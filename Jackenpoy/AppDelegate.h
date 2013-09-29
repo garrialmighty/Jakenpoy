@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
+@class MainViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) UINavigationController *viewController;
+
+- (void)showMenuButtons;
 
 @end
