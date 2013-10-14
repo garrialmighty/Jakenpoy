@@ -22,7 +22,11 @@
 + (JakenpoyHTTPClient *)getSharedClient;
 - (void)logout;
 - (id)initWithBaseURL:(NSURL *)url;
+
+// Login
 - (void)loginWithUsername:(NSString *)username Password:(NSString *)password;
+- (void)createAccountUsingEmail:(NSString *)email Name:(NSString *)name Password:(NSString *)password Type:(NSString *)type School:(NSNumber *)schoolid;
+- (void)getSchools;
 
 //Pick a Reviewer from the Library
 - (void)getQuestionType;
@@ -69,7 +73,9 @@
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error;
 
 @optional
+-(void)jakenpoyHTTPClientdidCreateAccount:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidRateWithData:(NSDictionary *)json;
+-(void)jakenpoyHTTPClientdidUpdateWithSchools:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithQuestionTypes:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithGradeLevels:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithSubjects:(NSDictionary *)json;

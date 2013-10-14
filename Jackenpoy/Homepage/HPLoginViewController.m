@@ -41,6 +41,18 @@
     
     [self.Email setInputAccessoryView:self.Toolbar];
     [self.Password setInputAccessoryView:self.Toolbar];
+    
+    NSUserDefaults * pref = [NSUserDefaults standardUserDefaults];
+    NSString * prefEmail = [pref objectForKey:@"email_preference"];
+    NSString * prefPassw = [pref objectForKey:@"password_preference"];
+    
+    if (prefEmail.length > 0) {
+        [self.Email setText:prefEmail];
+    }
+    
+    if (prefPassw.length > 0) {
+        [self.Password setText:prefPassw];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,14 +66,14 @@
 - (IBAction) login
 {
     if (self.Email.text.length==0 || self.Password.text.length==0) {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Empty Fields" message:@"Please fill out all fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please fill out all fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     }
     else {
         JakenpoyHTTPClient * client = [JakenpoyHTTPClient getSharedClient];
         [client setDelegate:self];
-        //[client loginWithUsername:self.Email.text Password:self.Password.text];
-        [client loginWithUsername:@"beta.jakenpoy@gmail.com" Password:@"jakenpoy123"];
+        [client loginWithUsername:self.Email.text Password:self.Password.text];
+        //[client loginWithUsername:@"beta.jakenpoy@gmail.com" Password:@"jakenpoy123"];
     }
 }
 

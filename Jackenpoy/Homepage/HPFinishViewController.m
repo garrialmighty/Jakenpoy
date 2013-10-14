@@ -7,8 +7,10 @@
 //
 
 #import "HPFinishViewController.h"
+#import "School.h"
 
-static NSArray * SchoolList;
+static JakenpoyHTTPClient * client;
+static NSMutableArray * SchoolList;
 static NSInteger Selected;
 
 @interface HPFinishViewController ()
@@ -22,6 +24,10 @@ static NSInteger Selected;
 @property (weak, nonatomic) IBOutlet UITextField *SchoolShortName;
 @property (weak, nonatomic) IBOutlet UITextField *SchoolAddress;
 @property (weak, nonatomic) IBOutlet UITextField *SchoolContact;
+@property (strong, nonatomic) NSString * Email;
+@property (strong, nonatomic) NSString * Name;
+@property (strong, nonatomic) NSString * Password;
+@property (strong, nonatomic) NSString * Type;
 @end
 
 @implementation HPFinishViewController
@@ -41,8 +47,12 @@ static NSInteger Selected;
     // Do any additional setup after loading the view from its nib.
     [self.navigationItem setHidesBackButton:YES];
     
+    client = [JakenpoyHTTPClient getSharedClient];
+    [client setDelegate:self];
+    [client getSchools];
+    
     Selected = 0;
-    SchoolList = @[@"School 1", @"School 2", @"School 3", @"School 4", @"School 5"];
+    SchoolList = [[NSMutableArray alloc] init];
     
     [self.SchoolName setInputAccessoryView:self.Toolbar];
     [self.SchoolShortName setInputAccessoryView:self.Toolbar];
@@ -72,11 +82,20 @@ static NSInteger Selected;
     }];
 }
 
+- (void)setEmail:(NSString *)email Name:(NSString *)name Password:(NSString *)password Type:(NSString *)type
+{
+    [self setEmail:email];
+    [self setName:name];
+    [self setPassword:password];
+    [self setType:type];
+}
+
 #pragma mark - IBActions
 #pragma mark UIButton
 - (IBAction) finish
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    School * school = SchoolList[Selected];
+    [client createAccountUsingEmail:self.Email Name:self.Name Password:self.Password Type:self.Type School:school.ID];
 }
 
 #pragma mark UIPicker
@@ -90,7 +109,13 @@ static NSInteger Selected;
 {
     [self.Picker setHidden:YES];
     [self.PickerToolbar setHidden:YES];
-    [self.School setText:SchoolList[Selected]];
+    
+    School * school = SchoolList[Selected];
+    [self.School setText:school.Name.length<=0?@"":school.Name];
+    [self.SchoolName setText:school.Name.length<=0?@"":school.Name];
+    [self.SchoolShortName setText:school.ShortName.length<=0?@"":school.ShortName];
+    [self.SchoolAddress setText:school.Address.length<=0?@"":school.Address];
+    [self.SchoolContact setText:school.ContactNumber?@"":school.ContactNumber];
 }
 
 #pragma mark UIToolbar
@@ -170,10 +195,53 @@ static NSInteger Selected;
 }
 
 #pragma mark - Delegate
+#pragma mark JakenpoyHTTPClient
+-(void)jakenpoyHTTPClientdidCreateAccount:(NSDictionary *)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    else {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error Creating Account" message:json[@"message"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+-(void)jakenpoyHTTPClientdidUpdateWithSchools:(NSDictionary *)json
+{
+    //NSLog(@"%@",json);
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        NSDictionary * list = json[@"data"][@"schools"];
+        
+        for (NSDictionary * school in list) {
+            School * item = [[School alloc] init];
+            [item setID:[NSNumber numberWithInteger:[school[@"id"] integerValue]]];
+            [item setName:school[@"name"]];
+            [item setShortName:school[@"shortname"]];
+            [item setAddress:school[@"address"]];
+            [item setContactNumber:school[@"contact"]];
+
+            [SchoolList addObject:item];
+        }
+
+        [self.Picker reloadAllComponents];
+    }
+}
+
+-(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
+{
+    NSLog(@"%@",json);
+}
+
+-(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error
+{
+    NSLog(@"E:%@",error);
+}
 #pragma mark UIPickerView
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return SchoolList[row];
+    School * school = SchoolList[row];
+    return school.ShortName;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component

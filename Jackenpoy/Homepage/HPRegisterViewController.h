@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPRegisterViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface HPRegisterViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, JakenpoyHTTPClientDelegate>
 
 @end

@@ -21,6 +21,7 @@
 		73192C9317E783B10080F339 /* TDSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C8B17E783B10080F339 /* TDSectionViewController.xib */; };
 		73192C9717E7844C0080F339 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73192C9517E7844C0080F339 /* AboutUsViewController.m */; };
 		73192C9817E7844C0080F339 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C9617E7844C0080F339 /* AboutUsViewController.xib */; };
+		732181F117FC89D9005442A8 /* new logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 732181F017FC89D9005442A8 /* new logo.png */; };
 		733077FE17E62DBA00B76FA5 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FB17E62DBA00B76FA5 /* SVSegmentedControl.m */; };
 		733077FF17E62DBA00B76FA5 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FD17E62DBA00B76FA5 /* SVSegmentedThumb.m */; };
 		735428EF17ECA57D006CDF8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 735428EE17ECA57D006CDF8F /* Default-568h@2x.png */; };
@@ -29,6 +30,7 @@
 		7359929C17E86EC10051E3D2 /* MRMKKidsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7359929A17E86EC10051E3D2 /* MRMKKidsViewController.xib */; };
 		735992A017E86ECA0051E3D2 /* MRMKRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7359929E17E86ECA0051E3D2 /* MRMKRegisterViewController.m */; };
 		735992A117E86ECA0051E3D2 /* MRMKRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7359929F17E86ECA0051E3D2 /* MRMKRegisterViewController.xib */; };
+		7374F94317FB02290017ECB0 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7374F94217FB02290017ECB0 /* School.m */; };
 		7384854717F54CDC00529CE1 /* MRMKChildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384853617F54CDC00529CE1 /* MRMKChildCell.m */; };
 		7384854817F54CDC00529CE1 /* MRMKChildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7384853717F54CDC00529CE1 /* MRMKChildCell.xib */; };
 		7384854917F54CDC00529CE1 /* PRLReviewerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384853917F54CDC00529CE1 /* PRLReviewerCell.m */; };
@@ -94,6 +96,7 @@
 		73B5E9DE17E6E2C000F53186 /* PRLPickViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B5E9D717E6E2C000F53186 /* PRLPickViewController.xib */; };
 		73B5E9DF17E6E2C000F53186 /* PRLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5E9D917E6E2C000F53186 /* PRLSearchViewController.m */; };
 		73B5E9E017E6E2C000F53186 /* PRLSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B5E9DA17E6E2C000F53186 /* PRLSearchViewController.xib */; };
+		73CE81391806B72F00FD2957 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 73CE81381806B72F00FD2957 /* Settings.bundle */; };
 		73D3F88417E4ADCE00149106 /* HPFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D3F87C17E4ADCE00149106 /* HPFinishViewController.m */; };
 		73D3F88517E4ADCE00149106 /* HPFinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D3F87D17E4ADCE00149106 /* HPFinishViewController.xib */; };
 		73D3F88617E4ADCE00149106 /* HPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D3F87F17E4ADCE00149106 /* HPLoginViewController.m */; };
@@ -133,6 +136,7 @@
 		73192C9417E7844B0080F339 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
 		73192C9517E7844C0080F339 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		73192C9617E7844C0080F339 /* AboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
+		732181F017FC89D9005442A8 /* new logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new logo.png"; sourceTree = "<group>"; };
 		733077FA17E62DBA00B76FA5 /* SVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
 		733077FB17E62DBA00B76FA5 /* SVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
 		733077FC17E62DBA00B76FA5 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 		7359929D17E86ECA0051E3D2 /* MRMKRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKRegisterViewController.h; sourceTree = "<group>"; };
 		7359929E17E86ECA0051E3D2 /* MRMKRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKRegisterViewController.m; sourceTree = "<group>"; };
 		7359929F17E86ECA0051E3D2 /* MRMKRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKRegisterViewController.xib; sourceTree = "<group>"; };
+		7374F94117FB02290017ECB0 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
+		7374F94217FB02290017ECB0 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
 		7384853517F54CDC00529CE1 /* MRMKChildCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKChildCell.h; sourceTree = "<group>"; };
 		7384853617F54CDC00529CE1 /* MRMKChildCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKChildCell.m; sourceTree = "<group>"; };
 		7384853717F54CDC00529CE1 /* MRMKChildCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKChildCell.xib; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 		73B5E9D817E6E2C000F53186 /* PRLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRLSearchViewController.h; path = "Pick a Reviewer from the Library/PRLSearchViewController.h"; sourceTree = "<group>"; };
 		73B5E9D917E6E2C000F53186 /* PRLSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRLSearchViewController.m; path = "Pick a Reviewer from the Library/PRLSearchViewController.m"; sourceTree = "<group>"; };
 		73B5E9DA17E6E2C000F53186 /* PRLSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PRLSearchViewController.xib; path = "Pick a Reviewer from the Library/PRLSearchViewController.xib"; sourceTree = "<group>"; };
+		73CE81381806B72F00FD2957 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		73D3F87B17E4ADCE00149106 /* HPFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPFinishViewController.h; path = Homepage/HPFinishViewController.h; sourceTree = "<group>"; };
 		73D3F87C17E4ADCE00149106 /* HPFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPFinishViewController.m; path = Homepage/HPFinishViewController.m; sourceTree = "<group>"; };
 		73D3F87D17E4ADCE00149106 /* HPFinishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPFinishViewController.xib; path = Homepage/HPFinishViewController.xib; sourceTree = "<group>"; };
@@ -247,14 +254,14 @@
 		73D3F88117E4ADCE00149106 /* HPRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPRegisterViewController.h; path = Homepage/HPRegisterViewController.h; sourceTree = "<group>"; };
 		73D3F88217E4ADCE00149106 /* HPRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPRegisterViewController.m; path = Homepage/HPRegisterViewController.m; sourceTree = "<group>"; };
 		73D3F88317E4ADCE00149106 /* HPRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPRegisterViewController.xib; path = Homepage/HPRegisterViewController.xib; sourceTree = "<group>"; };
-		73EC79A217B914BE00F2E12E /* Jackenpoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jackenpoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73EC79A217B914BE00F2E12E /* Jakenpoy PTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jakenpoy PTA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73EC79A517B914BE00F2E12E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		73EC79A717B914BE00F2E12E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		73EC79A917B914BE00F2E12E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		73EC79AD17B914BE00F2E12E /* Jackenpoy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jackenpoy-Info.plist"; sourceTree = "<group>"; };
+		73EC79AD17B914BE00F2E12E /* Jakenpoy PTA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jakenpoy PTA-Info.plist"; sourceTree = "<group>"; };
 		73EC79AF17B914BE00F2E12E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		73EC79B117B914BE00F2E12E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		73EC79B317B914BE00F2E12E /* Jackenpoy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jackenpoy-Prefix.pch"; sourceTree = "<group>"; };
+		73EC79B317B914BE00F2E12E /* Jakenpoy PTA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jakenpoy PTA-Prefix.pch"; sourceTree = "<group>"; };
 		73EC79B417B914BE00F2E12E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73EC79B517B914BE00F2E12E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		73EC79B717B914BE00F2E12E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -485,6 +492,8 @@
 				7384855E17F54D8B00529CE1 /* UserType.m */,
 				73A893A817F6107A00A9F4FD /* Student.h */,
 				73A893A917F6107A00A9F4FD /* Student.m */,
+				7374F94117FB02290017ECB0 /* School.h */,
+				7374F94217FB02290017ECB0 /* School.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -492,6 +501,7 @@
 		7384856417F54E5700529CE1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				732181F017FC89D9005442A8 /* new logo.png */,
 				7384856517F54E5700529CE1 /* back.png */,
 				7384856617F54E5700529CE1 /* back_arrow.png */,
 				7384856717F54E5700529CE1 /* cb_glossy_off.png */,
@@ -605,7 +615,7 @@
 		73EC79A317B914BE00F2E12E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73EC79A217B914BE00F2E12E /* Jackenpoy.app */,
+				73EC79A217B914BE00F2E12E /* Jakenpoy PTA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -639,12 +649,13 @@
 		73EC79AC17B914BE00F2E12E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				73CE81381806B72F00FD2957 /* Settings.bundle */,
 				7384856417F54E5700529CE1 /* Assets */,
 				735428F017ECA584006CDF8F /* Default~iphone.png */,
-				73EC79AD17B914BE00F2E12E /* Jackenpoy-Info.plist */,
+				73EC79AD17B914BE00F2E12E /* Jakenpoy PTA-Info.plist */,
 				73EC79AE17B914BE00F2E12E /* InfoPlist.strings */,
 				73EC79B117B914BE00F2E12E /* main.m */,
-				73EC79B317B914BE00F2E12E /* Jackenpoy-Prefix.pch */,
+				73EC79B317B914BE00F2E12E /* Jakenpoy PTA-Prefix.pch */,
 				73EC79B717B914BE00F2E12E /* Default.png */,
 				735428EE17ECA57D006CDF8F /* Default-568h@2x.png */,
 			);
@@ -678,9 +689,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		73EC79A117B914BE00F2E12E /* Jackenpoy */ = {
+		73EC79A117B914BE00F2E12E /* Jakenpoy PTA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73EC79C517B914BE00F2E12E /* Build configuration list for PBXNativeTarget "Jackenpoy" */;
+			buildConfigurationList = 73EC79C517B914BE00F2E12E /* Build configuration list for PBXNativeTarget "Jakenpoy PTA" */;
 			buildPhases = (
 				73EC799E17B914BE00F2E12E /* Sources */,
 				73EC799F17B914BE00F2E12E /* Frameworks */,
@@ -690,9 +701,9 @@
 			);
 			dependencies = (
 			);
-			name = Jackenpoy;
+			name = "Jakenpoy PTA";
 			productName = Jackenpoy;
-			productReference = 73EC79A217B914BE00F2E12E /* Jackenpoy.app */;
+			productReference = 73EC79A217B914BE00F2E12E /* Jakenpoy PTA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -703,8 +714,13 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Garri Adrian Nablo";
+				TargetAttributes = {
+					73EC79A117B914BE00F2E12E = {
+						DevelopmentTeam = UK7Q5V5E4G;
+					};
+				};
 			};
-			buildConfigurationList = 73EC799D17B914BE00F2E12E /* Build configuration list for PBXProject "Jackenpoy" */;
+			buildConfigurationList = 73EC799D17B914BE00F2E12E /* Build configuration list for PBXProject "Jakenpoy PTA" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -716,7 +732,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				73EC79A117B914BE00F2E12E /* Jackenpoy */,
+				73EC79A117B914BE00F2E12E /* Jakenpoy PTA */,
 			);
 		};
 /* End PBXProject section */
@@ -757,6 +773,7 @@
 				73192C8F17E783B10080F339 /* TDMenuViewController.xib in Resources */,
 				73192C9117E783B10080F339 /* TDSaveViewController.xib in Resources */,
 				73192C9317E783B10080F339 /* TDSectionViewController.xib in Resources */,
+				732181F117FC89D9005442A8 /* new logo.png in Resources */,
 				7384859117F54E5700529CE1 /* star_fill.png in Resources */,
 				7384858117F54E5700529CE1 /* drop_down.png in Resources */,
 				73192C9817E7844C0080F339 /* AboutUsViewController.xib in Resources */,
@@ -777,6 +794,7 @@
 				7384857D17F54E5700529CE1 /* back.png in Resources */,
 				7384854A17F54CDC00529CE1 /* PRLReviewerCell.xib in Resources */,
 				73A4AAFB17E97BD200F52277 /* MRSFinishViewController.xib in Resources */,
+				73CE81391806B72F00FD2957 /* Settings.bundle in Resources */,
 				73A4AAFD17E97BD200F52277 /* MRSQuestionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -814,6 +832,7 @@
 				7384854717F54CDC00529CE1 /* MRMKChildCell.m in Sources */,
 				73922A3917E7A05A00401722 /* MyAccountViewController.m in Sources */,
 				7359929B17E86EC10051E3D2 /* MRMKKidsViewController.m in Sources */,
+				7374F94317FB02290017ECB0 /* School.m in Sources */,
 				735992A017E86ECA0051E3D2 /* MRMKRegisterViewController.m in Sources */,
 				73A4AAEA17E97B7600F52277 /* AFHTTPClient.m in Sources */,
 				73A4AAEB17E97B7600F52277 /* AFHTTPRequestOperation.m in Sources */,
@@ -918,10 +937,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jakenpoy Corporation (UK7Q5V5E4G)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Jackenpoy/Jackenpoy-Prefix.pch";
-				INFOPLIST_FILE = "Jackenpoy/Jackenpoy-Info.plist";
+				GCC_PREFIX_HEADER = "Jackenpoy/Jakenpoy PTA-Prefix.pch";
+				INFOPLIST_FILE = "Jackenpoy/Jakenpoy PTA-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Jakenpoy PTA";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -931,10 +951,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jakenpoy Corporation (UK7Q5V5E4G)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Jackenpoy/Jackenpoy-Prefix.pch";
-				INFOPLIST_FILE = "Jackenpoy/Jackenpoy-Info.plist";
+				GCC_PREFIX_HEADER = "Jackenpoy/Jakenpoy PTA-Prefix.pch";
+				INFOPLIST_FILE = "Jackenpoy/Jakenpoy PTA-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Jakenpoy PTA";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -942,7 +963,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		73EC799D17B914BE00F2E12E /* Build configuration list for PBXProject "Jackenpoy" */ = {
+		73EC799D17B914BE00F2E12E /* Build configuration list for PBXProject "Jakenpoy PTA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73EC79C317B914BE00F2E12E /* Debug */,
@@ -951,7 +972,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73EC79C517B914BE00F2E12E /* Build configuration list for PBXNativeTarget "Jackenpoy" */ = {
+		73EC79C517B914BE00F2E12E /* Build configuration list for PBXNativeTarget "Jakenpoy PTA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73EC79C617B914BE00F2E12E /* Debug */,

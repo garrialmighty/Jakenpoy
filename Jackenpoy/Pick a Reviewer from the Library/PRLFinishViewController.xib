@@ -344,7 +344,7 @@
                                 <action selector="toggleCheckbox:" destination="-1" eventType="touchUpInside" id="jaK-v3-QKP"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Classification:" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="319" userLabel="Classification Text Field">
+                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Classification:" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="319" userLabel="Classification Text Field">
                             <rect key="frame" x="18" y="280" width="285" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
@@ -355,11 +355,11 @@
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="drop_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="YYP-y5-Nn2" userLabel="Drop Down Icon">
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="drop_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="YYP-y5-Nn2" userLabel="Drop Down Icon">
                             <rect key="frame" x="273" y="280" width="30" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="320" userLabel="Classification Drop Down">
+                        <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="320" userLabel="Classification Drop Down">
                             <rect key="frame" x="18" y="280" width="285" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
@@ -591,12 +591,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <action selector="showStep:" destination="-1" eventType="touchUpInside" id="470"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30" userLabel="Next/Finish Button">
-                    <rect key="frame" x="150" y="396" width="170" height="40"/>
+                <button opaque="NO" tag="170" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30" userLabel="Next/Finish Button">
+                    <rect key="frame" x="0.0" y="396" width="320" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="170" id="41"/>
+                        <constraint firstAttribute="width" constant="320" id="41"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="NEXT">

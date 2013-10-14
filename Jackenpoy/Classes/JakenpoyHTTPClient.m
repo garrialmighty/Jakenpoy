@@ -63,6 +63,11 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
                        // Enable going to menu
                        AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
                        [delegate showMenuButtons];
+                       
+                       // Save in app preferences
+                       NSUserDefaults * pref = [NSUserDefaults standardUserDefaults];
+                       [pref setObject:username forKey:@"email_preference"];
+                       [pref setObject:password forKey:@"password_preference"];
 
                        if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)]) {
                            [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
@@ -94,6 +99,38 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
                                                      otherButtonTitles:nil];
                [alert show];
            }];
+}
+
+- (void)createAccountUsingEmail:(NSString *)email Name:(NSString *)name Password:(NSString *)password Type:(NSString *)type School:(NSNumber *)schoolid
+{
+    NSLog(@"creating account");
+    [self getPath:@"createAccount"
+       parameters:@{@"email":email, @"name":name, @"password":password, @"type":type, @"schoolid":schoolid?schoolid:@0}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidCreateAccount:)]) {
+                  [self.delegate jakenpoyHTTPClientdidCreateAccount:responseObject];
+              }
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)getSchools
+{
+    NSLog(@"getting schools");
+    [self getPath:@"getSchools"
+       parameters:nil
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithSchools:)]) {
+                  [self.delegate jakenpoyHTTPClientdidUpdateWithSchools:responseObject];
+              }
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
 }
 
 #pragma mark Pick a Reviewer from the Library

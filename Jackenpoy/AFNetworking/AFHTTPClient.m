@@ -514,6 +514,12 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
                 
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
             }
+            else if ([path isEqualToString:@"createAccount"]) {
+                NSString * paramString = [NSString stringWithFormat:@"/%@/%@/%@/%@/%@",parameters[@"email"], parameters[@"name"], parameters[@"password"], parameters[@"type"] ,parameters[@"schoolid"]];
+                paramString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)paramString, NULL, (CFStringRef)@"!*'();:@&=+$,?%#[]", kCFStringEncodingUTF8));
+                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
+                NSLog(@"after%@",url);
+            }
             else if ([path isEqualToString:@"unpublish"] || [path isEqualToString:@"publish"]) {
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@",parameters[@"qsetId"], parameters[@"userId"], parameters[@"token"]]];
             }
@@ -527,6 +533,9 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
                 NSString * paramString = [NSString stringWithFormat:@"/%@/%@/%@/%@/%@",parameters[@"name"], parameters[@"currentpassword"], parameters[@"email"], parameters[@"userId"], parameters[@"token"]];
                 paramString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)paramString, NULL, (CFStringRef)@"!*'();:@&=+$,?%#[]", kCFStringEncodingUTF8));
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
+            }
+            else if ([path isEqualToString:@"getSchools"]) {
+                //url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@",parameters[@"userId"], parameters[@"token"]]];
             }
             else {
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@",parameters[@"userId"], parameters[@"token"]]];

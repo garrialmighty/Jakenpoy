@@ -75,7 +75,7 @@ static NSMutableArray * AssigneeList;
     QuestionTypeList = [[NSArray alloc] init];
     SubjectList = @[@"Subject 1", @"Subject 2", @"Subject 3", @"Subject 4", @"Subject 5"];
     
-    NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"NEXT"];
+    NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"FINISHED"];
     [nextUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [nextUlString length])];
     [nextUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [nextUlString length])];
     [self.NFButton setAttributedTitle:nextUlString forState:UIControlStateNormal];

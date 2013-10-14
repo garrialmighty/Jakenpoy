@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPFinishViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
-
+@interface HPFinishViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, JakenpoyHTTPClientDelegate>
+- (void)setEmail:(NSString *)email Name:(NSString *)name Password:(NSString *)password Type:(NSString *)type;
 @end

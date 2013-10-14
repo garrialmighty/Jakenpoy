@@ -44,7 +44,7 @@ static NSInteger Selected;
     ViewCenter = self.view.center;
     
     Selected = 0;
-    AccountTypeList = @[@"Account Type 1", @"Account Type 2", @"Account Type 3", @"Account Type 4", @"Account Type 5"];
+    AccountTypeList = @[@"Parent/Guardian", @"Teacher", @"Both Parent/Guardian & Teacher"];
     
     [self.navigationItem setHidesBackButton:YES];
     NSMutableAttributedString *loginString = [[NSMutableAttributedString alloc] initWithString:@"Log-In"];
@@ -83,8 +83,16 @@ static NSInteger Selected;
 #pragma mark UIButton
 - (IBAction) registerUser
 {
-    HPFinishViewController * hpfvc = [[HPFinishViewController alloc] initWithNibName:@"HPFinishViewController" bundle:nil];
-    [self.navigationController pushViewController:hpfvc animated:YES];
+    if (self.Email.text.length<=0 || self.Name.text.length<=0 || self.Password.text.length<=0 || self.AccountType.text.length<=0) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please fill out all fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
+    else {
+        HPFinishViewController * hpfvc = [[HPFinishViewController alloc] initWithNibName:@"HPFinishViewController" bundle:nil];
+        [self.navigationController pushViewController:hpfvc animated:YES];
+        
+        [hpfvc setEmail:self.Email.text Name:self.Name.text Password:self.Password.text Type:Selected==0?@"guardian":Selected==1?@"teacher":@"both"];
+    }
 }
 
 - (IBAction)login
@@ -167,6 +175,17 @@ static NSInteger Selected;
 }
 
 #pragma mark - Delegate
+#pragma mark JakenpoyHTTPClient
+-(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
+{
+    NSLog(@"%@",json);
+}
+
+-(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error
+{
+    NSLog(@"E:%@",error);
+}
+
 #pragma mark UIPickerView
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
