@@ -54,7 +54,7 @@ static NSArray * SubjectList;
     
     [self.Step2 addSubview:jackenpoySC];
     
-    [jackenpoySC setCenter:CGPointMake(160, 70)];
+    [jackenpoySC setCenter:CGPointMake(isPhone?160:360, isPhone?70:100)];
     
     NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"NEXT"];
     [nextUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [nextUlString length])];

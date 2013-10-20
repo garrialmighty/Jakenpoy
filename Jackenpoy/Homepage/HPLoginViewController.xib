@@ -229,7 +229,6 @@
     <resources>
         <image name="cb_glossy_off.png" width="44" height="43"/>
         <image name="cb_glossy_on.png" width="44" height="43"/>
-        <image name="cb_glossy_on.png" width="44" height="43"/>
         <image name="new logo.png" width="764" height="689"/>
     </resources>
 </document>

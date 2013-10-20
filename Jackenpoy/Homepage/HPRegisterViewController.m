@@ -74,21 +74,31 @@ static NSInteger Selected;
 
 - (void) scrollPageToPoint:(CGFloat)y
 {
-    [UIView animateWithDuration:0.3f animations:^{
-        [self.view setCenter:CGPointMake(ViewCenter.x, y)];
-    }];
+    if (isPhone) {
+        [UIView animateWithDuration:0.3f animations:^{
+            [self.view setCenter:CGPointMake(ViewCenter.x, y)];
+        }];
+    }
 }
 
 #pragma mark - IBActions
 #pragma mark UIButton
 - (IBAction) registerUser
 {
-    if (self.Email.text.length<=0 || self.Name.text.length<=0 || self.Password.text.length<=0 || self.AccountType.text.length<=0) {
+    if (self.Email.text.length<=0 || self.Name.text.length<=0 || self.Password.text.length<=0 || (isPhone&&self.AccountType.text.length<=0)) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please fill out all fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     }
     else {
-        HPFinishViewController * hpfvc = [[HPFinishViewController alloc] initWithNibName:@"HPFinishViewController" bundle:nil];
+        HPFinishViewController * hpfvc;
+        
+        if (isPhone) {
+            hpfvc = [[HPFinishViewController alloc] initWithNibName:@"HPFinishViewController" bundle:nil];
+        }
+        else {
+            hpfvc = [[HPFinishViewController alloc] initWithNibName:@"HPFinishViewController_iPad" bundle:nil];
+        }
+        
         [self.navigationController pushViewController:hpfvc animated:YES];
         
         [hpfvc setEmail:self.Email.text Name:self.Name.text Password:self.Password.text Type:Selected==0?@"guardian":Selected==1?@"teacher":@"both"];

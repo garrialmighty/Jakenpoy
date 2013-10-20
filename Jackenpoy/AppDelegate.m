@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
 #import "HPLoginViewController.h"
 #import "MyReviewersViewController.h"
 #import "PRLSearchViewController.h"
@@ -41,9 +40,15 @@ static CGFloat MenuCellCount = 8;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
-    //MainViewController *mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    HPLoginViewController * hplvc;
     
-    HPLoginViewController * hplvc = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController" bundle:nil];
+    isPhone = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
+    
+    if (isPhone) {
+        hplvc = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController" bundle:nil];
+    } else {
+        hplvc = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController_iPad" bundle:nil];
+    }
     
     self.viewController = [[UINavigationController alloc] initWithRootViewController:hplvc];
     [self.window setRootViewController:self.viewController];
@@ -116,7 +121,7 @@ static CGFloat MenuCellCount = 8;
         if (![view isKindOfClass:[UITableView class]] && ![view isKindOfClass:[UIButton class]]) {
             [UIView animateWithDuration:0.4f animations:^{
                 CGRect currFrame = view.frame;
-                currFrame.origin.x = 245;
+                currFrame.origin.x = isPhone?245:525;
                 [view setFrame:currFrame];
             }];
         }
@@ -141,7 +146,7 @@ static CGFloat MenuCellCount = 8;
 #pragma mark - Initializer Methods
 - (void)initializeNavigationBar
 {
-    UIView * bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    UIView * bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, isPhone?320:768, 44)];
     [bg setBackgroundColor:[UIColor colorWithRed:0.18 green:0.53 blue:0.94 alpha:1]];
     
     UIImageView * logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jakenpoy_logo.png"]];
@@ -158,12 +163,12 @@ static CGFloat MenuCellCount = 8;
     [self.ScreenLabel setBackgroundColor:[UIColor clearColor]];
     
     self.HitArea = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.HitArea setFrame:CGRectMake(0, 0, 200, 45)];
+    [self.HitArea setFrame:CGRectMake(0, 0, isPhone?200:500, 45)];
     [self.HitArea addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
     [self.HitArea setHidden:YES];
     
     self.BackButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.BackButton setFrame:CGRectMake(245, 0, 76, ScreenHeight)];
+    [self.BackButton setFrame:CGRectMake(245, 0, isPhone?76:500, ScreenHeight)];
     [self.BackButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
     [self.viewController.navigationBar addSubview:bg];
@@ -176,7 +181,7 @@ static CGFloat MenuCellCount = 8;
 
 - (void)initializeMenu
 {
-    self.Menu = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 245, ScreenHeight) style:UITableViewStylePlain];
+    self.Menu = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, isPhone?245:525, ScreenHeight) style:UITableViewStylePlain];
     [self.Menu setDataSource:self];
     [self.Menu setDelegate:self];
     [self.Menu setScrollEnabled:NO];
@@ -201,18 +206,18 @@ static CGFloat MenuCellCount = 8;
     }
     
     UIImageView * menuLogo;
-    UILabel * cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, MenuCellHeight)];;
+    UILabel * cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, isPhone?200:500, MenuCellHeight)];
     
-    UIView * highlight = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, MenuCellHeight)];
+    UIView * highlight = [[UIView alloc] initWithFrame:CGRectMake(0, 0, isPhone?320:768, MenuCellHeight)];
     [highlight setBackgroundColor:[UIColor blackColor]];
     
     CGFloat logoY = (HeaderHeight - 35) / 2;
     UIImageView * logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jakenpoy_logo.png"]];
     [logo setFrame:CGRectMake(20, logoY, 85, 35)];
     
-    UILabel * menuLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 0, 80, HeaderHeight)];
+    UILabel * menuLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 0, isPhone?80:200, HeaderHeight)];
     [menuLabel setText:@"Menu"];
-    [menuLabel setFont:[UIFont boldSystemFontOfSize:18]];
+    [menuLabel setFont:[UIFont boldSystemFontOfSize:isPhone?18:30]];
     [menuLabel setBackgroundColor:[UIColor clearColor]];
     [menuLabel setTextColor:[UIColor colorWithRed:0.18 green:0.53 blue:0.94 alpha:1]];
     
@@ -237,7 +242,6 @@ static CGFloat MenuCellCount = 8;
             [menuLogo setImage:[UIImage imageNamed:@"pick_icon.png"]];
             [cell addSubview:menuLogo];
             
-            cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, MenuCellHeight)];
             [cellLabel setText:@"Pick a Reviewer from the Library"];
             [cellLabel setNumberOfLines:2];
             [cell addSubview:cellLabel];
@@ -281,7 +285,6 @@ static CGFloat MenuCellCount = 8;
                 [menuLogo setImage:[UIImage imageNamed:@"manage_icon.png"]];
                 [cell addSubview:menuLogo];
                 
-                cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, MenuCellHeight)];
                 [cellLabel setText:@"Manage/Register My Kids"];
                 [cell addSubview:cellLabel];
                 break;
@@ -290,12 +293,10 @@ static CGFloat MenuCellCount = 8;
                 [menuLogo setImage:[UIImage imageNamed:@"my_icon.png"]];
                 [cell addSubview:menuLogo];
                 
-                cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, MenuCellHeight)];
                 [cellLabel setText:@"My Account"];
                 [cell addSubview:cellLabel];
                 break;
             case 5:
-                cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, MenuCellHeight)];
                 [cellLabel setText:@"About Us/Contact Us"];
                 [cell addSubview:cellLabel];
                 break;
@@ -304,7 +305,6 @@ static CGFloat MenuCellCount = 8;
                 [menuLogo setImage:[UIImage imageNamed:@"logout_icon.png"]];
                 [cell addSubview:menuLogo];
                 
-                cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, MenuCellHeight)];
                 [cellLabel setText:@"Log Out"];
                 [cell addSubview:cellLabel];
                 break;
@@ -327,7 +327,6 @@ static CGFloat MenuCellCount = 8;
                 [menuLogo setImage:[UIImage imageNamed:@"manage_icon.png"]];
                 [cell addSubview:menuLogo];
                 
-                cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, MenuCellHeight)];
                 [cellLabel setText:@"Manage/Register My Kids"];
                 [cell addSubview:cellLabel];
                 break;
@@ -336,12 +335,10 @@ static CGFloat MenuCellCount = 8;
                 [menuLogo setImage:[UIImage imageNamed:@"my_icon.png"]];
                 [cell addSubview:menuLogo];
                 
-                cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, MenuCellHeight)];
                 [cellLabel setText:@"My Account"];
                 [cell addSubview:cellLabel];
                 break;
             case 6:
-                cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, MenuCellHeight)];
                 [cellLabel setText:@"About Us/Contact Us"];
                 [cell addSubview:cellLabel];
                 break;
@@ -350,7 +347,6 @@ static CGFloat MenuCellCount = 8;
                 [menuLogo setImage:[UIImage imageNamed:@"logout_icon.png"]];
                 [cell addSubview:menuLogo];
                 
-                cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, MenuCellHeight)];
                 [cellLabel setText:@"Log Out"];
                 [cell addSubview:cellLabel];
                 break;
@@ -360,7 +356,7 @@ static CGFloat MenuCellCount = 8;
     }
     
     [cellLabel setTextColor:[UIColor whiteColor]];
-    [cellLabel setFont:[UIFont fontWithName:@"Helvetica Neue Light" size:8]];
+    [cellLabel setFont:[UIFont fontWithName:@"Helvetica Neue Light" size:isPhone?8:20]];
     [cellLabel setBackgroundColor:[UIColor clearColor]];
     
     [cell setSelectedBackgroundView:highlight];
@@ -394,11 +390,19 @@ static CGFloat MenuCellCount = 8;
     switch (indexPath.row) {
         case 1:
             [self.ScreenLabel setText:@"My Reviewers"];
-            newPage = [[MyReviewersViewController alloc] initWithNibName:@"MyReviewersViewController" bundle:nil];
+            if (isPhone) {
+                newPage = [[MyReviewersViewController alloc] initWithNibName:@"MyReviewersViewController" bundle:nil];
+            } else {
+                newPage = [[MyReviewersViewController alloc] initWithNibName:@"MyReviewersViewController_iPad" bundle:nil];
+            }
             break;
         case 2:
             [self.ScreenLabel setText:@"Pick a Reviewer from the Library"];
-            newPage = [[PRLSearchViewController alloc] initWithNibName:@"PRLSearchViewController" bundle:nil];
+            if (isPhone) {
+                newPage = [[PRLSearchViewController alloc] initWithNibName:@"PRLSearchViewController" bundle:nil];
+            } else {
+                newPage = [[PRLSearchViewController alloc] initWithNibName:@"PRLSearchViewController_iPad" bundle:nil];
+            }
             break;
         default:
             break;
@@ -421,19 +425,35 @@ static CGFloat MenuCellCount = 8;
         switch (indexPath.row) {
             case 3:
                 [self.ScreenLabel setText:@"Manage/Register My Kids"];
-                newPage = [[MRMKKidsViewController alloc] initWithNibName:@"MRMKKidsViewController" bundle:nil];
+                if (isPhone) {
+                    newPage = [[MRMKKidsViewController alloc] initWithNibName:@"MRMKKidsViewController" bundle:nil];
+                } else {
+                    newPage = [[MRMKKidsViewController alloc] initWithNibName:@"MRMKKidsViewController_iPad" bundle:nil];
+                }
                 break;
             case 4:
                 [self.ScreenLabel setText:@"My Account"];
-                newPage = [[MyAccountViewController alloc] initWithNibName:@"MyAccountViewController" bundle:nil];
+                if (isPhone) {
+                    newPage = [[MyAccountViewController alloc] initWithNibName:@"MyAccountViewController" bundle:nil];
+                } else {
+                    newPage = [[MyAccountViewController alloc] initWithNibName:@"MyAccountViewController_iPad" bundle:nil];
+                }
                 break;
             case 5:
                 [self.ScreenLabel setText:@"About Us/Contact Us"];
-                newPage = [[AboutUsViewController alloc] initWithNibName:@"AboutUsViewController" bundle:nil];
+                if (isPhone) {
+                    newPage = [[AboutUsViewController alloc] initWithNibName:@"AboutUsViewController" bundle:nil];
+                } else {
+                    newPage = [[AboutUsViewController alloc] initWithNibName:@"AboutUsViewController_iPad" bundle:nil];
+                }
                 break;
             case 6:
                 [self.ScreenLabel setText:@"Welcome to Jakenpoy PTA!"];
-                newPage = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController" bundle:nil];
+                if (isPhone) {
+                    newPage = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController" bundle:nil];
+                } else {
+                    newPage = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController_iPad" bundle:nil];
+                }
                 
                 [[JakenpoyHTTPClient getSharedClient] logout];
                 [self.HitArea setHidden:YES];
@@ -447,23 +467,43 @@ static CGFloat MenuCellCount = 8;
         switch (indexPath.row) {
             case 3:
                 [self.ScreenLabel setText:@"Teacher's Desk"];
-                newPage = [[TDMenuViewController alloc] initWithNibName:@"TDMenuViewController" bundle:nil];
+                if (isPhone) {
+                    newPage = [[TDMenuViewController alloc] initWithNibName:@"TDMenuViewController" bundle:nil];
+                } else {
+                    newPage = [[TDMenuViewController alloc] initWithNibName:@"TDMenuViewController_iPad" bundle:nil];
+                }
                 break;
             case 4:
                 [self.ScreenLabel setText:@"Manage/Register My Kids"];
-                newPage = [[MRMKKidsViewController alloc] initWithNibName:@"MRMKKidsViewController" bundle:nil];
+                if (isPhone) {
+                    newPage = [[MRMKKidsViewController alloc] initWithNibName:@"MRMKKidsViewController" bundle:nil];
+                } else {
+                    newPage = [[MRMKKidsViewController alloc] initWithNibName:@"MRMKKidsViewController_iPad" bundle:nil];
+                }
                 break;
             case 5:
                 [self.ScreenLabel setText:@"My Account"];
-                newPage = [[MyAccountViewController alloc] initWithNibName:@"MyAccountViewController" bundle:nil];
+                if (isPhone) {
+                    newPage = [[MyAccountViewController alloc] initWithNibName:@"MyAccountViewController" bundle:nil];
+                } else {
+                    newPage = [[MyAccountViewController alloc] initWithNibName:@"MyAccountViewController_iPad" bundle:nil];
+                }
                 break;
             case 6:
                 [self.ScreenLabel setText:@"About Us/Contact Us"];
-                newPage = [[AboutUsViewController alloc] initWithNibName:@"AboutUsViewController" bundle:nil];
+                if (isPhone) {
+                    newPage = [[AboutUsViewController alloc] initWithNibName:@"AboutUsViewController" bundle:nil];
+                } else {
+                    newPage = [[AboutUsViewController alloc] initWithNibName:@"AboutUsViewController_iPad" bundle:nil];
+                }
                 break;
             case 7:
                 [self.ScreenLabel setText:@"Welcome to Jakenpoy PTA!"];
-                newPage = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController" bundle:nil];
+                if (isPhone) {
+                    newPage = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController" bundle:nil];
+                } else {
+                    newPage = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController_iPad" bundle:nil];
+                }
                 
                 [[JakenpoyHTTPClient getSharedClient] logout];
                 [self.HitArea setHidden:YES];

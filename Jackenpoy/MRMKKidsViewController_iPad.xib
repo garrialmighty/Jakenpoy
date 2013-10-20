@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MRMKKidsViewController">
+            <connections>
+                <outlet property="RegisterButton" destination="L7C-4N-9GN" id="1lZ-mn-v55"/>
+                <outlet property="Table" destination="Ydj-Wv-lrl" id="hfJ-wW-NIs"/>
+                <outlet property="view" destination="1" id="Al0-x2-Byw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="44" width="768" height="980"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7C-4N-9GN" userLabel="Register Child Button">
+                    <rect key="frame" x="420" y="10" width="340" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="340" id="HE8-0p-BQC"/>
+                        <constraint firstAttribute="height" constant="70" id="W7g-Wp-YP2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Register Child">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="registerChild" destination="-1" eventType="touchUpInside" id="HA4-u2-seN"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ydj-Wv-lrl" userLabel="Table">
+                    <rect key="frame" x="0.0" y="90" width="770" height="820"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="m9C-Ib-R3I"/>
+                        <outlet property="delegate" destination="-1" id="W3a-eB-GQA"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9x-Y1-ZHK" userLabel="Reports Button">
+                    <rect key="frame" x="385" y="910" width="385" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.86274509799999999" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="53d-rB-VJO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                    <state key="normal" title="REPORTS">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="report" destination="-1" eventType="touchUpInside" id="GjL-oV-ied"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOb-jF-AZS" userLabel="Deactivate Account Button">
+                    <rect key="frame" x="0.0" y="910" width="385" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.74509803919999995" green="0.20000000000000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="Oej-LE-T1A"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                    <state key="normal" title="Deactivate Account">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="deactivateAccount" destination="-1" eventType="touchUpInside" id="WA9-TM-V53"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="o9x-Y1-ZHK" firstAttribute="leading" secondItem="XOb-jF-AZS" secondAttribute="trailing" id="2Uc-WJ-umN"/>
+                <constraint firstItem="XOb-jF-AZS" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="2vD-wR-VQZ"/>
+                <constraint firstAttribute="trailing" secondItem="o9x-Y1-ZHK" secondAttribute="trailing" id="EBA-JX-45g"/>
+                <constraint firstItem="Ydj-Wv-lrl" firstAttribute="top" secondItem="L7C-4N-9GN" secondAttribute="bottom" constant="10" id="JlL-dF-nGr"/>
+                <constraint firstItem="o9x-Y1-ZHK" firstAttribute="width" secondItem="XOb-jF-AZS" secondAttribute="width" id="P7d-LO-g1m"/>
+                <constraint firstItem="L7C-4N-9GN" firstAttribute="top" secondItem="1" secondAttribute="top" constant="10" id="QTR-fT-Sug"/>
+                <constraint firstAttribute="trailing" secondItem="Ydj-Wv-lrl" secondAttribute="trailing" id="XUi-tV-JsZ"/>
+                <constraint firstAttribute="bottom" secondItem="XOb-jF-AZS" secondAttribute="bottom" id="Z8H-H8-0QN"/>
+                <constraint firstItem="Ydj-Wv-lrl" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="eWg-9S-jvd"/>
+                <constraint firstAttribute="trailing" secondItem="L7C-4N-9GN" secondAttribute="trailing" constant="10" id="gYZ-Zf-NS9"/>
+                <constraint firstItem="XOb-jF-AZS" firstAttribute="top" secondItem="Ydj-Wv-lrl" secondAttribute="bottom" id="iKG-n4-r8G"/>
+                <constraint firstItem="o9x-Y1-ZHK" firstAttribute="leading" secondItem="XOb-jF-AZS" secondAttribute="trailing" id="jam-ty-cWn"/>
+                <constraint firstAttribute="bottom" secondItem="o9x-Y1-ZHK" secondAttribute="bottom" id="nBa-ZN-IZH"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+</document>

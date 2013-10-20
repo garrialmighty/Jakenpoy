@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutUsViewController">
+            <connections>
+                <outlet property="EmailButton" destination="V15-uj-kcF" id="D99-PJ-dE6"/>
+                <outlet property="GlobeButton" destination="FWS-c6-xgv" id="vuJ-Rh-hth"/>
+                <outlet property="LandlineButton" destination="EZt-Tu-TIf" id="PLn-cL-rdG"/>
+                <outlet property="LearnMoreButton" destination="6Ve-2b-IhN" id="WEA-Tt-XLT"/>
+                <outlet property="SmartButton" destination="3CL-w5-m4I" id="0el-oM-1zb"/>
+                <outlet property="SunButton" destination="9Ly-wd-Fum" id="1EY-bg-Pkt"/>
+                <outlet property="view" destination="1" id="hmk-N8-JMv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="44" width="768" height="980"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Ve-2b-IhN" userLabel="Learn More Button">
+                    <rect key="frame" x="159" y="55" width="450" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="U7a-EP-bLt"/>
+                        <constraint firstAttribute="width" constant="450" id="XsH-hH-Uc2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="34"/>
+                    <state key="normal" title="Click to learn more about Jakenpoy PTA">
+                        <color key="titleColor" red="0.1764705882" green="0.52941176469999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showTutorial" destination="-1" eventType="touchUpInside" id="Pby-va-DXB"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Contact Us:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afy-QX-2E9" userLabel="Contact Us Label">
+                    <rect key="frame" x="45" y="220" width="197" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
+                    <color key="textColor" red="0.1764705882" green="0.52941176469999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="678" translatesAutoresizingMaskIntoConstraints="NO" id="rFh-Ac-RX0" userLabel="Information">
+                    <rect key="frame" x="45" y="301" width="678" height="148"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <string key="text">Please call, text or email us if you would like help pon how to register, participate as a partner school, or help keep us free through sponsorship.</string>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="32"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SMART:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jW6-dl-Tsz" userLabel="Smart Label">
+                    <rect key="frame" x="92" y="514" width="118" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CL-w5-m4I" userLabel="Smart Button">
+                    <rect key="frame" x="265" y="514" width="234" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <state key="normal" title="(0939) 908-5930">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="contact:" destination="-1" eventType="touchUpInside" id="beD-oO-Fvn"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SUN:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ku-Tj-4LD" userLabel="Sun Label">
+                    <rect key="frame" x="134" y="598" width="76" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ly-wd-Fum" userLabel="Sun Button">
+                    <rect key="frame" x="265" y="598" width="234" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <state key="normal" title="(0932) 853-3936">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="contact:" destination="-1" eventType="touchUpInside" id="iUi-WP-vfW"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GLOBE:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3W-G4-JsT" userLabel="Globe Label">
+                    <rect key="frame" x="92" y="682" width="118" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWS-c6-xgv" userLabel="Globe Button">
+                    <rect key="frame" x="265" y="682" width="234" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <state key="normal" title="(0917) 853-8840">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="contact:" destination="-1" eventType="touchUpInside" id="fFz-au-Yvz"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LANDLINE:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLz-18-bBb" userLabel=" Landline Label">
+                    <rect key="frame" x="45" y="766" width="165" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZt-Tu-TIf" userLabel="Landline Button">
+                    <rect key="frame" x="265" y="766" width="199" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <state key="normal" title="(02) 466-1005">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="contact:" destination="-1" eventType="touchUpInside" id="FZ3-Qe-OkP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V15-uj-kcF" userLabel="Email Button">
+                    <rect key="frame" x="265" y="850" width="320" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <state key="normal" title="admin@jakenpoy.com">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="contact:" destination="-1" eventType="touchUpInside" id="rCY-3K-g2z"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="EMAIL:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWg-CS-9El" userLabel="Email Label">
+                    <rect key="frame" x="104" y="850" width="106" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="n3W-G4-JsT" firstAttribute="top" secondItem="1ku-Tj-4LD" secondAttribute="bottom" constant="45" id="3us-lP-mMO"/>
+                <constraint firstItem="rFh-Ac-RX0" firstAttribute="leading" secondItem="GLz-18-bBb" secondAttribute="leading" id="4jN-Pa-IrS"/>
+                <constraint firstItem="RWg-CS-9El" firstAttribute="centerY" secondItem="V15-uj-kcF" secondAttribute="centerY" id="5uP-yz-pPg"/>
+                <constraint firstItem="1ku-Tj-4LD" firstAttribute="trailing" secondItem="GLz-18-bBb" secondAttribute="trailing" id="6At-a2-URY"/>
+                <constraint firstItem="FWS-c6-xgv" firstAttribute="leading" secondItem="n3W-G4-JsT" secondAttribute="trailing" constant="55" id="6PL-mi-JnS"/>
+                <constraint firstItem="1ku-Tj-4LD" firstAttribute="trailing" secondItem="n3W-G4-JsT" secondAttribute="trailing" id="9aO-SR-VKP"/>
+                <constraint firstItem="9Ly-wd-Fum" firstAttribute="centerY" secondItem="1ku-Tj-4LD" secondAttribute="centerY" id="D6F-lS-tdJ"/>
+                <constraint firstItem="9Ly-wd-Fum" firstAttribute="leading" secondItem="1ku-Tj-4LD" secondAttribute="trailing" constant="55" id="GH8-Wa-tvA"/>
+                <constraint firstItem="6Ve-2b-IhN" firstAttribute="top" secondItem="1" secondAttribute="top" constant="55" id="Jcy-gy-Tby"/>
+                <constraint firstItem="3CL-w5-m4I" firstAttribute="leading" secondItem="jW6-dl-Tsz" secondAttribute="trailing" constant="55" id="O8y-so-LiQ"/>
+                <constraint firstItem="Afy-QX-2E9" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="45" id="OKb-g9-sgl"/>
+                <constraint firstItem="1ku-Tj-4LD" firstAttribute="trailing" secondItem="jW6-dl-Tsz" secondAttribute="trailing" id="T2C-pA-re4"/>
+                <constraint firstItem="FWS-c6-xgv" firstAttribute="centerY" secondItem="n3W-G4-JsT" secondAttribute="centerY" id="UtV-wN-7Ki"/>
+                <constraint firstAttribute="centerX" secondItem="6Ve-2b-IhN" secondAttribute="centerX" id="VSi-dp-clc"/>
+                <constraint firstItem="3CL-w5-m4I" firstAttribute="centerY" secondItem="jW6-dl-Tsz" secondAttribute="centerY" id="Y7C-Jw-vNS"/>
+                <constraint firstItem="rFh-Ac-RX0" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="45" id="ZPy-h4-50l"/>
+                <constraint firstItem="RWg-CS-9El" firstAttribute="top" secondItem="GLz-18-bBb" secondAttribute="bottom" constant="45" id="aTe-5H-GMT"/>
+                <constraint firstAttribute="trailing" secondItem="rFh-Ac-RX0" secondAttribute="trailing" constant="45" id="gXD-vV-2bA"/>
+                <constraint firstItem="Afy-QX-2E9" firstAttribute="top" secondItem="6Ve-2b-IhN" secondAttribute="bottom" constant="85" id="iQL-su-Ckx"/>
+                <constraint firstItem="V15-uj-kcF" firstAttribute="leading" secondItem="RWg-CS-9El" secondAttribute="trailing" constant="55" id="jSG-YY-6SY"/>
+                <constraint firstItem="GLz-18-bBb" firstAttribute="top" secondItem="n3W-G4-JsT" secondAttribute="bottom" constant="45" id="jUV-xo-Xbp"/>
+                <constraint firstItem="GLz-18-bBb" firstAttribute="centerY" secondItem="EZt-Tu-TIf" secondAttribute="centerY" id="jzN-ih-5dZ"/>
+                <constraint firstItem="1ku-Tj-4LD" firstAttribute="top" secondItem="jW6-dl-Tsz" secondAttribute="bottom" constant="45" id="kdS-Pj-P8l"/>
+                <constraint firstItem="jW6-dl-Tsz" firstAttribute="top" secondItem="rFh-Ac-RX0" secondAttribute="bottom" constant="65" id="o9e-7x-nI2"/>
+                <constraint firstItem="rFh-Ac-RX0" firstAttribute="top" secondItem="Afy-QX-2E9" secondAttribute="bottom" constant="40" id="qkr-wR-jAE"/>
+                <constraint firstItem="EZt-Tu-TIf" firstAttribute="leading" secondItem="GLz-18-bBb" secondAttribute="trailing" constant="55" id="znV-k4-Xia"/>
+                <constraint firstItem="1ku-Tj-4LD" firstAttribute="trailing" secondItem="RWg-CS-9El" secondAttribute="trailing" id="zt9-EN-81f"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+</document>

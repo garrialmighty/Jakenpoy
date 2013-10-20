@@ -45,13 +45,29 @@
 #pragma mark - IBActions
 - (IBAction)manageSections
 {
-    TDSectionViewController * tDSVC = [[TDSectionViewController alloc] initWithNibName:@"TDSectionViewController" bundle:nil];
+    TDSectionViewController * tDSVC;
+    
+    if (isPhone) {
+        tDSVC = [[TDSectionViewController alloc] initWithNibName:@"TDSectionViewController" bundle:nil];
+    }
+    else {
+        tDSVC = [[TDSectionViewController alloc] initWithNibName:@"TDSectionViewController_iPad" bundle:nil];
+    }
+    
     [self.navigationController pushViewController:tDSVC animated:YES];
 }
 
 - (IBAction)manageCourses
 {
-    TDCourseViewController * tDCVC = [[TDCourseViewController alloc] initWithNibName:@"TDCourseViewController" bundle:nil];
+    TDCourseViewController * tDCVC;
+    
+    if (isPhone) {
+        tDCVC = [[TDCourseViewController alloc] initWithNibName:@"TDCourseViewController" bundle:nil];
+    }
+    else {
+        tDCVC = [[TDCourseViewController alloc] initWithNibName:@"TDCourseViewController_iPad" bundle:nil];
+    }
+    
     [self.navigationController pushViewController:tDCVC animated:YES];
 }
 

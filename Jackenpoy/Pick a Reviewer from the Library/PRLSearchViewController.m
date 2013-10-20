@@ -267,12 +267,22 @@ static NSInteger QuestionTypeSelected;
 #pragma mark - UIPickerView Data Source
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 1;
+    return isPhone?1:3;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return isGradeLevel?GradeLevelList.count:isSubject?SubjectList.count:QuestionTypeList.count;
+    NSUInteger returnRow;
+    
+    if (isPhone) {
+        returnRow = isGradeLevel?GradeLevelList.count:isSubject?SubjectList.count:QuestionTypeList.count;
+    }
+    else {
+        //NSLog(@"%d",component);
+        returnRow = component==0?GradeLevelList.count:component==1?SubjectList.count:QuestionTypeList.count;
+    }
+    
+    return returnRow;
 }
 
 #pragma mark - Delegate
@@ -308,12 +318,38 @@ static NSInteger QuestionTypeSelected;
 #pragma mark UIPickerView
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return isGradeLevel?GradeLevelList[row]:isSubject?SubjectList[row]:QuestionTypeList[row];
+    NSString * rowString;
+    
+    if (isPhone) {
+        rowString = isGradeLevel?GradeLevelList[row]:isSubject?SubjectList[row]:QuestionTypeList[row];
+    }
+    else {
+        rowString = component==0?GradeLevelList[row]:component==1?SubjectList[row]:QuestionTypeList[row];
+    }
+    
+    return rowString;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    Selected = row;
+    if (isPhone) {
+        Selected = row;
+    }
+    else {
+        switch (component) {
+            case 0:
+                GradeLevelSelected = row;
+                break;
+            case 1:
+                SubjectSelected = row;
+                break;
+            case 2:
+                QuestionTypeSelected = row;
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 #pragma mark JakenpoyHTTPClient
@@ -326,8 +362,13 @@ static NSInteger QuestionTypeSelected;
         
         QuestionTypeList = json[@"data"][@"question_types_name"];
         
-        if (isQuestionType) {
-            [self.Picker reloadAllComponents];
+        if (isPhone) {
+            if (isQuestionType) {
+                [self.Picker reloadAllComponents];
+            }
+        }
+        else {
+            [self.Picker reloadComponent:2];
         }
     }
 }
@@ -347,8 +388,13 @@ static NSInteger QuestionTypeSelected;
             [GradeLevelList addObject:GradeLevels[key]];
         }
         
-        if (isGradeLevel) {
-            [self.Picker reloadAllComponents];
+        if (isPhone) {
+            if (isGradeLevel) {
+                [self.Picker reloadAllComponents];
+            }
+        }
+        else {
+            [self.Picker reloadComponent:0];
         }
     }
 }
@@ -362,8 +408,13 @@ static NSInteger QuestionTypeSelected;
         
         SubjectList = json[@"data"][@"subjects"];
         
-        if (isSubject) {
-            [self.Picker reloadAllComponents];
+        if (isPhone) {
+            if (isSubject) {
+                [self.Picker reloadAllComponents];
+            }
+        }
+        else {
+            [self.Picker reloadComponent:1];
         }
     }
 }

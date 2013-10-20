@@ -49,13 +49,29 @@ NSIndexPath * SelectedIndex;
 #pragma mark - IBAction
 - (IBAction)addCourse
 {
-    TDSaveViewController * tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController" bundle:nil];
+    TDSaveViewController * tDSVC;
+    
+    if (isPhone) {
+        tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController" bundle:nil];
+    }
+    else {
+        tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController_iPad" bundle:nil];
+    }
+    
     [self.navigationController pushViewController:tDSVC animated:YES];
 }
 
 - (IBAction)editCourse
 {
-    TDSaveViewController * tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController" bundle:nil];
+    TDSaveViewController * tDSVC;
+    
+    if (isPhone) {
+        tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController" bundle:nil];
+    }
+    else {
+        tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController_iPad" bundle:nil];
+    }
+    
     [self.navigationController pushViewController:tDSVC animated:YES];
     [tDSVC updateTitle:LessonPlanList[SelectedIndex.row]];
 }

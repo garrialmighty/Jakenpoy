@@ -271,24 +271,59 @@ static NSInteger SectionSelected;
 #pragma mark - Data Source
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 1;
+    return isPhone?1:3;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return isGradeLevel?GradeLevelList.count:isSchool?SchoolList.count:SectionList.count;
+    NSUInteger returnRow;
+    
+    if (isPhone) {
+        returnRow = isGradeLevel?GradeLevelList.count:isSchool?SchoolList.count:SectionList.count;
+    }
+    else {
+        returnRow = component==0?GradeLevelList.count:component==1?SchoolList.count:SectionList.count;
+    }
+    
+    return returnRow;
 }
 
 #pragma mark - Delegate
 #pragma mark UIPickerView
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return isGradeLevel?GradeLevelList[row]:isSchool?SchoolList[row]:SectionList[row];
+    NSString * rowString;
+    
+    if (isPhone) {
+        rowString = isGradeLevel?GradeLevelList[row]:isSchool?SchoolList[row]:SectionList[row];
+    }
+    else {
+        rowString = component==0?GradeLevelList[row]:component==1?SchoolList[row]:SectionList[row];
+    }
+    
+    return rowString;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    Selected = row;
+    if (isPhone) {
+        Selected = row;
+    }
+    else {
+        switch (component) {
+            case 0:
+                GradeLevelSelected = row;
+                break;
+            case 1:
+                SchoolSelected = row;
+                break;
+            case 2:
+                SectionSelected = row;
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 #pragma mark UITextField

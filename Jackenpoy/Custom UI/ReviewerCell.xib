@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -15,76 +15,78 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="172" userLabel="Selected BG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                         <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Sample Title of Reviewer" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="180" translatesAutoresizingMaskIntoConstraints="NO" id="29" userLabel="Title">
-                        <rect key="frame" x="10" y="0.0" width="180" height="44"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Sample Title of Reviewer" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="168" translatesAutoresizingMaskIntoConstraints="NO" id="29" userLabel="Title">
+                        <rect key="frame" x="10" y="0.0" width="168" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="180" id="159"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="Bar1">
-                        <rect key="frame" x="185" y="0.0" width="1" height="44"/>
+                        <rect key="frame" x="188" y="0.0" width="1" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="tGL-Um-30Y"/>
+                        </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="2012-07-08" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42" userLabel="Expiration">
-                        <rect key="frame" x="190" y="0.0" width="75" height="44"/>
+                        <rect key="frame" x="194" y="0.0" width="75" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="75" id="122"/>
+                            <constraint firstAttribute="width" constant="75" id="MBX-Nn-AYR"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18" userLabel="Bar2">
-                        <rect key="frame" x="270" y="0.0" width="1" height="44"/>
+                        <rect key="frame" x="269" y="0.0" width="1" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="4cK-FT-PEw"/>
+                        </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="(99/99)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80" userLabel="Status">
-                        <rect key="frame" x="275" y="0.0" width="45" height="44"/>
+                        <rect key="frame" x="275" y="0.0" width="45" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="45" id="118"/>
+                            <constraint firstAttribute="width" constant="45" id="CC5-tj-UEt"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="18" firstAttribute="leading" secondItem="42" secondAttribute="trailing" id="4db-1s-2WA"/>
+                    <constraint firstItem="18" firstAttribute="top" secondItem="RyJ-hT-FdJ" secondAttribute="top" id="AAe-s5-s1x"/>
+                    <constraint firstAttribute="bottom" secondItem="172" secondAttribute="bottom" id="AbJ-4P-rux"/>
+                    <constraint firstItem="29" firstAttribute="top" secondItem="RyJ-hT-FdJ" secondAttribute="top" id="Bxt-TE-m98"/>
+                    <constraint firstItem="80" firstAttribute="leading" secondItem="18" secondAttribute="trailing" constant="5" id="Dh2-dQ-654"/>
+                    <constraint firstItem="172" firstAttribute="top" secondItem="RyJ-hT-FdJ" secondAttribute="top" id="Ear-vD-2u1"/>
+                    <constraint firstAttribute="bottom" secondItem="42" secondAttribute="bottom" id="Fav-fy-dZL"/>
+                    <constraint firstItem="80" firstAttribute="top" secondItem="RyJ-hT-FdJ" secondAttribute="top" id="Gw8-L2-uGb"/>
+                    <constraint firstAttribute="trailing" secondItem="172" secondAttribute="trailing" id="LaA-Ln-C0Z"/>
+                    <constraint firstItem="6" firstAttribute="top" secondItem="RyJ-hT-FdJ" secondAttribute="top" id="Qs7-t5-cV7"/>
+                    <constraint firstItem="29" firstAttribute="leading" secondItem="RyJ-hT-FdJ" secondAttribute="leading" constant="10" id="YYc-CZ-fUC"/>
+                    <constraint firstAttribute="bottom" secondItem="18" secondAttribute="bottom" id="aaY-uE-iax"/>
+                    <constraint firstAttribute="trailing" secondItem="80" secondAttribute="trailing" id="hKQ-zv-r7l"/>
+                    <constraint firstItem="6" firstAttribute="leading" secondItem="29" secondAttribute="trailing" constant="10" id="r5K-yb-KQH"/>
+                    <constraint firstAttribute="bottom" secondItem="80" secondAttribute="bottom" id="rOf-HD-aqH"/>
+                    <constraint firstItem="42" firstAttribute="top" secondItem="RyJ-hT-FdJ" secondAttribute="top" id="sKa-yy-KTJ"/>
+                    <constraint firstItem="172" firstAttribute="leading" secondItem="RyJ-hT-FdJ" secondAttribute="leading" id="tQc-53-SGs"/>
+                    <constraint firstItem="42" firstAttribute="leading" secondItem="6" secondAttribute="trailing" constant="5" id="tTH-yQ-h7p"/>
+                    <constraint firstAttribute="bottom" secondItem="29" secondAttribute="bottom" id="vBs-b2-YWW"/>
+                    <constraint firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="wMQ-sl-Lnf"/>
+                </constraints>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstItem="18" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="0FU-Nt-ubR"/>
-                <constraint firstItem="6" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="185" id="3L8-bU-c3R"/>
-                <constraint firstItem="18" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="270" id="75e-xd-8kg"/>
-                <constraint firstItem="29" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="8cR-FS-xJc"/>
-                <constraint firstItem="80" firstAttribute="top" secondItem="3" secondAttribute="top" id="8yS-dI-vv7"/>
-                <constraint firstAttribute="trailing" secondItem="42" secondAttribute="trailing" constant="55" id="AT0-8J-OFz"/>
-                <constraint firstItem="29" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="10" id="CcI-ek-dSd"/>
-                <constraint firstItem="6" firstAttribute="top" secondItem="3" secondAttribute="top" id="DrX-iL-Z5q"/>
-                <constraint firstItem="42" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="FDp-7a-qmm"/>
-                <constraint firstItem="80" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="G4c-dv-EMQ"/>
-                <constraint firstItem="42" firstAttribute="top" secondItem="3" secondAttribute="top" id="HYi-Ku-sLL"/>
-                <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="134" id="I8y-9Y-Jf6"/>
-                <constraint firstItem="80" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="Lno-V8-nsP"/>
-                <constraint firstItem="172" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="SY1-W8-Dvq"/>
-                <constraint firstItem="172" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="VnR-8S-5Nt"/>
-                <constraint firstItem="6" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="eWy-Yn-19g"/>
-                <constraint firstAttribute="trailing" secondItem="18" secondAttribute="trailing" constant="49" id="hws-yC-OKh"/>
-                <constraint firstItem="172" firstAttribute="top" secondItem="3" secondAttribute="top" id="orB-7k-yYw"/>
-                <constraint firstItem="29" firstAttribute="top" secondItem="3" secondAttribute="top" id="tfJ-FT-KgR"/>
-                <constraint firstItem="18" firstAttribute="top" secondItem="3" secondAttribute="top" id="uH8-8L-gje"/>
-                <constraint firstItem="172" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="y4j-v4-VAb"/>
-            </constraints>
             <connections>
                 <outlet property="ExpirationDate" destination="42" id="171"/>
                 <outlet property="SelectedBG" destination="172" id="178"/>

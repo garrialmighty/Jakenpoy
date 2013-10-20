@@ -72,6 +72,7 @@
     else {
         JakenpoyHTTPClient * client = [JakenpoyHTTPClient getSharedClient];
         [client setDelegate:self];
+//#warning Remove override when submitting
         [client loginWithUsername:self.Email.text Password:self.Password.text];
         //[client loginWithUsername:@"beta.jakenpoy@gmail.com" Password:@"jakenpoy123"];
     }
@@ -79,7 +80,15 @@
 
 - (IBAction) registerForFree
 {
-    HPRegisterViewController * hprvc = [[HPRegisterViewController alloc] initWithNibName:@"HPRegisterViewController" bundle:nil];
+    HPRegisterViewController * hprvc;
+    
+    if (isPhone) {
+        hprvc = [[HPRegisterViewController alloc] initWithNibName:@"HPRegisterViewController" bundle:nil];
+    }
+    else {
+        hprvc = [[HPRegisterViewController alloc] initWithNibName:@"HPRegisterViewController_iPad" bundle:nil];
+    }
+    
     [self.navigationController pushViewController:hprvc animated:YES];
 }
 

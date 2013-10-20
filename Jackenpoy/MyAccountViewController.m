@@ -57,9 +57,12 @@
 
 - (void) scrollPageToPoint:(CGFloat)y
 {
-    [UIView animateWithDuration:0.3f animations:^{
-        [self.view setCenter:CGPointMake(ViewCenter.x, y)];
-    }];
+    if (isPhone) {
+        [UIView animateWithDuration:0.3f animations:^{
+            [self.view setCenter:CGPointMake(ViewCenter.x, y)];
+        }];
+    }
+
 }
 
 #pragma mark - IBAction

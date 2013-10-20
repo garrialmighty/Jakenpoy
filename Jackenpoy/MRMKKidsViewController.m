@@ -58,7 +58,15 @@ NSIndexPath * SelectedIndex;
 #pragma mark - IBAction
 - (IBAction)registerChild
 {
-    MRMKRegisterViewController * mrmkrvc = [[MRMKRegisterViewController alloc] initWithNibName:@"MRMKRegisterViewController" bundle:nil];
+    MRMKRegisterViewController * mrmkrvc;
+    
+    if (isPhone) {
+        mrmkrvc = [[MRMKRegisterViewController alloc] initWithNibName:@"MRMKRegisterViewController" bundle:nil];
+    }
+    else {
+        mrmkrvc = [[MRMKRegisterViewController alloc] initWithNibName:@"MRMKRegisterViewController_iPad" bundle:nil];
+    }
+    
     [self.navigationController pushViewController:mrmkrvc animated:YES];
 }
 

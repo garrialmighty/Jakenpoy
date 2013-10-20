@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -43,7 +43,7 @@
                     </connections>
                 </tableView>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rate:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57" userLabel="Rate:">
-                    <rect key="frame" x="40" y="419" width="42" height="21"/>
+                    <rect key="frame" x="40" y="412" width="42" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="60"/>
@@ -53,7 +53,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button hidden="YES" opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88" userLabel="Star 5">
-                    <rect key="frame" x="275" y="409" width="35" height="25"/>
+                    <rect key="frame" x="275" y="407" width="35" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="94"/>
@@ -71,7 +71,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="117" userLabel="Star 4">
-                    <rect key="frame" x="230" y="409" width="35" height="25"/>
+                    <rect key="frame" x="230" y="407" width="35" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="118"/>
@@ -89,7 +89,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="127" userLabel="Star 3">
-                    <rect key="frame" x="185" y="409" width="35" height="25"/>
+                    <rect key="frame" x="185" y="407" width="35" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="128"/>
@@ -107,7 +107,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="146" userLabel="Star 2">
-                    <rect key="frame" x="140" y="409" width="35" height="25"/>
+                    <rect key="frame" x="140" y="407" width="35" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="147"/>
@@ -125,11 +125,11 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="155" userLabel="Star 1">
-                    <rect key="frame" x="95" y="409" width="35" height="25"/>
+                    <rect key="frame" x="95" y="407" width="35" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="156"/>
-                        <constraint firstAttribute="height" constant="25" id="249"/>
+                        <constraint firstAttribute="height" constant="30" id="249"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" backgroundImage="star_blank.png">
@@ -189,7 +189,6 @@
                 <constraint firstItem="46" firstAttribute="top" secondItem="33" secondAttribute="top" id="104"/>
                 <constraint firstItem="146" firstAttribute="bottom" secondItem="127" secondAttribute="bottom" id="154"/>
                 <constraint firstItem="155" firstAttribute="bottom" secondItem="146" secondAttribute="bottom" id="161"/>
-                <constraint firstAttribute="bottom" secondItem="57" secondAttribute="bottom" constant="40" id="165"/>
                 <constraint firstAttribute="trailing" secondItem="88" secondAttribute="trailing" constant="10" id="194"/>
                 <constraint firstItem="117" firstAttribute="bottom" secondItem="127" secondAttribute="bottom" id="204"/>
                 <constraint firstItem="117" firstAttribute="bottom" secondItem="88" secondAttribute="bottom" id="205"/>
@@ -201,15 +200,20 @@
                 <constraint firstItem="127" firstAttribute="top" secondItem="146" secondAttribute="top" id="243"/>
                 <constraint firstItem="88" firstAttribute="top" secondItem="117" secondAttribute="top" id="244"/>
                 <constraint firstItem="127" firstAttribute="top" secondItem="117" secondAttribute="top" id="245"/>
-                <constraint firstAttribute="bottom" secondItem="155" secondAttribute="bottom" constant="46" id="248"/>
-                <constraint firstItem="33" firstAttribute="top" secondItem="88" secondAttribute="bottom" constant="6" id="251"/>
-                <constraint firstItem="88" firstAttribute="top" secondItem="13" secondAttribute="bottom" constant="5" id="252"/>
+                <constraint firstAttribute="bottom" secondItem="155" secondAttribute="bottom" constant="43" id="248"/>
+                <constraint firstItem="33" firstAttribute="top" secondItem="88" secondAttribute="bottom" constant="3" id="251"/>
+                <constraint firstItem="88" firstAttribute="top" secondItem="13" secondAttribute="bottom" constant="3" id="252"/>
+                <constraint firstItem="57" firstAttribute="centerY" secondItem="155" secondAttribute="centerY" id="dAS-IE-qkM"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
+        <image name="star_blank.png" width="71" height="58"/>
+        <image name="star_blank.png" width="71" height="58"/>
+        <image name="star_blank.png" width="71" height="58"/>
+        <image name="star_blank.png" width="71" height="58"/>
         <image name="star_blank.png" width="71" height="58"/>
     </resources>
 </document>

@@ -30,7 +30,19 @@
 		7359929C17E86EC10051E3D2 /* MRMKKidsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7359929A17E86EC10051E3D2 /* MRMKKidsViewController.xib */; };
 		735992A017E86ECA0051E3D2 /* MRMKRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7359929E17E86ECA0051E3D2 /* MRMKRegisterViewController.m */; };
 		735992A117E86ECA0051E3D2 /* MRMKRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7359929F17E86ECA0051E3D2 /* MRMKRegisterViewController.xib */; };
+		737119E31813C2E8004217BA /* AboutUsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737119E21813C2E8004217BA /* AboutUsViewController_iPad.xib */; };
+		7372F168180F7C2000BD2850 /* PRLSearchViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F167180F7C2000BD2850 /* PRLSearchViewController_iPad.xib */; };
+		7372F16A180F7C4900BD2850 /* MyAccountViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F169180F7C4900BD2850 /* MyAccountViewController_iPad.xib */; };
+		7372F16C180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F16B180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib */; };
+		7372F16E180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F16D180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib */; };
+		7372F170180F7D0400BD2850 /* TDCourseViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F16F180F7D0400BD2850 /* TDCourseViewController_iPad.xib */; };
+		7372F172180F7D1C00BD2850 /* TDMenuViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F171180F7D1C00BD2850 /* TDMenuViewController_iPad.xib */; };
+		7372F174180F7D3400BD2850 /* TDSaveViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F173180F7D3400BD2850 /* TDSaveViewController_iPad.xib */; };
+		7372F176180F7D5400BD2850 /* TDSectionViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F175180F7D5400BD2850 /* TDSectionViewController_iPad.xib */; };
 		7374F94317FB02290017ECB0 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7374F94217FB02290017ECB0 /* School.m */; };
+		73816349180C192800B32A35 /* HPFinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73816348180C192800B32A35 /* HPFinishViewController_iPad.xib */; };
+		7381634B180C196500B32A35 /* HPLoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7381634A180C196500B32A35 /* HPLoginViewController_iPad.xib */; };
+		7381634D180C197300B32A35 /* HPRegisterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7381634C180C197300B32A35 /* HPRegisterViewController_iPad.xib */; };
 		7384854717F54CDC00529CE1 /* MRMKChildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384853617F54CDC00529CE1 /* MRMKChildCell.m */; };
 		7384854817F54CDC00529CE1 /* MRMKChildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7384853717F54CDC00529CE1 /* MRMKChildCell.xib */; };
 		7384854917F54CDC00529CE1 /* PRLReviewerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384853917F54CDC00529CE1 /* PRLReviewerCell.m */; };
@@ -89,6 +101,7 @@
 		73A4AAFF17E9843200F52277 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A4AAFE17E9843200F52277 /* SystemConfiguration.framework */; };
 		73A4AB0117E985BD00F52277 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A4AB0017E985BD00F52277 /* MobileCoreServices.framework */; };
 		73A4AB0317E9863A00F52277 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A4AB0217E9863A00F52277 /* Security.framework */; };
+		73A5057C180D9684006792CA /* MyReviewersViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */; };
 		73A893AA17F6107A00A9F4FD /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A893A917F6107A00A9F4FD /* Student.m */; };
 		73B5E9DB17E6E2C000F53186 /* PRLFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5E9D317E6E2C000F53186 /* PRLFinishViewController.m */; };
 		73B5E9DC17E6E2C000F53186 /* PRLFinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B5E9D417E6E2C000F53186 /* PRLFinishViewController.xib */; };
@@ -110,8 +123,8 @@
 		73EC79B217B914BE00F2E12E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC79B117B914BE00F2E12E /* main.m */; };
 		73EC79B617B914BE00F2E12E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC79B517B914BE00F2E12E /* AppDelegate.m */; };
 		73EC79B817B914BE00F2E12E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EC79B717B914BE00F2E12E /* Default.png */; };
-		73EC79BF17B914BE00F2E12E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC79BE17B914BE00F2E12E /* MainViewController.m */; };
-		73EC79C217B914BE00F2E12E /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73EC79C017B914BE00F2E12E /* MainViewController.xib */; };
+		73FED442180EAA2000162BC7 /* PRLFinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FED441180EAA2000162BC7 /* PRLFinishViewController_iPad.xib */; };
+		73FED444180EBC6D00162BC7 /* PRLPickViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FED443180EBC6D00162BC7 /* PRLPickViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,8 +162,20 @@
 		7359929D17E86ECA0051E3D2 /* MRMKRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKRegisterViewController.h; sourceTree = "<group>"; };
 		7359929E17E86ECA0051E3D2 /* MRMKRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKRegisterViewController.m; sourceTree = "<group>"; };
 		7359929F17E86ECA0051E3D2 /* MRMKRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKRegisterViewController.xib; sourceTree = "<group>"; };
+		737119E21813C2E8004217BA /* AboutUsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController_iPad.xib; sourceTree = "<group>"; };
+		7372F167180F7C2000BD2850 /* PRLSearchViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLSearchViewController_iPad.xib; sourceTree = "<group>"; };
+		7372F169180F7C4900BD2850 /* MyAccountViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAccountViewController_iPad.xib; sourceTree = "<group>"; };
+		7372F16B180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKKidsViewController_iPad.xib; sourceTree = "<group>"; };
+		7372F16D180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKRegisterViewController_iPad.xib; sourceTree = "<group>"; };
+		7372F16F180F7D0400BD2850 /* TDCourseViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCourseViewController_iPad.xib; sourceTree = "<group>"; };
+		7372F171180F7D1C00BD2850 /* TDMenuViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDMenuViewController_iPad.xib; sourceTree = "<group>"; };
+		7372F173180F7D3400BD2850 /* TDSaveViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSaveViewController_iPad.xib; sourceTree = "<group>"; };
+		7372F175180F7D5400BD2850 /* TDSectionViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSectionViewController_iPad.xib; sourceTree = "<group>"; };
 		7374F94117FB02290017ECB0 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
 		7374F94217FB02290017ECB0 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
+		73816348180C192800B32A35 /* HPFinishViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPFinishViewController_iPad.xib; sourceTree = "<group>"; };
+		7381634A180C196500B32A35 /* HPLoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPLoginViewController_iPad.xib; sourceTree = "<group>"; };
+		7381634C180C197300B32A35 /* HPRegisterViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPRegisterViewController_iPad.xib; sourceTree = "<group>"; };
 		7384853517F54CDC00529CE1 /* MRMKChildCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKChildCell.h; sourceTree = "<group>"; };
 		7384853617F54CDC00529CE1 /* MRMKChildCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKChildCell.m; sourceTree = "<group>"; };
 		7384853717F54CDC00529CE1 /* MRMKChildCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKChildCell.xib; sourceTree = "<group>"; };
@@ -233,6 +258,7 @@
 		73A4AAFE17E9843200F52277 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		73A4AB0017E985BD00F52277 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		73A4AB0217E9863A00F52277 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyReviewersViewController_iPad.xib; sourceTree = "<group>"; };
 		73A893A817F6107A00A9F4FD /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		73A893A917F6107A00A9F4FD /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		73B5E9D217E6E2C000F53186 /* PRLFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRLFinishViewController.h; path = "Pick a Reviewer from the Library/PRLFinishViewController.h"; sourceTree = "<group>"; };
@@ -265,9 +291,8 @@
 		73EC79B417B914BE00F2E12E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73EC79B517B914BE00F2E12E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		73EC79B717B914BE00F2E12E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		73EC79BD17B914BE00F2E12E /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		73EC79BE17B914BE00F2E12E /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		73EC79C117B914BE00F2E12E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
+		73FED441180EAA2000162BC7 /* PRLFinishViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLFinishViewController_iPad.xib; sourceTree = "<group>"; };
+		73FED443180EBC6D00162BC7 /* PRLPickViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLPickViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,8 +339,11 @@
 			isa = PBXGroup;
 			children = (
 				73D3F87D17E4ADCE00149106 /* HPFinishViewController.xib */,
+				73816348180C192800B32A35 /* HPFinishViewController_iPad.xib */,
 				73D3F88017E4ADCE00149106 /* HPLoginViewController.xib */,
+				7381634A180C196500B32A35 /* HPLoginViewController_iPad.xib */,
 				73D3F88317E4ADCE00149106 /* HPRegisterViewController.xib */,
+				7381634C180C197300B32A35 /* HPRegisterViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -345,20 +373,11 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		4A5C10A617C328BE00C89CA6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				73EC79BD17B914BE00F2E12E /* MainViewController.h */,
-				73EC79BE17B914BE00F2E12E /* MainViewController.m */,
-				73EC79C017B914BE00F2E12E /* MainViewController.xib */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
 		4A5C10A717C328DA00C89CA6 /* My Reviewers */ = {
 			isa = PBXGroup;
 			children = (
 				4A22730417C1FF1E00019CAD /* MyReviewersViewController.xib */,
+				73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */,
 				4A22730217C1FF1E00019CAD /* MyReviewersViewController.h */,
 				4A22730317C1FF1E00019CAD /* MyReviewersViewController.m */,
 			);
@@ -385,9 +404,13 @@
 			isa = PBXGroup;
 			children = (
 				73192C8217E783B10080F339 /* TDCourseViewController.xib */,
+				7372F16F180F7D0400BD2850 /* TDCourseViewController_iPad.xib */,
 				73192C8517E783B10080F339 /* TDMenuViewController.xib */,
+				7372F171180F7D1C00BD2850 /* TDMenuViewController_iPad.xib */,
 				73192C8817E783B10080F339 /* TDSaveViewController.xib */,
+				7372F173180F7D3400BD2850 /* TDSaveViewController_iPad.xib */,
 				73192C8B17E783B10080F339 /* TDSectionViewController.xib */,
+				7372F175180F7D5400BD2850 /* TDSectionViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -406,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				73192C9617E7844C0080F339 /* AboutUsViewController.xib */,
+				737119E21813C2E8004217BA /* AboutUsViewController_iPad.xib */,
 				73192C9417E7844B0080F339 /* AboutUsViewController.h */,
 				73192C9517E7844C0080F339 /* AboutUsViewController.m */,
 			);
@@ -439,7 +463,9 @@
 			isa = PBXGroup;
 			children = (
 				7359929A17E86EC10051E3D2 /* MRMKKidsViewController.xib */,
+				7372F16B180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib */,
 				7359929F17E86ECA0051E3D2 /* MRMKRegisterViewController.xib */,
+				7372F16D180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -541,6 +567,7 @@
 			isa = PBXGroup;
 			children = (
 				73922A3817E7A05A00401722 /* MyAccountViewController.xib */,
+				7372F169180F7C4900BD2850 /* MyAccountViewController_iPad.xib */,
 				73922A3617E7A05A00401722 /* MyAccountViewController.h */,
 				73922A3717E7A05A00401722 /* MyAccountViewController.m */,
 			);
@@ -639,7 +666,6 @@
 				73A4AAF317E97B7E00F52277 /* 3rd Party */,
 				4A2272FF17C1FA0F00019CAD /* delegate */,
 				4A22730C17C2170400019CAD /* Model */,
-				4A5C10A617C328BE00C89CA6 /* Controller */,
 				4A5C10A517C328AD00C89CA6 /* View */,
 				73EC79AC17B914BE00F2E12E /* Supporting Files */,
 			);
@@ -680,8 +706,11 @@
 			isa = PBXGroup;
 			children = (
 				73B5E9D417E6E2C000F53186 /* PRLFinishViewController.xib */,
+				73FED441180EAA2000162BC7 /* PRLFinishViewController_iPad.xib */,
 				73B5E9D717E6E2C000F53186 /* PRLPickViewController.xib */,
+				73FED443180EBC6D00162BC7 /* PRLPickViewController_iPad.xib */,
 				73B5E9DA17E6E2C000F53186 /* PRLSearchViewController.xib */,
+				7372F167180F7C2000BD2850 /* PRLSearchViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -745,7 +774,6 @@
 				7384858417F54E5700529CE1 /* landing_logo.png in Resources */,
 				73EC79B017B914BE00F2E12E /* InfoPlist.strings in Resources */,
 				73EC79B817B914BE00F2E12E /* Default.png in Resources */,
-				73EC79C217B914BE00F2E12E /* MainViewController.xib in Resources */,
 				7384858A17F54E5700529CE1 /* random_icon.png in Resources */,
 				7384858817F54E5700529CE1 /* my_icon.png in Resources */,
 				7384857F17F54E5700529CE1 /* cb_glossy_off.png in Resources */,
@@ -753,48 +781,63 @@
 				7384858917F54E5700529CE1 /* pick_icon.png in Resources */,
 				7384857E17F54E5700529CE1 /* back_arrow.png in Resources */,
 				7384854C17F54CDC00529CE1 /* ReviewerCell.xib in Resources */,
+				73FED444180EBC6D00162BC7 /* PRLPickViewController_iPad.xib in Resources */,
 				73D3F88517E4ADCE00149106 /* HPFinishViewController.xib in Resources */,
 				73D3F88717E4ADCE00149106 /* HPLoginViewController.xib in Resources */,
 				7384858B17F54E5700529CE1 /* reviewers_icon.png in Resources */,
 				73D3F88917E4ADCE00149106 /* HPRegisterViewController.xib in Resources */,
+				7372F16A180F7C4900BD2850 /* MyAccountViewController_iPad.xib in Resources */,
+				7372F16E180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib in Resources */,
 				7384855217F54CDC00529CE1 /* TDSectionCell.xib in Resources */,
 				735428EF17ECA57D006CDF8F /* Default-568h@2x.png in Resources */,
 				73B5E9DC17E6E2C000F53186 /* PRLFinishViewController.xib in Resources */,
+				7372F172180F7D1C00BD2850 /* TDMenuViewController_iPad.xib in Resources */,
 				7384858517F54E5700529CE1 /* logout_icon.png in Resources */,
 				73B5E9DE17E6E2C000F53186 /* PRLPickViewController.xib in Resources */,
 				7384858617F54E5700529CE1 /* make_icon.png in Resources */,
 				73B5E9E017E6E2C000F53186 /* PRLSearchViewController.xib in Resources */,
+				73816349180C192800B32A35 /* HPFinishViewController_iPad.xib in Resources */,
 				73192C7E17E779110080F339 /* RandomizerViewController.xib in Resources */,
+				7381634B180C196500B32A35 /* HPLoginViewController_iPad.xib in Resources */,
 				73192C8D17E783B10080F339 /* TDCourseViewController.xib in Resources */,
 				7384858F17F54E5700529CE1 /* selected.png in Resources */,
+				73FED442180EAA2000162BC7 /* PRLFinishViewController_iPad.xib in Resources */,
 				7384859317F54E5700529CE1 /* unselected.png in Resources */,
+				7372F176180F7D5400BD2850 /* TDSectionViewController_iPad.xib in Resources */,
 				7384858C17F54E5700529CE1 /* teacher_icon.png in Resources */,
 				7384859017F54E5700529CE1 /* star_blank.png in Resources */,
 				73192C8F17E783B10080F339 /* TDMenuViewController.xib in Resources */,
 				73192C9117E783B10080F339 /* TDSaveViewController.xib in Resources */,
 				73192C9317E783B10080F339 /* TDSectionViewController.xib in Resources */,
+				737119E31813C2E8004217BA /* AboutUsViewController_iPad.xib in Resources */,
 				732181F117FC89D9005442A8 /* new logo.png in Resources */,
 				7384859117F54E5700529CE1 /* star_fill.png in Resources */,
 				7384858117F54E5700529CE1 /* drop_down.png in Resources */,
 				73192C9817E7844C0080F339 /* AboutUsViewController.xib in Resources */,
+				7372F174180F7D3400BD2850 /* TDSaveViewController_iPad.xib in Resources */,
 				7384858D17F54E5700529CE1 /* tutorial_icon.png in Resources */,
 				7384858217F54E5700529CE1 /* jakenpoy_logo.png in Resources */,
 				73922A3A17E7A05A00401722 /* MyAccountViewController.xib in Resources */,
 				7384854817F54CDC00529CE1 /* MRMKChildCell.xib in Resources */,
 				7384858317F54E5700529CE1 /* jakenpoy_text.png in Resources */,
+				73A5057C180D9684006792CA /* MyReviewersViewController_iPad.xib in Resources */,
 				7384858017F54E5700529CE1 /* cb_glossy_on.png in Resources */,
+				7372F16C180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib in Resources */,
 				7359929C17E86EC10051E3D2 /* MRMKKidsViewController.xib in Resources */,
 				735992A117E86ECA0051E3D2 /* MRMKRegisterViewController.xib in Resources */,
 				7384854E17F54CDC00529CE1 /* TDCheckboxCell.xib in Resources */,
 				7384855017F54CDC00529CE1 /* TDCourseCell.xib in Resources */,
 				7384858E17F54E5700529CE1 /* next.png in Resources */,
+				7372F170180F7D0400BD2850 /* TDCourseViewController_iPad.xib in Resources */,
 				7384859217F54E5700529CE1 /* star_half.png in Resources */,
 				735428F117ECA584006CDF8F /* Default~iphone.png in Resources */,
+				7381634D180C197300B32A35 /* HPRegisterViewController_iPad.xib in Resources */,
 				7384858717F54E5700529CE1 /* manage_icon.png in Resources */,
 				7384857D17F54E5700529CE1 /* back.png in Resources */,
 				7384854A17F54CDC00529CE1 /* PRLReviewerCell.xib in Resources */,
 				73A4AAFB17E97BD200F52277 /* MRSFinishViewController.xib in Resources */,
 				73CE81391806B72F00FD2957 /* Settings.bundle in Resources */,
+				7372F168180F7C2000BD2850 /* PRLSearchViewController_iPad.xib in Resources */,
 				73A4AAFD17E97BD200F52277 /* MRSQuestionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,7 +853,6 @@
 				7384856017F54D8B00529CE1 /* Challenge.m in Sources */,
 				7384856117F54D8B00529CE1 /* JakenpoyHTTPClient.m in Sources */,
 				73EC79B617B914BE00F2E12E /* AppDelegate.m in Sources */,
-				73EC79BF17B914BE00F2E12E /* MainViewController.m in Sources */,
 				4A22730517C1FF1E00019CAD /* MyReviewersViewController.m in Sources */,
 				73D3F88417E4ADCE00149106 /* HPFinishViewController.m in Sources */,
 				73D3F88617E4ADCE00149106 /* HPLoginViewController.m in Sources */,
@@ -863,14 +905,6 @@
 				73EC79AF17B914BE00F2E12E /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		73EC79C017B914BE00F2E12E /* MainViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				73EC79C117B914BE00F2E12E /* en */,
-			);
-			name = MainViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -942,6 +976,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Jakenpoy PTA";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -956,6 +991,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Jakenpoy PTA";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

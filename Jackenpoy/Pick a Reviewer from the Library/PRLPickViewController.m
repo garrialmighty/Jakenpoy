@@ -151,7 +151,15 @@ static NSIndexPath * IndexToUpdate;
 
 - (IBAction)pick
 {
-    PRLFinishViewController * prlfvc = [[PRLFinishViewController alloc] initWithNibName:@"PRLFinishViewController" bundle:nil];
+    PRLFinishViewController * prlfvc;
+    
+    if (isPhone) {
+        prlfvc = [[PRLFinishViewController alloc] initWithNibName:@"PRLFinishViewController" bundle:nil];
+    }
+    else {
+        prlfvc = [[PRLFinishViewController alloc] initWithNibName:@"PRLFinishViewController_iPad" bundle:nil];
+    }
+    
     [self.navigationController pushViewController:prlfvc animated:YES];
     
     Reviewer * reviewer = ReviewList[SelectedIndex.row];

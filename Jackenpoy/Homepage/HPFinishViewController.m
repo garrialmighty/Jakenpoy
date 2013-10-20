@@ -77,9 +77,11 @@ static NSInteger Selected;
 
 - (void) scrollPageToPoint:(CGFloat)y
 {
-    [UIView animateWithDuration:0.3f animations:^{
-        [self.view setCenter:CGPointMake(ViewCenter.x, y)];
-    }];
+    if (isPhone) {
+        [UIView animateWithDuration:0.3f animations:^{
+            [self.view setCenter:CGPointMake(ViewCenter.x, y)];
+        }];
+    }
 }
 
 - (void)setEmail:(NSString *)email Name:(NSString *)name Password:(NSString *)password Type:(NSString *)type
@@ -247,6 +249,15 @@ static NSInteger Selected;
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     Selected = row;
+    
+    if (!isPhone) {
+        School * school = SchoolList[Selected];
+        [self.School setText:school.Name.length<=0?@"":school.Name];
+        [self.SchoolName setText:school.Name.length<=0?@"":school.Name];
+        [self.SchoolShortName setText:school.ShortName.length<=0?@"":school.ShortName];
+        [self.SchoolAddress setText:school.Address.length<=0?@"":school.Address];
+        [self.SchoolContact setText:school.ContactNumber?@"":school.ContactNumber];
+    }
 }
 
 #pragma mark UITextField

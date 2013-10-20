@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -15,76 +15,76 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="Selected BG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                         <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Section" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="Section">
-                        <rect key="frame" x="10" y="0.0" width="200" height="44"/>
+                        <rect key="frame" x="10" y="0.0" width="120" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="200" id="36"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
                     <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="Bar1">
-                        <rect key="frame" x="150" y="0.0" width="1" height="44"/>
+                        <rect key="frame" x="129" y="0.0" width="1" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="cUU-Z0-Be5"/>
+                        </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9" userLabel="Grade">
-                        <rect key="frame" x="160" y="0.0" width="40" height="44"/>
+                        <rect key="frame" x="140" y="0.0" width="40" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="67"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="32J-Rt-hSG"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
                     <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="Bar2">
-                        <rect key="frame" x="200" y="0.0" width="1" height="44"/>
+                        <rect key="frame" x="190" y="0.0" width="1" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Aris Nicolas" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="110" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="Teacher">
-                        <rect key="frame" x="210" y="0.0" width="110" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="110" id="54"/>
+                            <constraint firstAttribute="width" constant="1" id="GXy-9D-ygO"/>
                         </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Aris Nicolas" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="119" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="Teacher">
+                        <rect key="frame" x="201" y="0.0" width="119" height="43"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="7" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="0Qo-u6-hoe"/>
+                    <constraint firstItem="9" firstAttribute="leading" secondItem="6" secondAttribute="trailing" constant="10" id="1ug-XV-q4J"/>
+                    <constraint firstItem="5" firstAttribute="leading" secondItem="4" secondAttribute="trailing" constant="10" id="8LZ-DF-FgF"/>
+                    <constraint firstItem="8" firstAttribute="leading" secondItem="9eg-l7-csW" secondAttribute="leading" id="CjS-zu-yD5"/>
+                    <constraint firstItem="4" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="HT5-Pv-enr"/>
+                    <constraint firstAttribute="centerX" secondItem="9" secondAttribute="centerX" id="KZ0-BD-ORg"/>
+                    <constraint firstItem="6" firstAttribute="leading" secondItem="9eg-l7-csW" secondAttribute="leading" constant="10" id="MyY-aV-mkB"/>
+                    <constraint firstAttribute="bottom" secondItem="9" secondAttribute="bottom" id="PwI-9U-ven"/>
+                    <constraint firstAttribute="trailing" secondItem="5" secondAttribute="trailing" id="THb-rC-8wT"/>
+                    <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="Te2-rC-dJD"/>
+                    <constraint firstItem="6" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="c3m-jg-GMB"/>
+                    <constraint firstAttribute="bottom" secondItem="5" secondAttribute="bottom" id="hDG-BI-ctJ"/>
+                    <constraint firstAttribute="bottom" secondItem="7" secondAttribute="bottom" id="moj-Zo-KCn"/>
+                    <constraint firstItem="5" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="omp-Z4-Ug0"/>
+                    <constraint firstAttribute="bottom" secondItem="8" secondAttribute="bottom" id="pPE-fl-clF"/>
+                    <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="qbo-pK-rHm"/>
+                    <constraint firstItem="4" firstAttribute="leading" secondItem="9" secondAttribute="trailing" constant="10" id="qhd-jp-CHm"/>
+                    <constraint firstItem="9" firstAttribute="leading" secondItem="7" secondAttribute="trailing" constant="10" id="r2Y-du-2ss"/>
+                    <constraint firstItem="8" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="rQy-uw-ice"/>
+                    <constraint firstItem="9" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="sn5-ns-6gI"/>
+                    <constraint firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="zxW-4b-nMb"/>
+                </constraints>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" constant="119" id="4wd-Jc-YWE"/>
-                <constraint firstItem="4" firstAttribute="top" secondItem="3" secondAttribute="top" id="6lk-49-4MR"/>
-                <constraint firstAttribute="trailing" secondItem="7" secondAttribute="trailing" constant="169" id="AGI-Q6-JPW"/>
-                <constraint firstItem="4" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="Bod-EU-odV"/>
-                <constraint firstItem="6" firstAttribute="top" secondItem="3" secondAttribute="top" id="COB-87-zlk"/>
-                <constraint firstItem="7" firstAttribute="top" secondItem="3" secondAttribute="top" id="Cr2-bH-ue0"/>
-                <constraint firstItem="7" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="150" id="IOM-Gd-9i2"/>
-                <constraint firstItem="9" firstAttribute="top" secondItem="3" secondAttribute="top" id="LFA-85-5Vo"/>
-                <constraint firstItem="8" firstAttribute="top" secondItem="3" secondAttribute="top" id="NdW-ps-v8N"/>
-                <constraint firstAttribute="trailing" secondItem="9" secondAttribute="trailing" constant="120" id="UVo-ox-k7b"/>
-                <constraint firstItem="5" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="WZ4-sS-Eol"/>
-                <constraint firstItem="4" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="200" id="Ytb-Mg-nhq"/>
-                <constraint firstItem="6" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="cOo-fp-bOL"/>
-                <constraint firstItem="7" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="fIE-G7-6aW"/>
-                <constraint firstItem="8" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="hgd-NE-jXD"/>
-                <constraint firstItem="8" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="ihL-XF-fSY"/>
-                <constraint firstItem="9" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="j7k-48-K2A"/>
-                <constraint firstItem="5" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="mRt-Xa-FX2"/>
-                <constraint firstItem="6" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="10" id="qWh-2d-J4n"/>
-                <constraint firstItem="5" firstAttribute="top" secondItem="3" secondAttribute="top" id="thv-2D-1qO"/>
-                <constraint firstItem="8" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="y38-5W-PEm"/>
-            </constraints>
             <connections>
                 <outlet property="Grade" destination="9" id="60"/>
                 <outlet property="Section" destination="6" id="61"/>
