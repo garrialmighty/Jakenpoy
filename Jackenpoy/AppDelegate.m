@@ -156,9 +156,9 @@ static CGFloat MenuCellCount = 8;
     [self.BackArrow setFrame:CGRectMake(5, 12, 11, 23)];
     [self.BackArrow setHidden:YES];
     
-    self.ScreenLabel = [[UILabel alloc] initWithFrame:CGRectMake(21, 15, 150, 19)];
-    [self.ScreenLabel setText:@"Welcome to Jakenpoy PTA!"];
-    [self.ScreenLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:9]];
+    self.ScreenLabel = [[UILabel alloc] initWithFrame:CGRectMake(21, 15, 250, 19)];
+    [self.ScreenLabel setText:@"Get Started"];
+    [self.ScreenLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:15]];
     [self.ScreenLabel setTextColor:[UIColor whiteColor]];
     [self.ScreenLabel setBackgroundColor:[UIColor clearColor]];
     
@@ -172,7 +172,7 @@ static CGFloat MenuCellCount = 8;
     [self.BackButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
     [self.viewController.navigationBar addSubview:bg];
-    [self.viewController.navigationBar addSubview:logo];
+    if (isPhone) [self.viewController.navigationBar addSubview:logo];
     [self.viewController.navigationBar addSubview:self.BackArrow];
     [self.viewController.navigationBar addSubview:self.ScreenLabel];
     [self.viewController.navigationBar addSubview:self.HitArea];
@@ -199,7 +199,7 @@ static CGFloat MenuCellCount = 8;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"CELL"];
+    UITableViewCell * cell = [self.Menu dequeueReusableCellWithIdentifier:@"CELL"];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CELL"];
@@ -356,7 +356,8 @@ static CGFloat MenuCellCount = 8;
     }
     
     [cellLabel setTextColor:[UIColor whiteColor]];
-    [cellLabel setFont:[UIFont fontWithName:@"Helvetica Neue Light" size:isPhone?8:20]];
+    //[cellLabel setFont:[UIFont fontWithName:@"Helvetica Neue Light" size:isPhone?8:20]];
+    [cellLabel setFont:[UIFont boldSystemFontOfSize:isPhone?15:30]];
     [cellLabel setBackgroundColor:[UIColor clearColor]];
     
     [cell setSelectedBackgroundView:highlight];

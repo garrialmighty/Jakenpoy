@@ -58,6 +58,8 @@ static NSInteger Selected;
     [self.SchoolShortName setInputAccessoryView:self.Toolbar];
     [self.SchoolAddress setInputAccessoryView:self.Toolbar];
     [self.SchoolContact setInputAccessoryView:self.Toolbar];
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning

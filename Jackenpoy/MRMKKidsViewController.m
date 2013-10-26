@@ -47,6 +47,10 @@ NSIndexPath * SelectedIndex;
     if (!type.Guardian) {
         [self.RegisterButton setHidden:YES];
     }
+    
+    //[self.navigationController.navigationBar setTranslucent:NO];
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning

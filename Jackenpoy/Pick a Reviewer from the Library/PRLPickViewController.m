@@ -50,6 +50,8 @@ static NSIndexPath * IndexToUpdate;
     SubjectList = [[NSArray alloc] init];
     
     [self.navigationItem setHidesBackButton:YES];
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning

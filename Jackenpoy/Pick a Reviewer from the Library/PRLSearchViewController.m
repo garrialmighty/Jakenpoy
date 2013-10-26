@@ -77,6 +77,8 @@ static NSInteger QuestionTypeSelected;
     
     isGradeLevel = NO;
     isSubject = NO;
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning

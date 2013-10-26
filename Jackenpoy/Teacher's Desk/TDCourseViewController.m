@@ -38,6 +38,8 @@ NSIndexPath * SelectedIndex;
     LessonPlanList = @[@"Sample Course Title 1", @"Sample Course Title 2", @"Sample Course Title 3", @"Sample Course Title 4", @"Sample Course Title 5"];
     
     [self.navigationItem setHidesBackButton:YES];
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning

@@ -56,10 +56,12 @@ static NSArray * SubjectList;
     
     [jackenpoySC setCenter:CGPointMake(isPhone?160:360, isPhone?70:100)];
     
-    NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"NEXT"];
+    NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
     [nextUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [nextUlString length])];
     [nextUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [nextUlString length])];
     [self.NSButton setAttributedTitle:nextUlString forState:UIControlStateNormal];
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,7 +83,7 @@ static NSArray * SubjectList;
     [sender setEnabled:NO];
     
     if (sender.tag == 1) {
-        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"NEXT"];
+        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
         [self.NSButton setTag:1];
         [self.Step2Button setEnabled:YES];
         [self.Step3Button setEnabled:YES];
@@ -89,7 +91,7 @@ static NSArray * SubjectList;
         [self.view sendSubviewToBack:self.Step3];
     }
     else if (sender.tag == 2) {
-        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"NEXT"];
+        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
         [self.NSButton setTag:2];
         [self.Step1Button setEnabled:YES];
         [self.Step3Button setEnabled:YES];
@@ -97,7 +99,7 @@ static NSArray * SubjectList;
         [self.view sendSubviewToBack:self.Step3];
     }
     else {
-        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"SAVE"];
+        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Save"];
         [self.NSButton setTag:3];
         [self.Step1Button setEnabled:YES];
         [self.Step2Button setEnabled:YES];
@@ -120,7 +122,7 @@ static NSArray * SubjectList;
         [self.view sendSubviewToBack:self.Step1];
         [self.view sendSubviewToBack:self.Step3];
         
-        NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"NEXT"];
+        NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
         [finUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [finUlString length])];
         [finUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [finUlString length])];
         [self.NSButton setAttributedTitle:finUlString forState:UIControlStateNormal];
@@ -133,7 +135,7 @@ static NSArray * SubjectList;
         [self.view sendSubviewToBack:self.Step1];
         [self.view sendSubviewToBack:self.Step2];
         
-        NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"SAVE"];
+        NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"Save"];
         [finUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [finUlString length])];
         [finUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [finUlString length])];
         [self.NSButton setAttributedTitle:finUlString forState:UIControlStateNormal];

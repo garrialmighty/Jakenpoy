@@ -34,6 +34,8 @@
     if (!type.Admin) {
         [self.ManageTeachersButton setHidden:YES];
     }
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning

@@ -38,6 +38,8 @@
     [self.Name setInputAccessoryView:self.Toolbar];
     [self.Email setInputAccessoryView:self.Toolbar];
     [self.Password setInputAccessoryView:self.Toolbar];
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning

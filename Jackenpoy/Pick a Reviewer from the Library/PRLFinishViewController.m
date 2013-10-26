@@ -75,7 +75,7 @@ static NSMutableArray * AssigneeList;
     QuestionTypeList = [[NSArray alloc] init];
     SubjectList = @[@"Subject 1", @"Subject 2", @"Subject 3", @"Subject 4", @"Subject 5"];
     
-    NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"FINISHED"];
+    NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"Finished"];
     [nextUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [nextUlString length])];
     [nextUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [nextUlString length])];
     [self.NFButton setAttributedTitle:nextUlString forState:UIControlStateNormal];
@@ -83,6 +83,8 @@ static NSMutableArray * AssigneeList;
     [self.Title setInputAccessoryView:self.Toolbar];
     [self.Instructions setInputAccessoryView:self.Toolbar];
     [self.Code setInputAccessoryView:self.Toolbar];
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,13 +135,13 @@ static NSMutableArray * AssigneeList;
     [sender setEnabled:NO];
     
     if (sender.tag == 1) {
-        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"NEXT"];
+        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
         [self.NFButton setTag:1];
         [self.Step2Button setEnabled:YES];
         [self.view sendSubviewToBack:self.Step2];
     }
     else {
-        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"FINISHED"];
+        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Finished"];
         [self.NFButton setTag:2];
         [self.Step1Button setEnabled:YES];
         [self.view sendSubviewToBack:self.Step1];
@@ -170,7 +172,7 @@ static NSMutableArray * AssigneeList;
         [self.Step2Button setEnabled:NO];
         [self.view sendSubviewToBack:self.Step1];
         
-        NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"FINISHED"];
+        NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"Finished"];
         [finUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [finUlString length])];
         [finUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [finUlString length])];
         [self.NFButton setAttributedTitle:finUlString forState:UIControlStateNormal];

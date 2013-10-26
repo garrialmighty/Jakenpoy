@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *Password;
 @property (weak, nonatomic) IBOutlet UIView *LandingPage;
 @property (weak, nonatomic) IBOutlet UIButton *Checkbox;
+@property (weak, nonatomic) IBOutlet UIImageView *JakenpoyLogo;
 @end
 
 @implementation HPLoginViewController
@@ -53,6 +54,12 @@
     if (prefPassw.length > 0) {
         [self.Password setText:prefPassw];
     }
+    
+    if (!isPhone) {
+        [self.JakenpoyLogo setHidden:NO];
+    }
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning

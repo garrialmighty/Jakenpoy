@@ -82,6 +82,8 @@ static NSInteger SectionSelected;
     [self.Username setInputAccessoryView:self.Toolbar];
     [self.Password setInputAccessoryView:self.Toolbar];
     [self.Confirm setInputAccessoryView:self.Toolbar];
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning
