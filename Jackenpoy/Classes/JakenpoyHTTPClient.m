@@ -231,7 +231,7 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
     [self getPath:@"pickReviewer"
        parameters:@{@"qSetId":qid, @"assignees":a, @"title":t,  @"expiration":e, @"code":c, @"share_public":[NSString stringWithFormat:@"%d",stp], @"share_school":[NSString stringWithFormat:@"%d",sts], @"show_answers":[NSString stringWithFormat:@"%d",sa], @"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              NSLog(@"%@",responseObject);
+              NSLog(@"pick response %@",responseObject);
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
           }

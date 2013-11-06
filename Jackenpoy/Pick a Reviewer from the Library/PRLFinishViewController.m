@@ -75,7 +75,7 @@ static NSMutableArray * AssigneeList;
     QuestionTypeList = [[NSArray alloc] init];
     SubjectList = @[@"Subject 1", @"Subject 2", @"Subject 3", @"Subject 4", @"Subject 5"];
     
-    NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"Finished"];
+    NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
     [nextUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [nextUlString length])];
     [nextUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [nextUlString length])];
     [self.NFButton setAttributedTitle:nextUlString forState:UIControlStateNormal];
@@ -192,15 +192,31 @@ static NSMutableArray * AssigneeList;
                 assigneeString = [assigneeString stringByAppendingString:[NSString stringWithFormat:@"+%@",student.ID]];
             }
         }
-
-        [client pickReviewerWithQuestionID:ReviewerID
-                                 Assigness:assigneeString.length>0?assigneeString:@"blank_0"
-                                     Title:self.Title.text.length>0?self.Title.text:@"blank_0"
-                                Expiration:self.Expiry.text.length>0?self.Expiry.text:@"blank_0"
-                                      Code:self.Code.text.length>0?self.Code.text:@"blank_0"
-                             ShareToPublic:[self.ShareToPublicCheckbox isSelected]
-                             ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
-                          ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
+        
+        if (isPhone) {
+            [client pickReviewerWithQuestionID:ReviewerID
+                                     Assigness:assigneeString.length>0?assigneeString:@"blank_0"
+                                         Title:self.Title.text.length>0?self.Title.text:@"blank_0"
+                                    Expiration:self.Expiry.text.length>0?self.Expiry.text:@"blank_0"
+                                          Code:self.Code.text.length>0?self.Code.text:@"blank_0"
+                                 ShareToPublic:[self.ShareToPublicCheckbox isSelected]
+                                 ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
+                              ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
+        }
+        else {
+            NSDateFormatter * format = [[NSDateFormatter alloc] init];
+            [format setDateFormat:@"YYYY-MM-dd"];
+            
+            [client pickReviewerWithQuestionID:ReviewerID
+                                     Assigness:assigneeString.length>0?assigneeString:@"blank_0"
+                                         Title:self.Title.text.length>0?self.Title.text:@"blank_0"
+                                    Expiration:[format stringFromDate:self.DatePicker.date]
+                                          Code:self.Code.text.length>0?self.Code.text:@"blank_0"
+                                 ShareToPublic:[self.ShareToPublicCheckbox isSelected]
+                                 ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
+                              ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
+        }
+        
     }
 }
 

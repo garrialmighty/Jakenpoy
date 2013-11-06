@@ -590,13 +590,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <action selector="showStep:" destination="-1" eventType="touchUpInside" id="470"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="170" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30" userLabel="Next/Finish Button">
-                    <rect key="frame" x="0.0" y="396" width="320" height="40"/>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30" userLabel="Next/Finish Button">
+                    <rect key="frame" x="150" y="396" width="170" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="320" id="41"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <state key="normal" title="Next">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -620,15 +617,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <constraint firstItem="30" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="42"/>
                 <constraint firstItem="30" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="44"/>
                 <constraint firstItem="16" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="75" id="177"/>
+                <constraint firstAttribute="bottom" secondItem="30" secondAttribute="bottom" id="2a4-8L-Bxz"/>
                 <constraint firstAttribute="bottom" secondItem="421" secondAttribute="bottom" id="5sK-EF-arf"/>
                 <constraint firstAttribute="trailing" secondItem="176" secondAttribute="trailing" id="6hb-Vm-Jod"/>
                 <constraint firstItem="176" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="7tI-6D-Do5"/>
+                <constraint firstItem="30" firstAttribute="leading" secondItem="16" secondAttribute="trailing" id="8oU-jA-wmt"/>
                 <constraint firstItem="421" firstAttribute="trailing" secondItem="30" secondAttribute="trailing" id="98V-rM-85c"/>
                 <constraint firstItem="176" firstAttribute="top" secondItem="1" secondAttribute="top" id="Gd6-XG-3th"/>
                 <constraint firstItem="421" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="OxK-9t-3RH"/>
                 <constraint firstAttribute="trailing" secondItem="421" secondAttribute="trailing" id="Spd-8r-74y"/>
                 <constraint firstAttribute="bottom" secondItem="176" secondAttribute="bottom" id="VFm-Hz-Y1C"/>
                 <constraint firstItem="421" firstAttribute="top" secondItem="1" secondAttribute="top" id="b9k-Af-Kwj"/>
+                <constraint firstAttribute="trailing" secondItem="30" secondAttribute="trailing" id="dKF-DY-fSZ"/>
                 <constraint firstItem="421" firstAttribute="bottom" secondItem="30" secondAttribute="bottom" id="ngw-ql-p5x"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

@@ -33,6 +33,10 @@
                     <rect key="frame" x="0.0" y="66" width="768" height="796"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="BLM-0P-zsW"/>
+                        <outlet property="delegate" destination="-1" id="isf-Cn-2R8"/>
+                    </connections>
                 </tableView>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rate:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whe-xd-SRH" userLabel="Rate:">
                     <rect key="frame" x="122" y="878" width="70" height="36"/>

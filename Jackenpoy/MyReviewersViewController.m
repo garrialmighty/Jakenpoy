@@ -21,6 +21,7 @@ NSIndexPath * SelectedIndex;
 @property (weak, nonatomic) IBOutlet UIButton *ReportsButton;
 @property (weak, nonatomic) IBOutlet UIButton *PrintButton;
 @property (weak, nonatomic) IBOutlet UIButton *RepublishButton;
+@property (weak, nonatomic) IBOutlet UIButton *FBButton;
 @property (weak, nonatomic) IBOutlet UITableView *Table;
 @end
 
@@ -204,6 +205,7 @@ NSIndexPath * SelectedIndex;
         [self.ReportsButton setHidden:NO];
         [self.PrintButton setHidden:NO];
         [self.RepublishButton setHidden:NO];
+        [self.FBButton setHidden:NO];
     }
     
     if (SelectedIndex.row != indexPath.row) [tableView deselectRowAtIndexPath:SelectedIndex animated:YES];

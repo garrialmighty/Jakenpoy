@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyReviewersViewController">
             <connections>
+                <outlet property="FBButton" destination="xtQ-ML-EZe" id="BVT-U7-mNJ"/>
                 <outlet property="PrintButton" destination="R0F-61-oLu" id="Zhc-7b-6p7"/>
                 <outlet property="ReportsButton" destination="t7q-KC-cRj" id="fMh-vS-Kz1"/>
                 <outlet property="RepublishButton" destination="4Js-DG-b7X" id="k6f-Ur-eX7"/>
@@ -52,12 +53,12 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Js-DG-b7X" userLabel="Republish Button">
-                    <rect key="frame" x="383" y="915" width="385" height="65"/>
+                    <rect key="frame" x="383" y="914" width="320" height="66"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="385" id="2Ct-CW-UNG"/>
-                        <constraint firstAttribute="height" constant="65" id="fwE-xK-RHb"/>
+                        <constraint firstAttribute="width" constant="320" id="BWz-Bb-OMa"/>
+                        <constraint firstAttribute="height" constant="66" id="fwE-xK-RHb"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Republish">
@@ -95,22 +96,40 @@
                         <action selector="edit" destination="-1" eventType="touchUpInside" id="BNh-3s-gM3"/>
                     </connections>
                 </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtQ-ML-EZe" userLabel="Share FB">
+                    <rect key="frame" x="703" y="915" width="65" height="65"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="2vf-db-9z8"/>
+                        <constraint firstAttribute="width" constant="65" id="KGu-1o-0JW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="fb_logo.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="I38-an-Ye1" secondAttribute="trailing" id="2C8-k9-YX2"/>
-                <constraint firstItem="4Js-DG-b7X" firstAttribute="leading" secondItem="R0F-61-oLu" secondAttribute="trailing" id="4eg-S2-oJ5"/>
                 <constraint firstItem="t7q-KC-cRj" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="6W9-fA-3mE"/>
+                <constraint firstItem="4Js-DG-b7X" firstAttribute="leading" secondItem="R0F-61-oLu" secondAttribute="trailing" id="9Yf-kF-9eW"/>
                 <constraint firstItem="R0F-61-oLu" firstAttribute="centerY" secondItem="t7q-KC-cRj" secondAttribute="centerY" id="Cqn-cI-ee6"/>
                 <constraint firstAttribute="bottom" secondItem="t7q-KC-cRj" secondAttribute="bottom" id="F6y-RP-aCb"/>
                 <constraint firstItem="R0F-61-oLu" firstAttribute="centerY" secondItem="4Js-DG-b7X" secondAttribute="centerY" id="JyO-OB-meN"/>
                 <constraint firstItem="R0F-61-oLu" firstAttribute="leading" secondItem="t7q-KC-cRj" secondAttribute="trailing" id="P9n-7n-LWQ"/>
                 <constraint firstItem="I38-an-Ye1" firstAttribute="top" secondItem="1" secondAttribute="top" id="SiN-Iw-Hma"/>
-                <constraint firstAttribute="trailing" secondItem="4Js-DG-b7X" secondAttribute="trailing" id="UXl-rE-Ujb"/>
                 <constraint firstItem="I38-an-Ye1" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="YIN-Cb-TeI"/>
+                <constraint firstAttribute="bottom" secondItem="xtQ-ML-EZe" secondAttribute="bottom" id="ayc-u9-nnb"/>
+                <constraint firstItem="xtQ-ML-EZe" firstAttribute="leading" secondItem="4Js-DG-b7X" secondAttribute="trailing" id="bio-Y1-jRx"/>
+                <constraint firstAttribute="bottom" secondItem="4Js-DG-b7X" secondAttribute="bottom" id="dFF-0t-PVK"/>
                 <constraint firstItem="t7q-KC-cRj" firstAttribute="top" secondItem="I38-an-Ye1" secondAttribute="bottom" id="eUv-N9-Tsq"/>
+                <constraint firstAttribute="trailing" secondItem="xtQ-ML-EZe" secondAttribute="trailing" id="hmX-bO-yqU"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
     </objects>
+    <resources>
+        <image name="fb_logo.png" width="512" height="512"/>
+    </resources>
 </document>

@@ -20,6 +20,7 @@ static NSIndexPath * SelectedIndex;
 static NSIndexPath * IndexToUpdate;
 
 @interface PRLPickViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *Table;
 @property (weak, nonatomic) IBOutlet UILabel *RateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *Star5;
 @property (weak, nonatomic) IBOutlet UIButton *Star4;
@@ -27,7 +28,6 @@ static NSIndexPath * IndexToUpdate;
 @property (weak, nonatomic) IBOutlet UIButton *Star2;
 @property (weak, nonatomic) IBOutlet UIButton *Star1;
 @property (weak, nonatomic) IBOutlet UILabel *RatingLabel;
-@property (weak, nonatomic) IBOutlet UITableView *Table;
 @end
 
 @implementation PRLPickViewController
@@ -41,17 +41,33 @@ static NSIndexPath * IndexToUpdate;
     return self;
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil List:(NSArray *)list
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        ReviewList = [[NSArray alloc] initWithArray:list];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    ReviewList = [[NSArray alloc] init];
+    //ReviewList = [[NSArray alloc] init];
     QuestionTypeList = [[NSArray alloc] init];
     SubjectList = [[NSArray alloc] init];
     
     [self.navigationItem setHidesBackButton:YES];
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    //[self.Table reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,8 +80,8 @@ static NSIndexPath * IndexToUpdate;
 - (void)setReviewList:(NSArray *)list
 {
     ReviewList = list;
-    
-    [self.Table reloadData];
+    NSLog(@"pick %d",list.count);
+    //[self.Table reloadData];
 }
 
 - (void)setQuestionTypeList:(NSArray *)list
@@ -146,7 +162,6 @@ static NSIndexPath * IndexToUpdate;
     [client setDelegate:self];
     [client rateReviewer:reviewer.ID Rating:[NSNumber numberWithInt:sender.tag]];
     
-    NSLog(@"%d",sender.tag);
     Rating = sender.tag;
     IndexToUpdate = SelectedIndex;
 }
@@ -183,6 +198,7 @@ static NSIndexPath * IndexToUpdate;
 #pragma mark - UITableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"table %d",ReviewList.count);
     return ReviewList.count;
 }
 

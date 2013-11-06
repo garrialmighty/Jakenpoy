@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyReviewersViewController">
             <connections>
+                <outlet property="FBButton" destination="4ro-SN-vwU" id="bMZ-YR-dWB"/>
                 <outlet property="PrintButton" destination="27" id="58"/>
                 <outlet property="ReportsButton" destination="20" id="57"/>
                 <outlet property="RepublishButton" destination="34" id="59"/>
@@ -77,11 +78,11 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34" userLabel="Republish Button">
-                    <rect key="frame" x="160" y="430" width="160" height="50"/>
+                    <rect key="frame" x="160" y="430" width="110" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="160" id="39"/>
+                        <constraint firstAttribute="width" constant="110" id="39"/>
                         <constraint firstAttribute="height" constant="50" id="74"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -96,23 +97,39 @@
                         <action selector="publish" destination="-1" eventType="touchUpInside" id="Q65-k7-QSF"/>
                     </connections>
                 </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ro-SN-vwU" userLabel="FBButton">
+                    <rect key="frame" x="270" y="430" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Zms-8D-fGw"/>
+                        <constraint firstAttribute="width" constant="50" id="evr-gP-XhF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="fb_logo.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="7"/>
-                <constraint firstItem="4" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="8"/>
-                <constraint firstItem="20" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="21"/>
-                <constraint firstItem="34" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="38"/>
-                <constraint firstItem="20" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="61"/>
-                <constraint firstItem="34" firstAttribute="top" secondItem="27" secondAttribute="top" id="71"/>
-                <constraint firstAttribute="bottom" secondItem="34" secondAttribute="bottom" id="2cb-Qd-VZL"/>
-                <constraint firstItem="27" firstAttribute="leading" secondItem="20" secondAttribute="trailing" id="MRu-zn-FpK"/>
-                <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" id="PeB-oH-9O9"/>
-                <constraint firstItem="34" firstAttribute="leading" secondItem="27" secondAttribute="trailing" id="cJV-b2-y4S"/>
-                <constraint firstItem="34" firstAttribute="top" secondItem="4" secondAttribute="bottom" id="j1R-34-ets"/>
+                <constraint firstAttribute="bottom" secondItem="4ro-SN-vwU" secondAttribute="bottom" id="4HP-Aq-hbI"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="84d-N6-R3Y"/>
+                <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" id="O7i-Vq-nl6"/>
+                <constraint firstItem="4ro-SN-vwU" firstAttribute="leading" secondItem="34" secondAttribute="trailing" id="TAW-bI-xyF"/>
+                <constraint firstAttribute="bottom" secondItem="34" secondAttribute="bottom" id="ddN-dv-zsr"/>
+                <constraint firstAttribute="trailing" secondItem="4ro-SN-vwU" secondAttribute="trailing" id="eIe-TQ-sWy"/>
+                <constraint firstAttribute="bottom" secondItem="20" secondAttribute="bottom" id="hxv-P7-r7H"/>
+                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="kCs-JY-VHa"/>
+                <constraint firstAttribute="bottom" secondItem="27" secondAttribute="bottom" id="mmz-23-zhJ"/>
+                <constraint firstItem="4ro-SN-vwU" firstAttribute="top" secondItem="4" secondAttribute="bottom" id="n33-UJ-4ID"/>
+                <constraint firstItem="34" firstAttribute="leading" secondItem="27" secondAttribute="trailing" id="tlx-Eh-OUa"/>
+                <constraint firstItem="27" firstAttribute="leading" secondItem="20" secondAttribute="trailing" id="uSi-i2-b3E"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="fb_logo.png" width="512" height="512"/>
+    </resources>
 </document>

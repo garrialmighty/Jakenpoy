@@ -16,11 +16,13 @@ static const NSInteger AUTHORID = 2;
 
 static JakenpoyHTTPClient * client;
 static NSDictionary * GradeLevels;
+static NSDictionary * Subjects;
+static NSDictionary * QuestionTypes;
 
 static NSInteger Selected;
 static NSMutableArray * GradeLevelList;
-static NSArray * SubjectList;
-static NSArray * QuestionTypeList;
+static NSMutableArray * SubjectList;
+static NSMutableArray * QuestionTypeList;
 static BOOL isGradeLevel;
 static BOOL isSubject;
 static BOOL isQuestionType;
@@ -59,10 +61,8 @@ static NSInteger QuestionTypeSelected;
     
     Selected = 0;
     GradeLevelList = [[NSMutableArray alloc] initWithArray:@[@"No Grade Levels"]];
-    
-    //GradeLevelList = @[@"No Grade Levels"];
-    SubjectList = @[@"No Subjects"];
-    QuestionTypeList = @[@"No Question Types"];
+    SubjectList = [[NSMutableArray alloc] initWithArray:@[@"No Subjects"]];
+    QuestionTypeList = [[NSMutableArray alloc] initWithArray:@[@"No Question Types"]];
     
     [self.navigationItem setHidesBackButton:YES];
     
@@ -114,8 +114,8 @@ static NSInteger QuestionTypeSelected;
                                         Author:@"blank_0"
                                          Limit:@"blank_0"
                                         Offset:@"blank_0"
-                                          Sort:@"blank_0"
-                                     Ascending:@"blank_0"];
+                                          Sort:@"average"
+                                     Ascending:@"DESC"];
         }
         else {
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Code Field Empty"
@@ -136,8 +136,8 @@ static NSInteger QuestionTypeSelected;
                                         Author:self.Author.text
                                          Limit:@"blank_0"
                                         Offset:@"blank_0"
-                                          Sort:@"blank_0"
-                                     Ascending:@"blank_0"];
+                                          Sort:@"average"
+                                     Ascending:@"DESC"];
         }
         else {
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Author Field Empty"
@@ -161,8 +161,8 @@ static NSInteger QuestionTypeSelected;
                                 Author:@"blank_0"//self.Author.text
                                  Limit:@"blank_0"
                                 Offset:@"blank_0"
-                                  Sort:@"blank_0"
-                             Ascending:@"blank_0"];
+                                  Sort:@"average"
+                             Ascending:@"DESC"];
 }
 
 - (IBAction)go:(UIButton *)sender
@@ -280,7 +280,6 @@ static NSInteger QuestionTypeSelected;
         returnRow = isGradeLevel?GradeLevelList.count:isSubject?SubjectList.count:QuestionTypeList.count;
     }
     else {
-        //NSLog(@"%d",component);
         returnRow = component==0?GradeLevelList.count:component==1?SubjectList.count:QuestionTypeList.count;
     }
     
@@ -326,6 +325,7 @@ static NSInteger QuestionTypeSelected;
         rowString = isGradeLevel?GradeLevelList[row]:isSubject?SubjectList[row]:QuestionTypeList[row];
     }
     else {
+
         rowString = component==0?GradeLevelList[row]:component==1?SubjectList[row]:QuestionTypeList[row];
     }
     
@@ -360,9 +360,14 @@ static NSInteger QuestionTypeSelected;
     //for (NSString * key in json) NSLog(@"QT:%@ %@",key, json[key]);
     
     if ([json[@"status"] isEqualToString:@"success"]) {
-        //NSLog(@"%@",json[@"data"][@"question_types_name"]);
+        //NSLog(@"%@",[json[@"data"][@"question_types_name"] class]);
         
-        QuestionTypeList = json[@"data"][@"question_types_name"];
+        QuestionTypes = json[@"data"][@"question_types_name"];
+        [QuestionTypeList removeAllObjects];
+        
+        for (NSString * key in QuestionTypes) {
+            [QuestionTypeList addObject:QuestionTypes[key]];
+        }
         
         if (isPhone) {
             if (isQuestionType) {
@@ -408,7 +413,12 @@ static NSInteger QuestionTypeSelected;
     if ([json[@"status"] isEqualToString:@"success"]) {
         //NSLog(@"%@",json[@"data"][@"subjects"]);
         
-        SubjectList = json[@"data"][@"subjects"];
+        Subjects = json[@"data"][@"subjects"];
+        [SubjectList removeAllObjects];
+        
+        for (NSString * key in Subjects) {
+            [SubjectList addObject:Subjects[key]];
+        }
         
         if (isPhone) {
             if (isSubject) {
@@ -426,7 +436,7 @@ static NSInteger QuestionTypeSelected;
     if ([json[@"status"] isEqualToString:@"success"]) {
         NSArray * data = json[@"data"];
         NSMutableArray * reviewerList = [[NSMutableArray alloc] init];
-        NSLog(@"%@",json);
+        //NSLog(@"%@",json);
         for (NSDictionary * reviewer in data) {
             Reviewer * item = [[Reviewer alloc] init];
             [item setName:reviewer[@"name"]];
@@ -440,11 +450,14 @@ static NSInteger QuestionTypeSelected;
             [reviewerList addObject:item];
         }
         
-        PRLPickViewController * prlpvc = [[PRLPickViewController alloc] initWithNibName:@"PRLPickViewController" bundle:nil];
+        //PRLPickViewController * prlpvc = [[PRLPickViewController alloc] initWithNibName:@"PRLPickViewController" bundle:nil];
+        PRLPickViewController * prlpvc = [[PRLPickViewController alloc] initWithNibName:@"PRLPickViewController" bundle:nil List:reviewerList];
         [self.navigationController pushViewController:prlpvc animated:YES];
-        [prlpvc setReviewList:reviewerList];
         [prlpvc setQuestionTypeList:QuestionTypeList];
         [prlpvc setSubjectList:SubjectList];
+        
+        NSLog(@"search %d",reviewerList.count);
+        [prlpvc setReviewList:reviewerList];
     }
 }
 

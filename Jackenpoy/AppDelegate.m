@@ -449,7 +449,7 @@ static CGFloat MenuCellCount = 8;
                 }
                 break;
             case 6:
-                [self.ScreenLabel setText:@"Welcome to Jakenpoy PTA!"];
+                [self.ScreenLabel setText:@"Get Started"];
                 if (isPhone) {
                     newPage = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController" bundle:nil];
                 } else {
@@ -499,7 +499,7 @@ static CGFloat MenuCellCount = 8;
                 }
                 break;
             case 7:
-                [self.ScreenLabel setText:@"Welcome to Jakenpoy PTA!"];
+                [self.ScreenLabel setText:@"Get Started"];
                 if (isPhone) {
                     newPage = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController" bundle:nil];
                 } else {
