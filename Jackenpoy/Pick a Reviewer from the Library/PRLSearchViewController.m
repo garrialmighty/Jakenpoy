@@ -42,6 +42,9 @@ static NSInteger QuestionTypeSelected;
 @property (weak, nonatomic) IBOutlet UITextField *QuestionType;
 @property (weak, nonatomic) IBOutlet UITextField *Code;
 @property (weak, nonatomic) IBOutlet UITextField *Author;
+
+@property (weak, nonatomic) IBOutlet UIView *LoadingScreen;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spinner;
 @end
 
 @implementation PRLSearchViewController
@@ -107,6 +110,7 @@ static NSInteger QuestionTypeSelected;
     // Find by Code
     if (code == CODEID) {
         if (self.Code.text.length>=1) {
+            [self showLoadingScreen];
             [client getReviewersWithGradeLevel:0
                                        Subject:0
                                   QuestionType:0
@@ -129,6 +133,7 @@ static NSInteger QuestionTypeSelected;
     // Find by Author
     else {
         if (self.Author.text.length>=1) {
+            [self showLoadingScreen];
             [client getReviewersWithGradeLevel:0
                                        Subject:0
                                   QuestionType:0
@@ -148,6 +153,18 @@ static NSInteger QuestionTypeSelected;
             [alert show];
         }
     }
+}
+
+- (void)showLoadingScreen
+{
+    [self.LoadingScreen setHidden:NO];
+    [self.Spinner startAnimating];
+}
+
+- (void)hideLoadingScreen
+{
+    [self.LoadingScreen setHidden:YES];
+    [self.Spinner stopAnimating];
 }
 
 #pragma mark - IBActions
@@ -176,6 +193,7 @@ static NSInteger QuestionTypeSelected;
         }
     }
     
+    [self showLoadingScreen];
     [client getReviewersWithGradeLevel:[gradeLvlID integerValue]
                                Subject:[subjectID integerValue]
                           QuestionType:[questionID integerValue]
@@ -472,7 +490,7 @@ static NSInteger QuestionTypeSelected;
             [reviewerList addObject:item];
         }
         
-        //PRLPickViewController * prlpvc = [[PRLPickViewController alloc] initWithNibName:@"PRLPickViewController" bundle:nil];
+        [self hideLoadingScreen];
         PRLPickViewController * prlpvc = [[PRLPickViewController alloc] initWithNibName:@"PRLPickViewController" bundle:nil List:reviewerList];
         [self.navigationController pushViewController:prlpvc animated:YES];
         [prlpvc setQuestionTypeList:QuestionTypeList];

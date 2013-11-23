@@ -11,12 +11,14 @@
                 <outlet property="DatePicker" destination="WHj-CK-i3d" id="xo3-YM-HhV"/>
                 <outlet property="Instructions" destination="1L8-MW-pL2" id="7jN-gV-itx"/>
                 <outlet property="KidsTable" destination="jZg-AJ-Rts" id="m4C-Ud-ryK"/>
+                <outlet property="LoadingScreen" destination="kJl-mc-XHm" id="aY3-85-zxN"/>
                 <outlet property="NFButton" destination="V1H-3g-RTS" id="Fgq-Ee-LeE"/>
                 <outlet property="NextButton" destination="Tjz-2f-8Aw" id="O7j-Kt-eFR"/>
                 <outlet property="PreviousButton" destination="OeW-Rj-Rux" id="vFO-Iu-sqC"/>
                 <outlet property="ShareToPublicCheckbox" destination="M2q-rE-Ypk" id="G7Z-PJ-uL9"/>
                 <outlet property="ShareToSchoolCheckbox" destination="eMw-VX-0kN" id="68j-BP-jGK"/>
                 <outlet property="ShowRightAnswersCheckbox" destination="VZJ-kO-55u" id="zDc-wg-Ps5"/>
+                <outlet property="Spinner" destination="FhM-V4-feN" id="yh5-BJ-9qh"/>
                 <outlet property="Step1" destination="sPI-CU-ZBC" id="ioU-1i-Zov"/>
                 <outlet property="Step1Button" destination="y4B-YB-W7j" id="Dkm-Zi-XYm"/>
                 <outlet property="Step2" destination="qnu-A2-ahN" id="7kG-B8-Lpe"/>
@@ -414,6 +416,23 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <action selector="nextFinish:" destination="-1" eventType="touchUpInside" id="fLk-Fa-WzU"/>
                     </connections>
                 </button>
+                <view hidden="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJl-mc-XHm" userLabel="Loading Screen">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FhM-V4-feN">
+                            <rect key="frame" x="366" y="472" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="FhM-V4-feN" secondAttribute="centerX" id="54e-Jo-Umk"/>
+                        <constraint firstAttribute="centerY" secondItem="FhM-V4-feN" secondAttribute="centerY" id="6P6-Kz-Qu7"/>
+                        <constraint firstAttribute="centerY" secondItem="FhM-V4-feN" secondAttribute="centerY" id="BVZ-e9-UW1"/>
+                        <constraint firstAttribute="centerX" secondItem="FhM-V4-feN" secondAttribute="centerX" id="TGS-7H-xdc"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -425,8 +444,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <constraint firstItem="y4B-YB-W7j" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="HmK-TG-GYq"/>
                 <constraint firstAttribute="bottom" secondItem="sPI-CU-ZBC" secondAttribute="bottom" id="QCF-lR-YCf"/>
                 <constraint firstAttribute="bottom" secondItem="jOa-df-JTH" secondAttribute="bottom" id="VJ6-iF-0lY"/>
+                <constraint firstItem="kJl-mc-XHm" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Z83-Nz-qjU"/>
+                <constraint firstAttribute="bottom" secondItem="kJl-mc-XHm" secondAttribute="bottom" id="dhw-Rb-bey"/>
                 <constraint firstAttribute="trailing" secondItem="V1H-3g-RTS" secondAttribute="trailing" id="fRR-aU-2rb"/>
                 <constraint firstAttribute="bottom" secondItem="V1H-3g-RTS" secondAttribute="bottom" id="jat-Av-xL7"/>
+                <constraint firstAttribute="trailing" secondItem="kJl-mc-XHm" secondAttribute="trailing" id="sam-9H-q5o"/>
+                <constraint firstItem="kJl-mc-XHm" firstAttribute="top" secondItem="1" secondAttribute="top" id="u3c-dN-URb"/>
                 <constraint firstItem="jOa-df-JTH" firstAttribute="leading" secondItem="y4B-YB-W7j" secondAttribute="trailing" id="zEV-dB-jkO"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

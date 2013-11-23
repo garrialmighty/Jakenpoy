@@ -15,6 +15,9 @@
 @property (strong, nonatomic) IBOutlet UIToolbar *Toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *PreviousButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *NextButton;
+
+@property (weak, nonatomic) IBOutlet UIView *LoadingScreen;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spinner;
 @end
 
 @implementation MyAccountViewController
@@ -67,6 +70,18 @@
 
 }
 
+- (void)showLoadingScreen
+{
+    [self.LoadingScreen setHidden:NO];
+    [self.Spinner startAnimating];
+}
+
+- (void)hideLoadingScreen
+{
+    [self.LoadingScreen setHidden:YES];
+    [self.Spinner stopAnimating];
+}
+
 #pragma mark - IBAction
 #pragma mark UIButton
 - (IBAction)save
@@ -76,6 +91,7 @@
         [alert show];
     }
     else {
+        [self showLoadingScreen];
         JakenpoyHTTPClient * client = [JakenpoyHTTPClient getSharedClient];
         [client setDelegate:self];
         [client updateName:self.Name.text Email:self.Email.text Password:self.Password.text];
@@ -134,6 +150,7 @@
 #pragma mark JakenpoyHTTPClient
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
 {
+    [self hideLoadingScreen];
     NSLog(@"%@",json);
 }
 

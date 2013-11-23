@@ -10,11 +10,13 @@
                 <outlet property="Author" destination="240" id="ELd-rM-NZO"/>
                 <outlet property="Code" destination="193" id="buh-Mc-82d"/>
                 <outlet property="GradeLevel" destination="8" id="gba-6h-I7Y"/>
+                <outlet property="LoadingScreen" destination="lh3-bO-Rxs" id="iZI-ok-J2G"/>
                 <outlet property="NextButton" destination="96r-1f-8eI" id="Oio-zL-Bsk"/>
                 <outlet property="Picker" destination="lLP-ew-Q4B" id="ZP9-ga-84l"/>
                 <outlet property="PickerToolbar" destination="3fU-wU-yQu" id="7Fp-62-p1t"/>
                 <outlet property="PreviousButton" destination="Nhp-4g-tBS" id="kS7-3L-qVt"/>
                 <outlet property="QuestionType" destination="64" id="a2d-8a-7Xq"/>
+                <outlet property="Spinner" destination="yzR-yI-kzN" id="oKd-WJ-ky0"/>
                 <outlet property="Subject" destination="50" id="reh-EN-72Z"/>
                 <outlet property="Toolbar" destination="VGp-K8-EhW" id="WWo-ub-hyS"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -226,6 +228,23 @@
                     </items>
                     <color key="tintColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                 </toolbar>
+                <view hidden="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-bO-Rxs" userLabel="Loading Screen">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yzR-yI-kzN">
+                            <rect key="frame" x="142" y="200" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="yzR-yI-kzN" secondAttribute="centerX" id="81Q-ES-VDf"/>
+                        <constraint firstAttribute="centerY" secondItem="yzR-yI-kzN" secondAttribute="centerY" id="8Fo-ue-IXN"/>
+                        <constraint firstAttribute="centerX" secondItem="yzR-yI-kzN" secondAttribute="centerX" id="Kjg-XK-OkL"/>
+                        <constraint firstAttribute="centerY" secondItem="yzR-yI-kzN" secondAttribute="centerY" id="luA-qS-RsU"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -262,6 +281,7 @@
                 <constraint firstItem="240" firstAttribute="leading" secondItem="Zzt-uw-Ga6" secondAttribute="leading" id="J4M-TT-IyA"/>
                 <constraint firstItem="PhU-AR-f9y" firstAttribute="trailing" secondItem="4ZM-eb-bbz" secondAttribute="trailing" id="MUc-eE-yq0"/>
                 <constraint firstItem="PhU-AR-f9y" firstAttribute="trailing" secondItem="ZaZ-BH-GGc" secondAttribute="trailing" id="MVo-oE-AM0"/>
+                <constraint firstAttribute="bottom" secondItem="lh3-bO-Rxs" secondAttribute="bottom" id="NUG-4X-ERC"/>
                 <constraint firstItem="3fU-wU-yQu" firstAttribute="leading" secondItem="lLP-ew-Q4B" secondAttribute="leading" id="Odd-to-Kt1"/>
                 <constraint firstItem="PhU-AR-f9y" firstAttribute="bottom" secondItem="7Gs-EX-ZoT" secondAttribute="bottom" id="PfK-6r-N0w"/>
                 <constraint firstAttribute="bottom" secondItem="lLP-ew-Q4B" secondAttribute="bottom" id="QQQ-f2-1GA"/>
@@ -288,6 +308,9 @@
                 <constraint firstItem="4ZM-eb-bbz" firstAttribute="bottom" secondItem="8" secondAttribute="bottom" id="q8D-ff-XWh"/>
                 <constraint firstItem="Zzt-uw-Ga6" firstAttribute="trailing" secondItem="7Gs-EX-ZoT" secondAttribute="trailing" id="q8R-L8-E9K"/>
                 <constraint firstItem="PhU-AR-f9y" firstAttribute="trailing" secondItem="7Gs-EX-ZoT" secondAttribute="trailing" id="rH1-m2-T2y"/>
+                <constraint firstAttribute="trailing" secondItem="lh3-bO-Rxs" secondAttribute="trailing" id="rQu-OW-ng3"/>
+                <constraint firstItem="lh3-bO-Rxs" firstAttribute="top" secondItem="1" secondAttribute="top" id="uOS-Ga-5D5"/>
+                <constraint firstItem="lh3-bO-Rxs" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="uPp-AM-p9n"/>
                 <constraint firstItem="240" firstAttribute="leading" secondItem="168" secondAttribute="leading" id="ula-JK-JbO"/>
                 <constraint firstItem="PhU-AR-f9y" firstAttribute="top" secondItem="50" secondAttribute="top" id="xFU-J1-wgn"/>
                 <constraint firstItem="lLP-ew-Q4B" firstAttribute="top" secondItem="3fU-wU-yQu" secondAttribute="bottom" id="xWZ-tV-Njz"/>

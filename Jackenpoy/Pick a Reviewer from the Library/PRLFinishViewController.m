@@ -57,6 +57,9 @@ static NSMutableArray * AssigneeList;
 @property (weak, nonatomic) IBOutlet UILabel *QuestionTopic;
 @property (weak, nonatomic) IBOutlet UILabel *QuestionType;
 
+@property (weak, nonatomic) IBOutlet UIView *LoadingScreen;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spinner;
+
 @end
 
 @implementation PRLFinishViewController
@@ -139,6 +142,18 @@ static NSMutableArray * AssigneeList;
     [self.NextButton setEnabled:YES];
 }
 
+- (void)showLoadingScreen
+{
+    [self.LoadingScreen setHidden:NO];
+    [self.Spinner startAnimating];
+}
+
+- (void)hideLoadingScreen
+{
+    [self.LoadingScreen setHidden:YES];
+    [self.Spinner stopAnimating];
+}
+
 #pragma mark - IBAction
 #pragma mark UIButton
 - (IBAction)showStep:(UIButton *)sender
@@ -211,9 +226,6 @@ static NSMutableArray * AssigneeList;
         [self.NFButton setAttributedTitle:finUlString forState:UIControlStateNormal];
     }
     else {
-        NSArray * vcStack = self.navigationController.viewControllers;
-        [self.navigationController popToViewController:vcStack[1] animated:YES];
-        
         NSString * assigneeString = @"";
         for (NSIndexPath * ip in [self.KidsTable indexPathsForSelectedRows]) {
             Assignees * student = AssigneeList[ip.row];
@@ -226,6 +238,7 @@ static NSMutableArray * AssigneeList;
             }
         }
         
+        [self showLoadingScreen];
         if (isPhone) {
             [client pickReviewerWithQuestionID:ReviewerID
                                      Assigness:assigneeString.length>0?assigneeString:@"blank_0"
@@ -418,6 +431,9 @@ static NSMutableArray * AssigneeList;
 #pragma mark JakenpoyHTTPClient
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(NSDictionary *)json
 {
+    [self hideLoadingScreen];
+    NSArray * vcStack = self.navigationController.viewControllers;
+    [self.navigationController popToViewController:vcStack[1] animated:YES];
     NSLog(@"%@",json);
 }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -27,7 +27,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
-                    <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="Bar1">
+                    <view hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="Bar1">
                         <rect key="frame" x="225" y="0.0" width="1" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,11 +51,21 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pfg-5L-ygn" userLabel="Border">
+                        <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="G4Y-6h-NEi"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Pfg-5L-ygn" secondAttribute="trailing" id="AQP-UH-oPM"/>
                     <constraint firstItem="5" firstAttribute="leading" secondItem="2px-M7-7pB" secondAttribute="leading" constant="10" id="CPU-D9-GWx"/>
+                    <constraint firstItem="Pfg-5L-ygn" firstAttribute="leading" secondItem="2px-M7-7pB" secondAttribute="leading" id="GNV-1a-e1D"/>
                     <constraint firstItem="4" firstAttribute="leading" secondItem="2px-M7-7pB" secondAttribute="leading" id="IA3-C3-qCm"/>
                     <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="Jzp-Mq-gOS"/>
+                    <constraint firstAttribute="bottom" secondItem="Pfg-5L-ygn" secondAttribute="bottom" id="Nng-4h-9Qo"/>
                     <constraint firstItem="6" firstAttribute="leading" secondItem="5" secondAttribute="trailing" id="P3G-sI-tPk"/>
                     <constraint firstItem="30" firstAttribute="leading" secondItem="6" secondAttribute="trailing" constant="4" id="U0W-NW-AlF"/>
                     <constraint firstItem="6" firstAttribute="top" secondItem="2px-M7-7pB" secondAttribute="top" id="WO6-vq-wup"/>
@@ -77,4 +87,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Default.png" width="640" height="960"/>
+    </resources>
 </document>

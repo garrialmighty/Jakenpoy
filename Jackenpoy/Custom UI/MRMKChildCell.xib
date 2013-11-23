@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -27,7 +27,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
-                    <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="Bar1">
+                    <view hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="Bar1">
                         <rect key="frame" x="224" y="0.0" width="1" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,17 +45,27 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="KRa-It-c3V" userLabel="Border">
+                        <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="qhS-bV-P2s"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="6" firstAttribute="top" secondItem="c2Q-5o-R8k" secondAttribute="top" id="Afs-a8-vri"/>
                     <constraint firstItem="5" firstAttribute="leading" secondItem="6" secondAttribute="trailing" id="BPT-Of-dRz"/>
                     <constraint firstItem="5" firstAttribute="top" secondItem="c2Q-5o-R8k" secondAttribute="top" id="Cyk-oz-mna"/>
+                    <constraint firstAttribute="bottom" secondItem="KRa-It-c3V" secondAttribute="bottom" id="DUT-wL-UQz"/>
                     <constraint firstAttribute="bottom" secondItem="27" secondAttribute="bottom" id="Dpd-K5-is5"/>
                     <constraint firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="Je1-sC-lw2"/>
                     <constraint firstAttribute="trailing" secondItem="7" secondAttribute="trailing" id="OeT-Th-uM2"/>
                     <constraint firstAttribute="bottom" secondItem="5" secondAttribute="bottom" id="SnM-Yb-i57"/>
+                    <constraint firstItem="KRa-It-c3V" firstAttribute="leading" secondItem="c2Q-5o-R8k" secondAttribute="leading" id="Sy5-CF-dMd"/>
                     <constraint firstItem="6" firstAttribute="leading" secondItem="c2Q-5o-R8k" secondAttribute="leading" constant="10" id="Xws-LA-oag"/>
                     <constraint firstItem="27" firstAttribute="leading" secondItem="5" secondAttribute="trailing" constant="15" id="bos-tk-uS3"/>
+                    <constraint firstAttribute="trailing" secondItem="KRa-It-c3V" secondAttribute="trailing" id="lLV-ZK-USL"/>
                     <constraint firstItem="27" firstAttribute="top" secondItem="c2Q-5o-R8k" secondAttribute="top" id="tPf-bi-pUv"/>
                     <constraint firstItem="7" firstAttribute="leading" secondItem="c2Q-5o-R8k" secondAttribute="leading" id="wZY-Kt-n6m"/>
                     <constraint firstAttribute="bottom" secondItem="7" secondAttribute="bottom" id="yNu-RS-igC"/>
@@ -70,4 +80,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Default.png" width="640" height="960"/>
+    </resources>
 </document>

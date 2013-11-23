@@ -8,10 +8,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyAccountViewController">
             <connections>
                 <outlet property="Email" destination="tBs-HY-BGz" id="1Lw-c5-Fpp"/>
+                <outlet property="LoadingScreen" destination="2DZ-GT-CA0" id="x8h-Qi-Kwb"/>
                 <outlet property="Name" destination="cMQ-sv-QLf" id="CmA-NM-fzq"/>
                 <outlet property="NextButton" destination="GQO-aI-8lW" id="WQ0-5Y-JzV"/>
                 <outlet property="Password" destination="oAR-jh-l7J" id="kUg-h9-WJM"/>
                 <outlet property="PreviousButton" destination="EWY-5m-aNg" id="rxv-xV-q0c"/>
+                <outlet property="Spinner" destination="EBk-s0-kfe" id="lse-YJ-H1r"/>
                 <outlet property="Toolbar" destination="djr-QT-pQz" id="ycC-Vf-9Fz"/>
                 <outlet property="view" destination="1" id="Bbl-ZT-8Lr"/>
             </connections>
@@ -108,6 +110,23 @@
                         <action selector="save" destination="-1" eventType="touchUpInside" id="Ri2-oo-jC6"/>
                     </connections>
                 </button>
+                <view hidden="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DZ-GT-CA0" userLabel="Loading Screen">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="EBk-s0-kfe">
+                            <rect key="frame" x="366" y="472" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="EBk-s0-kfe" secondAttribute="centerX" id="DwR-0C-y6z"/>
+                        <constraint firstAttribute="centerX" secondItem="EBk-s0-kfe" secondAttribute="centerX" id="HDx-cf-V1V"/>
+                        <constraint firstAttribute="centerY" secondItem="EBk-s0-kfe" secondAttribute="centerY" id="x3z-OL-xe6"/>
+                        <constraint firstAttribute="centerY" secondItem="EBk-s0-kfe" secondAttribute="centerY" id="yT0-mo-Fb0"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -116,6 +135,7 @@
                 <constraint firstItem="cMQ-sv-QLf" firstAttribute="top" secondItem="86Z-CZ-vQc" secondAttribute="bottom" constant="15" id="8Tm-MP-wTC"/>
                 <constraint firstAttribute="bottom" secondItem="7rq-8x-hiw" secondAttribute="bottom" id="ArE-4C-EJe"/>
                 <constraint firstAttribute="centerX" secondItem="oAR-jh-l7J" secondAttribute="centerX" id="F05-ll-XNp"/>
+                <constraint firstAttribute="trailing" secondItem="2DZ-GT-CA0" secondAttribute="trailing" id="GMK-pd-e2n"/>
                 <constraint firstAttribute="trailing" secondItem="7rq-8x-hiw" secondAttribute="trailing" id="IUP-bL-wvF"/>
                 <constraint firstItem="86Z-CZ-vQc" firstAttribute="leading" secondItem="5Do-I5-YVQ" secondAttribute="leading" id="KKb-kV-8E4"/>
                 <constraint firstItem="86Z-CZ-vQc" firstAttribute="top" secondItem="1" secondAttribute="top" constant="100" id="NTr-Sq-QE2"/>
@@ -123,8 +143,11 @@
                 <constraint firstItem="86Z-CZ-vQc" firstAttribute="leading" secondItem="y2o-Da-CdA" secondAttribute="leading" id="WkY-ac-HEU"/>
                 <constraint firstItem="y2o-Da-CdA" firstAttribute="top" secondItem="tBs-HY-BGz" secondAttribute="bottom" constant="40" id="WlR-cy-qeH"/>
                 <constraint firstItem="tBs-HY-BGz" firstAttribute="top" secondItem="5Do-I5-YVQ" secondAttribute="bottom" constant="15" id="X51-i0-XhZ"/>
+                <constraint firstItem="2DZ-GT-CA0" firstAttribute="top" secondItem="1" secondAttribute="top" id="ZJh-Jc-ASE"/>
+                <constraint firstAttribute="bottom" secondItem="2DZ-GT-CA0" secondAttribute="bottom" id="ZXk-bJ-gz5"/>
                 <constraint firstItem="oAR-jh-l7J" firstAttribute="trailing" secondItem="t1I-I9-Ogg" secondAttribute="trailing" id="bSQ-uy-0gS"/>
                 <constraint firstAttribute="centerX" secondItem="cMQ-sv-QLf" secondAttribute="centerX" id="bUC-jR-H4r"/>
+                <constraint firstItem="2DZ-GT-CA0" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="hPF-f0-Bfy"/>
                 <constraint firstItem="5Do-I5-YVQ" firstAttribute="top" secondItem="cMQ-sv-QLf" secondAttribute="bottom" constant="40" id="thG-2y-8Y5"/>
                 <constraint firstAttribute="centerX" secondItem="tBs-HY-BGz" secondAttribute="centerX" id="v1Q-oI-FIF"/>
                 <constraint firstItem="7rq-8x-hiw" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="y0j-9u-pLz"/>

@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIView *LandingPage;
 @property (weak, nonatomic) IBOutlet UIButton *Checkbox;
 @property (weak, nonatomic) IBOutlet UIImageView *JakenpoyLogo;
+@property (weak, nonatomic) IBOutlet UIView *LoadingScreen;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spinner;
 @end
 
 @implementation HPLoginViewController
@@ -68,6 +70,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Helper Methods
+- (void)showLoadingScreen
+{
+    [self.LoadingScreen setHidden:NO];
+    [self.Spinner startAnimating];
+}
+
+- (void)hideLoadingScreen
+{
+    [self.LoadingScreen setHidden:YES];
+    [self.Spinner stopAnimating];
+}
+
 #pragma mark - IBActions
 #pragma mark UIButton
 - (IBAction) login
@@ -82,6 +97,8 @@
 //#warning Remove override when submitting
         [client loginWithUsername:self.Email.text Password:self.Password.text];
         //[client loginWithUsername:@"beta.jakenpoy@gmail.com" Password:@"jakenpoy123"];
+        
+        [self showLoadingScreen];
     }
 }
 
@@ -152,6 +169,7 @@
 #pragma mark JakenpoyHTTPClient
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
 {
+    [self hideLoadingScreen];
     [self.LandingPage setHidden:NO];
 }
 

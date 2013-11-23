@@ -37,10 +37,20 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="hfK-Oe-0gm" userLabel="Border">
+                        <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Yua-Zc-vMH"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="4" firstAttribute="leading" secondItem="27" secondAttribute="trailing" constant="25" id="7js-64-pST"/>
                     <constraint firstAttribute="centerY" secondItem="27" secondAttribute="centerY" id="JJz-pp-Qxa"/>
+                    <constraint firstAttribute="trailing" secondItem="hfK-Oe-0gm" secondAttribute="trailing" id="QRe-mT-Oh6"/>
+                    <constraint firstItem="hfK-Oe-0gm" firstAttribute="leading" secondItem="Z8g-iv-ciI" secondAttribute="leading" id="SNc-br-izj"/>
+                    <constraint firstAttribute="bottom" secondItem="hfK-Oe-0gm" secondAttribute="bottom" id="bS0-jl-YvC"/>
                     <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="bWS-Xg-thL"/>
                     <constraint firstItem="27" firstAttribute="leading" secondItem="Z8g-iv-ciI" secondAttribute="leading" constant="10" id="gzC-6h-jOG"/>
                     <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="m3q-Tb-Vxm"/>
@@ -54,6 +64,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Default.png" width="640" height="960"/>
         <image name="cb_glossy_off.png" width="44" height="43"/>
         <image name="cb_glossy_on.png" width="44" height="43"/>
     </resources>

@@ -61,6 +61,13 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="jA6-fj-2mo" userLabel="Border">
+                        <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="WeH-FV-zGa"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="3ea-Ok-KvE" firstAttribute="leading" secondItem="yAJ-hx-c2F" secondAttribute="trailing" constant="10" id="2BU-Ni-tmz"/>
@@ -71,11 +78,14 @@
                     <constraint firstAttribute="bottom" secondItem="XJf-Ns-hz9" secondAttribute="bottom" id="DIb-Ew-52r"/>
                     <constraint firstAttribute="trailing" secondItem="Q0g-Zh-HNK" secondAttribute="trailing" constant="5" id="FEM-Qq-elF"/>
                     <constraint firstItem="yAJ-hx-c2F" firstAttribute="top" secondItem="xVb-UW-See" secondAttribute="top" id="I3j-s1-Km1"/>
+                    <constraint firstAttribute="bottom" secondItem="jA6-fj-2mo" secondAttribute="bottom" id="LDc-on-11g"/>
+                    <constraint firstAttribute="trailing" secondItem="jA6-fj-2mo" secondAttribute="trailing" id="MY5-bK-gt2"/>
                     <constraint firstAttribute="bottom" secondItem="Q0g-Zh-HNK" secondAttribute="bottom" id="QqO-jk-t1T"/>
                     <constraint firstItem="3ea-Ok-KvE" firstAttribute="top" secondItem="xVb-UW-See" secondAttribute="top" id="Rnc-fH-ajW"/>
                     <constraint firstItem="wqP-5y-dpw" firstAttribute="top" secondItem="xVb-UW-See" secondAttribute="top" id="SgR-lu-gGA"/>
                     <constraint firstAttribute="bottom" secondItem="3ea-Ok-KvE" secondAttribute="bottom" id="So3-Um-xBW"/>
                     <constraint firstItem="wqP-5y-dpw" firstAttribute="leading" secondItem="3ea-Ok-KvE" secondAttribute="trailing" constant="10" id="YSU-Ua-Ujd"/>
+                    <constraint firstItem="jA6-fj-2mo" firstAttribute="leading" secondItem="xVb-UW-See" secondAttribute="leading" id="bHB-pZ-2BJ"/>
                     <constraint firstItem="wqP-5y-dpw" firstAttribute="top" secondItem="xVb-UW-See" secondAttribute="top" id="bZP-84-Fen"/>
                     <constraint firstItem="XJf-Ns-hz9" firstAttribute="leading" secondItem="wqP-5y-dpw" secondAttribute="trailing" constant="10" id="eYg-Jc-ROm"/>
                     <constraint firstAttribute="bottom" secondItem="yAJ-hx-c2F" secondAttribute="bottom" id="f57-qS-ewz"/>
@@ -94,4 +104,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Default.png" width="320" height="480"/>
+    </resources>
 </document>

@@ -28,6 +28,9 @@ static NSInteger Selected;
 @property (strong, nonatomic) NSString * Name;
 @property (strong, nonatomic) NSString * Password;
 @property (strong, nonatomic) NSString * Type;
+
+@property (weak, nonatomic) IBOutlet UIView *LoadingScreen;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spinner;
 @end
 
 @implementation HPFinishViewController
@@ -86,6 +89,18 @@ static NSInteger Selected;
     }
 }
 
+- (void)showLoadingScreen
+{
+    [self.LoadingScreen setHidden:NO];
+    [self.Spinner startAnimating];
+}
+
+- (void)hideLoadingScreen
+{
+    [self.LoadingScreen setHidden:YES];
+    [self.Spinner stopAnimating];
+}
+
 - (void)setEmail:(NSString *)email Name:(NSString *)name Password:(NSString *)password Type:(NSString *)type
 {
     [self setEmail:email];
@@ -98,6 +113,7 @@ static NSInteger Selected;
 #pragma mark UIButton
 - (IBAction) finish
 {
+    [self showLoadingScreen];
     School * school = SchoolList[Selected];
     [client createAccountUsingEmail:self.Email Name:self.Name Password:self.Password Type:self.Type School:school.ID];
 }
@@ -203,6 +219,7 @@ static NSInteger Selected;
 -(void)jakenpoyHTTPClientdidCreateAccount:(NSDictionary *)json
 {
     if ([json[@"status"] isEqualToString:@"success"]) {
+        [self hideLoadingScreen];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
     else {

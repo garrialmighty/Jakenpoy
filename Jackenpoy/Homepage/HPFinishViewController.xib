@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HPFinishViewController">
             <connections>
+                <outlet property="LoadingScreen" destination="JJn-Wg-hW7" id="upm-09-acU"/>
                 <outlet property="NextButton" destination="LV4-fF-7iO" id="Xjv-tP-Hwc"/>
                 <outlet property="Picker" destination="v3J-I5-Hrl" id="Kca-az-v4R"/>
                 <outlet property="PickerToolbar" destination="Sa1-sU-JZP" id="jlt-zs-WIs"/>
@@ -16,6 +17,7 @@
                 <outlet property="SchoolContact" destination="101" id="wPu-2c-8Gb"/>
                 <outlet property="SchoolName" destination="12" id="XmR-25-SnO"/>
                 <outlet property="SchoolShortName" destination="7" id="3qh-fv-QQo"/>
+                <outlet property="Spinner" destination="sY5-EG-p5q" id="wX8-z9-beZ"/>
                 <outlet property="Toolbar" destination="dje-nM-ItN" id="S7S-hY-sk5"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -198,6 +200,21 @@
                         <outlet property="delegate" destination="-1" id="jNL-TV-O92"/>
                     </connections>
                 </pickerView>
+                <view hidden="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJn-Wg-hW7" userLabel="Loading Screen">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="sY5-EG-p5q">
+                            <rect key="frame" x="142" y="200" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="sY5-EG-p5q" secondAttribute="centerY" id="KPt-ui-4WL"/>
+                        <constraint firstAttribute="centerX" secondItem="sY5-EG-p5q" secondAttribute="centerX" id="edY-x1-2mX"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -236,10 +253,14 @@
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="v3J-I5-Hrl" secondAttribute="bottom" id="GG9-on-ZsB"/>
                 <constraint firstAttribute="bottom" secondItem="v3J-I5-Hrl" secondAttribute="bottom" constant="1" id="Nyd-i7-STu"/>
                 <constraint firstItem="iJ1-gn-Zy4" firstAttribute="bottom" secondItem="11" secondAttribute="bottom" id="PXA-a7-cEN"/>
+                <constraint firstAttribute="trailing" secondItem="JJn-Wg-hW7" secondAttribute="trailing" id="ReT-Z5-Pnh"/>
+                <constraint firstAttribute="bottom" secondItem="JJn-Wg-hW7" secondAttribute="bottom" id="XfY-fN-ha1"/>
                 <constraint firstItem="v3J-I5-Hrl" firstAttribute="top" secondItem="Sa1-sU-JZP" secondAttribute="bottom" id="Yxw-lY-oWD"/>
                 <constraint firstItem="11" firstAttribute="leading" secondItem="8" secondAttribute="leading" id="ZJr-y2-ojH"/>
                 <constraint firstItem="Sa1-sU-JZP" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="fJb-Yb-AXR"/>
+                <constraint firstItem="JJn-Wg-hW7" firstAttribute="top" secondItem="1" secondAttribute="top" id="geg-4G-PAV"/>
                 <constraint firstItem="11" firstAttribute="bottom" secondItem="8" secondAttribute="bottom" id="huw-53-Ye5"/>
+                <constraint firstItem="JJn-Wg-hW7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="lLp-xA-PhC"/>
                 <constraint firstItem="v3J-I5-Hrl" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="mce-HL-geQ"/>
                 <constraint firstItem="11" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="n3c-DQ-c2S"/>
                 <constraint firstItem="iJ1-gn-Zy4" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="ocB-Ri-FHw"/>

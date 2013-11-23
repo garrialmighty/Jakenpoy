@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -27,7 +27,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
-                    <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="Bar1">
+                    <view hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="Bar1">
                         <rect key="frame" x="129" y="0.0" width="1" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,7 +45,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
-                    <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="Bar2">
+                    <view hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="Bar2">
                         <rect key="frame" x="190" y="0.0" width="1" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,10 +60,18 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="2KH-oD-Ine" userLabel="Border">
+                        <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="v3h-cC-X1U"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="7" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="0Qo-u6-hoe"/>
                     <constraint firstItem="9" firstAttribute="leading" secondItem="6" secondAttribute="trailing" constant="10" id="1ug-XV-q4J"/>
+                    <constraint firstItem="2KH-oD-Ine" firstAttribute="leading" secondItem="9eg-l7-csW" secondAttribute="leading" id="89g-rh-6jD"/>
                     <constraint firstItem="5" firstAttribute="leading" secondItem="4" secondAttribute="trailing" constant="10" id="8LZ-DF-FgF"/>
                     <constraint firstItem="8" firstAttribute="leading" secondItem="9eg-l7-csW" secondAttribute="leading" id="CjS-zu-yD5"/>
                     <constraint firstItem="4" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="HT5-Pv-enr"/>
@@ -74,6 +82,7 @@
                     <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="Te2-rC-dJD"/>
                     <constraint firstItem="6" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="c3m-jg-GMB"/>
                     <constraint firstAttribute="bottom" secondItem="5" secondAttribute="bottom" id="hDG-BI-ctJ"/>
+                    <constraint firstAttribute="trailing" secondItem="2KH-oD-Ine" secondAttribute="trailing" id="hva-be-aJt"/>
                     <constraint firstAttribute="bottom" secondItem="7" secondAttribute="bottom" id="moj-Zo-KCn"/>
                     <constraint firstItem="5" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="omp-Z4-Ug0"/>
                     <constraint firstAttribute="bottom" secondItem="8" secondAttribute="bottom" id="pPE-fl-clF"/>
@@ -82,6 +91,7 @@
                     <constraint firstItem="9" firstAttribute="leading" secondItem="7" secondAttribute="trailing" constant="10" id="r2Y-du-2ss"/>
                     <constraint firstItem="8" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="rQy-uw-ice"/>
                     <constraint firstItem="9" firstAttribute="top" secondItem="9eg-l7-csW" secondAttribute="top" id="sn5-ns-6gI"/>
+                    <constraint firstAttribute="bottom" secondItem="2KH-oD-Ine" secondAttribute="bottom" id="tdh-UZ-8LG"/>
                     <constraint firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="zxW-4b-nMb"/>
                 </constraints>
             </tableViewCellContentView>
@@ -93,4 +103,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Default.png" width="640" height="960"/>
+    </resources>
 </document>
