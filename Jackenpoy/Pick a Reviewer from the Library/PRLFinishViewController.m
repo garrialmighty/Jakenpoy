@@ -11,8 +11,11 @@
 #import "Reviewer.h"
 #import "Challenge.h"
 #import "Assignees.h"
+#import "QuestionDetails.h"
+#import "Question.h"
 
 static JakenpoyHTTPClient * client;
+static QuestionDetails * QuestionDetail;
 static NSNumber * ReviewerID;
 static NSInteger Selected;
 static NSInteger Step2Selected;
@@ -32,8 +35,10 @@ static NSMutableArray * AssigneeList;
 @property (weak, nonatomic) IBOutlet UIButton *NFButton;
 @property (weak, nonatomic) IBOutlet UIButton *Step1Button;
 @property (weak, nonatomic) IBOutlet UIButton *Step2Button;
-@property (strong, nonatomic) IBOutlet UIView *Step1;
-@property (strong, nonatomic) IBOutlet UIView *Step2;
+@property (weak, nonatomic) IBOutlet UIButton *DetailsButton;
+@property (weak, nonatomic) IBOutlet UIView *Step1;
+@property (weak, nonatomic) IBOutlet UIView *Step2;
+@property (weak, nonatomic) IBOutlet UIView *Detail;
 @property (weak, nonatomic) IBOutlet UIPickerView *Picker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *DatePicker;
 @property (weak, nonatomic) IBOutlet UIToolbar *PickerToolbar;
@@ -45,7 +50,12 @@ static NSMutableArray * AssigneeList;
 @property (weak, nonatomic) IBOutlet UIButton *ShowRightAnswersCheckbox;
 @property (weak, nonatomic) IBOutlet UIToolbar *Step2PickerToolbar;
 @property (weak, nonatomic) IBOutlet UIPickerView *Step2Picker;
-@property (weak, nonatomic) IBOutlet UITextField *QuestionType;
+//@property (weak, nonatomic) IBOutlet UITextField *QuestionType;
+
+@property (weak, nonatomic) IBOutlet UILabel *QuestionTitle;
+@property (weak, nonatomic) IBOutlet UILabel *QuestionClassification;
+@property (weak, nonatomic) IBOutlet UILabel *QuestionTopic;
+@property (weak, nonatomic) IBOutlet UILabel *QuestionType;
 
 @end
 
@@ -99,6 +109,8 @@ static NSMutableArray * AssigneeList;
     ReviewerID = ID;
     QuestionTypeList = list;
     SubjectList = slist;
+    
+    [client getQuestionWithID:ID];
 }
 
 - (void)updateTitle:(NSString *)t
@@ -137,13 +149,25 @@ static NSMutableArray * AssigneeList;
     if (sender.tag == 1) {
         NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
         [self.NFButton setTag:1];
+        [self.DetailsButton setEnabled:YES];
         [self.Step2Button setEnabled:YES];
+        [self.view sendSubviewToBack:self.Detail];
+        [self.view sendSubviewToBack:self.Step2];
+    }
+    else if (sender.tag == 3) {
+        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
+        [self.NFButton setTag:3];
+        [self.Step1Button setEnabled:YES];
+        [self.Step2Button setEnabled:YES];
+        [self.view sendSubviewToBack:self.Step1];
         [self.view sendSubviewToBack:self.Step2];
     }
     else {
         NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Finished"];
         [self.NFButton setTag:2];
+        [self.DetailsButton setEnabled:YES];
         [self.Step1Button setEnabled:YES];
+        [self.view sendSubviewToBack:self.Detail];
         [self.view sendSubviewToBack:self.Step1];
     }
     
@@ -166,10 +190,19 @@ static NSMutableArray * AssigneeList;
 
 - (IBAction)nextFinish:(UIButton *)sender
 {
-    if (sender.tag == 1) {
+    if (sender.tag == 3) {
+        [self.NFButton setTag:1];
+        [self.DetailsButton setEnabled:YES];
+        [self.Step1Button setEnabled:NO];
+        [self.Step2Button setEnabled:YES];
+        [self.view sendSubviewToBack:self.Detail];
+        [self.view sendSubviewToBack:self.Step2];
+    }
+    else if (sender.tag == 1) {
         [self.NFButton setTag:2];
         [self.Step1Button setEnabled:YES];
         [self.Step2Button setEnabled:NO];
+        [self.view sendSubviewToBack:self.Detail];
         [self.view sendSubviewToBack:self.Step1];
         
         NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"Finished"];
@@ -407,6 +440,51 @@ static NSMutableArray * AssigneeList;
         }
         
         [self.KidsTable reloadData];
+    }
+}
+
+-(void)jakenpoyHTTPClientdidUpdateWithQuestionDetails:(NSDictionary *)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        NSDictionary * qset = json[@"data"][@"question_set"];
+        
+        QuestionDetail = [[QuestionDetails alloc] init];
+        
+        [QuestionDetail setID:[NSNumber numberWithInteger:[qset[@"id"] integerValue]]];
+        [QuestionDetail setTopicID:[NSNumber numberWithInteger:[qset[@"topic_id"] integerValue]]];
+        [QuestionDetail setCreatedBy:[NSNumber numberWithInteger:[qset[@"created_by"] integerValue]]];
+        [QuestionDetail setIsPublished:[qset[@"is_published"] boolValue]];
+        [QuestionDetail setCanBeDeleted:[qset[@"can_be_deleted"] boolValue]];
+        [QuestionDetail setShowAnswer:[qset[@"show_answer"] boolValue]];
+        [QuestionDetail setShareToSchool:[qset[@"share_to_school"] boolValue]];
+        [QuestionDetail setInstruction:qset[@"instruction"]];
+        [QuestionDetail setType:qset[@"type"]];
+        [QuestionDetail setTopic:qset[@"topic"]];
+        [QuestionDetail setTitle:qset[@"title"]];
+        [QuestionDetail setExpiry:qset[@"expiry"]];
+        [QuestionDetail setQuestionType:qset[@"question_type"]];
+        [QuestionDetail setSubject:qset[@"subject"]];
+        [QuestionDetail setChallengeInfo:[Challenge challengeWithInfo:qset[@"challenge_info"]]];
+        
+        NSMutableArray * temp = [NSMutableArray arrayWithCapacity:[json[@"data"][@"questions"] count]];
+        
+        for (NSDictionary * qstn in json[@"data"][@"questions"]) {
+            Question * item = [[Question alloc] init];
+            
+            [item setID:[NSNumber numberWithInteger:[qstn[@"id"] integerValue]]];
+            [item setQuestion:qstn[@"text"]];
+            [item setRight:qstn[@"right"]];
+            [item setWrong:qstn[@"wrong"]];
+            
+            [temp addObject:item];
+        }
+        
+        [QuestionDetail setQuestions:temp];
+        
+        [self.QuestionTitle setText:QuestionDetail.Title];
+        [self.QuestionClassification setText:QuestionDetail.Subject];
+        [self.QuestionTopic setText:QuestionDetail.Topic];
+        [self.QuestionType setText:QuestionDetail.Type];
     }
 }
 

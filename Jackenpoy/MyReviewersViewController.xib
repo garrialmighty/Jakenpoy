@@ -49,6 +49,7 @@
                             </fragment>
                         </attributedString>
                     </state>
+                    <state key="highlighted" backgroundImage="Default.png"/>
                     <connections>
                         <action selector="edit" destination="-1" eventType="touchUpInside" id="QZQ-hZ-G70"/>
                     </connections>
@@ -73,6 +74,7 @@
                             </fragment>
                         </attributedString>
                     </state>
+                    <state key="highlighted" backgroundImage="Default.png"/>
                     <connections>
                         <action selector="print" destination="-1" eventType="touchUpInside" id="PAY-Hs-ESk"/>
                     </connections>
@@ -90,7 +92,7 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted">
+                    <state key="highlighted" backgroundImage="Default.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -130,6 +132,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Default.png" width="640" height="960"/>
         <image name="fb_logo.png" width="512" height="512"/>
     </resources>
 </document>

@@ -154,9 +154,31 @@ static NSInteger QuestionTypeSelected;
 #pragma mark UIButton
 - (IBAction)search
 {
-    [client getReviewersWithGradeLevel:GradeLevelSelected
-                               Subject:SubjectSelected
-                          QuestionType:QuestionTypeSelected
+    NSString * gradeLvlID;
+    NSString * subjectID;
+    NSString * questionID;
+    
+    for (NSString * key in GradeLevels) {
+        if ([GradeLevels[key] isEqualToString:GradeLevelList[GradeLevelSelected]]) {
+            gradeLvlID = key;
+        }
+    }
+    
+    for (NSString * key in Subjects) {
+        if ([Subjects[key] isEqualToString:SubjectList[SubjectSelected]]) {
+            subjectID = key;
+        }
+    }
+    
+    for (NSString * key in QuestionTypes) {
+        if ([QuestionTypes[key] isEqualToString:QuestionTypeList[QuestionTypeSelected]]) {
+            questionID = key;
+        }
+    }
+    
+    [client getReviewersWithGradeLevel:[gradeLvlID integerValue]
+                               Subject:[subjectID integerValue]
+                          QuestionType:[questionID integerValue]
                                   Code:@"blank_0"//self.Code.text
                                 Author:@"blank_0"//self.Author.text
                                  Limit:@"blank_0"
@@ -357,7 +379,7 @@ static NSInteger QuestionTypeSelected;
 #pragma mark JakenpoyHTTPClient
 -(void)jakenpoyHTTPClientdidUpdateWithQuestionTypes:(NSDictionary *)json
 {
-    //for (NSString * key in json) NSLog(@"QT:%@ %@",key, json[key]);
+    for (NSString * key in json) NSLog(@"QT:%@ %@",key, json[key]);
     
     if ([json[@"status"] isEqualToString:@"success"]) {
         //NSLog(@"%@",[json[@"data"][@"question_types_name"] class]);
@@ -382,7 +404,7 @@ static NSInteger QuestionTypeSelected;
 
 -(void)jakenpoyHTTPClientdidUpdateWithGradeLevels:(NSDictionary *)json
 {
-    //for (NSString * key in json) NSLog(@"GL:%@ %@",key, json[key]);
+    for (NSString * key in json) NSLog(@"GL:%@ %@",key, json[key]);
     
     if ([json[@"status"] isEqualToString:@"success"]) {
         //NSLog(@"%@",json[@"data"][@"grade_levels_name"]);
@@ -408,7 +430,7 @@ static NSInteger QuestionTypeSelected;
 
 -(void)jakenpoyHTTPClientdidUpdateWithSubjects:(NSDictionary *)json
 {
-    //for (NSString * key in json) NSLog(@"S:%@ %@",key, json[key]);
+    for (NSString * key in json) NSLog(@"S:%@ %@",key, json[key]);
     
     if ([json[@"status"] isEqualToString:@"success"]) {
         //NSLog(@"%@",json[@"data"][@"subjects"]);
@@ -456,7 +478,6 @@ static NSInteger QuestionTypeSelected;
         [prlpvc setQuestionTypeList:QuestionTypeList];
         [prlpvc setSubjectList:SubjectList];
         
-        NSLog(@"search %d",reviewerList.count);
         [prlpvc setReviewList:reviewerList];
     }
 }

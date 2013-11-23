@@ -195,6 +195,20 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
+- (void)getQuestionWithID:(NSNumber *)qid
+{
+    [self getPath:@"getquestion"
+       parameters:@{@"qsetId":qid, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithQuestionDetails:)])
+                  [self.delegate jakenpoyHTTPClientdidUpdateWithQuestionDetails:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
 - (void)getReviewersWithGradeLevel:(NSInteger)gl
                            Subject:(NSInteger)sbj
                       QuestionType:(NSInteger)qt
@@ -247,6 +261,20 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
     NSLog(@"getting my reviewers");
     [self getPath:@"getMyReviewers"
        parameters:@{@"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)getReportForReviewer:(NSNumber *)ID
+{
+    [self getPath:@"analysisreport"
+       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];

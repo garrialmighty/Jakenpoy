@@ -33,6 +33,7 @@
 - (void)getGradeLevels;
 - (void)getSubjects;
 - (void)getAssignees;
+- (void)getQuestionWithID:(NSNumber *)qid;
 - (void)getReviewersWithGradeLevel:(NSInteger)gl
                            Subject:(NSInteger)sbj
                       QuestionType:(NSInteger)qt
@@ -54,6 +55,7 @@
 
 // My Reviewers
 - (void)getMyReviewers;
+- (void)getReportForReviewer:(NSNumber *)ID;
 - (void)unpublish:(NSNumber *)ID;
 - (void)publish:(NSNumber *)ID;
 - (void)rateReviewer:(NSNumber *)ID Rating:(NSNumber *)rate;
@@ -81,4 +83,5 @@
 -(void)jakenpoyHTTPClientdidUpdateWithSubjects:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithAssignees:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithKids:(NSDictionary *)json;
+-(void)jakenpoyHTTPClientdidUpdateWithQuestionDetails:(NSDictionary *)json;
 @end

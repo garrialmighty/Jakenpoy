@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		4A22730517C1FF1E00019CAD /* MyReviewersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A22730317C1FF1E00019CAD /* MyReviewersViewController.m */; };
 		4A22730617C1FF1E00019CAD /* MyReviewersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A22730417C1FF1E00019CAD /* MyReviewersViewController.xib */; };
+		730417DA1832899A00051BB0 /* MRReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730417D81832899A00051BB0 /* MRReportViewController.m */; };
+		730417DB1832899A00051BB0 /* MRReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730417D91832899A00051BB0 /* MRReportViewController.xib */; };
+		730417DD18328A1200051BB0 /* MRReportViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730417DC18328A1200051BB0 /* MRReportViewController_iPad.xib */; };
+		730417E018328C6E00051BB0 /* MRReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730417DF18328C6E00051BB0 /* MRReportCell.m */; };
+		730417E218328C8800051BB0 /* MRReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730417E118328C8800051BB0 /* MRReportCell.xib */; };
 		73104455182530280028CC62 /* jakenpoy_logo_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 73104454182530280028CC62 /* jakenpoy_logo_ipad.png */; };
 		73192C7D17E779110080F339 /* RandomizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73192C7B17E779110080F339 /* RandomizerViewController.m */; };
 		73192C7E17E779110080F339 /* RandomizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C7C17E779110080F339 /* RandomizerViewController.xib */; };
@@ -25,6 +30,8 @@
 		732181F117FC89D9005442A8 /* new logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 732181F017FC89D9005442A8 /* new logo.png */; };
 		733077FE17E62DBA00B76FA5 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FB17E62DBA00B76FA5 /* SVSegmentedControl.m */; };
 		733077FF17E62DBA00B76FA5 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FD17E62DBA00B76FA5 /* SVSegmentedThumb.m */; };
+		734A608A1837B55900E64184 /* ReviewerReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 734A60891837B55900E64184 /* ReviewerReport.m */; };
+		734A608D1837BA9900E64184 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 734A608C1837BA9900E64184 /* Question.m */; };
 		735428EF17ECA57D006CDF8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 735428EE17ECA57D006CDF8F /* Default-568h@2x.png */; };
 		735428F117ECA584006CDF8F /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 735428F017ECA584006CDF8F /* Default~iphone.png */; };
 		7359929B17E86EC10051E3D2 /* MRMKKidsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7359929917E86EC10051E3D2 /* MRMKKidsViewController.m */; };
@@ -104,6 +111,7 @@
 		73A4AB0317E9863A00F52277 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A4AB0217E9863A00F52277 /* Security.framework */; };
 		73A5057C180D9684006792CA /* MyReviewersViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */; };
 		73A893AA17F6107A00A9F4FD /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A893A917F6107A00A9F4FD /* Student.m */; };
+		73B05789183E388F003649AC /* QuestionDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B05788183E388F003649AC /* QuestionDetails.m */; };
 		73B5E9DB17E6E2C000F53186 /* PRLFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5E9D317E6E2C000F53186 /* PRLFinishViewController.m */; };
 		73B5E9DC17E6E2C000F53186 /* PRLFinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B5E9D417E6E2C000F53186 /* PRLFinishViewController.xib */; };
 		73B5E9DD17E6E2C000F53186 /* PRLPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5E9D617E6E2C000F53186 /* PRLPickViewController.m */; };
@@ -133,6 +141,13 @@
 		4A22730217C1FF1E00019CAD /* MyReviewersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyReviewersViewController.h; sourceTree = "<group>"; };
 		4A22730317C1FF1E00019CAD /* MyReviewersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyReviewersViewController.m; sourceTree = "<group>"; };
 		4A22730417C1FF1E00019CAD /* MyReviewersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyReviewersViewController.xib; sourceTree = "<group>"; };
+		730417D71832899A00051BB0 /* MRReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRReportViewController.h; sourceTree = "<group>"; };
+		730417D81832899A00051BB0 /* MRReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRReportViewController.m; sourceTree = "<group>"; };
+		730417D91832899A00051BB0 /* MRReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRReportViewController.xib; sourceTree = "<group>"; };
+		730417DC18328A1200051BB0 /* MRReportViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRReportViewController_iPad.xib; sourceTree = "<group>"; };
+		730417DE18328C6E00051BB0 /* MRReportCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRReportCell.h; sourceTree = "<group>"; };
+		730417DF18328C6E00051BB0 /* MRReportCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRReportCell.m; sourceTree = "<group>"; };
+		730417E118328C8800051BB0 /* MRReportCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRReportCell.xib; sourceTree = "<group>"; };
 		73104454182530280028CC62 /* jakenpoy_logo_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jakenpoy_logo_ipad.png; sourceTree = "<group>"; };
 		73192C7A17E779110080F339 /* RandomizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomizerViewController.h; sourceTree = "<group>"; };
 		73192C7B17E779110080F339 /* RandomizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomizerViewController.m; sourceTree = "<group>"; };
@@ -157,6 +172,10 @@
 		733077FB17E62DBA00B76FA5 /* SVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
 		733077FC17E62DBA00B76FA5 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
 		733077FD17E62DBA00B76FA5 /* SVSegmentedThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedThumb.m; sourceTree = "<group>"; };
+		734A60881837B55900E64184 /* ReviewerReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewerReport.h; sourceTree = "<group>"; };
+		734A60891837B55900E64184 /* ReviewerReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewerReport.m; sourceTree = "<group>"; };
+		734A608B1837BA9900E64184 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		734A608C1837BA9900E64184 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		735428EE17ECA57D006CDF8F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		735428F017ECA584006CDF8F /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		7359929817E86EC10051E3D2 /* MRMKKidsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKKidsViewController.h; sourceTree = "<group>"; };
@@ -264,6 +283,8 @@
 		73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyReviewersViewController_iPad.xib; sourceTree = "<group>"; };
 		73A893A817F6107A00A9F4FD /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		73A893A917F6107A00A9F4FD /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		73B05787183E388F003649AC /* QuestionDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetails.h; sourceTree = "<group>"; };
+		73B05788183E388F003649AC /* QuestionDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetails.m; sourceTree = "<group>"; };
 		73B5E9D217E6E2C000F53186 /* PRLFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRLFinishViewController.h; path = "Pick a Reviewer from the Library/PRLFinishViewController.h"; sourceTree = "<group>"; };
 		73B5E9D317E6E2C000F53186 /* PRLFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRLFinishViewController.m; path = "Pick a Reviewer from the Library/PRLFinishViewController.m"; sourceTree = "<group>"; };
 		73B5E9D417E6E2C000F53186 /* PRLFinishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PRLFinishViewController.xib; path = "Pick a Reviewer from the Library/PRLFinishViewController.xib"; sourceTree = "<group>"; };
@@ -380,10 +401,11 @@
 		4A5C10A717C328DA00C89CA6 /* My Reviewers */ = {
 			isa = PBXGroup;
 			children = (
-				4A22730417C1FF1E00019CAD /* MyReviewersViewController.xib */,
-				73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */,
+				73C612EB1840EEAE0046388B /* xib */,
 				4A22730217C1FF1E00019CAD /* MyReviewersViewController.h */,
 				4A22730317C1FF1E00019CAD /* MyReviewersViewController.m */,
+				730417D71832899A00051BB0 /* MRReportViewController.h */,
+				730417D81832899A00051BB0 /* MRReportViewController.m */,
 			);
 			name = "My Reviewers";
 			sourceTree = "<group>";
@@ -490,6 +512,8 @@
 				7384854217F54CDC00529CE1 /* TDCourseCell.m */,
 				7384854417F54CDC00529CE1 /* TDSectionCell.h */,
 				7384854517F54CDC00529CE1 /* TDSectionCell.m */,
+				730417DE18328C6E00051BB0 /* MRReportCell.h */,
+				730417DF18328C6E00051BB0 /* MRReportCell.m */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -503,6 +527,7 @@
 				7384854017F54CDC00529CE1 /* TDCheckboxCell.xib */,
 				7384854317F54CDC00529CE1 /* TDCourseCell.xib */,
 				7384854617F54CDC00529CE1 /* TDSectionCell.xib */,
+				730417E118328C8800051BB0 /* MRReportCell.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -524,6 +549,12 @@
 				73A893A917F6107A00A9F4FD /* Student.m */,
 				7374F94117FB02290017ECB0 /* School.h */,
 				7374F94217FB02290017ECB0 /* School.m */,
+				734A60881837B55900E64184 /* ReviewerReport.h */,
+				734A60891837B55900E64184 /* ReviewerReport.m */,
+				734A608B1837BA9900E64184 /* Question.h */,
+				734A608C1837BA9900E64184 /* Question.m */,
+				73B05787183E388F003649AC /* QuestionDetails.h */,
+				73B05788183E388F003649AC /* QuestionDetails.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -632,6 +663,17 @@
 			children = (
 				73A4AAF617E97BD200F52277 /* MRSFinishViewController.xib */,
 				73A4AAF917E97BD200F52277 /* MRSQuestionViewController.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		73C612EB1840EEAE0046388B /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				4A22730417C1FF1E00019CAD /* MyReviewersViewController.xib */,
+				73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */,
+				730417D91832899A00051BB0 /* MRReportViewController.xib */,
+				730417DC18328A1200051BB0 /* MRReportViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -790,6 +832,7 @@
 				73FED444180EBC6D00162BC7 /* PRLPickViewController_iPad.xib in Resources */,
 				73D3F88517E4ADCE00149106 /* HPFinishViewController.xib in Resources */,
 				73D3F88717E4ADCE00149106 /* HPLoginViewController.xib in Resources */,
+				730417E218328C8800051BB0 /* MRReportCell.xib in Resources */,
 				7384858B17F54E5700529CE1 /* reviewers_icon.png in Resources */,
 				73D3F88917E4ADCE00149106 /* HPRegisterViewController.xib in Resources */,
 				7372F16A180F7C4900BD2850 /* MyAccountViewController_iPad.xib in Resources */,
@@ -799,6 +842,7 @@
 				73B5E9DC17E6E2C000F53186 /* PRLFinishViewController.xib in Resources */,
 				7372F172180F7D1C00BD2850 /* TDMenuViewController_iPad.xib in Resources */,
 				7384858517F54E5700529CE1 /* logout_icon.png in Resources */,
+				730417DB1832899A00051BB0 /* MRReportViewController.xib in Resources */,
 				73B5E9DE17E6E2C000F53186 /* PRLPickViewController.xib in Resources */,
 				7384858617F54E5700529CE1 /* make_icon.png in Resources */,
 				73B5E9E017E6E2C000F53186 /* PRLSearchViewController.xib in Resources */,
@@ -815,6 +859,7 @@
 				7384859017F54E5700529CE1 /* star_blank.png in Resources */,
 				73192C8F17E783B10080F339 /* TDMenuViewController.xib in Resources */,
 				73192C9117E783B10080F339 /* TDSaveViewController.xib in Resources */,
+				730417DD18328A1200051BB0 /* MRReportViewController_iPad.xib in Resources */,
 				73192C9317E783B10080F339 /* TDSectionViewController.xib in Resources */,
 				737119E31813C2E8004217BA /* AboutUsViewController_iPad.xib in Resources */,
 				732181F117FC89D9005442A8 /* new logo.png in Resources */,
@@ -859,6 +904,7 @@
 			files = (
 				73EC79B217B914BE00F2E12E /* main.m in Sources */,
 				7384856017F54D8B00529CE1 /* Challenge.m in Sources */,
+				734A608A1837B55900E64184 /* ReviewerReport.m in Sources */,
 				7384856117F54D8B00529CE1 /* JakenpoyHTTPClient.m in Sources */,
 				73EC79B617B914BE00F2E12E /* AppDelegate.m in Sources */,
 				4A22730517C1FF1E00019CAD /* MyReviewersViewController.m in Sources */,
@@ -872,6 +918,7 @@
 				7384854F17F54CDC00529CE1 /* TDCourseCell.m in Sources */,
 				73B5E9DD17E6E2C000F53186 /* PRLPickViewController.m in Sources */,
 				7384856217F54D8B00529CE1 /* Reviewer.m in Sources */,
+				73B05789183E388F003649AC /* QuestionDetails.m in Sources */,
 				73B5E9DF17E6E2C000F53186 /* PRLSearchViewController.m in Sources */,
 				73192C7D17E779110080F339 /* RandomizerViewController.m in Sources */,
 				73192C8C17E783B10080F339 /* TDCourseViewController.m in Sources */,
@@ -894,11 +941,14 @@
 				7384854917F54CDC00529CE1 /* PRLReviewerCell.m in Sources */,
 				73A4AAEE17E97B7600F52277 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				73A4AAEF17E97B7600F52277 /* AFPropertyListRequestOperation.m in Sources */,
+				730417DA1832899A00051BB0 /* MRReportViewController.m in Sources */,
+				730417E018328C6E00051BB0 /* MRReportCell.m in Sources */,
 				73A4AAF017E97B7600F52277 /* AFURLConnectionOperation.m in Sources */,
 				7384855117F54CDC00529CE1 /* TDSectionCell.m in Sources */,
 				73A4AAF117E97B7600F52277 /* AFXMLRequestOperation.m in Sources */,
 				73A4AAF217E97B7600F52277 /* UIImageView+AFNetworking.m in Sources */,
 				7384854D17F54CDC00529CE1 /* TDCheckboxCell.m in Sources */,
+				734A608D1837BA9900E64184 /* Question.m in Sources */,
 				73A4AAFA17E97BD200F52277 /* MRSFinishViewController.m in Sources */,
 				73A4AAFC17E97BD200F52277 /* MRSQuestionViewController.m in Sources */,
 			);

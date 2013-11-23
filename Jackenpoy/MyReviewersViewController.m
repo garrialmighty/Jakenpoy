@@ -8,6 +8,7 @@
 
 #import "MyReviewersViewController.h"
 #import "PRLFinishViewController.h"
+#import "MRReportViewController.h"
 #import "ReviewerCell.h"
 #import "Reviewer.h"
 #import "Challenge.h"
@@ -79,7 +80,7 @@ NSIndexPath * SelectedIndex;
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - IBaction
+#pragma mark - IBAction
 - (IBAction)publish
 {
     Reviewer * reviewer = ReviewersList[SelectedIndex.row];
@@ -112,7 +113,19 @@ NSIndexPath * SelectedIndex;
                    Assigned:nil];*/
     }
     else {
-        // Do something for reports
+        MRReportViewController * mrrvc;
+        
+        if (isPhone) {
+            mrrvc = [[MRReportViewController alloc] initWithNibName:@"MRReportViewController" bundle:nil];
+        }
+        else {
+            mrrvc = [[MRReportViewController alloc] initWithNibName:@"MRReportViewController_iPad" bundle:nil];
+        }
+        
+        Reviewer * reviewer = ReviewersList[SelectedIndex.row];
+        [mrrvc setReviewerID:reviewer.ID];
+        
+        [self.navigationController pushViewController:mrrvc animated:YES];
     }
 }
 

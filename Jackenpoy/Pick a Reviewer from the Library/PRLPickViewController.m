@@ -80,7 +80,6 @@ static NSIndexPath * IndexToUpdate;
 - (void)setReviewList:(NSArray *)list
 {
     ReviewList = list;
-    NSLog(@"pick %d",list.count);
     //[self.Table reloadData];
 }
 
@@ -198,7 +197,6 @@ static NSIndexPath * IndexToUpdate;
 #pragma mark - UITableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"table %d",ReviewList.count);
     return ReviewList.count;
 }
 

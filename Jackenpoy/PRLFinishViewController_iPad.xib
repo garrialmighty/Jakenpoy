@@ -407,7 +407,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted">
+                    <state key="highlighted" backgroundImage="Default.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -459,6 +459,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </toolbar>
     </objects>
     <resources>
+        <image name="Default.png" width="320" height="480"/>
         <image name="cb_glossy_off.png" width="44" height="43"/>
         <image name="cb_glossy_on.png" width="44" height="43"/>
         <image name="drop_down.png" width="85" height="77"/>

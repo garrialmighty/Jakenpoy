@@ -25,6 +25,8 @@ static CGFloat MenuCellHeight;
 
 static CGFloat MenuCellCount = 8;
 
+static NSIndexPath * SelectedRow = nil;
+
 @interface AppDelegate()
 @property (strong) UILabel * ScreenLabel;
 @property (strong) UIButton * BackButton;
@@ -221,7 +223,7 @@ static CGFloat MenuCellCount = 8;
     [menuLabel setBackgroundColor:[UIColor clearColor]];
     [menuLabel setTextColor:[UIColor colorWithRed:0.18 green:0.53 blue:0.94 alpha:1]];
     
-    [[cell subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    //[[cell subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     switch (indexPath.row) {
         case 0:
@@ -384,7 +386,11 @@ static CGFloat MenuCellCount = 8;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (SelectedRow.row != indexPath.row) {
+        [tableView deselectRowAtIndexPath:SelectedRow animated:YES];
+    }
+    
+    SelectedRow = indexPath;
     
     UIViewController * newPage = nil;
     
@@ -588,6 +594,7 @@ static CGFloat MenuCellCount = 8;
                 break;
         }
     }
+    
 }
 
 @end
