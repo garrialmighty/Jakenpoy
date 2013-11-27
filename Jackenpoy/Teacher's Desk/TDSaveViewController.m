@@ -47,7 +47,7 @@ static NSArray * SubjectList;
     Selected = 0;
     SubjectList = @[@"Subject 1", @"Subject 2", @"Subject 3", @"Subject 4", @"Subject 5"];
     
-    SVSegmentedControl * jackenpoySC = [[SVSegmentedControl alloc] initWithSectionTitles:@[@"Customize",@"Jackenpoy Default"]];
+    SVSegmentedControl * jackenpoySC = [[SVSegmentedControl alloc] initWithSectionTitles:@[@"Customized",@"Jakenpoy Default"]];
     [jackenpoySC setHeight:45];
     [jackenpoySC.thumb setTintColor:[UIColor colorWithRed:1 green:0.76 blue:0.57 alpha:1]];
     [jackenpoySC.thumb setTextColor:[UIColor blackColor]];

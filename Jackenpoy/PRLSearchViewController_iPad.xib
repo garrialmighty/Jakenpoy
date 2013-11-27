@@ -81,7 +81,7 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -111,7 +111,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -131,7 +131,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -157,8 +157,6 @@
                     <constraints>
                         <constraint firstAttribute="centerY" secondItem="6vo-eA-bSO" secondAttribute="centerY" id="2sS-dI-dxn"/>
                         <constraint firstAttribute="centerX" secondItem="6vo-eA-bSO" secondAttribute="centerX" id="O32-xb-CR4"/>
-                        <constraint firstAttribute="centerX" secondItem="6vo-eA-bSO" secondAttribute="centerX" id="gp9-N3-1Dj"/>
-                        <constraint firstAttribute="centerY" secondItem="6vo-eA-bSO" secondAttribute="centerY" id="vmC-Df-y7b"/>
                     </constraints>
                 </view>
             </subviews>
@@ -201,6 +199,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Default.png" width="320" height="480"/>
+        <image name="feedback.png" width="320" height="320"/>
     </resources>
 </document>

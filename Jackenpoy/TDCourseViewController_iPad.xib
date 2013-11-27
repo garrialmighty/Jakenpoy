@@ -30,7 +30,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -59,7 +59,7 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png"/>
+                    <state key="highlighted" backgroundImage="feedback.png"/>
                     <connections>
                         <action selector="editCourse" destination="-1" eventType="touchUpInside" id="Gpd-KS-Ros"/>
                     </connections>
@@ -77,7 +77,7 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png"/>
+                    <state key="highlighted" backgroundImage="feedback.png"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -99,6 +99,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Default.png" width="320" height="480"/>
+        <image name="feedback.png" width="320" height="320"/>
     </resources>
 </document>

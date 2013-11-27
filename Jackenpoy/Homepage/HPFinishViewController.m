@@ -256,6 +256,7 @@ static NSInteger Selected;
 
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error
 {
+    [self hideLoadingScreen];
     NSLog(@"E:%@",error);
 }
 #pragma mark UIPickerView

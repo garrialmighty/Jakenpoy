@@ -29,7 +29,7 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png"/>
+                    <state key="highlighted" backgroundImage="feedback.png"/>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWA-dy-5qa" userLabel="Edit Section">
                     <rect key="frame" x="0.0" y="910" width="384" height="70"/>
@@ -43,7 +43,7 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png"/>
+                    <state key="highlighted" backgroundImage="feedback.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysf-OM-3Jq" userLabel="Add Section Button">
                     <rect key="frame" x="418" y="20" width="340" height="70"/>
@@ -58,7 +58,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -91,6 +91,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Default.png" width="320" height="480"/>
+        <image name="feedback.png" width="320" height="320"/>
     </resources>
 </document>

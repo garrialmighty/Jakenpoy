@@ -11,7 +11,7 @@
 @interface MRReportCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *Number;
 @property (weak, nonatomic) IBOutlet UILabel *Question;
-@property (weak, nonatomic) IBOutlet UILabel *Right;
+@property (weak, nonatomic) IBOutlet UILabel *Correct;
+@property (weak, nonatomic) IBOutlet UILabel *Percentage;
 @property (weak, nonatomic) IBOutlet UILabel *Wrong;
-@property (weak, nonatomic) IBOutlet UILabel *Result;
 @end

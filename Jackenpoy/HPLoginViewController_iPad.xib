@@ -81,7 +81,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -100,7 +100,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -116,7 +116,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -154,8 +154,6 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="centerY" secondItem="4cp-97-7C4" secondAttribute="centerY" id="05L-HZ-UZ2"/>
-                        <constraint firstAttribute="centerY" secondItem="4cp-97-7C4" secondAttribute="centerY" id="JA1-xS-jsx"/>
-                        <constraint firstAttribute="centerX" secondItem="4cp-97-7C4" secondAttribute="centerX" id="KFf-F5-UcR"/>
                         <constraint firstAttribute="centerX" secondItem="4cp-97-7C4" secondAttribute="centerX" id="iWL-k3-qhB"/>
                     </constraints>
                 </view>
@@ -220,7 +218,7 @@
         </toolbar>
     </objects>
     <resources>
-        <image name="Default.png" width="320" height="480"/>
+        <image name="feedback.png" width="320" height="320"/>
         <image name="jakenpoy_logo_ipad.png" width="1067" height="533"/>
         <image name="new logo.png" width="764" height="689"/>
     </resources>

@@ -268,7 +268,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -307,7 +307,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Default.png" width="640" height="960"/>
+        <image name="feedback.png" width="320" height="320"/>
         <image name="selected.png" width="150" height="91"/>
         <image name="unselected.png" width="150" height="91"/>
     </resources>

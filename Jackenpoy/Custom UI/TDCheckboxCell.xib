@@ -14,9 +14,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27" userLabel="Assign Drop Down">
+                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27" userLabel="Assign Drop Down">
                         <rect key="frame" x="10" y="0.0" width="44" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43" id="Aeg-ho-ERI"/>
+                            <constraint firstAttribute="width" constant="44" id="QzY-Oc-X8l"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <state key="normal" backgroundImage="cb_glossy_off.png">
                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,7 +69,7 @@
     </objects>
     <resources>
         <image name="Default.png" width="640" height="960"/>
-        <image name="cb_glossy_off.png" width="44" height="43"/>
-        <image name="cb_glossy_on.png" width="44" height="43"/>
+        <image name="cb_glossy_off.png" width="535" height="531"/>
+        <image name="cb_glossy_on.png" width="535" height="531"/>
     </resources>
 </document>

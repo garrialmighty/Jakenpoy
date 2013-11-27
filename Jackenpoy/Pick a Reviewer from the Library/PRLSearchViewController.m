@@ -405,7 +405,12 @@ static NSInteger QuestionTypeSelected;
         QuestionTypes = json[@"data"][@"question_types_name"];
         [QuestionTypeList removeAllObjects];
         
-        for (NSString * key in QuestionTypes) {
+        NSArray *sortedKeys = [QuestionTypes allKeys];
+        sortedKeys = [sortedKeys sortedArrayUsingComparator:^(id a, id b) {
+            return [a compare:b options:NSNumericSearch];
+        }];
+        
+        for (NSString * key in sortedKeys) {
             [QuestionTypeList addObject:QuestionTypes[key]];
         }
         
@@ -422,7 +427,7 @@ static NSInteger QuestionTypeSelected;
 
 -(void)jakenpoyHTTPClientdidUpdateWithGradeLevels:(NSDictionary *)json
 {
-    for (NSString * key in json) NSLog(@"GL:%@ %@",key, json[key]);
+    //for (NSString * key in json) NSLog(@"GL:%@ %@",key, json[key]);
     
     if ([json[@"status"] isEqualToString:@"success"]) {
         //NSLog(@"%@",json[@"data"][@"grade_levels_name"]);
@@ -430,8 +435,12 @@ static NSInteger QuestionTypeSelected;
         GradeLevels = json[@"data"][@"grade_levels_name"];
         [GradeLevelList removeAllObjects];
         
-        for (NSString * key in GradeLevels) {
-            //NSLog(@"%@ %d",GradeLevels[key], [key integerValue]);
+        NSArray *sortedKeys = [GradeLevels allKeys];
+        sortedKeys = [sortedKeys sortedArrayUsingComparator:^(id a, id b) {
+            return [a compare:b options:NSNumericSearch];
+        }];
+        
+        for (NSString * key in sortedKeys) {
             [GradeLevelList addObject:GradeLevels[key]];
         }
         
@@ -448,7 +457,7 @@ static NSInteger QuestionTypeSelected;
 
 -(void)jakenpoyHTTPClientdidUpdateWithSubjects:(NSDictionary *)json
 {
-    for (NSString * key in json) NSLog(@"S:%@ %@",key, json[key]);
+    //for (NSString * key in json) NSLog(@"S:%@ %@",key, json[key]);
     
     if ([json[@"status"] isEqualToString:@"success"]) {
         //NSLog(@"%@",json[@"data"][@"subjects"]);
@@ -456,7 +465,12 @@ static NSInteger QuestionTypeSelected;
         Subjects = json[@"data"][@"subjects"];
         [SubjectList removeAllObjects];
         
-        for (NSString * key in Subjects) {
+        NSArray *sortedKeys = [Subjects allKeys];
+        sortedKeys = [sortedKeys sortedArrayUsingComparator:^(id a, id b) {
+            return [a compare:b options:NSNumericSearch];
+        }];
+        
+        for (NSString * key in sortedKeys) {
             [SubjectList addObject:Subjects[key]];
         }
         
@@ -502,6 +516,7 @@ static NSInteger QuestionTypeSelected;
 
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error
 {
+    [self hideLoadingScreen];
     NSLog(@"E:%@",error);
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error Searching" message:@"Make sure you are connected to the internet and please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];

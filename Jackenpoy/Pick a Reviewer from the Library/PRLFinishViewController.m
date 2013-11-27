@@ -8,6 +8,7 @@
 
 #import "PRLFinishViewController.h"
 #import "PRLSearchViewController.h"
+#import "PRLQuestionCell.h"
 #import "Reviewer.h"
 #import "Challenge.h"
 #import "Assignees.h"
@@ -22,6 +23,9 @@ static NSInteger Step2Selected;
 static NSArray * SubjectList;
 static NSArray * QuestionTypeList;
 static NSMutableArray * AssigneeList;
+
+static NSString * CurrentTitle;
+static NSString * CurrentInstruction;
 
 @interface PRLFinishViewController ()
 @property (strong, nonatomic) IBOutlet UIToolbar *Toolbar;
@@ -56,6 +60,7 @@ static NSMutableArray * AssigneeList;
 @property (weak, nonatomic) IBOutlet UILabel *QuestionClassification;
 @property (weak, nonatomic) IBOutlet UILabel *QuestionTopic;
 @property (weak, nonatomic) IBOutlet UILabel *QuestionType;
+@property (weak, nonatomic) IBOutlet UITableView *QuestionTable;
 
 @property (weak, nonatomic) IBOutlet UIView *LoadingScreen;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spinner;
@@ -126,8 +131,14 @@ static NSMutableArray * AssigneeList;
      Classification:(uint)cl
            Assigned:(NSArray *)a
 {
-    [self.Title setText:t];
-    [self.Instructions setText:i];
+    //[self.Title setText:t];
+    //[self.Instructions setText:i];
+    
+    CurrentTitle = t;
+    CurrentInstruction = i;
+    [self.Title setPlaceholder:t];
+    [self.Instructions setPlaceholder:i];
+    
     [self.Expiry setText:e];
     [self.Code setText:[NSString stringWithFormat:@"%d",c]];
     [self.ShareToPublicCheckbox setSelected:stp];
@@ -239,10 +250,13 @@ static NSMutableArray * AssigneeList;
         }
         
         [self showLoadingScreen];
+        
+        NSString * titleToSend = self.Title.text.length>0?self.Title.text:CurrentTitle.length>0?CurrentTitle:@"blank_0";
+        
         if (isPhone) {
             [client pickReviewerWithQuestionID:ReviewerID
                                      Assigness:assigneeString.length>0?assigneeString:@"blank_0"
-                                         Title:self.Title.text.length>0?self.Title.text:@"blank_0"
+                                         Title:titleToSend
                                     Expiration:self.Expiry.text.length>0?self.Expiry.text:@"blank_0"
                                           Code:self.Code.text.length>0?self.Code.text:@"blank_0"
                                  ShareToPublic:[self.ShareToPublicCheckbox isSelected]
@@ -255,7 +269,7 @@ static NSMutableArray * AssigneeList;
             
             [client pickReviewerWithQuestionID:ReviewerID
                                      Assigness:assigneeString.length>0?assigneeString:@"blank_0"
-                                         Title:self.Title.text.length>0?self.Title.text:@"blank_0"
+                                         Title:titleToSend
                                     Expiration:[format stringFromDate:self.DatePicker.date]
                                           Code:self.Code.text.length>0?self.Code.text:@"blank_0"
                                  ShareToPublic:[self.ShareToPublicCheckbox isSelected]
@@ -378,34 +392,48 @@ static NSMutableArray * AssigneeList;
 #pragma mark UITableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return AssigneeList.count;
+    return tableView.tag==1337?QuestionDetail.Questions.count:AssigneeList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //TDCheckboxCell * cell = [tableView dequeueReusableCellWithIdentifier:@"CHECKBOXCELL"];
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"CHECKBOXCELL"];
+    UITableViewCell * cell;
     
-    if (cell == nil) {
-        //NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"TDCheckboxCell" owner:self options:nil];
-        //cell = topObj[0];
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CHECKBOXCELL"];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    }
-    
-    if ([[tableView indexPathsForSelectedRows] containsObject:indexPath]) {
-        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    if (tableView.tag==1337) {
+        cell = cell = [tableView dequeueReusableCellWithIdentifier:@"QUESTIONCELL"];
+        
+        if (cell == nil) {
+            NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"PRLQuestionCell" owner:self options:nil];
+            PRLQuestionCell *qCell = topObj[0];
+            Question * qItem = QuestionDetail.Questions[indexPath.row];
+            
+            [qCell.Question setText:qItem.Question];
+            [qCell.Right setText:qItem.Right];
+            [qCell.Wrong setText:qItem.Wrong];
+            
+            cell = qCell;
+        }
     }
     else {
-        [cell setAccessoryType:UITableViewCellAccessoryNone];
-    }
-    
-    if (AssigneeList.count>0) {
-        //[cell.Section setText:[NSString stringWithFormat:@"Section %d",indexPath.row]];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CHECKBOXCELL"];
         
-        Assignees * kid = AssigneeList[indexPath.row];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CHECKBOXCELL"];
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        }
         
-        [cell.textLabel setText:kid.Name];
+        if ([[tableView indexPathsForSelectedRows] containsObject:indexPath]) {
+            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+        }
+        else {
+            [cell setAccessoryType:UITableViewCellAccessoryNone];
+        }
+        
+        if (AssigneeList.count>0) {
+            Assignees * kid = AssigneeList[indexPath.row];
+            
+            [cell.textLabel setText:kid.Name];
+        }
     }
     
     return cell;
@@ -439,6 +467,7 @@ static NSMutableArray * AssigneeList;
 
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error
 {
+    [self hideLoadingScreen];
     NSLog(@"%@",error);
 }
 
@@ -501,6 +530,8 @@ static NSMutableArray * AssigneeList;
         [self.QuestionClassification setText:QuestionDetail.Subject];
         [self.QuestionTopic setText:QuestionDetail.Topic];
         [self.QuestionType setText:QuestionDetail.Type];
+        
+        [self.QuestionTable reloadData];
     }
 }
 
@@ -508,16 +539,25 @@ static NSMutableArray * AssigneeList;
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //CheckedList[indexPath.row] = @NO;
-    
-    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-    [cell setAccessoryType:UITableViewCellAccessoryNone];
+    if (tableView.tag==1337) {
+        // Do nothing
+    }
+    else {
+        UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //CheckedList[indexPath.row] = @YES;
-    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    if (tableView.tag==1337) {
+        // Do nothing
+    }
+    else {
+        UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
 }
 
 #pragma mark UITextField

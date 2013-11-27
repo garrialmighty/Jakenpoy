@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Garri Adrian Nablo. All rights reserved.
 //
 
+#import <FacebookSDK/FacebookSDK.h>
 #import "MyReviewersViewController.h"
 #import "PRLFinishViewController.h"
 #import "MRReportViewController.h"
@@ -133,6 +134,21 @@ NSIndexPath * SelectedIndex;
 {
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil message:@"Printing" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
+}
+
+- (IBAction)shareToFB
+{
+    [FBSession openActiveSessionWithPublishPermissions:@[@"publish_actions"]
+                                       defaultAudience:FBSessionDefaultAudienceFriends
+                                          allowLoginUI:YES
+                                     completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                         // Post reviewer
+                                         if (status == FBSessionStateOpen) {
+                                             // Do actual post
+                                         }
+                                         
+                                         //[FBDialogs presentShareDialog];
+                                     }];
 }
 
 #pragma mark - UITableView Data Source

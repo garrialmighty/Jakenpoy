@@ -71,10 +71,12 @@ static JakenpoyHTTPClient * client;
         
         [cell.Number setText:[NSString stringWithFormat:@"%d",indexPath.row+1]];
         [cell.Question setText:item.Question];
-        [cell.Right setText:item.Right];
-        [cell.Wrong setText:item.Wrong];
+        [cell.Correct setText:[NSString stringWithFormat:@"%@/%@",Report.QuestionArray[indexPath.row], Report.TotalStudents]];
+        [cell.Percentage setText:[NSString stringWithFormat:@"%0.0f%%",([Report.QuestionArray[indexPath.row] floatValue]/Report.TotalStudents.floatValue)*100]];
+
+        [cell.Wrong setText:Report.Wrong[indexPath.row]];
         
-        BOOL isRight = [Report.QuestionArray[indexPath.row] boolValue];
+        /*BOOL isRight = [Report.QuestionArray[indexPath.row] boolValue];
         
         if (isRight) {
             [cell.Result setText:@"Right"];
@@ -83,7 +85,7 @@ static JakenpoyHTTPClient * client;
         else {
             [cell.Result setText:@"Wrong"];
             [cell.Result setBackgroundColor:[UIColor colorWithRed:0.62 green:0.06 blue:0 alpha:1]];
-        }
+        }*/
     }
     
     return cell;
@@ -153,11 +155,6 @@ static JakenpoyHTTPClient * client;
     NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"MRReportCell" owner:self options:nil];
     MRReportCell * returnView = topObj[0];
     [returnView setBackgroundColor:[UIColor whiteColor]];
-    [returnView.Number setText:@"No."];
-    [returnView.Question setText:@"Question"];
-    [returnView.Right setText:@"Right"];
-    [returnView.Wrong setText:@"Wrong"];
-    [returnView.Result setText:@"Result"];
     
     return returnView;
 }

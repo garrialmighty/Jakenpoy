@@ -87,7 +87,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -103,7 +103,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="Default.png">
+                    <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -122,8 +122,6 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="EBk-s0-kfe" secondAttribute="centerX" id="DwR-0C-y6z"/>
-                        <constraint firstAttribute="centerX" secondItem="EBk-s0-kfe" secondAttribute="centerX" id="HDx-cf-V1V"/>
-                        <constraint firstAttribute="centerY" secondItem="EBk-s0-kfe" secondAttribute="centerY" id="x3z-OL-xe6"/>
                         <constraint firstAttribute="centerY" secondItem="EBk-s0-kfe" secondAttribute="centerY" id="yT0-mo-Fb0"/>
                     </constraints>
                 </view>
@@ -182,6 +180,6 @@
         </toolbar>
     </objects>
     <resources>
-        <image name="Default.png" width="320" height="480"/>
+        <image name="feedback.png" width="320" height="320"/>
     </resources>
 </document>

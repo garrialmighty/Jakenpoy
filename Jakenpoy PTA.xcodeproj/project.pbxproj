@@ -14,6 +14,9 @@
 		730417DD18328A1200051BB0 /* MRReportViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730417DC18328A1200051BB0 /* MRReportViewController_iPad.xib */; };
 		730417E018328C6E00051BB0 /* MRReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730417DF18328C6E00051BB0 /* MRReportCell.m */; };
 		730417E218328C8800051BB0 /* MRReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730417E118328C8800051BB0 /* MRReportCell.xib */; };
+		730C7E541845DF3B008E74F3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730C7E531845DF3B008E74F3 /* FacebookSDK.framework */; };
+		730C7E581845F30D008E74F3 /* cb_glossy_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 730C7E561845F30D008E74F3 /* cb_glossy_off.png */; };
+		730C7E591845F30D008E74F3 /* cb_glossy_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 730C7E571845F30D008E74F3 /* cb_glossy_on.png */; };
 		73104455182530280028CC62 /* jakenpoy_logo_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 73104454182530280028CC62 /* jakenpoy_logo_ipad.png */; };
 		73192C7D17E779110080F339 /* RandomizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73192C7B17E779110080F339 /* RandomizerViewController.m */; };
 		73192C7E17E779110080F339 /* RandomizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C7C17E779110080F339 /* RandomizerViewController.xib */; };
@@ -27,6 +30,8 @@
 		73192C9317E783B10080F339 /* TDSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C8B17E783B10080F339 /* TDSectionViewController.xib */; };
 		73192C9717E7844C0080F339 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73192C9517E7844C0080F339 /* AboutUsViewController.m */; };
 		73192C9817E7844C0080F339 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C9617E7844C0080F339 /* AboutUsViewController.xib */; };
+		731A960F1846557D00F3A2BC /* PRLQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 731A960E1846557D00F3A2BC /* PRLQuestionCell.m */; };
+		731A9611184655D600F3A2BC /* PRLQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731A9610184655D600F3A2BC /* PRLQuestionCell.xib */; };
 		732181F117FC89D9005442A8 /* new logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 732181F017FC89D9005442A8 /* new logo.png */; };
 		733077FE17E62DBA00B76FA5 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FB17E62DBA00B76FA5 /* SVSegmentedControl.m */; };
 		733077FF17E62DBA00B76FA5 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FD17E62DBA00B76FA5 /* SVSegmentedThumb.m */; };
@@ -70,8 +75,6 @@
 		7384856317F54D8B00529CE1 /* UserType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384855E17F54D8B00529CE1 /* UserType.m */; };
 		7384857D17F54E5700529CE1 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856517F54E5700529CE1 /* back.png */; };
 		7384857E17F54E5700529CE1 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856617F54E5700529CE1 /* back_arrow.png */; };
-		7384857F17F54E5700529CE1 /* cb_glossy_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856717F54E5700529CE1 /* cb_glossy_off.png */; };
-		7384858017F54E5700529CE1 /* cb_glossy_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856817F54E5700529CE1 /* cb_glossy_on.png */; };
 		7384858117F54E5700529CE1 /* drop_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856917F54E5700529CE1 /* drop_down.png */; };
 		7384858217F54E5700529CE1 /* jakenpoy_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856A17F54E5700529CE1 /* jakenpoy_logo.png */; };
 		7384858317F54E5700529CE1 /* jakenpoy_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856B17F54E5700529CE1 /* jakenpoy_text.png */; };
@@ -126,6 +129,7 @@
 		73D3F88817E4ADCE00149106 /* HPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D3F88217E4ADCE00149106 /* HPRegisterViewController.m */; };
 		73D3F88917E4ADCE00149106 /* HPRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D3F88317E4ADCE00149106 /* HPRegisterViewController.xib */; };
 		73D9E8071828E8AA004D70C2 /* fb_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D9E8061828E8AA004D70C2 /* fb_logo.png */; };
+		73E725751843AFA400CBFE66 /* feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = 73E725741843AFA400CBFE66 /* feedback.png */; };
 		73EC79A617B914BE00F2E12E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC79A517B914BE00F2E12E /* UIKit.framework */; };
 		73EC79A817B914BE00F2E12E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC79A717B914BE00F2E12E /* Foundation.framework */; };
 		73EC79AA17B914BE00F2E12E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC79A917B914BE00F2E12E /* CoreGraphics.framework */; };
@@ -148,6 +152,9 @@
 		730417DE18328C6E00051BB0 /* MRReportCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRReportCell.h; sourceTree = "<group>"; };
 		730417DF18328C6E00051BB0 /* MRReportCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRReportCell.m; sourceTree = "<group>"; };
 		730417E118328C8800051BB0 /* MRReportCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRReportCell.xib; sourceTree = "<group>"; };
+		730C7E531845DF3B008E74F3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		730C7E561845F30D008E74F3 /* cb_glossy_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_glossy_off.png; sourceTree = "<group>"; };
+		730C7E571845F30D008E74F3 /* cb_glossy_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_glossy_on.png; sourceTree = "<group>"; };
 		73104454182530280028CC62 /* jakenpoy_logo_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jakenpoy_logo_ipad.png; sourceTree = "<group>"; };
 		73192C7A17E779110080F339 /* RandomizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomizerViewController.h; sourceTree = "<group>"; };
 		73192C7B17E779110080F339 /* RandomizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomizerViewController.m; sourceTree = "<group>"; };
@@ -167,6 +174,9 @@
 		73192C9417E7844B0080F339 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
 		73192C9517E7844C0080F339 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		73192C9617E7844C0080F339 /* AboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
+		731A960D1846557D00F3A2BC /* PRLQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRLQuestionCell.h; sourceTree = "<group>"; };
+		731A960E1846557D00F3A2BC /* PRLQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRLQuestionCell.m; sourceTree = "<group>"; };
+		731A9610184655D600F3A2BC /* PRLQuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLQuestionCell.xib; sourceTree = "<group>"; };
 		732181F017FC89D9005442A8 /* new logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new logo.png"; sourceTree = "<group>"; };
 		733077FA17E62DBA00B76FA5 /* SVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
 		733077FB17E62DBA00B76FA5 /* SVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
@@ -228,8 +238,6 @@
 		7384855E17F54D8B00529CE1 /* UserType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserType.m; sourceTree = "<group>"; };
 		7384856517F54E5700529CE1 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		7384856617F54E5700529CE1 /* back_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_arrow.png; sourceTree = "<group>"; };
-		7384856717F54E5700529CE1 /* cb_glossy_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_glossy_off.png; sourceTree = "<group>"; };
-		7384856817F54E5700529CE1 /* cb_glossy_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_glossy_on.png; sourceTree = "<group>"; };
 		7384856917F54E5700529CE1 /* drop_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop_down.png; sourceTree = "<group>"; };
 		7384856A17F54E5700529CE1 /* jakenpoy_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jakenpoy_logo.png; sourceTree = "<group>"; };
 		7384856B17F54E5700529CE1 /* jakenpoy_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jakenpoy_text.png; sourceTree = "<group>"; };
@@ -305,6 +313,7 @@
 		73D3F88217E4ADCE00149106 /* HPRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPRegisterViewController.m; path = Homepage/HPRegisterViewController.m; sourceTree = "<group>"; };
 		73D3F88317E4ADCE00149106 /* HPRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPRegisterViewController.xib; path = Homepage/HPRegisterViewController.xib; sourceTree = "<group>"; };
 		73D9E8061828E8AA004D70C2 /* fb_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_logo.png; sourceTree = "<group>"; };
+		73E725741843AFA400CBFE66 /* feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback.png; sourceTree = "<group>"; };
 		73EC79A217B914BE00F2E12E /* Jakenpoy PTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jakenpoy PTA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73EC79A517B914BE00F2E12E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		73EC79A717B914BE00F2E12E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -331,6 +340,7 @@
 				73A4AAFF17E9843200F52277 /* SystemConfiguration.framework in Frameworks */,
 				73A4AB0117E985BD00F52277 /* MobileCoreServices.framework in Frameworks */,
 				73A4AB0317E9863A00F52277 /* Security.framework in Frameworks */,
+				730C7E541845DF3B008E74F3 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +524,8 @@
 				7384854517F54CDC00529CE1 /* TDSectionCell.m */,
 				730417DE18328C6E00051BB0 /* MRReportCell.h */,
 				730417DF18328C6E00051BB0 /* MRReportCell.m */,
+				731A960D1846557D00F3A2BC /* PRLQuestionCell.h */,
+				731A960E1846557D00F3A2BC /* PRLQuestionCell.m */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -528,6 +540,7 @@
 				7384854317F54CDC00529CE1 /* TDCourseCell.xib */,
 				7384854617F54CDC00529CE1 /* TDSectionCell.xib */,
 				730417E118328C8800051BB0 /* MRReportCell.xib */,
+				731A9610184655D600F3A2BC /* PRLQuestionCell.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -568,8 +581,9 @@
 				7384856517F54E5700529CE1 /* back.png */,
 				7384856617F54E5700529CE1 /* back_arrow.png */,
 				73104454182530280028CC62 /* jakenpoy_logo_ipad.png */,
-				7384856717F54E5700529CE1 /* cb_glossy_off.png */,
-				7384856817F54E5700529CE1 /* cb_glossy_on.png */,
+				73E725741843AFA400CBFE66 /* feedback.png */,
+				730C7E561845F30D008E74F3 /* cb_glossy_off.png */,
+				730C7E571845F30D008E74F3 /* cb_glossy_on.png */,
 				7384856917F54E5700529CE1 /* drop_down.png */,
 				7384856A17F54E5700529CE1 /* jakenpoy_logo.png */,
 				7384856B17F54E5700529CE1 /* jakenpoy_text.png */,
@@ -698,12 +712,13 @@
 		73EC79A417B914BE00F2E12E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				73EC79A517B914BE00F2E12E /* UIKit.framework */,
-				73EC79A717B914BE00F2E12E /* Foundation.framework */,
 				73EC79A917B914BE00F2E12E /* CoreGraphics.framework */,
+				730C7E531845DF3B008E74F3 /* FacebookSDK.framework */,
+				73EC79A717B914BE00F2E12E /* Foundation.framework */,
 				73A4AB0017E985BD00F52277 /* MobileCoreServices.framework */,
 				73A4AB0217E9863A00F52277 /* Security.framework */,
 				73A4AAFE17E9843200F52277 /* SystemConfiguration.framework */,
+				73EC79A517B914BE00F2E12E /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -824,7 +839,6 @@
 				73EC79B817B914BE00F2E12E /* Default.png in Resources */,
 				7384858A17F54E5700529CE1 /* random_icon.png in Resources */,
 				7384858817F54E5700529CE1 /* my_icon.png in Resources */,
-				7384857F17F54E5700529CE1 /* cb_glossy_off.png in Resources */,
 				4A22730617C1FF1E00019CAD /* MyReviewersViewController.xib in Resources */,
 				7384858917F54E5700529CE1 /* pick_icon.png in Resources */,
 				7384857E17F54E5700529CE1 /* back_arrow.png in Resources */,
@@ -837,6 +851,7 @@
 				73D3F88917E4ADCE00149106 /* HPRegisterViewController.xib in Resources */,
 				7372F16A180F7C4900BD2850 /* MyAccountViewController_iPad.xib in Resources */,
 				7372F16E180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib in Resources */,
+				73E725751843AFA400CBFE66 /* feedback.png in Resources */,
 				7384855217F54CDC00529CE1 /* TDSectionCell.xib in Resources */,
 				735428EF17ECA57D006CDF8F /* Default-568h@2x.png in Resources */,
 				73B5E9DC17E6E2C000F53186 /* PRLFinishViewController.xib in Resources */,
@@ -874,15 +889,16 @@
 				7384858317F54E5700529CE1 /* jakenpoy_text.png in Resources */,
 				73D9E8071828E8AA004D70C2 /* fb_logo.png in Resources */,
 				73A5057C180D9684006792CA /* MyReviewersViewController_iPad.xib in Resources */,
-				7384858017F54E5700529CE1 /* cb_glossy_on.png in Resources */,
 				7372F16C180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib in Resources */,
 				7359929C17E86EC10051E3D2 /* MRMKKidsViewController.xib in Resources */,
 				735992A117E86ECA0051E3D2 /* MRMKRegisterViewController.xib in Resources */,
 				7384854E17F54CDC00529CE1 /* TDCheckboxCell.xib in Resources */,
 				7384855017F54CDC00529CE1 /* TDCourseCell.xib in Resources */,
 				7384858E17F54E5700529CE1 /* next.png in Resources */,
+				730C7E581845F30D008E74F3 /* cb_glossy_off.png in Resources */,
 				7372F170180F7D0400BD2850 /* TDCourseViewController_iPad.xib in Resources */,
 				7384859217F54E5700529CE1 /* star_half.png in Resources */,
+				731A9611184655D600F3A2BC /* PRLQuestionCell.xib in Resources */,
 				735428F117ECA584006CDF8F /* Default~iphone.png in Resources */,
 				7381634D180C197300B32A35 /* HPRegisterViewController_iPad.xib in Resources */,
 				7384858717F54E5700529CE1 /* manage_icon.png in Resources */,
@@ -891,6 +907,7 @@
 				73A4AAFB17E97BD200F52277 /* MRSFinishViewController.xib in Resources */,
 				73CE81391806B72F00FD2957 /* Settings.bundle in Resources */,
 				7372F168180F7C2000BD2850 /* PRLSearchViewController_iPad.xib in Resources */,
+				730C7E591845F30D008E74F3 /* cb_glossy_on.png in Resources */,
 				73A4AAFD17E97BD200F52277 /* MRSQuestionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -950,6 +967,7 @@
 				7384854D17F54CDC00529CE1 /* TDCheckboxCell.m in Sources */,
 				734A608D1837BA9900E64184 /* Question.m in Sources */,
 				73A4AAFA17E97BD200F52277 /* MRSFinishViewController.m in Sources */,
+				731A960F1846557D00F3A2BC /* PRLQuestionCell.m in Sources */,
 				73A4AAFC17E97BD200F52277 /* MRSQuestionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1028,6 +1046,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jakenpoy Corporation (UK7Q5V5E4G)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/DorkLord/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jackenpoy/Jakenpoy PTA-Prefix.pch";
 				INFOPLIST_FILE = "Jackenpoy/Jakenpoy PTA-Info.plist";
@@ -1043,6 +1065,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jakenpoy Corporation (UK7Q5V5E4G)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/DorkLord/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jackenpoy/Jakenpoy PTA-Prefix.pch";
 				INFOPLIST_FILE = "Jackenpoy/Jakenpoy PTA-Info.plist";

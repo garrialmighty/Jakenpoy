@@ -175,6 +175,7 @@
 
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error
 {
+    [self hideLoadingScreen];
     //NSLog(@"E:%@",error);
 }
 

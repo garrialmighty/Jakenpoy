@@ -38,5 +38,18 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>FacebookAppID</key>
+	<string>115037308671185</string>
+	<key>FacebookDisplayName</key>
+	<string>Jakenpoy PTA</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb115037308671185</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

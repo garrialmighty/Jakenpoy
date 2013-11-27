@@ -67,7 +67,6 @@
             [self.view setCenter:CGPointMake(ViewCenter.x, y)];
         }];
     }
-
 }
 
 - (void)showLoadingScreen
@@ -156,6 +155,7 @@
 
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error
 {
+    [self hideLoadingScreen];
     NSLog(@"E:%@",error);
 }
 
