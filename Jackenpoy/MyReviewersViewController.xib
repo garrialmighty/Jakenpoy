@@ -8,9 +8,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyReviewersViewController">
             <connections>
                 <outlet property="FBButton" destination="4ro-SN-vwU" id="bMZ-YR-dWB"/>
+                <outlet property="LoadingScreen" destination="mly-dJ-QjL" id="PgY-7p-2gd"/>
                 <outlet property="PrintButton" destination="27" id="58"/>
                 <outlet property="ReportsButton" destination="20" id="57"/>
                 <outlet property="RepublishButton" destination="34" id="59"/>
+                <outlet property="Spinner" destination="LnC-LI-jcX" id="iOV-LA-Bf8"/>
                 <outlet property="Table" destination="4" id="mnH-Gh-g0x"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -110,14 +112,35 @@
                     <state key="normal" image="fb_logo.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="shareToFB" destination="-1" eventType="touchUpInside" id="eA5-D7-wJu"/>
+                    </connections>
                 </button>
+                <view hidden="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mly-dJ-QjL" userLabel="Loading Screen">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LnC-LI-jcX">
+                            <rect key="frame" x="142" y="222" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="LnC-LI-jcX" secondAttribute="centerX" id="I9v-8e-J6v"/>
+                        <constraint firstAttribute="centerY" secondItem="LnC-LI-jcX" secondAttribute="centerY" id="Qbn-BN-kRD"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="mly-dJ-QjL" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="1qK-fI-JI2"/>
                 <constraint firstAttribute="bottom" secondItem="4ro-SN-vwU" secondAttribute="bottom" id="4HP-Aq-hbI"/>
                 <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="84d-N6-R3Y"/>
+                <constraint firstAttribute="bottom" secondItem="mly-dJ-QjL" secondAttribute="bottom" id="BgW-CS-aON"/>
                 <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" id="O7i-Vq-nl6"/>
                 <constraint firstItem="4ro-SN-vwU" firstAttribute="leading" secondItem="34" secondAttribute="trailing" id="TAW-bI-xyF"/>
+                <constraint firstAttribute="trailing" secondItem="mly-dJ-QjL" secondAttribute="trailing" id="U8W-a6-vua"/>
                 <constraint firstAttribute="bottom" secondItem="34" secondAttribute="bottom" id="ddN-dv-zsr"/>
                 <constraint firstAttribute="trailing" secondItem="4ro-SN-vwU" secondAttribute="trailing" id="eIe-TQ-sWy"/>
                 <constraint firstAttribute="bottom" secondItem="20" secondAttribute="bottom" id="hxv-P7-r7H"/>
@@ -126,6 +149,7 @@
                 <constraint firstItem="4ro-SN-vwU" firstAttribute="top" secondItem="4" secondAttribute="bottom" id="n33-UJ-4ID"/>
                 <constraint firstItem="34" firstAttribute="leading" secondItem="27" secondAttribute="trailing" id="tlx-Eh-OUa"/>
                 <constraint firstItem="27" firstAttribute="leading" secondItem="20" secondAttribute="trailing" id="uSi-i2-b3E"/>
+                <constraint firstItem="mly-dJ-QjL" firstAttribute="top" secondItem="1" secondAttribute="top" id="vOs-9c-Hp9"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

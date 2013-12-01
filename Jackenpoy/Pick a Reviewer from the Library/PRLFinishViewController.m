@@ -171,7 +171,6 @@ static NSString * CurrentInstruction;
 {
     NSMutableAttributedString * NFUlString;
     [sender setEnabled:NO];
-    
     if (sender.tag == 1) {
         NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
         [self.NFButton setTag:1];
@@ -536,6 +535,15 @@ static NSString * CurrentInstruction;
 }
 
 #pragma mark UITableView
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"PRLQuestionCell" owner:self options:nil];
+    PRLQuestionCell * returnView = topObj[0];
+    [returnView setBackgroundColor:[UIColor whiteColor]];
+    
+    return returnView;
+}
+
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //CheckedList[indexPath.row] = @NO;

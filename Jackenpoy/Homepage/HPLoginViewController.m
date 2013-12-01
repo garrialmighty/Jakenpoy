@@ -176,6 +176,32 @@
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error
 {
     [self hideLoadingScreen];
+    
+    if (client.LoginErrorFlag==1) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error Loggin in" message:@"Please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+    else if (client.LoginErrorFlag==2) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server Error"
+                              //message:[NSString stringWithFormat:@"%@",error]
+                                                        message:@"Please try again."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else {
+        
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Logging in"
+                          //message:[NSString stringWithFormat:@"%@",error]
+                                                    message:@"There was an error logging in. Make sure you have internet access and try again."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
     //NSLog(@"E:%@",error);
 }
 

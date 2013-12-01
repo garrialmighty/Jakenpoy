@@ -16,6 +16,7 @@
 @property(strong) NSString * UserID;
 @property(strong) NSString * Token;
 @property(strong) NSString * UserName;
+@property(assign) NSInteger LoginErrorFlag;
 @property(strong) UserType * Type;
 @property(weak) id<JakenpoyHTTPClientDelegate> delegate;
 
@@ -59,8 +60,9 @@
 - (void)unpublish:(NSNumber *)ID;
 - (void)publish:(NSNumber *)ID;
 - (void)rateReviewer:(NSNumber *)ID Rating:(NSNumber *)rate;
+- (void)getPDFLink:(NSNumber *)ID;
 
-// #pragma mark My Account
+// My Account
 - (void)updateName:(NSString *)name Email:(NSString *)email Password:(NSString *)password;
 
 // New
@@ -84,4 +86,5 @@
 -(void)jakenpoyHTTPClientdidUpdateWithAssignees:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithKids:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithQuestionDetails:(NSDictionary *)json;
+-(void)jakenpoyHTTPClientdidUpdateWithPDFLink:(NSDictionary *)json;
 @end

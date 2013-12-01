@@ -8,9 +8,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyReviewersViewController">
             <connections>
                 <outlet property="FBButton" destination="xtQ-ML-EZe" id="BVT-U7-mNJ"/>
+                <outlet property="LoadingScreen" destination="15q-ms-6u7" id="CvQ-Uu-JJl"/>
                 <outlet property="PrintButton" destination="R0F-61-oLu" id="Zhc-7b-6p7"/>
                 <outlet property="ReportsButton" destination="t7q-KC-cRj" id="fMh-vS-Kz1"/>
                 <outlet property="RepublishButton" destination="4Js-DG-b7X" id="k6f-Ur-eX7"/>
+                <outlet property="Spinner" destination="Kdf-K5-RZh" id="7zD-6b-jhe"/>
                 <outlet property="Table" destination="I38-an-Ye1" id="vgX-8N-KPo"/>
                 <outlet property="view" destination="1" id="iOj-S0-6CY"/>
             </connections>
@@ -109,7 +111,25 @@
                     <state key="normal" image="fb_logo.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="shareToFB" destination="-1" eventType="touchUpInside" id="cNL-lM-UWJ"/>
+                    </connections>
                 </button>
+                <view hidden="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15q-ms-6u7" userLabel="Loading Screen">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kdf-K5-RZh">
+                            <rect key="frame" x="366" y="472" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="Kdf-K5-RZh" secondAttribute="centerY" id="2NU-r9-ND7"/>
+                        <constraint firstAttribute="centerX" secondItem="Kdf-K5-RZh" secondAttribute="centerX" id="uCm-h1-2JS"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -121,8 +141,12 @@
                 <constraint firstItem="xtQ-ML-EZe" firstAttribute="leading" secondItem="4Js-DG-b7X" secondAttribute="trailing" id="Hwf-Kf-rjK"/>
                 <constraint firstAttribute="trailing" secondItem="I38-an-Ye1" secondAttribute="trailing" id="IRh-IO-zqd"/>
                 <constraint firstAttribute="bottom" secondItem="t7q-KC-cRj" secondAttribute="bottom" id="Iax-pk-svM"/>
+                <constraint firstAttribute="trailing" secondItem="15q-ms-6u7" secondAttribute="trailing" id="Icf-bw-Dlj"/>
+                <constraint firstItem="15q-ms-6u7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="PmQ-hd-XUD"/>
+                <constraint firstItem="15q-ms-6u7" firstAttribute="top" secondItem="1" secondAttribute="top" id="fnt-F4-bUq"/>
                 <constraint firstItem="t7q-KC-cRj" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ivb-FJ-Rab"/>
                 <constraint firstItem="xtQ-ML-EZe" firstAttribute="top" secondItem="I38-an-Ye1" secondAttribute="bottom" id="kMC-o4-axv"/>
+                <constraint firstAttribute="bottom" secondItem="15q-ms-6u7" secondAttribute="bottom" id="sAr-Pi-8Oa"/>
                 <constraint firstAttribute="trailing" secondItem="xtQ-ML-EZe" secondAttribute="trailing" id="tm2-FZ-LTp"/>
                 <constraint firstItem="I38-an-Ye1" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="x2q-1y-wad"/>
                 <constraint firstAttribute="bottom" secondItem="R0F-61-oLu" secondAttribute="bottom" id="ykR-YX-5SP"/>

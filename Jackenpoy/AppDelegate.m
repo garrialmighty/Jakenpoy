@@ -211,7 +211,7 @@ static NSIndexPath * SelectedRow = nil;
     UILabel * cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, isPhone?200:500, MenuCellHeight)];
     
     UIView * highlight = [[UIView alloc] initWithFrame:CGRectMake(0, 0, isPhone?320:768, MenuCellHeight)];
-    [highlight setBackgroundColor:[UIColor blackColor]];
+    [highlight setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"feedback.png"]]];
     
     CGFloat logoY = (HeaderHeight - 35) / 2;
     UIImageView * logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jakenpoy_logo.png"]];

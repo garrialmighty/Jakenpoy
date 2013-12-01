@@ -41,18 +41,28 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="OhC-Se-W17" userLabel="Border">
+                        <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="cWL-0S-me6"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="iJT-JS-RRx" secondAttribute="bottom" id="1Kw-Be-NB6"/>
                     <constraint firstItem="K48-Be-SQf" firstAttribute="leading" secondItem="Qe7-9C-rtq" secondAttribute="leading" constant="5" id="8ve-rP-Ogz"/>
                     <constraint firstItem="a4V-4h-KbH" firstAttribute="leading" secondItem="K48-Be-SQf" secondAttribute="trailing" constant="10" id="DVH-mR-0Cw"/>
+                    <constraint firstAttribute="trailing" secondItem="OhC-Se-W17" secondAttribute="trailing" id="Ijy-jA-Nvx"/>
                     <constraint firstItem="iJT-JS-RRx" firstAttribute="top" secondItem="Qe7-9C-rtq" secondAttribute="top" id="PtK-DW-xqo"/>
                     <constraint firstAttribute="bottom" secondItem="a4V-4h-KbH" secondAttribute="bottom" id="QyA-hB-cU2"/>
+                    <constraint firstAttribute="bottom" secondItem="OhC-Se-W17" secondAttribute="bottom" id="V3u-a7-IWU"/>
                     <constraint firstItem="K48-Be-SQf" firstAttribute="top" secondItem="Qe7-9C-rtq" secondAttribute="top" id="VJ9-iM-ra4"/>
                     <constraint firstAttribute="bottom" secondItem="K48-Be-SQf" secondAttribute="bottom" id="ZkO-JN-wF5"/>
                     <constraint firstAttribute="trailing" secondItem="iJT-JS-RRx" secondAttribute="trailing" id="aer-PP-W7T"/>
                     <constraint firstItem="iJT-JS-RRx" firstAttribute="leading" secondItem="a4V-4h-KbH" secondAttribute="trailing" constant="10" id="cYF-iu-pCX"/>
                     <constraint firstItem="a4V-4h-KbH" firstAttribute="top" secondItem="Qe7-9C-rtq" secondAttribute="top" id="rLJ-sp-8qi"/>
+                    <constraint firstItem="OhC-Se-W17" firstAttribute="leading" secondItem="Qe7-9C-rtq" secondAttribute="leading" id="z77-e8-2iY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -62,4 +72,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Default.png" width="320" height="480"/>
+    </resources>
 </document>

@@ -647,7 +647,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <tableView clipsSubviews="YES" tag="1337" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="r07-B0-Q6e">
+                        <tableView clipsSubviews="YES" tag="1337" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="r07-B0-Q6e">
                             <rect key="frame" x="0.0" y="170" width="320" height="226"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -780,8 +780,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="centerY" secondItem="wDq-fG-wSx" secondAttribute="centerY" id="6s2-6N-eht"/>
-                        <constraint firstAttribute="centerX" secondItem="wDq-fG-wSx" secondAttribute="centerX" id="YDU-99-CV5"/>
                         <constraint firstAttribute="centerX" secondItem="wDq-fG-wSx" secondAttribute="centerX" id="fMe-TE-J0B"/>
                         <constraint firstAttribute="centerY" secondItem="wDq-fG-wSx" secondAttribute="centerY" id="zIr-sa-b7h"/>
                     </constraints>

@@ -74,30 +74,21 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
                        }
                    }
                    else {
-                       UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error Loggin in" message:responseObject[@"message"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                       [alert show];
+                       [self setLoginErrorFlag:1];
+                       if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                           [self.delegate jakenpoyHTTPClient:self didFailWithError:nil];
                    }
                    
                }
                else {
-                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server Error"
-                                         //message:[NSString stringWithFormat:@"%@",error]
-                                                                   message:@"Please try again."
-                                                                  delegate:nil
-                                                         cancelButtonTitle:@"OK"
-                                                         otherButtonTitles:nil];
-                   [alert show];
-
+                   [self setLoginErrorFlag:2];
+                   if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                       [self.delegate jakenpoyHTTPClient:self didFailWithError:nil];
                }
            }
            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-               UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Logging in"
-                                     //message:[NSString stringWithFormat:@"%@",error]
-                                                               message:@"There was an error logging in. Make sure you have internet access and try again."
-                                                              delegate:nil
-                                                     cancelButtonTitle:@"OK"
-                                                     otherButtonTitles:nil];
-               [alert show];
+               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                   [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
            }];
 }
 
@@ -323,6 +314,21 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidRateWithData:)])
                   [self.delegate jakenpoyHTTPClientdidRateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)getPDFLink:(NSNumber *)ID
+{
+    NSLog(@"getting link");
+    [self getPath:@"getPDF"
+       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithPDFLink:)])
+                  [self.delegate jakenpoyHTTPClientdidUpdateWithPDFLink:responseObject];
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
