@@ -9,6 +9,7 @@
 #import "PRLFinishViewController.h"
 #import "PRLSearchViewController.h"
 #import "PRLQuestionCell.h"
+#import "TDCheckboxCell.h"
 #import "Reviewer.h"
 #import "Challenge.h"
 #import "Assignees.h"
@@ -414,25 +415,31 @@ static NSString * CurrentInstruction;
         }
     }
     else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"CHECKBOXCELL"];
+        TDCheckboxCell *cCell = [tableView dequeueReusableCellWithIdentifier:@"CHECKBOXCELL"];
         
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CHECKBOXCELL"];
-            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"TDCheckboxCell" owner:self options:nil];
+            cCell = topObj[0];
+            //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CHECKBOXCELL"];
+            //[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         }
         
         if ([[tableView indexPathsForSelectedRows] containsObject:indexPath]) {
-            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+            //[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+            [cCell toggleCheckbox];
         }
         else {
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
+            //[cell setAccessoryType:UITableViewCellAccessoryNone];
         }
         
         if (AssigneeList.count>0) {
             Assignees * kid = AssigneeList[indexPath.row];
             
-            [cell.textLabel setText:kid.Name];
+            //[cell.textLabel setText:kid.Name];
+            [cCell.Section setText:kid.Name];
         }
+        
+        cell = cCell;
     }
     
     return cell;
@@ -541,7 +548,7 @@ static NSString * CurrentInstruction;
     PRLQuestionCell * returnView = topObj[0];
     [returnView setBackgroundColor:[UIColor whiteColor]];
     
-    return returnView;
+    return tableView.tag==1337?returnView:nil;
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -551,8 +558,11 @@ static NSString * CurrentInstruction;
         // Do nothing
     }
     else {
-        UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-        [cell setAccessoryType:UITableViewCellAccessoryNone];
+        //UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+        //[cell setAccessoryType:UITableViewCellAccessoryNone];
+        
+        TDCheckboxCell *cCell = [tableView cellForRowAtIndexPath:indexPath];
+        [cCell toggleCheckbox];
     }
 }
 
@@ -563,8 +573,11 @@ static NSString * CurrentInstruction;
         // Do nothing
     }
     else {
-        UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+        //UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+        //[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+        
+        TDCheckboxCell *cCell = [tableView cellForRowAtIndexPath:indexPath];
+        [cCell toggleCheckbox];
     }
 }
 

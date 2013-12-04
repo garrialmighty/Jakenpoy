@@ -53,6 +53,13 @@ NSIndexPath * SelectedIndex;
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [jakenpoyAppDelegate hideBackButton];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -83,7 +90,9 @@ NSIndexPath * SelectedIndex;
 - (IBAction)report
 {
     Student * kid = StudentList[SelectedIndex.row];
-    [client kidReport:kid.ID];
+#warning This causes an error
+    //[client kidReport:kid.ID];
+    [client studentReport:kid.ID];
 }
 
 #pragma mark - UITableView Data Source
@@ -132,7 +141,7 @@ NSIndexPath * SelectedIndex;
 
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(NSDictionary *)json
 {
-    NSLog(@"%@",json);
+    //NSLog(@"%@",json);
 }
 
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error

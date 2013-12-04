@@ -29,6 +29,15 @@
 - (void)createAccountUsingEmail:(NSString *)email Name:(NSString *)name Password:(NSString *)password Type:(NSString *)type School:(NSNumber *)schoolid;
 - (void)getSchools;
 
+// My Reviewers
+- (void)getMyReviewers;
+- (void)getReportForReviewer:(NSNumber *)ID;
+- (void)unpublish:(NSNumber *)ID;
+- (void)publish:(NSNumber *)ID;
+- (void)rateReviewer:(NSNumber *)ID Rating:(NSNumber *)rate;
+- (void)getPDFLink:(NSNumber *)ID;
+- (void)getAnalysisForReviewer:(NSNumber *)ID;
+
 //Pick a Reviewer from the Library
 - (void)getQuestionType;
 - (void)getGradeLevels;
@@ -54,20 +63,13 @@
                      ShareToSchool:(BOOL)sts
                   ShowRightAnswers:(BOOL)sa;
 
-// My Reviewers
-- (void)getMyReviewers;
-- (void)getReportForReviewer:(NSNumber *)ID;
-- (void)unpublish:(NSNumber *)ID;
-- (void)publish:(NSNumber *)ID;
-- (void)rateReviewer:(NSNumber *)ID Rating:(NSNumber *)rate;
-- (void)getPDFLink:(NSNumber *)ID;
-
 // My Account
 - (void)updateName:(NSString *)name Email:(NSString *)email Password:(NSString *)password;
 
-// New
+// Manage/Register My Kids
 - (void)deactivateGuardian:(NSNumber *)ID;
 - (void)kidReport:(NSNumber *)ID;
+- (void)studentReport:(NSNumber *)ID;
 - (void)getManageKids;
 
 @end

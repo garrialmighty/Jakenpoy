@@ -11,4 +11,5 @@
 @interface TDCheckboxCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *Checkbox;
 @property (weak, nonatomic) IBOutlet UILabel *Section;
+- (void)toggleCheckbox;
 @end

@@ -47,6 +47,8 @@ static NSInteger Selected;
     AccountTypeList = @[@"Parent/Guardian", @"Teacher", @"Both Parent/Guardian & Teacher"];
     
     [self.navigationItem setHidesBackButton:YES];
+    
+    
     NSMutableAttributedString *loginString = [[NSMutableAttributedString alloc] initWithString:@"Log-In"];
     [loginString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [loginString length])];
     [loginString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.18 green:0.53 blue:0.94 alpha:1] range:NSMakeRange(0, [loginString length])];

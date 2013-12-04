@@ -17,5 +17,6 @@
 @property (strong, nonatomic) UINavigationController *viewController;
 
 - (void)showMenuButtons;
-
+- (void)showBackButton;
+- (void)hideBackButton;
 @end

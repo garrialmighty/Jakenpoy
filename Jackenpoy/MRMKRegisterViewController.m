@@ -74,6 +74,7 @@ static NSInteger SectionSelected;
     [self.BoyButton setBackgroundImage:image forState:UIControlStateDisabled];
     [self.GirlButton setBackgroundImage:image forState:UIControlStateDisabled];
     
+    [jakenpoyAppDelegate showBackButton];
     [self.navigationItem setHidesBackButton:YES];
     
     [self.Email setInputAccessoryView:self.Toolbar];

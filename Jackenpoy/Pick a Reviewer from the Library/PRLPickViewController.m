@@ -59,6 +59,7 @@ static NSIndexPath * IndexToUpdate;
     QuestionTypeList = [[NSArray alloc] init];
     SubjectList = [[NSArray alloc] init];
     
+    [jakenpoyAppDelegate showBackButton];
     [self.navigationItem setHidesBackButton:YES];
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;

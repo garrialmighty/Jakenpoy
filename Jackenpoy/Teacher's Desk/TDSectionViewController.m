@@ -32,6 +32,7 @@ NSIndexPath * SelectedIndex;
 {
     [super viewDidLoad];
     
+    [jakenpoyAppDelegate showBackButton];
     [self.navigationItem setHidesBackButton:YES];
     
     NSMutableAttributedString *reportUlString = [[NSMutableAttributedString alloc] initWithString:@"Edit Section"];

@@ -19,6 +19,10 @@
 
 #import "Challenge.h"
 
+static NSString * RootPage;
+
+static BOOL isBackEnabled = NO;
+
 static CGFloat HeaderHeight;
 static CGFloat ScreenHeight;
 static CGFloat MenuCellHeight;
@@ -61,6 +65,8 @@ static NSIndexPath * SelectedRow = nil;
     [self initializeMenu];
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+    jakenpoyAppDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     return YES;
 }
@@ -114,19 +120,37 @@ static NSIndexPath * SelectedRow = nil;
     }
 }
 
+- (void)showBackButton
+{
+    isBackEnabled = YES;
+    RootPage = self.ScreenLabel.text;
+    [self.ScreenLabel setText:@"Back"];
+}
+
+- (void)hideBackButton
+{
+    isBackEnabled = NO;
+    [self.ScreenLabel setText:RootPage];
+}
+
 #pragma mark - IBAction Methods
 - (void)showMenu
 {
     [self.BackButton setUserInteractionEnabled:YES];
     
-    for (UIView * view in self.viewController.view.subviews) {
-        if (![view isKindOfClass:[UITableView class]] && ![view isKindOfClass:[UIButton class]]) {
-            [UIView animateWithDuration:0.4f animations:^{
-                CGRect currFrame = view.frame;
-                currFrame.origin.x = isPhone?245:525;
-                [view setFrame:currFrame];
-            }];
+    if (!isBackEnabled) {
+        for (UIView * view in self.viewController.view.subviews) {
+            if (![view isKindOfClass:[UITableView class]] && ![view isKindOfClass:[UIButton class]]) {
+                [UIView animateWithDuration:0.4f animations:^{
+                    CGRect currFrame = view.frame;
+                    currFrame.origin.x = isPhone?245:525;
+                    [view setFrame:currFrame];
+                }];
+            }
         }
+    }
+    else {
+        [self.viewController popViewControllerAnimated:YES];
     }
 }
 
@@ -396,7 +420,7 @@ static NSIndexPath * SelectedRow = nil;
     
     switch (indexPath.row) {
         case 1:
-            [self.ScreenLabel setText:@"My Reviewers"];
+            RootPage = @"My Reviewers";
             if (isPhone) {
                 newPage = [[MyReviewersViewController alloc] initWithNibName:@"MyReviewersViewController" bundle:nil];
             } else {
@@ -404,7 +428,7 @@ static NSIndexPath * SelectedRow = nil;
             }
             break;
         case 2:
-            [self.ScreenLabel setText:@"Pick a Reviewer from the Library"];
+            RootPage = @"Pick a Reviewer from the Library";
             if (isPhone) {
                 newPage = [[PRLSearchViewController alloc] initWithNibName:@"PRLSearchViewController" bundle:nil];
             } else {
@@ -431,7 +455,7 @@ static NSIndexPath * SelectedRow = nil;
     if (MenuCellCount == 7) {
         switch (indexPath.row) {
             case 3:
-                [self.ScreenLabel setText:@"Manage/Register My Kids"];
+                RootPage = @"Manage/Register My Kids";
                 if (isPhone) {
                     newPage = [[MRMKKidsViewController alloc] initWithNibName:@"MRMKKidsViewController" bundle:nil];
                 } else {
@@ -439,7 +463,7 @@ static NSIndexPath * SelectedRow = nil;
                 }
                 break;
             case 4:
-                [self.ScreenLabel setText:@"My Account"];
+                RootPage = @"My Account";
                 if (isPhone) {
                     newPage = [[MyAccountViewController alloc] initWithNibName:@"MyAccountViewController" bundle:nil];
                 } else {
@@ -447,7 +471,7 @@ static NSIndexPath * SelectedRow = nil;
                 }
                 break;
             case 5:
-                [self.ScreenLabel setText:@"About Us/Contact Us"];
+                RootPage = @"About Us/Contact Us";
                 if (isPhone) {
                     newPage = [[AboutUsViewController alloc] initWithNibName:@"AboutUsViewController" bundle:nil];
                 } else {
@@ -455,7 +479,7 @@ static NSIndexPath * SelectedRow = nil;
                 }
                 break;
             case 6:
-                [self.ScreenLabel setText:@"Get Started"];
+                RootPage = @"Get Started";
                 if (isPhone) {
                     newPage = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController" bundle:nil];
                 } else {
@@ -473,7 +497,7 @@ static NSIndexPath * SelectedRow = nil;
     else {
         switch (indexPath.row) {
             case 3:
-                [self.ScreenLabel setText:@"Teacher's Desk"];
+                RootPage = @"Teacher's Desk";
                 if (isPhone) {
                     newPage = [[TDMenuViewController alloc] initWithNibName:@"TDMenuViewController" bundle:nil];
                 } else {
@@ -481,7 +505,7 @@ static NSIndexPath * SelectedRow = nil;
                 }
                 break;
             case 4:
-                [self.ScreenLabel setText:@"Manage/Register My Kids"];
+                RootPage = @"Manage/Register My Kids";
                 if (isPhone) {
                     newPage = [[MRMKKidsViewController alloc] initWithNibName:@"MRMKKidsViewController" bundle:nil];
                 } else {
@@ -489,7 +513,7 @@ static NSIndexPath * SelectedRow = nil;
                 }
                 break;
             case 5:
-                [self.ScreenLabel setText:@"My Account"];
+                RootPage = @"My Account";
                 if (isPhone) {
                     newPage = [[MyAccountViewController alloc] initWithNibName:@"MyAccountViewController" bundle:nil];
                 } else {
@@ -497,7 +521,7 @@ static NSIndexPath * SelectedRow = nil;
                 }
                 break;
             case 6:
-                [self.ScreenLabel setText:@"About Us/Contact Us"];
+                RootPage = @"About Us/Contact Us";
                 if (isPhone) {
                     newPage = [[AboutUsViewController alloc] initWithNibName:@"AboutUsViewController" bundle:nil];
                 } else {
@@ -505,7 +529,7 @@ static NSIndexPath * SelectedRow = nil;
                 }
                 break;
             case 7:
-                [self.ScreenLabel setText:@"Get Started"];
+                RootPage = @"Get Started";
                 if (isPhone) {
                     newPage = [[HPLoginViewController alloc] initWithNibName:@"HPLoginViewController" bundle:nil];
                 } else {
@@ -525,6 +549,8 @@ static NSIndexPath * SelectedRow = nil;
         [self.viewController popViewControllerAnimated:NO];
         [self.viewController pushViewController:newPage animated:NO];
     }
+    
+    [self.ScreenLabel setText:RootPage];
     [self back];
 }
 

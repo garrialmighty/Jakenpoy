@@ -9,7 +9,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "MyReviewersViewController.h"
 #import "PRLFinishViewController.h"
-#import "MRReportViewController.h"
+#import "MRAnalysisViewController.h"
 #import "ReviewerCell.h"
 #import "Reviewer.h"
 #import "Challenge.h"
@@ -78,6 +78,13 @@ NSIndexPath * SelectedIndex;
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [jakenpoyAppDelegate hideBackButton];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -130,19 +137,22 @@ NSIndexPath * SelectedIndex;
                    Assigned:nil];*/
     }
     else {
-        MRReportViewController * mrrvc;
+        MRAnalysisViewController * mravc;
         
         if (isPhone) {
-            mrrvc = [[MRReportViewController alloc] initWithNibName:@"MRReportViewController" bundle:nil];
+            mravc = [[MRAnalysisViewController alloc] initWithNibName:@"MRAnalysisViewController" bundle:nil];
         }
         else {
-            mrrvc = [[MRReportViewController alloc] initWithNibName:@"MRReportViewController_iPad" bundle:nil];
+            mravc = [[MRAnalysisViewController alloc] initWithNibName:@"MRAnalysisViewController_iPad" bundle:nil];
         }
         
         Reviewer * reviewer = ReviewersList[SelectedIndex.row];
-        [mrrvc setReviewerID:reviewer.ID];
+        [mravc setReviewerID:reviewer.ID];
         
-        [self.navigationController pushViewController:mrrvc animated:YES];
+        [self.navigationController pushViewController:mravc animated:YES];
+        
+        Reviewer * r = ReviewersList[SelectedIndex.row];
+        [client getAnalysisForReviewer:r.ID];
     }
 }
 

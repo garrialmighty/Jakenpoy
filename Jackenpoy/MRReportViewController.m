@@ -37,6 +37,8 @@ static JakenpoyHTTPClient * client;
     client = [JakenpoyHTTPClient getSharedClient];
     [client setDelegate:self];
     [client getReportForReviewer:reviewerID];
+    
+    [self.navigationItem setHidesBackButton:YES];
     // Do any additional setup after loading the view from its nib.
 }
 

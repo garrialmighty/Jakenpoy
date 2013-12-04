@@ -61,8 +61,8 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
                        [self setType:[UserType userTypeWithRole:responseObject[@"roles"]]];
                        
                        // Enable going to menu
-                       AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-                       [delegate showMenuButtons];
+                       jakenpoyAppDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                       [jakenpoyAppDelegate showMenuButtons];
                        
                        // Save in app preferences
                        NSUserDefaults * pref = [NSUserDefaults standardUserDefaults];
@@ -336,6 +336,20 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
+- (void)getAnalysisForReviewer:(NSNumber *)ID
+{
+    [self getPath:@"report"
+       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
 #pragma mark My Account
 - (void)updateName:(NSString *)name Email:(NSString *)email Password:(NSString *)password
 {
@@ -375,6 +389,23 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+              NSLog(@"kid %@",responseObject);
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)studentReport:(NSNumber *)ID
+{
+    NSLog(@"reporting");
+    [self getPath:@"studentreport"
+       parameters:@{@"student_account_id":ID, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+              NSLog(@"student %@",responseObject);
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])

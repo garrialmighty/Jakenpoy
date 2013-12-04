@@ -67,7 +67,9 @@ static NSInteger QuestionTypeSelected;
     SubjectList = [[NSMutableArray alloc] initWithArray:@[@"No Subjects"]];
     QuestionTypeList = [[NSMutableArray alloc] initWithArray:@[@"No Question Types"]];
     
+    [jakenpoyAppDelegate showBackButton];
     [self.navigationItem setHidesBackButton:YES];
+
     
     [self.Code setInputAccessoryView:self.Toolbar];
     [self.Author setInputAccessoryView:self.Toolbar];
@@ -82,6 +84,13 @@ static NSInteger QuestionTypeSelected;
     isSubject = NO;
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [jakenpoyAppDelegate hideBackButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -505,7 +514,16 @@ static NSInteger QuestionTypeSelected;
         }
         
         [self hideLoadingScreen];
-        PRLPickViewController * prlpvc = [[PRLPickViewController alloc] initWithNibName:@"PRLPickViewController" bundle:nil List:reviewerList];
+        PRLPickViewController * prlpvc;
+        
+        if (isPhone) {
+            prlpvc = [[PRLPickViewController alloc] initWithNibName:@"PRLPickViewController" bundle:nil List:reviewerList];
+        }
+        else {
+            
+            prlpvc = [[PRLPickViewController alloc] initWithNibName:@"PRLPickViewController_iPad" bundle:nil List:reviewerList];
+        }
+        
         [self.navigationController pushViewController:prlpvc animated:YES];
         [prlpvc setQuestionTypeList:QuestionTypeList];
         [prlpvc setSubjectList:SubjectList];

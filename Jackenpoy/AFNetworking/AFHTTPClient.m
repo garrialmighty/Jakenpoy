@@ -520,13 +520,13 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
                 NSLog(@"after%@",url);
             }
-            else if ([path isEqualToString:@"unpublish"] || [path isEqualToString:@"publish"] || [path isEqualToString:@"analysisreport"] || [path isEqualToString:@"getquestion"] || [path isEqualToString:@"getPDF"]) {
+            else if ([path isEqualToString:@"unpublish"] || [path isEqualToString:@"publish"] || [path isEqualToString:@"analysisreport"] || [path isEqualToString:@"getquestion"] || [path isEqualToString:@"getPDF"] || [path isEqualToString:@"report"]) {
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@",parameters[@"qsetId"], parameters[@"userId"], parameters[@"token"]]];
             }
             else if ([path isEqualToString:@"rate"]) {
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@/%@",parameters[@"qsetId"], parameters[@"rate"], parameters[@"userId"], parameters[@"token"]]];
             }
-            else if ([path isEqualToString:@"guardianDeactivate"] || [path isEqualToString:@"kidReport"]) {
+            else if ([path isEqualToString:@"guardianDeactivate"] || [path isEqualToString:@"kidReport"] || [path isEqualToString:@"studentreport"]) {
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@",parameters[@"student_account_id"], parameters[@"userId"], parameters[@"token"]]];
             }
             else if ([path isEqualToString:@"updateAccount"]) {

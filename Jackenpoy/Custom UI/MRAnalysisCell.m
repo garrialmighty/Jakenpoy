@@ -1,14 +1,14 @@
 //
-//  TDSSectionCell.m
-//  Jackenpoy
+//  MRAnalysisCell.m
+//  Jakenpoy PTA
 //
-//  Created by Garri Adrian Nablo on 9/16/13.
+//  Created by Garri Adrian Nablo on 12/5/13.
 //  Copyright (c) 2013 Garri Adrian Nablo. All rights reserved.
 //
 
-#import "TDCheckboxCell.h"
+#import "MRAnalysisCell.h"
 
-@implementation TDCheckboxCell
+@implementation MRAnalysisCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -22,19 +22,8 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-}
 
-#pragma mark - IBAction
-- (void)toggleCheckbox
-{
-    if (self.Checkbox.tag == 0) {
-        [self.Checkbox setSelected:YES];
-        [self.Checkbox setTag:1];
-    }
-    else {
-        [self.Checkbox setSelected:NO];
-        [self.Checkbox setTag:0];
-    }
+    // Configure the view for the selected state
 }
 
 @end

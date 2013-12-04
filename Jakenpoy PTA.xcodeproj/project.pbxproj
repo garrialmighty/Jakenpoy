@@ -137,6 +137,12 @@
 		73EC79B217B914BE00F2E12E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC79B117B914BE00F2E12E /* main.m */; };
 		73EC79B617B914BE00F2E12E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC79B517B914BE00F2E12E /* AppDelegate.m */; };
 		73EC79B817B914BE00F2E12E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EC79B717B914BE00F2E12E /* Default.png */; };
+		73FCF7E9184FA53000BD130B /* ReviewerStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FCF7E8184FA53000BD130B /* ReviewerStudent.m */; };
+		73FCF7F0184FA60F00BD130B /* MRAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FCF7EE184FA60F00BD130B /* MRAnalysisViewController.m */; };
+		73FCF7F1184FA60F00BD130B /* MRAnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FCF7EF184FA60F00BD130B /* MRAnalysisViewController.xib */; };
+		73FCF7F4184FA6E400BD130B /* MRAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FCF7F3184FA6E400BD130B /* MRAnalysisCell.m */; };
+		73FCF7F6184FA6FD00BD130B /* MRAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FCF7F5184FA6FD00BD130B /* MRAnalysisCell.xib */; };
+		73FCF7F8184FAC6B00BD130B /* MRAnalysisViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FCF7F7184FAC6B00BD130B /* MRAnalysisViewController_iPad.xib */; };
 		73FED442180EAA2000162BC7 /* PRLFinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FED441180EAA2000162BC7 /* PRLFinishViewController_iPad.xib */; };
 		73FED444180EBC6D00162BC7 /* PRLPickViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FED443180EBC6D00162BC7 /* PRLPickViewController_iPad.xib */; };
 /* End PBXBuildFile section */
@@ -325,6 +331,15 @@
 		73EC79B417B914BE00F2E12E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73EC79B517B914BE00F2E12E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		73EC79B717B914BE00F2E12E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		73FCF7E7184FA53000BD130B /* ReviewerStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewerStudent.h; sourceTree = "<group>"; };
+		73FCF7E8184FA53000BD130B /* ReviewerStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewerStudent.m; sourceTree = "<group>"; };
+		73FCF7ED184FA60F00BD130B /* MRAnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAnalysisViewController.h; sourceTree = "<group>"; };
+		73FCF7EE184FA60F00BD130B /* MRAnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAnalysisViewController.m; sourceTree = "<group>"; };
+		73FCF7EF184FA60F00BD130B /* MRAnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRAnalysisViewController.xib; sourceTree = "<group>"; };
+		73FCF7F2184FA6E400BD130B /* MRAnalysisCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAnalysisCell.h; sourceTree = "<group>"; };
+		73FCF7F3184FA6E400BD130B /* MRAnalysisCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAnalysisCell.m; sourceTree = "<group>"; };
+		73FCF7F5184FA6FD00BD130B /* MRAnalysisCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRAnalysisCell.xib; sourceTree = "<group>"; };
+		73FCF7F7184FAC6B00BD130B /* MRAnalysisViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRAnalysisViewController_iPad.xib; sourceTree = "<group>"; };
 		73FED441180EAA2000162BC7 /* PRLFinishViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLFinishViewController_iPad.xib; sourceTree = "<group>"; };
 		73FED443180EBC6D00162BC7 /* PRLPickViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLPickViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -412,6 +427,8 @@
 			isa = PBXGroup;
 			children = (
 				73C612EB1840EEAE0046388B /* xib */,
+				73FCF7ED184FA60F00BD130B /* MRAnalysisViewController.h */,
+				73FCF7EE184FA60F00BD130B /* MRAnalysisViewController.m */,
 				4A22730217C1FF1E00019CAD /* MyReviewersViewController.h */,
 				4A22730317C1FF1E00019CAD /* MyReviewersViewController.m */,
 				730417D71832899A00051BB0 /* MRReportViewController.h */,
@@ -526,6 +543,8 @@
 				730417DF18328C6E00051BB0 /* MRReportCell.m */,
 				731A960D1846557D00F3A2BC /* PRLQuestionCell.h */,
 				731A960E1846557D00F3A2BC /* PRLQuestionCell.m */,
+				73FCF7F2184FA6E400BD130B /* MRAnalysisCell.h */,
+				73FCF7F3184FA6E400BD130B /* MRAnalysisCell.m */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -541,6 +560,7 @@
 				7384854617F54CDC00529CE1 /* TDSectionCell.xib */,
 				730417E118328C8800051BB0 /* MRReportCell.xib */,
 				731A9610184655D600F3A2BC /* PRLQuestionCell.xib */,
+				73FCF7F5184FA6FD00BD130B /* MRAnalysisCell.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -568,6 +588,8 @@
 				734A608C1837BA9900E64184 /* Question.m */,
 				73B05787183E388F003649AC /* QuestionDetails.h */,
 				73B05788183E388F003649AC /* QuestionDetails.m */,
+				73FCF7E7184FA53000BD130B /* ReviewerStudent.h */,
+				73FCF7E8184FA53000BD130B /* ReviewerStudent.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -688,6 +710,8 @@
 				73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */,
 				730417D91832899A00051BB0 /* MRReportViewController.xib */,
 				730417DC18328A1200051BB0 /* MRReportViewController_iPad.xib */,
+				73FCF7EF184FA60F00BD130B /* MRAnalysisViewController.xib */,
+				73FCF7F7184FAC6B00BD130B /* MRAnalysisViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -847,6 +871,7 @@
 				73D3F88517E4ADCE00149106 /* HPFinishViewController.xib in Resources */,
 				73D3F88717E4ADCE00149106 /* HPLoginViewController.xib in Resources */,
 				730417E218328C8800051BB0 /* MRReportCell.xib in Resources */,
+				73FCF7F8184FAC6B00BD130B /* MRAnalysisViewController_iPad.xib in Resources */,
 				7384858B17F54E5700529CE1 /* reviewers_icon.png in Resources */,
 				73D3F88917E4ADCE00149106 /* HPRegisterViewController.xib in Resources */,
 				7372F16A180F7C4900BD2850 /* MyAccountViewController_iPad.xib in Resources */,
@@ -866,6 +891,7 @@
 				7381634B180C196500B32A35 /* HPLoginViewController_iPad.xib in Resources */,
 				73192C8D17E783B10080F339 /* TDCourseViewController.xib in Resources */,
 				7384858F17F54E5700529CE1 /* selected.png in Resources */,
+				73FCF7F6184FA6FD00BD130B /* MRAnalysisCell.xib in Resources */,
 				73FED442180EAA2000162BC7 /* PRLFinishViewController_iPad.xib in Resources */,
 				7384859317F54E5700529CE1 /* unselected.png in Resources */,
 				7372F176180F7D5400BD2850 /* TDSectionViewController_iPad.xib in Resources */,
@@ -893,6 +919,7 @@
 				7359929C17E86EC10051E3D2 /* MRMKKidsViewController.xib in Resources */,
 				735992A117E86ECA0051E3D2 /* MRMKRegisterViewController.xib in Resources */,
 				7384854E17F54CDC00529CE1 /* TDCheckboxCell.xib in Resources */,
+				73FCF7F1184FA60F00BD130B /* MRAnalysisViewController.xib in Resources */,
 				7384855017F54CDC00529CE1 /* TDCourseCell.xib in Resources */,
 				7384858E17F54E5700529CE1 /* next.png in Resources */,
 				730C7E581845F30D008E74F3 /* cb_glossy_off.png in Resources */,
@@ -938,10 +965,12 @@
 				73B05789183E388F003649AC /* QuestionDetails.m in Sources */,
 				73B5E9DF17E6E2C000F53186 /* PRLSearchViewController.m in Sources */,
 				73192C7D17E779110080F339 /* RandomizerViewController.m in Sources */,
+				73FCF7F4184FA6E400BD130B /* MRAnalysisCell.m in Sources */,
 				73192C8C17E783B10080F339 /* TDCourseViewController.m in Sources */,
 				73192C8E17E783B10080F339 /* TDMenuViewController.m in Sources */,
 				73192C9017E783B10080F339 /* TDSaveViewController.m in Sources */,
 				73192C9217E783B10080F339 /* TDSectionViewController.m in Sources */,
+				73FCF7F0184FA60F00BD130B /* MRAnalysisViewController.m in Sources */,
 				73192C9717E7844C0080F339 /* AboutUsViewController.m in Sources */,
 				7384854717F54CDC00529CE1 /* MRMKChildCell.m in Sources */,
 				73922A3917E7A05A00401722 /* MyAccountViewController.m in Sources */,
@@ -950,6 +979,7 @@
 				735992A017E86ECA0051E3D2 /* MRMKRegisterViewController.m in Sources */,
 				73A4AAEA17E97B7600F52277 /* AFHTTPClient.m in Sources */,
 				73A4AAEB17E97B7600F52277 /* AFHTTPRequestOperation.m in Sources */,
+				73FCF7E9184FA53000BD130B /* ReviewerStudent.m in Sources */,
 				73A4AAEC17E97B7600F52277 /* AFImageRequestOperation.m in Sources */,
 				7384854B17F54CDC00529CE1 /* ReviewerCell.m in Sources */,
 				7384855F17F54D8B00529CE1 /* Assignees.m in Sources */,
