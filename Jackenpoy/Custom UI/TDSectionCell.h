@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TDSectionCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *Section;
-@property (weak, nonatomic) IBOutlet UILabel *Grade;
-@property (weak, nonatomic) IBOutlet UILabel *Teacher;
+@property (weak, nonatomic) IBOutlet UILabel *ID;
+@property (weak, nonatomic) IBOutlet UILabel *Name;
+@property (weak, nonatomic) IBOutlet UILabel *GradeLevel;
 @end

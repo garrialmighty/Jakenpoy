@@ -457,32 +457,44 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <constraint firstItem="P5w-rl-yse" firstAttribute="centerY" secondItem="hVf-Yn-W0o" secondAttribute="centerY" id="yYC-9g-kMw"/>
                     </constraints>
                 </view>
+                <view hidden="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJl-mc-XHm" userLabel="Loading Screen">
+                    <rect key="frame" x="0.0" y="0.0" width="769" height="980"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FhM-V4-feN">
+                            <rect key="frame" x="366" y="472" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                        <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOa-df-JTH" userLabel="Step 2 Button">
+                            <rect key="frame" x="361" y="788" width="181" height="65"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <state key="normal" title="Step 2" backgroundImage="unselected.png">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="disabled" backgroundImage="selected.png"/>
+                            <state key="selected" backgroundImage="selected.png"/>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="showStep:" destination="-1" eventType="touchUpInside" id="j9F-IW-3ef"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="FhM-V4-feN" secondAttribute="centerX" id="54e-Jo-Umk"/>
+                        <constraint firstAttribute="centerY" secondItem="FhM-V4-feN" secondAttribute="centerY" id="BVZ-e9-UW1"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4B-YB-W7j" userLabel="Step 1 Button">
-                    <rect key="frame" x="181" y="915" width="180" height="65"/>
+                    <rect key="frame" x="270" y="915" width="270" height="65"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="65" id="TxP-hO-W1I"/>
-                        <constraint firstAttribute="width" constant="180" id="qpx-zy-R7y"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                    <state key="normal" title="Step 1" backgroundImage="unselected.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="disabled" backgroundImage="selected.png"/>
-                    <state key="selected" backgroundImage="selected.png"/>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="showStep:" destination="-1" eventType="touchUpInside" id="1uI-6m-pDB"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOa-df-JTH" userLabel="Step 2 Button">
-                    <rect key="frame" x="361" y="915" width="181" height="65"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="65" id="7Bp-rK-5PV"/>
+                        <constraint firstAttribute="width" constant="270" id="qpx-zy-R7y"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <state key="normal" title="Step 2" backgroundImage="unselected.png">
@@ -495,17 +507,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="showStep:" destination="-1" eventType="touchUpInside" id="j9F-IW-3ef"/>
+                        <action selector="showStep:" destination="-1" eventType="touchUpInside" id="1uI-6m-pDB"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twg-ql-I0x" userLabel="Details Button">
-                    <rect key="frame" x="0.0" y="915" width="181" height="65"/>
+                    <rect key="frame" x="0.0" y="915" width="270" height="65"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="65" id="fKL-Bi-P0Z"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                    <state key="normal" title="Details" backgroundImage="unselected.png">
+                    <state key="normal" title="Step 1" backgroundImage="unselected.png">
                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -519,7 +531,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1H-3g-RTS" userLabel="Next/Finish Button">
-                    <rect key="frame" x="542" y="915" width="227" height="65"/>
+                    <rect key="frame" x="540" y="915" width="229" height="65"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -537,24 +549,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <action selector="nextFinish:" destination="-1" eventType="touchUpInside" id="fLk-Fa-WzU"/>
                     </connections>
                 </button>
-                <view hidden="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJl-mc-XHm" userLabel="Loading Screen">
-                    <rect key="frame" x="0.0" y="0.0" width="769" height="980"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FhM-V4-feN">
-                            <rect key="frame" x="366" y="472" width="37" height="37"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </activityIndicatorView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="centerX" secondItem="FhM-V4-feN" secondAttribute="centerX" id="54e-Jo-Umk"/>
-                        <constraint firstAttribute="centerY" secondItem="FhM-V4-feN" secondAttribute="centerY" id="BVZ-e9-UW1"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="V1H-3g-RTS" firstAttribute="leading" secondItem="y4B-YB-W7j" secondAttribute="trailing" id="11g-Bg-aqJ"/>
                 <constraint firstItem="sPI-CU-ZBC" firstAttribute="top" secondItem="1" secondAttribute="top" id="1Cc-ZI-4Zs"/>
                 <constraint firstAttribute="trailing" secondItem="sPI-CU-ZBC" secondAttribute="trailing" id="2w5-De-Ce3"/>
                 <constraint firstItem="y4B-YB-W7j" firstAttribute="leading" secondItem="Twg-ql-I0x" secondAttribute="trailing" id="CR6-CN-ooc"/>
@@ -563,14 +561,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <constraint firstAttribute="bottom" secondItem="y4B-YB-W7j" secondAttribute="bottom" id="Fbc-dN-qz5"/>
                 <constraint firstItem="sPI-CU-ZBC" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="FtE-y4-Nr7"/>
                 <constraint firstAttribute="bottom" secondItem="kJl-mc-XHm" secondAttribute="bottom" id="Hsf-dn-juq"/>
-                <constraint firstItem="V1H-3g-RTS" firstAttribute="leading" secondItem="jOa-df-JTH" secondAttribute="trailing" id="Kvz-HD-RO8"/>
                 <constraint firstAttribute="trailing" secondItem="hqF-h0-mYz" secondAttribute="trailing" id="KzW-yD-jys"/>
                 <constraint firstItem="hqF-h0-mYz" firstAttribute="top" secondItem="1" secondAttribute="top" id="NRG-Ql-v2M"/>
                 <constraint firstAttribute="bottom" secondItem="sPI-CU-ZBC" secondAttribute="bottom" id="QCF-lR-YCf"/>
                 <constraint firstItem="Twg-ql-I0x" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="VBr-m5-s5z"/>
-                <constraint firstAttribute="bottom" secondItem="jOa-df-JTH" secondAttribute="bottom" id="VJ6-iF-0lY"/>
                 <constraint firstItem="kJl-mc-XHm" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Zi5-CR-Mmc"/>
-                <constraint firstItem="Twg-ql-I0x" firstAttribute="width" secondItem="jOa-df-JTH" secondAttribute="width" id="aXX-0m-5vF"/>
                 <constraint firstAttribute="bottom" secondItem="qnu-A2-ahN" secondAttribute="bottom" id="dyn-rw-xwi"/>
                 <constraint firstAttribute="trailing" secondItem="V1H-3g-RTS" secondAttribute="trailing" id="fRR-aU-2rb"/>
                 <constraint firstAttribute="trailing" secondItem="qnu-A2-ahN" secondAttribute="trailing" id="i9d-9a-GjN"/>
@@ -581,7 +576,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <constraint firstItem="qnu-A2-ahN" firstAttribute="top" secondItem="1" secondAttribute="top" id="qgs-pR-mME"/>
                 <constraint firstItem="hqF-h0-mYz" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="yc0-NA-jqL"/>
                 <constraint firstAttribute="trailing" secondItem="V1H-3g-RTS" secondAttribute="trailing" id="ype-I4-Nyg"/>
-                <constraint firstItem="jOa-df-JTH" firstAttribute="leading" secondItem="y4B-YB-W7j" secondAttribute="trailing" id="zEV-dB-jkO"/>
                 <constraint firstItem="Twg-ql-I0x" firstAttribute="width" secondItem="y4B-YB-W7j" secondAttribute="width" id="zgc-4i-mL7"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

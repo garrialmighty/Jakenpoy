@@ -8,7 +8,8 @@
 
 #import "TDMenuViewController.h"
 #import "TDSectionViewController.h"
-#import "TDCourseViewController.h"
+#import "TDLessonPlanViewController.h"
+#import "TDTeacherViewController.h"
 
 @interface TDMenuViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *ManageTeachersButton;
@@ -68,13 +69,13 @@
 
 - (IBAction)manageCourses
 {
-    TDCourseViewController * tDCVC;
+    TDLessonPlanViewController * tDCVC;
     
     if (isPhone) {
-        tDCVC = [[TDCourseViewController alloc] initWithNibName:@"TDCourseViewController" bundle:nil];
+        tDCVC = [[TDLessonPlanViewController alloc] initWithNibName:@"TDCourseViewController" bundle:nil];
     }
     else {
-        tDCVC = [[TDCourseViewController alloc] initWithNibName:@"TDCourseViewController_iPad" bundle:nil];
+        tDCVC = [[TDLessonPlanViewController alloc] initWithNibName:@"TDCourseViewController_iPad" bundle:nil];
     }
     
     [self.navigationController pushViewController:tDCVC animated:YES];
@@ -82,7 +83,16 @@
 
 - (IBAction)manageTeachers
 {
+    TDTeacherViewController * tDTVC;
     
+    if (isPhone) {
+        tDTVC = [[TDTeacherViewController alloc] initWithNibName:@"TDTeacherViewController" bundle:nil];
+    }
+    else {
+        tDTVC = [[TDTeacherViewController alloc] initWithNibName:@"TDTeacherViewController_iPad" bundle:nil];
+    }
+    
+    [self.navigationController pushViewController:tDTVC animated:YES];
 }
 
 @end

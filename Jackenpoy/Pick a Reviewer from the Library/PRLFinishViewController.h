@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PRLFinishViewController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, JakenpoyHTTPClientDelegate>
+@interface PRLFinishViewController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, JakenpoyHTTPClientDelegate, UIAlertViewDelegate>
 - (void)setReviewerID:(NSNumber *)ID QuestionTypeList:(NSArray *)list SubjectList:(NSArray *)slist;
 - (void)updateTitle:(NSString *)t
        Instructions:(NSString *)i

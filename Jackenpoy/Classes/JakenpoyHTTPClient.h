@@ -63,14 +63,23 @@
                      ShareToSchool:(BOOL)sts
                   ShowRightAnswers:(BOOL)sa;
 
-// My Account
-- (void)updateName:(NSString *)name Email:(NSString *)email Password:(NSString *)password;
+// Teacher's Desk
+- (void)getLessonPlans;
+- (void)getAvailableSections; //OK
+- (void)getSectionsForLessonPlan:(NSNumber *)sid;
+- (void)addSection:(NSNumber *)sid ToLessonPlan:(NSNumber *)lid;
+- (void)getLessonPlan:(NSNumber *)lid;
+- (void)getTeachers; //OK
+- (void)saveLessonPlan:(NSNumber *)lid WithSubject:(NSNumber *)sid Teacher:(NSNumber *)tid Name:(NSString *)name;
 
 // Manage/Register My Kids
 - (void)deactivateGuardian:(NSNumber *)ID;
 - (void)kidReport:(NSNumber *)ID;
 - (void)studentReport:(NSNumber *)ID;
 - (void)getManageKids;
+
+// My Account
+- (void)updateName:(NSString *)name Email:(NSString *)email Password:(NSString *)password;
 
 @end
 

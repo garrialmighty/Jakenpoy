@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDSectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TDSectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, JakenpoyHTTPClientDelegate>
 
 @end

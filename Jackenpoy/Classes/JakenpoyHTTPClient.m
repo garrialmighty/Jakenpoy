@@ -124,7 +124,112 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
-#pragma mark Pick a Reviewer from the Library
+#pragma mark - My Reviewers
+- (void)getMyReviewers
+{
+    NSLog(@"getting my reviewers");
+    [self getPath:@"getMyReviewers"
+       parameters:@{@"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)getReportForReviewer:(NSNumber *)ID
+{
+    [self getPath:@"analysisreport"
+       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)unpublish:(NSNumber *)ID
+{
+    NSLog(@"unpublishing");
+    [self getPath:@"unpublish"
+       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)publish:(NSNumber *)ID
+{
+    NSLog(@"publishing");
+    [self getPath:@"publish"
+       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)rateReviewer:(NSNumber *)ID Rating:(NSNumber *)rate
+{
+    NSLog(@"rating");
+    [self getPath:@"rate"
+       parameters:@{@"qsetId":ID, @"rate":rate, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidRateWithData:)])
+                  [self.delegate jakenpoyHTTPClientdidRateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)getPDFLink:(NSNumber *)ID
+{
+    NSLog(@"getting link");
+    [self getPath:@"getPDF"
+       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithPDFLink:)])
+                  [self.delegate jakenpoyHTTPClientdidUpdateWithPDFLink:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)getAnalysisForReviewer:(NSNumber *)ID
+{
+    [self getPath:@"report"
+       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+
+#pragma mark - Pick a Reviewer from the Library
 - (void)getQuestionType
 {
     NSLog(@"getting question type");
@@ -246,11 +351,10 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
-#pragma mark My Reviewers
-- (void)getMyReviewers
+#pragma mark - Teacher's Desk
+- (void)getLessonPlans
 {
-    NSLog(@"getting my reviewers");
-    [self getPath:@"getMyReviewers"
+    [self getPath:@"coursemanage"
        parameters:@{@"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
@@ -262,10 +366,10 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
-- (void)getReportForReviewer:(NSNumber *)ID
+- (void)getAvailableSections
 {
-    [self getPath:@"analysisreport"
-       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+    [self getPath:@"availableSections"
+       parameters:@{@"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
@@ -276,11 +380,24 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
-- (void)unpublish:(NSNumber *)ID
+- (void)getSectionsForLessonPlan:(NSNumber *)sid
 {
-    NSLog(@"unpublishing");
-    [self getPath:@"unpublish"
-       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+    [self getPath:@"courseSections"
+       parameters:@{@"id":sid, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+           if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+               [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+       }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)addSection:(NSNumber *)sid ToLessonPlan:(NSNumber *)lid
+{
+    [self getPath:@"addSection"
+       parameters:@{@"courseId":lid, @"sectionId":sid, @"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
@@ -291,11 +408,10 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
-- (void)publish:(NSNumber *)ID
+- (void)getLessonPlan:(NSNumber *)lid
 {
-    NSLog(@"publishing");
-    [self getPath:@"publish"
-       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+    [self getPath:@"getCourse"
+       parameters:@{@"id":lid, @"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
@@ -306,40 +422,10 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
-- (void)rateReviewer:(NSNumber *)ID Rating:(NSNumber *)rate
+- (void)getTeachers
 {
-    NSLog(@"rating");
-    [self getPath:@"rate"
-       parameters:@{@"qsetId":ID, @"rate":rate, @"userId":self.UserID, @"token":self.Token}
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidRateWithData:)])
-                  [self.delegate jakenpoyHTTPClientdidRateWithData:responseObject];
-          }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
-                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
-          }];
-}
-
-- (void)getPDFLink:(NSNumber *)ID
-{
-    NSLog(@"getting link");
-    [self getPath:@"getPDF"
-       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithPDFLink:)])
-                  [self.delegate jakenpoyHTTPClientdidUpdateWithPDFLink:responseObject];
-          }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
-                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
-          }];
-}
-
-- (void)getAnalysisForReviewer:(NSNumber *)ID
-{
-    [self getPath:@"report"
-       parameters:@{@"qsetId":ID, @"userId":self.UserID, @"token":self.Token}
+    [self getPath:@"getTeachers"
+       parameters:@{@"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
@@ -350,12 +436,10 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
-#pragma mark My Account
-- (void)updateName:(NSString *)name Email:(NSString *)email Password:(NSString *)password
+- (void)saveLessonPlan:(NSNumber *)lid WithSubject:(NSNumber *)sid Teacher:(NSNumber *)tid Name:(NSString *)name
 {
-    NSLog(@"updating account");
-    [self getPath:@"updateAccount"
-       parameters:@{@"name":name, @"currentpassword":password, @"email":email, @"userId":self.UserID, @"token":self.Token}
+    [self getPath:@"saveCourse"
+       parameters:@{@"name":name, @"courseId":lid, @"subjectId":sid, @"teacherId":tid, @"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
@@ -366,6 +450,7 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
+#pragma mark - Manage / Register My Kids
 - (void)deactivateGuardian:(NSNumber *)ID
 {
     NSLog(@"deactivating");
@@ -405,7 +490,6 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
-              NSLog(@"student %@",responseObject);
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
@@ -427,6 +511,22 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
                   [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
           }];
 
+}
+
+#pragma mark - My Account
+- (void)updateName:(NSString *)name Email:(NSString *)email Password:(NSString *)password
+{
+    NSLog(@"updating account");
+    [self getPath:@"updateAccount"
+       parameters:@{@"name":name, @"currentpassword":password, @"email":email, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
 }
 
 @end

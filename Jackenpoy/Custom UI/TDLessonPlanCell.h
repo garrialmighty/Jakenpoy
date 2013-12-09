@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDCourseCell : UITableViewCell
+@interface TDLessonPlanCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *CourseTitle;
 @property (weak, nonatomic) IBOutlet UIButton *TopicButton;
 @end

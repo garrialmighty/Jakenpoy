@@ -7,21 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A22730517C1FF1E00019CAD /* MyReviewersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A22730317C1FF1E00019CAD /* MyReviewersViewController.m */; };
-		4A22730617C1FF1E00019CAD /* MyReviewersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A22730417C1FF1E00019CAD /* MyReviewersViewController.xib */; };
-		730417DA1832899A00051BB0 /* MRReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730417D81832899A00051BB0 /* MRReportViewController.m */; };
-		730417DB1832899A00051BB0 /* MRReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730417D91832899A00051BB0 /* MRReportViewController.xib */; };
-		730417DD18328A1200051BB0 /* MRReportViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730417DC18328A1200051BB0 /* MRReportViewController_iPad.xib */; };
 		730417E018328C6E00051BB0 /* MRReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730417DF18328C6E00051BB0 /* MRReportCell.m */; };
 		730417E218328C8800051BB0 /* MRReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730417E118328C8800051BB0 /* MRReportCell.xib */; };
 		730C7E541845DF3B008E74F3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730C7E531845DF3B008E74F3 /* FacebookSDK.framework */; };
 		730C7E581845F30D008E74F3 /* cb_glossy_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 730C7E561845F30D008E74F3 /* cb_glossy_off.png */; };
 		730C7E591845F30D008E74F3 /* cb_glossy_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 730C7E571845F30D008E74F3 /* cb_glossy_on.png */; };
 		73104455182530280028CC62 /* jakenpoy_logo_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 73104454182530280028CC62 /* jakenpoy_logo_ipad.png */; };
+		7311E4E618521EF300816372 /* MRMKChildReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7311E4E518521EF300816372 /* MRMKChildReportCell.m */; };
+		7311E4E818521F2200816372 /* MRMKChildReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7311E4E718521F2200816372 /* MRMKChildReportCell.xib */; };
 		73192C7D17E779110080F339 /* RandomizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73192C7B17E779110080F339 /* RandomizerViewController.m */; };
 		73192C7E17E779110080F339 /* RandomizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C7C17E779110080F339 /* RandomizerViewController.xib */; };
-		73192C8C17E783B10080F339 /* TDCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73192C8117E783B10080F339 /* TDCourseViewController.m */; };
-		73192C8D17E783B10080F339 /* TDCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C8217E783B10080F339 /* TDCourseViewController.xib */; };
+		73192C8C17E783B10080F339 /* TDLessonPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73192C8117E783B10080F339 /* TDLessonPlanViewController.m */; };
+		73192C8D17E783B10080F339 /* TDLessonPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C8217E783B10080F339 /* TDLessonPlanViewController.xib */; };
 		73192C8E17E783B10080F339 /* TDMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73192C8417E783B10080F339 /* TDMenuViewController.m */; };
 		73192C8F17E783B10080F339 /* TDMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C8517E783B10080F339 /* TDMenuViewController.xib */; };
 		73192C9017E783B10080F339 /* TDSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73192C8717E783B10080F339 /* TDSaveViewController.m */; };
@@ -37,25 +34,52 @@
 		733077FF17E62DBA00B76FA5 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FD17E62DBA00B76FA5 /* SVSegmentedThumb.m */; };
 		734A608A1837B55900E64184 /* ReviewerReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 734A60891837B55900E64184 /* ReviewerReport.m */; };
 		734A608D1837BA9900E64184 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 734A608C1837BA9900E64184 /* Question.m */; };
+		735387131856135300D1A283 /* GIAccordion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7353870A1856135300D1A283 /* GIAccordion.m */; };
+		735387141856135300D1A283 /* GIAccordionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7353870C1856135300D1A283 /* GIAccordionViewCell.m */; };
+		735387151856135300D1A283 /* GIAccordionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7353870E1856135300D1A283 /* GIAccordionViewController.m */; };
+		735387161856135300D1A283 /* GITree.m in Sources */ = {isa = PBXBuildFile; fileRef = 735387101856135300D1A283 /* GITree.m */; };
+		735387171856135300D1A283 /* GITreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 735387121856135300D1A283 /* GITreeNode.m */; };
+		73538725185613CD00D1A283 /* MRMKKidsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7353871A185613CD00D1A283 /* MRMKKidsViewController.m */; };
+		73538726185613CD00D1A283 /* MRMKKidsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7353871B185613CD00D1A283 /* MRMKKidsViewController.xib */; };
+		73538727185613CD00D1A283 /* MRMKKidsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7353871C185613CD00D1A283 /* MRMKKidsViewController_iPad.xib */; };
+		73538728185613CD00D1A283 /* MRMKRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7353871E185613CD00D1A283 /* MRMKRegisterViewController.m */; };
+		73538729185613CD00D1A283 /* MRMKRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7353871F185613CD00D1A283 /* MRMKRegisterViewController.xib */; };
+		7353872A185613CD00D1A283 /* MRMKRegisterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73538720185613CD00D1A283 /* MRMKRegisterViewController_iPad.xib */; };
+		7353872B185613CD00D1A283 /* MRMKReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73538722185613CD00D1A283 /* MRMKReportViewController.m */; };
+		7353872C185613CD00D1A283 /* MRMKReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73538723185613CD00D1A283 /* MRMKReportViewController.xib */; };
+		7353872D185613CD00D1A283 /* MRMKReportViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73538724185613CD00D1A283 /* MRMKReportViewController_iPad.xib */; };
+		7353872F185614A900D1A283 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7353872E185614A800D1A283 /* QuartzCore.framework */; };
+		73538735185615AE00D1A283 /* TDLessonPlanViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73538731185615AE00D1A283 /* TDLessonPlanViewController_iPad.xib */; };
+		73538736185615AE00D1A283 /* TDMenuViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73538732185615AE00D1A283 /* TDMenuViewController_iPad.xib */; };
+		73538737185615AE00D1A283 /* TDSaveViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73538733185615AE00D1A283 /* TDSaveViewController_iPad.xib */; };
+		73538738185615AE00D1A283 /* TDSectionViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73538734185615AE00D1A283 /* TDSectionViewController_iPad.xib */; };
+		7353873C1856162600D1A283 /* HPFinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735387391856162600D1A283 /* HPFinishViewController_iPad.xib */; };
+		7353873D1856162600D1A283 /* HPLoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7353873A1856162600D1A283 /* HPLoginViewController_iPad.xib */; };
+		7353873E1856162600D1A283 /* HPRegisterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7353873B1856162600D1A283 /* HPRegisterViewController_iPad.xib */; };
+		7353874C1856166200D1A283 /* MRAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735387411856166200D1A283 /* MRAnalysisViewController.m */; };
+		7353874D1856166200D1A283 /* MRAnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735387421856166200D1A283 /* MRAnalysisViewController.xib */; };
+		7353874E1856166200D1A283 /* MRAnalysisViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735387431856166200D1A283 /* MRAnalysisViewController_iPad.xib */; };
+		7353874F1856166200D1A283 /* MRReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735387451856166200D1A283 /* MRReportViewController.m */; };
+		735387501856166200D1A283 /* MRReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735387461856166200D1A283 /* MRReportViewController.xib */; };
+		735387511856166200D1A283 /* MRReportViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735387471856166200D1A283 /* MRReportViewController_iPad.xib */; };
+		735387521856166200D1A283 /* MyReviewersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735387491856166200D1A283 /* MyReviewersViewController.m */; };
+		735387531856166200D1A283 /* MyReviewersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7353874A1856166200D1A283 /* MyReviewersViewController.xib */; };
+		735387541856166200D1A283 /* MyReviewersViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7353874B1856166200D1A283 /* MyReviewersViewController_iPad.xib */; };
+		73538759185616BC00D1A283 /* PRLFinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73538756185616BC00D1A283 /* PRLFinishViewController_iPad.xib */; };
+		7353875A185616BC00D1A283 /* PRLPickViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73538757185616BC00D1A283 /* PRLPickViewController_iPad.xib */; };
+		7353875B185616BC00D1A283 /* PRLSearchViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73538758185616BC00D1A283 /* PRLSearchViewController_iPad.xib */; };
+		7353875E18562CA400D1A283 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 7353875D18562CA400D1A283 /* Section.m */; };
+		73538761185634FE00D1A283 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 73538760185634FE00D1A283 /* Teacher.m */; };
+		735387641856355600D1A283 /* TDTeacherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 735387631856355600D1A283 /* TDTeacherCell.m */; };
+		735387681856357700D1A283 /* TDTeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735387671856357700D1A283 /* TDTeacherCell.xib */; };
+		7353876B1856389000D1A283 /* TDTeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7353876A1856389000D1A283 /* TDTeacherViewController.m */; };
+		7353876D18563A0400D1A283 /* TDTeacherViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7353876C18563A0400D1A283 /* TDTeacherViewController_iPad.xib */; };
+		7353876F18563A3900D1A283 /* TDTeacherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7353876E18563A3900D1A283 /* TDTeacherViewController.xib */; };
 		735428EF17ECA57D006CDF8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 735428EE17ECA57D006CDF8F /* Default-568h@2x.png */; };
 		735428F117ECA584006CDF8F /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 735428F017ECA584006CDF8F /* Default~iphone.png */; };
-		7359929B17E86EC10051E3D2 /* MRMKKidsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7359929917E86EC10051E3D2 /* MRMKKidsViewController.m */; };
-		7359929C17E86EC10051E3D2 /* MRMKKidsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7359929A17E86EC10051E3D2 /* MRMKKidsViewController.xib */; };
-		735992A017E86ECA0051E3D2 /* MRMKRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7359929E17E86ECA0051E3D2 /* MRMKRegisterViewController.m */; };
-		735992A117E86ECA0051E3D2 /* MRMKRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7359929F17E86ECA0051E3D2 /* MRMKRegisterViewController.xib */; };
 		737119E31813C2E8004217BA /* AboutUsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737119E21813C2E8004217BA /* AboutUsViewController_iPad.xib */; };
-		7372F168180F7C2000BD2850 /* PRLSearchViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F167180F7C2000BD2850 /* PRLSearchViewController_iPad.xib */; };
 		7372F16A180F7C4900BD2850 /* MyAccountViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F169180F7C4900BD2850 /* MyAccountViewController_iPad.xib */; };
-		7372F16C180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F16B180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib */; };
-		7372F16E180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F16D180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib */; };
-		7372F170180F7D0400BD2850 /* TDCourseViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F16F180F7D0400BD2850 /* TDCourseViewController_iPad.xib */; };
-		7372F172180F7D1C00BD2850 /* TDMenuViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F171180F7D1C00BD2850 /* TDMenuViewController_iPad.xib */; };
-		7372F174180F7D3400BD2850 /* TDSaveViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F173180F7D3400BD2850 /* TDSaveViewController_iPad.xib */; };
-		7372F176180F7D5400BD2850 /* TDSectionViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F175180F7D5400BD2850 /* TDSectionViewController_iPad.xib */; };
 		7374F94317FB02290017ECB0 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7374F94217FB02290017ECB0 /* School.m */; };
-		73816349180C192800B32A35 /* HPFinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73816348180C192800B32A35 /* HPFinishViewController_iPad.xib */; };
-		7381634B180C196500B32A35 /* HPLoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7381634A180C196500B32A35 /* HPLoginViewController_iPad.xib */; };
-		7381634D180C197300B32A35 /* HPRegisterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7381634C180C197300B32A35 /* HPRegisterViewController_iPad.xib */; };
 		7384854717F54CDC00529CE1 /* MRMKChildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384853617F54CDC00529CE1 /* MRMKChildCell.m */; };
 		7384854817F54CDC00529CE1 /* MRMKChildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7384853717F54CDC00529CE1 /* MRMKChildCell.xib */; };
 		7384854917F54CDC00529CE1 /* PRLReviewerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384853917F54CDC00529CE1 /* PRLReviewerCell.m */; };
@@ -64,8 +88,8 @@
 		7384854C17F54CDC00529CE1 /* ReviewerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7384853D17F54CDC00529CE1 /* ReviewerCell.xib */; };
 		7384854D17F54CDC00529CE1 /* TDCheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384853F17F54CDC00529CE1 /* TDCheckboxCell.m */; };
 		7384854E17F54CDC00529CE1 /* TDCheckboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7384854017F54CDC00529CE1 /* TDCheckboxCell.xib */; };
-		7384854F17F54CDC00529CE1 /* TDCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384854217F54CDC00529CE1 /* TDCourseCell.m */; };
-		7384855017F54CDC00529CE1 /* TDCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7384854317F54CDC00529CE1 /* TDCourseCell.xib */; };
+		7384854F17F54CDC00529CE1 /* TDLessonPlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384854217F54CDC00529CE1 /* TDLessonPlanCell.m */; };
+		7384855017F54CDC00529CE1 /* TDLessonPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7384854317F54CDC00529CE1 /* TDLessonPlanCell.xib */; };
 		7384855117F54CDC00529CE1 /* TDSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384854517F54CDC00529CE1 /* TDSectionCell.m */; };
 		7384855217F54CDC00529CE1 /* TDSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7384854617F54CDC00529CE1 /* TDSectionCell.xib */; };
 		7384855F17F54D8B00529CE1 /* Assignees.m in Sources */ = {isa = PBXBuildFile; fileRef = 7384855617F54D8B00529CE1 /* Assignees.m */; };
@@ -112,7 +136,6 @@
 		73A4AAFF17E9843200F52277 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A4AAFE17E9843200F52277 /* SystemConfiguration.framework */; };
 		73A4AB0117E985BD00F52277 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A4AB0017E985BD00F52277 /* MobileCoreServices.framework */; };
 		73A4AB0317E9863A00F52277 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A4AB0217E9863A00F52277 /* Security.framework */; };
-		73A5057C180D9684006792CA /* MyReviewersViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */; };
 		73A893AA17F6107A00A9F4FD /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A893A917F6107A00A9F4FD /* Student.m */; };
 		73B05789183E388F003649AC /* QuestionDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B05788183E388F003649AC /* QuestionDetails.m */; };
 		73B5E9DB17E6E2C000F53186 /* PRLFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5E9D317E6E2C000F53186 /* PRLFinishViewController.m */; };
@@ -128,6 +151,7 @@
 		73D3F88717E4ADCE00149106 /* HPLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D3F88017E4ADCE00149106 /* HPLoginViewController.xib */; };
 		73D3F88817E4ADCE00149106 /* HPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D3F88217E4ADCE00149106 /* HPRegisterViewController.m */; };
 		73D3F88917E4ADCE00149106 /* HPRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D3F88317E4ADCE00149106 /* HPRegisterViewController.xib */; };
+		73D7DF2A1850E781008EFC77 /* KidReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D7DF291850E781008EFC77 /* KidReport.m */; };
 		73D9E8071828E8AA004D70C2 /* fb_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D9E8061828E8AA004D70C2 /* fb_logo.png */; };
 		73E725751843AFA400CBFE66 /* feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = 73E725741843AFA400CBFE66 /* feedback.png */; };
 		73EC79A617B914BE00F2E12E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC79A517B914BE00F2E12E /* UIKit.framework */; };
@@ -138,23 +162,11 @@
 		73EC79B617B914BE00F2E12E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC79B517B914BE00F2E12E /* AppDelegate.m */; };
 		73EC79B817B914BE00F2E12E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EC79B717B914BE00F2E12E /* Default.png */; };
 		73FCF7E9184FA53000BD130B /* ReviewerStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FCF7E8184FA53000BD130B /* ReviewerStudent.m */; };
-		73FCF7F0184FA60F00BD130B /* MRAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FCF7EE184FA60F00BD130B /* MRAnalysisViewController.m */; };
-		73FCF7F1184FA60F00BD130B /* MRAnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FCF7EF184FA60F00BD130B /* MRAnalysisViewController.xib */; };
 		73FCF7F4184FA6E400BD130B /* MRAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FCF7F3184FA6E400BD130B /* MRAnalysisCell.m */; };
 		73FCF7F6184FA6FD00BD130B /* MRAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FCF7F5184FA6FD00BD130B /* MRAnalysisCell.xib */; };
-		73FCF7F8184FAC6B00BD130B /* MRAnalysisViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FCF7F7184FAC6B00BD130B /* MRAnalysisViewController_iPad.xib */; };
-		73FED442180EAA2000162BC7 /* PRLFinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FED441180EAA2000162BC7 /* PRLFinishViewController_iPad.xib */; };
-		73FED444180EBC6D00162BC7 /* PRLPickViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FED443180EBC6D00162BC7 /* PRLPickViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A22730217C1FF1E00019CAD /* MyReviewersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyReviewersViewController.h; sourceTree = "<group>"; };
-		4A22730317C1FF1E00019CAD /* MyReviewersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyReviewersViewController.m; sourceTree = "<group>"; };
-		4A22730417C1FF1E00019CAD /* MyReviewersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyReviewersViewController.xib; sourceTree = "<group>"; };
-		730417D71832899A00051BB0 /* MRReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRReportViewController.h; sourceTree = "<group>"; };
-		730417D81832899A00051BB0 /* MRReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRReportViewController.m; sourceTree = "<group>"; };
-		730417D91832899A00051BB0 /* MRReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRReportViewController.xib; sourceTree = "<group>"; };
-		730417DC18328A1200051BB0 /* MRReportViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRReportViewController_iPad.xib; sourceTree = "<group>"; };
 		730417DE18328C6E00051BB0 /* MRReportCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRReportCell.h; sourceTree = "<group>"; };
 		730417DF18328C6E00051BB0 /* MRReportCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRReportCell.m; sourceTree = "<group>"; };
 		730417E118328C8800051BB0 /* MRReportCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRReportCell.xib; sourceTree = "<group>"; };
@@ -162,12 +174,15 @@
 		730C7E561845F30D008E74F3 /* cb_glossy_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_glossy_off.png; sourceTree = "<group>"; };
 		730C7E571845F30D008E74F3 /* cb_glossy_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_glossy_on.png; sourceTree = "<group>"; };
 		73104454182530280028CC62 /* jakenpoy_logo_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jakenpoy_logo_ipad.png; sourceTree = "<group>"; };
+		7311E4E418521EF300816372 /* MRMKChildReportCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKChildReportCell.h; sourceTree = "<group>"; };
+		7311E4E518521EF300816372 /* MRMKChildReportCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKChildReportCell.m; sourceTree = "<group>"; };
+		7311E4E718521F2200816372 /* MRMKChildReportCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKChildReportCell.xib; sourceTree = "<group>"; };
 		73192C7A17E779110080F339 /* RandomizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomizerViewController.h; sourceTree = "<group>"; };
 		73192C7B17E779110080F339 /* RandomizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomizerViewController.m; sourceTree = "<group>"; };
 		73192C7C17E779110080F339 /* RandomizerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RandomizerViewController.xib; sourceTree = "<group>"; };
-		73192C8017E783B10080F339 /* TDCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDCourseViewController.h; path = "Teacher's Desk/TDCourseViewController.h"; sourceTree = "<group>"; };
-		73192C8117E783B10080F339 /* TDCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDCourseViewController.m; path = "Teacher's Desk/TDCourseViewController.m"; sourceTree = "<group>"; };
-		73192C8217E783B10080F339 /* TDCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TDCourseViewController.xib; path = "Teacher's Desk/TDCourseViewController.xib"; sourceTree = "<group>"; };
+		73192C8017E783B10080F339 /* TDLessonPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDLessonPlanViewController.h; path = "Teacher's Desk/TDLessonPlanViewController.h"; sourceTree = "<group>"; };
+		73192C8117E783B10080F339 /* TDLessonPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDLessonPlanViewController.m; path = "Teacher's Desk/TDLessonPlanViewController.m"; sourceTree = "<group>"; };
+		73192C8217E783B10080F339 /* TDLessonPlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TDLessonPlanViewController.xib; path = "Teacher's Desk/TDLessonPlanViewController.xib"; sourceTree = "<group>"; };
 		73192C8317E783B10080F339 /* TDMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDMenuViewController.h; path = "Teacher's Desk/TDMenuViewController.h"; sourceTree = "<group>"; };
 		73192C8417E783B10080F339 /* TDMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDMenuViewController.m; path = "Teacher's Desk/TDMenuViewController.m"; sourceTree = "<group>"; };
 		73192C8517E783B10080F339 /* TDMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TDMenuViewController.xib; path = "Teacher's Desk/TDMenuViewController.xib"; sourceTree = "<group>"; };
@@ -192,28 +207,68 @@
 		734A60891837B55900E64184 /* ReviewerReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewerReport.m; sourceTree = "<group>"; };
 		734A608B1837BA9900E64184 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		734A608C1837BA9900E64184 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		735387091856135300D1A283 /* GIAccordion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIAccordion.h; sourceTree = "<group>"; };
+		7353870A1856135300D1A283 /* GIAccordion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIAccordion.m; sourceTree = "<group>"; };
+		7353870B1856135300D1A283 /* GIAccordionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIAccordionViewCell.h; sourceTree = "<group>"; };
+		7353870C1856135300D1A283 /* GIAccordionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIAccordionViewCell.m; sourceTree = "<group>"; };
+		7353870D1856135300D1A283 /* GIAccordionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIAccordionViewController.h; sourceTree = "<group>"; };
+		7353870E1856135300D1A283 /* GIAccordionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIAccordionViewController.m; sourceTree = "<group>"; };
+		7353870F1856135300D1A283 /* GITree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GITree.h; sourceTree = "<group>"; };
+		735387101856135300D1A283 /* GITree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GITree.m; sourceTree = "<group>"; };
+		735387111856135300D1A283 /* GITreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GITreeNode.h; sourceTree = "<group>"; };
+		735387121856135300D1A283 /* GITreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GITreeNode.m; sourceTree = "<group>"; };
+		73538719185613CD00D1A283 /* MRMKKidsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKKidsViewController.h; sourceTree = "<group>"; };
+		7353871A185613CD00D1A283 /* MRMKKidsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKKidsViewController.m; sourceTree = "<group>"; };
+		7353871B185613CD00D1A283 /* MRMKKidsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKKidsViewController.xib; sourceTree = "<group>"; };
+		7353871C185613CD00D1A283 /* MRMKKidsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKKidsViewController_iPad.xib; sourceTree = "<group>"; };
+		7353871D185613CD00D1A283 /* MRMKRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKRegisterViewController.h; sourceTree = "<group>"; };
+		7353871E185613CD00D1A283 /* MRMKRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKRegisterViewController.m; sourceTree = "<group>"; };
+		7353871F185613CD00D1A283 /* MRMKRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKRegisterViewController.xib; sourceTree = "<group>"; };
+		73538720185613CD00D1A283 /* MRMKRegisterViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKRegisterViewController_iPad.xib; sourceTree = "<group>"; };
+		73538721185613CD00D1A283 /* MRMKReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKReportViewController.h; sourceTree = "<group>"; };
+		73538722185613CD00D1A283 /* MRMKReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKReportViewController.m; sourceTree = "<group>"; };
+		73538723185613CD00D1A283 /* MRMKReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKReportViewController.xib; sourceTree = "<group>"; };
+		73538724185613CD00D1A283 /* MRMKReportViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKReportViewController_iPad.xib; sourceTree = "<group>"; };
+		7353872E185614A800D1A283 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		73538731185615AE00D1A283 /* TDLessonPlanViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TDLessonPlanViewController_iPad.xib; path = "Teacher's Desk/TDLessonPlanViewController_iPad.xib"; sourceTree = "<group>"; };
+		73538732185615AE00D1A283 /* TDMenuViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TDMenuViewController_iPad.xib; path = "Teacher's Desk/TDMenuViewController_iPad.xib"; sourceTree = "<group>"; };
+		73538733185615AE00D1A283 /* TDSaveViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TDSaveViewController_iPad.xib; path = "Teacher's Desk/TDSaveViewController_iPad.xib"; sourceTree = "<group>"; };
+		73538734185615AE00D1A283 /* TDSectionViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TDSectionViewController_iPad.xib; path = "Teacher's Desk/TDSectionViewController_iPad.xib"; sourceTree = "<group>"; };
+		735387391856162600D1A283 /* HPFinishViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPFinishViewController_iPad.xib; path = Homepage/HPFinishViewController_iPad.xib; sourceTree = "<group>"; };
+		7353873A1856162600D1A283 /* HPLoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPLoginViewController_iPad.xib; path = Homepage/HPLoginViewController_iPad.xib; sourceTree = "<group>"; };
+		7353873B1856162600D1A283 /* HPRegisterViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPRegisterViewController_iPad.xib; path = Homepage/HPRegisterViewController_iPad.xib; sourceTree = "<group>"; };
+		735387401856166200D1A283 /* MRAnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAnalysisViewController.h; sourceTree = "<group>"; };
+		735387411856166200D1A283 /* MRAnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAnalysisViewController.m; sourceTree = "<group>"; };
+		735387421856166200D1A283 /* MRAnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRAnalysisViewController.xib; sourceTree = "<group>"; };
+		735387431856166200D1A283 /* MRAnalysisViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRAnalysisViewController_iPad.xib; sourceTree = "<group>"; };
+		735387441856166200D1A283 /* MRReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRReportViewController.h; sourceTree = "<group>"; };
+		735387451856166200D1A283 /* MRReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRReportViewController.m; sourceTree = "<group>"; };
+		735387461856166200D1A283 /* MRReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRReportViewController.xib; sourceTree = "<group>"; };
+		735387471856166200D1A283 /* MRReportViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRReportViewController_iPad.xib; sourceTree = "<group>"; };
+		735387481856166200D1A283 /* MyReviewersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyReviewersViewController.h; sourceTree = "<group>"; };
+		735387491856166200D1A283 /* MyReviewersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyReviewersViewController.m; sourceTree = "<group>"; };
+		7353874A1856166200D1A283 /* MyReviewersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyReviewersViewController.xib; sourceTree = "<group>"; };
+		7353874B1856166200D1A283 /* MyReviewersViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyReviewersViewController_iPad.xib; sourceTree = "<group>"; };
+		73538756185616BC00D1A283 /* PRLFinishViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PRLFinishViewController_iPad.xib; path = "Pick a Reviewer from the Library/PRLFinishViewController_iPad.xib"; sourceTree = "<group>"; };
+		73538757185616BC00D1A283 /* PRLPickViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PRLPickViewController_iPad.xib; path = "Pick a Reviewer from the Library/PRLPickViewController_iPad.xib"; sourceTree = "<group>"; };
+		73538758185616BC00D1A283 /* PRLSearchViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PRLSearchViewController_iPad.xib; path = "Pick a Reviewer from the Library/PRLSearchViewController_iPad.xib"; sourceTree = "<group>"; };
+		7353875C18562CA400D1A283 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
+		7353875D18562CA400D1A283 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
+		7353875F185634FE00D1A283 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		73538760185634FE00D1A283 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		735387621856355600D1A283 /* TDTeacherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDTeacherCell.h; sourceTree = "<group>"; };
+		735387631856355600D1A283 /* TDTeacherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDTeacherCell.m; sourceTree = "<group>"; };
+		735387671856357700D1A283 /* TDTeacherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDTeacherCell.xib; sourceTree = "<group>"; };
+		735387691856389000D1A283 /* TDTeacherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDTeacherViewController.h; sourceTree = "<group>"; };
+		7353876A1856389000D1A283 /* TDTeacherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDTeacherViewController.m; sourceTree = "<group>"; };
+		7353876C18563A0400D1A283 /* TDTeacherViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDTeacherViewController_iPad.xib; sourceTree = "<group>"; };
+		7353876E18563A3900D1A283 /* TDTeacherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDTeacherViewController.xib; sourceTree = "<group>"; };
 		735428EE17ECA57D006CDF8F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		735428F017ECA584006CDF8F /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
-		7359929817E86EC10051E3D2 /* MRMKKidsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKKidsViewController.h; sourceTree = "<group>"; };
-		7359929917E86EC10051E3D2 /* MRMKKidsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKKidsViewController.m; sourceTree = "<group>"; };
-		7359929A17E86EC10051E3D2 /* MRMKKidsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKKidsViewController.xib; sourceTree = "<group>"; };
-		7359929D17E86ECA0051E3D2 /* MRMKRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKRegisterViewController.h; sourceTree = "<group>"; };
-		7359929E17E86ECA0051E3D2 /* MRMKRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKRegisterViewController.m; sourceTree = "<group>"; };
-		7359929F17E86ECA0051E3D2 /* MRMKRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKRegisterViewController.xib; sourceTree = "<group>"; };
 		737119E21813C2E8004217BA /* AboutUsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController_iPad.xib; sourceTree = "<group>"; };
-		7372F167180F7C2000BD2850 /* PRLSearchViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLSearchViewController_iPad.xib; sourceTree = "<group>"; };
 		7372F169180F7C4900BD2850 /* MyAccountViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAccountViewController_iPad.xib; sourceTree = "<group>"; };
-		7372F16B180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKKidsViewController_iPad.xib; sourceTree = "<group>"; };
-		7372F16D180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKRegisterViewController_iPad.xib; sourceTree = "<group>"; };
-		7372F16F180F7D0400BD2850 /* TDCourseViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCourseViewController_iPad.xib; sourceTree = "<group>"; };
-		7372F171180F7D1C00BD2850 /* TDMenuViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDMenuViewController_iPad.xib; sourceTree = "<group>"; };
-		7372F173180F7D3400BD2850 /* TDSaveViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSaveViewController_iPad.xib; sourceTree = "<group>"; };
-		7372F175180F7D5400BD2850 /* TDSectionViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSectionViewController_iPad.xib; sourceTree = "<group>"; };
 		7374F94117FB02290017ECB0 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
 		7374F94217FB02290017ECB0 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
-		73816348180C192800B32A35 /* HPFinishViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPFinishViewController_iPad.xib; sourceTree = "<group>"; };
-		7381634A180C196500B32A35 /* HPLoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPLoginViewController_iPad.xib; sourceTree = "<group>"; };
-		7381634C180C197300B32A35 /* HPRegisterViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPRegisterViewController_iPad.xib; sourceTree = "<group>"; };
 		7384853517F54CDC00529CE1 /* MRMKChildCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMKChildCell.h; sourceTree = "<group>"; };
 		7384853617F54CDC00529CE1 /* MRMKChildCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMKChildCell.m; sourceTree = "<group>"; };
 		7384853717F54CDC00529CE1 /* MRMKChildCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRMKChildCell.xib; sourceTree = "<group>"; };
@@ -226,9 +281,9 @@
 		7384853E17F54CDC00529CE1 /* TDCheckboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCheckboxCell.h; sourceTree = "<group>"; };
 		7384853F17F54CDC00529CE1 /* TDCheckboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCheckboxCell.m; sourceTree = "<group>"; };
 		7384854017F54CDC00529CE1 /* TDCheckboxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCheckboxCell.xib; sourceTree = "<group>"; };
-		7384854117F54CDC00529CE1 /* TDCourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCourseCell.h; sourceTree = "<group>"; };
-		7384854217F54CDC00529CE1 /* TDCourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCourseCell.m; sourceTree = "<group>"; };
-		7384854317F54CDC00529CE1 /* TDCourseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDCourseCell.xib; sourceTree = "<group>"; };
+		7384854117F54CDC00529CE1 /* TDLessonPlanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLessonPlanCell.h; sourceTree = "<group>"; };
+		7384854217F54CDC00529CE1 /* TDLessonPlanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLessonPlanCell.m; sourceTree = "<group>"; };
+		7384854317F54CDC00529CE1 /* TDLessonPlanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDLessonPlanCell.xib; sourceTree = "<group>"; };
 		7384854417F54CDC00529CE1 /* TDSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSectionCell.h; sourceTree = "<group>"; };
 		7384854517F54CDC00529CE1 /* TDSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSectionCell.m; sourceTree = "<group>"; };
 		7384854617F54CDC00529CE1 /* TDSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSectionCell.xib; sourceTree = "<group>"; };
@@ -294,7 +349,6 @@
 		73A4AAFE17E9843200F52277 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		73A4AB0017E985BD00F52277 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		73A4AB0217E9863A00F52277 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyReviewersViewController_iPad.xib; sourceTree = "<group>"; };
 		73A893A817F6107A00A9F4FD /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		73A893A917F6107A00A9F4FD /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		73B05787183E388F003649AC /* QuestionDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetails.h; sourceTree = "<group>"; };
@@ -318,6 +372,8 @@
 		73D3F88117E4ADCE00149106 /* HPRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPRegisterViewController.h; path = Homepage/HPRegisterViewController.h; sourceTree = "<group>"; };
 		73D3F88217E4ADCE00149106 /* HPRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPRegisterViewController.m; path = Homepage/HPRegisterViewController.m; sourceTree = "<group>"; };
 		73D3F88317E4ADCE00149106 /* HPRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HPRegisterViewController.xib; path = Homepage/HPRegisterViewController.xib; sourceTree = "<group>"; };
+		73D7DF281850E781008EFC77 /* KidReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KidReport.h; sourceTree = "<group>"; };
+		73D7DF291850E781008EFC77 /* KidReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KidReport.m; sourceTree = "<group>"; };
 		73D9E8061828E8AA004D70C2 /* fb_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_logo.png; sourceTree = "<group>"; };
 		73E725741843AFA400CBFE66 /* feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback.png; sourceTree = "<group>"; };
 		73EC79A217B914BE00F2E12E /* Jakenpoy PTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jakenpoy PTA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -333,15 +389,9 @@
 		73EC79B717B914BE00F2E12E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		73FCF7E7184FA53000BD130B /* ReviewerStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewerStudent.h; sourceTree = "<group>"; };
 		73FCF7E8184FA53000BD130B /* ReviewerStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewerStudent.m; sourceTree = "<group>"; };
-		73FCF7ED184FA60F00BD130B /* MRAnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAnalysisViewController.h; sourceTree = "<group>"; };
-		73FCF7EE184FA60F00BD130B /* MRAnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAnalysisViewController.m; sourceTree = "<group>"; };
-		73FCF7EF184FA60F00BD130B /* MRAnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRAnalysisViewController.xib; sourceTree = "<group>"; };
 		73FCF7F2184FA6E400BD130B /* MRAnalysisCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAnalysisCell.h; sourceTree = "<group>"; };
 		73FCF7F3184FA6E400BD130B /* MRAnalysisCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAnalysisCell.m; sourceTree = "<group>"; };
 		73FCF7F5184FA6FD00BD130B /* MRAnalysisCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRAnalysisCell.xib; sourceTree = "<group>"; };
-		73FCF7F7184FAC6B00BD130B /* MRAnalysisViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRAnalysisViewController_iPad.xib; sourceTree = "<group>"; };
-		73FED441180EAA2000162BC7 /* PRLFinishViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLFinishViewController_iPad.xib; sourceTree = "<group>"; };
-		73FED443180EBC6D00162BC7 /* PRLPickViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLPickViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +399,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7353872F185614A900D1A283 /* QuartzCore.framework in Frameworks */,
 				73EC79A617B914BE00F2E12E /* UIKit.framework in Frameworks */,
 				73EC79A817B914BE00F2E12E /* Foundation.framework in Frameworks */,
 				73EC79AA17B914BE00F2E12E /* CoreGraphics.framework in Frameworks */,
@@ -388,12 +439,12 @@
 		4A22730117C1FD7200019CAD /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				735387391856162600D1A283 /* HPFinishViewController_iPad.xib */,
+				7353873A1856162600D1A283 /* HPLoginViewController_iPad.xib */,
+				7353873B1856162600D1A283 /* HPRegisterViewController_iPad.xib */,
 				73D3F87D17E4ADCE00149106 /* HPFinishViewController.xib */,
-				73816348180C192800B32A35 /* HPFinishViewController_iPad.xib */,
 				73D3F88017E4ADCE00149106 /* HPLoginViewController.xib */,
-				7381634A180C196500B32A35 /* HPLoginViewController_iPad.xib */,
 				73D3F88317E4ADCE00149106 /* HPRegisterViewController.xib */,
-				7381634C180C197300B32A35 /* HPRegisterViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -411,44 +462,32 @@
 			isa = PBXGroup;
 			children = (
 				4A2272FE17C1FA0400019CAD /* Homepage */,
-				4A5C10A717C328DA00C89CA6 /* My Reviewers */,
+				7353873F1856166200D1A283 /* My Reviewers */,
 				73FD1EBA17DC3A2600A690D2 /* Pick a Reviewer from the Library */,
 				4A5C10AD17C3374300C89CA6 /* Teacher's Desk */,
 				739239F717E6C77600576D06 /* Make a Reviewer from Scratch */,
 				73192C7F17E779160080F339 /* Randomizer */,
-				735992A217E86ECF0051E3D2 /* Manage/Register My Kids */,
+				73538718185613CD00D1A283 /* Manage:Register My Kids */,
 				73922A3B17E7A05C00401722 /* My Account */,
 				73192C9917E7844F0080F339 /* About Us */,
 			);
 			name = View;
 			sourceTree = "<group>";
 		};
-		4A5C10A717C328DA00C89CA6 /* My Reviewers */ = {
-			isa = PBXGroup;
-			children = (
-				73C612EB1840EEAE0046388B /* xib */,
-				73FCF7ED184FA60F00BD130B /* MRAnalysisViewController.h */,
-				73FCF7EE184FA60F00BD130B /* MRAnalysisViewController.m */,
-				4A22730217C1FF1E00019CAD /* MyReviewersViewController.h */,
-				4A22730317C1FF1E00019CAD /* MyReviewersViewController.m */,
-				730417D71832899A00051BB0 /* MRReportViewController.h */,
-				730417D81832899A00051BB0 /* MRReportViewController.m */,
-			);
-			name = "My Reviewers";
-			sourceTree = "<group>";
-		};
 		4A5C10AD17C3374300C89CA6 /* Teacher's Desk */ = {
 			isa = PBXGroup;
 			children = (
 				4A5C10BD17C33C9300C89CA6 /* xib */,
-				73192C8017E783B10080F339 /* TDCourseViewController.h */,
-				73192C8117E783B10080F339 /* TDCourseViewController.m */,
+				73192C8017E783B10080F339 /* TDLessonPlanViewController.h */,
+				73192C8117E783B10080F339 /* TDLessonPlanViewController.m */,
 				73192C8317E783B10080F339 /* TDMenuViewController.h */,
 				73192C8417E783B10080F339 /* TDMenuViewController.m */,
 				73192C8617E783B10080F339 /* TDSaveViewController.h */,
 				73192C8717E783B10080F339 /* TDSaveViewController.m */,
 				73192C8917E783B10080F339 /* TDSectionViewController.h */,
 				73192C8A17E783B10080F339 /* TDSectionViewController.m */,
+				735387691856389000D1A283 /* TDTeacherViewController.h */,
+				7353876A1856389000D1A283 /* TDTeacherViewController.m */,
 			);
 			name = "Teacher's Desk";
 			sourceTree = "<group>";
@@ -456,14 +495,16 @@
 		4A5C10BD17C33C9300C89CA6 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				73192C8217E783B10080F339 /* TDCourseViewController.xib */,
-				7372F16F180F7D0400BD2850 /* TDCourseViewController_iPad.xib */,
+				73192C8217E783B10080F339 /* TDLessonPlanViewController.xib */,
+				73538731185615AE00D1A283 /* TDLessonPlanViewController_iPad.xib */,
 				73192C8517E783B10080F339 /* TDMenuViewController.xib */,
-				7372F171180F7D1C00BD2850 /* TDMenuViewController_iPad.xib */,
+				73538732185615AE00D1A283 /* TDMenuViewController_iPad.xib */,
 				73192C8817E783B10080F339 /* TDSaveViewController.xib */,
-				7372F173180F7D3400BD2850 /* TDSaveViewController_iPad.xib */,
+				73538733185615AE00D1A283 /* TDSaveViewController_iPad.xib */,
 				73192C8B17E783B10080F339 /* TDSectionViewController.xib */,
-				7372F175180F7D5400BD2850 /* TDSectionViewController_iPad.xib */,
+				73538734185615AE00D1A283 /* TDSectionViewController_iPad.xib */,
+				7353876C18563A0400D1A283 /* TDTeacherViewController_iPad.xib */,
+				7353876E18563A3900D1A283 /* TDTeacherViewController.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -500,25 +541,73 @@
 			path = SVSegmentedControl;
 			sourceTree = "<group>";
 		};
-		735992A217E86ECF0051E3D2 /* Manage/Register My Kids */ = {
+		735387081856135300D1A283 /* GIAccordion */ = {
 			isa = PBXGroup;
 			children = (
-				735992A317E86EF90051E3D2 /* xib */,
-				7359929817E86EC10051E3D2 /* MRMKKidsViewController.h */,
-				7359929917E86EC10051E3D2 /* MRMKKidsViewController.m */,
-				7359929D17E86ECA0051E3D2 /* MRMKRegisterViewController.h */,
-				7359929E17E86ECA0051E3D2 /* MRMKRegisterViewController.m */,
+				735387091856135300D1A283 /* GIAccordion.h */,
+				7353870A1856135300D1A283 /* GIAccordion.m */,
+				7353870B1856135300D1A283 /* GIAccordionViewCell.h */,
+				7353870C1856135300D1A283 /* GIAccordionViewCell.m */,
+				7353870D1856135300D1A283 /* GIAccordionViewController.h */,
+				7353870E1856135300D1A283 /* GIAccordionViewController.m */,
+				7353870F1856135300D1A283 /* GITree.h */,
+				735387101856135300D1A283 /* GITree.m */,
+				735387111856135300D1A283 /* GITreeNode.h */,
+				735387121856135300D1A283 /* GITreeNode.m */,
 			);
-			name = "Manage/Register My Kids";
+			path = GIAccordion;
 			sourceTree = "<group>";
 		};
-		735992A317E86EF90051E3D2 /* xib */ = {
+		73538718185613CD00D1A283 /* Manage:Register My Kids */ = {
 			isa = PBXGroup;
 			children = (
-				7359929A17E86EC10051E3D2 /* MRMKKidsViewController.xib */,
-				7372F16B180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib */,
-				7359929F17E86ECA0051E3D2 /* MRMKRegisterViewController.xib */,
-				7372F16D180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib */,
+				73538730185614FF00D1A283 /* xib */,
+				73538719185613CD00D1A283 /* MRMKKidsViewController.h */,
+				7353871A185613CD00D1A283 /* MRMKKidsViewController.m */,
+				7353871D185613CD00D1A283 /* MRMKRegisterViewController.h */,
+				7353871E185613CD00D1A283 /* MRMKRegisterViewController.m */,
+				73538721185613CD00D1A283 /* MRMKReportViewController.h */,
+				73538722185613CD00D1A283 /* MRMKReportViewController.m */,
+			);
+			path = "Manage:Register My Kids";
+			sourceTree = "<group>";
+		};
+		73538730185614FF00D1A283 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				7353871B185613CD00D1A283 /* MRMKKidsViewController.xib */,
+				7353871C185613CD00D1A283 /* MRMKKidsViewController_iPad.xib */,
+				7353871F185613CD00D1A283 /* MRMKRegisterViewController.xib */,
+				73538720185613CD00D1A283 /* MRMKRegisterViewController_iPad.xib */,
+				73538723185613CD00D1A283 /* MRMKReportViewController.xib */,
+				73538724185613CD00D1A283 /* MRMKReportViewController_iPad.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		7353873F1856166200D1A283 /* My Reviewers */ = {
+			isa = PBXGroup;
+			children = (
+				735387551856167000D1A283 /* xib */,
+				735387401856166200D1A283 /* MRAnalysisViewController.h */,
+				735387411856166200D1A283 /* MRAnalysisViewController.m */,
+				735387441856166200D1A283 /* MRReportViewController.h */,
+				735387451856166200D1A283 /* MRReportViewController.m */,
+				735387481856166200D1A283 /* MyReviewersViewController.h */,
+				735387491856166200D1A283 /* MyReviewersViewController.m */,
+			);
+			path = "My Reviewers";
+			sourceTree = "<group>";
+		};
+		735387551856167000D1A283 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				735387421856166200D1A283 /* MRAnalysisViewController.xib */,
+				735387431856166200D1A283 /* MRAnalysisViewController_iPad.xib */,
+				735387461856166200D1A283 /* MRReportViewController.xib */,
+				735387471856166200D1A283 /* MRReportViewController_iPad.xib */,
+				7353874A1856166200D1A283 /* MyReviewersViewController.xib */,
+				7353874B1856166200D1A283 /* MyReviewersViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -535,16 +624,20 @@
 				7384853C17F54CDC00529CE1 /* ReviewerCell.m */,
 				7384853E17F54CDC00529CE1 /* TDCheckboxCell.h */,
 				7384853F17F54CDC00529CE1 /* TDCheckboxCell.m */,
-				7384854117F54CDC00529CE1 /* TDCourseCell.h */,
-				7384854217F54CDC00529CE1 /* TDCourseCell.m */,
+				7384854117F54CDC00529CE1 /* TDLessonPlanCell.h */,
+				7384854217F54CDC00529CE1 /* TDLessonPlanCell.m */,
 				7384854417F54CDC00529CE1 /* TDSectionCell.h */,
 				7384854517F54CDC00529CE1 /* TDSectionCell.m */,
+				735387621856355600D1A283 /* TDTeacherCell.h */,
+				735387631856355600D1A283 /* TDTeacherCell.m */,
 				730417DE18328C6E00051BB0 /* MRReportCell.h */,
 				730417DF18328C6E00051BB0 /* MRReportCell.m */,
 				731A960D1846557D00F3A2BC /* PRLQuestionCell.h */,
 				731A960E1846557D00F3A2BC /* PRLQuestionCell.m */,
 				73FCF7F2184FA6E400BD130B /* MRAnalysisCell.h */,
 				73FCF7F3184FA6E400BD130B /* MRAnalysisCell.m */,
+				7311E4E418521EF300816372 /* MRMKChildReportCell.h */,
+				7311E4E518521EF300816372 /* MRMKChildReportCell.m */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -556,11 +649,13 @@
 				7384853A17F54CDC00529CE1 /* PRLReviewerCell.xib */,
 				7384853D17F54CDC00529CE1 /* ReviewerCell.xib */,
 				7384854017F54CDC00529CE1 /* TDCheckboxCell.xib */,
-				7384854317F54CDC00529CE1 /* TDCourseCell.xib */,
+				7384854317F54CDC00529CE1 /* TDLessonPlanCell.xib */,
 				7384854617F54CDC00529CE1 /* TDSectionCell.xib */,
 				730417E118328C8800051BB0 /* MRReportCell.xib */,
 				731A9610184655D600F3A2BC /* PRLQuestionCell.xib */,
 				73FCF7F5184FA6FD00BD130B /* MRAnalysisCell.xib */,
+				7311E4E718521F2200816372 /* MRMKChildReportCell.xib */,
+				735387671856357700D1A283 /* TDTeacherCell.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -590,6 +685,12 @@
 				73B05788183E388F003649AC /* QuestionDetails.m */,
 				73FCF7E7184FA53000BD130B /* ReviewerStudent.h */,
 				73FCF7E8184FA53000BD130B /* ReviewerStudent.m */,
+				73D7DF281850E781008EFC77 /* KidReport.h */,
+				73D7DF291850E781008EFC77 /* KidReport.m */,
+				7353875C18562CA400D1A283 /* Section.h */,
+				7353875D18562CA400D1A283 /* Section.m */,
+				7353875F185634FE00D1A283 /* Teacher.h */,
+				73538760185634FE00D1A283 /* Teacher.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -688,6 +789,7 @@
 		73A4AAF317E97B7E00F52277 /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
+				735387081856135300D1A283 /* GIAccordion */,
 				733077F917E62DBA00B76FA5 /* SVSegmentedControl */,
 				73A4AAD617E97B7600F52277 /* AFNetworking */,
 			);
@@ -699,19 +801,6 @@
 			children = (
 				73A4AAF617E97BD200F52277 /* MRSFinishViewController.xib */,
 				73A4AAF917E97BD200F52277 /* MRSQuestionViewController.xib */,
-			);
-			name = xib;
-			sourceTree = "<group>";
-		};
-		73C612EB1840EEAE0046388B /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				4A22730417C1FF1E00019CAD /* MyReviewersViewController.xib */,
-				73A5057B180D9684006792CA /* MyReviewersViewController_iPad.xib */,
-				730417D91832899A00051BB0 /* MRReportViewController.xib */,
-				730417DC18328A1200051BB0 /* MRReportViewController_iPad.xib */,
-				73FCF7EF184FA60F00BD130B /* MRAnalysisViewController.xib */,
-				73FCF7F7184FAC6B00BD130B /* MRAnalysisViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -742,6 +831,7 @@
 				73A4AB0017E985BD00F52277 /* MobileCoreServices.framework */,
 				73A4AB0217E9863A00F52277 /* Security.framework */,
 				73A4AAFE17E9843200F52277 /* SystemConfiguration.framework */,
+				7353872E185614A800D1A283 /* QuartzCore.framework */,
 				73EC79A517B914BE00F2E12E /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -792,12 +882,12 @@
 		73FD1EC517DC3A6600A690D2 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				73538756185616BC00D1A283 /* PRLFinishViewController_iPad.xib */,
+				73538757185616BC00D1A283 /* PRLPickViewController_iPad.xib */,
+				73538758185616BC00D1A283 /* PRLSearchViewController_iPad.xib */,
 				73B5E9D417E6E2C000F53186 /* PRLFinishViewController.xib */,
-				73FED441180EAA2000162BC7 /* PRLFinishViewController_iPad.xib */,
 				73B5E9D717E6E2C000F53186 /* PRLPickViewController.xib */,
-				73FED443180EBC6D00162BC7 /* PRLPickViewController_iPad.xib */,
 				73B5E9DA17E6E2C000F53186 /* PRLSearchViewController.xib */,
-				7372F167180F7C2000BD2850 /* PRLSearchViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -858,84 +948,90 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73538726185613CD00D1A283 /* MRMKKidsViewController.xib in Resources */,
 				7384858417F54E5700529CE1 /* landing_logo.png in Resources */,
+				73538736185615AE00D1A283 /* TDMenuViewController_iPad.xib in Resources */,
 				73EC79B017B914BE00F2E12E /* InfoPlist.strings in Resources */,
 				73EC79B817B914BE00F2E12E /* Default.png in Resources */,
 				7384858A17F54E5700529CE1 /* random_icon.png in Resources */,
+				7353874E1856166200D1A283 /* MRAnalysisViewController_iPad.xib in Resources */,
 				7384858817F54E5700529CE1 /* my_icon.png in Resources */,
-				4A22730617C1FF1E00019CAD /* MyReviewersViewController.xib in Resources */,
 				7384858917F54E5700529CE1 /* pick_icon.png in Resources */,
+				7353876D18563A0400D1A283 /* TDTeacherViewController_iPad.xib in Resources */,
 				7384857E17F54E5700529CE1 /* back_arrow.png in Resources */,
+				735387681856357700D1A283 /* TDTeacherCell.xib in Resources */,
 				7384854C17F54CDC00529CE1 /* ReviewerCell.xib in Resources */,
-				73FED444180EBC6D00162BC7 /* PRLPickViewController_iPad.xib in Resources */,
 				73D3F88517E4ADCE00149106 /* HPFinishViewController.xib in Resources */,
 				73D3F88717E4ADCE00149106 /* HPLoginViewController.xib in Resources */,
 				730417E218328C8800051BB0 /* MRReportCell.xib in Resources */,
-				73FCF7F8184FAC6B00BD130B /* MRAnalysisViewController_iPad.xib in Resources */,
 				7384858B17F54E5700529CE1 /* reviewers_icon.png in Resources */,
 				73D3F88917E4ADCE00149106 /* HPRegisterViewController.xib in Resources */,
+				73538727185613CD00D1A283 /* MRMKKidsViewController_iPad.xib in Resources */,
 				7372F16A180F7C4900BD2850 /* MyAccountViewController_iPad.xib in Resources */,
-				7372F16E180F7C9700BD2850 /* MRMKRegisterViewController_iPad.xib in Resources */,
+				7311E4E818521F2200816372 /* MRMKChildReportCell.xib in Resources */,
 				73E725751843AFA400CBFE66 /* feedback.png in Resources */,
 				7384855217F54CDC00529CE1 /* TDSectionCell.xib in Resources */,
 				735428EF17ECA57D006CDF8F /* Default-568h@2x.png in Resources */,
+				73538735185615AE00D1A283 /* TDLessonPlanViewController_iPad.xib in Resources */,
 				73B5E9DC17E6E2C000F53186 /* PRLFinishViewController.xib in Resources */,
-				7372F172180F7D1C00BD2850 /* TDMenuViewController_iPad.xib in Resources */,
 				7384858517F54E5700529CE1 /* logout_icon.png in Resources */,
-				730417DB1832899A00051BB0 /* MRReportViewController.xib in Resources */,
+				7353873D1856162600D1A283 /* HPLoginViewController_iPad.xib in Resources */,
 				73B5E9DE17E6E2C000F53186 /* PRLPickViewController.xib in Resources */,
 				7384858617F54E5700529CE1 /* make_icon.png in Resources */,
 				73B5E9E017E6E2C000F53186 /* PRLSearchViewController.xib in Resources */,
-				73816349180C192800B32A35 /* HPFinishViewController_iPad.xib in Resources */,
 				73192C7E17E779110080F339 /* RandomizerViewController.xib in Resources */,
-				7381634B180C196500B32A35 /* HPLoginViewController_iPad.xib in Resources */,
-				73192C8D17E783B10080F339 /* TDCourseViewController.xib in Resources */,
+				73192C8D17E783B10080F339 /* TDLessonPlanViewController.xib in Resources */,
 				7384858F17F54E5700529CE1 /* selected.png in Resources */,
+				735387501856166200D1A283 /* MRReportViewController.xib in Resources */,
 				73FCF7F6184FA6FD00BD130B /* MRAnalysisCell.xib in Resources */,
-				73FED442180EAA2000162BC7 /* PRLFinishViewController_iPad.xib in Resources */,
 				7384859317F54E5700529CE1 /* unselected.png in Resources */,
-				7372F176180F7D5400BD2850 /* TDSectionViewController_iPad.xib in Resources */,
+				7353873C1856162600D1A283 /* HPFinishViewController_iPad.xib in Resources */,
 				7384858C17F54E5700529CE1 /* teacher_icon.png in Resources */,
 				73104455182530280028CC62 /* jakenpoy_logo_ipad.png in Resources */,
 				7384859017F54E5700529CE1 /* star_blank.png in Resources */,
 				73192C8F17E783B10080F339 /* TDMenuViewController.xib in Resources */,
 				73192C9117E783B10080F339 /* TDSaveViewController.xib in Resources */,
-				730417DD18328A1200051BB0 /* MRReportViewController_iPad.xib in Resources */,
 				73192C9317E783B10080F339 /* TDSectionViewController.xib in Resources */,
 				737119E31813C2E8004217BA /* AboutUsViewController_iPad.xib in Resources */,
 				732181F117FC89D9005442A8 /* new logo.png in Resources */,
 				7384859117F54E5700529CE1 /* star_fill.png in Resources */,
+				735387531856166200D1A283 /* MyReviewersViewController.xib in Resources */,
 				7384858117F54E5700529CE1 /* drop_down.png in Resources */,
+				7353872D185613CD00D1A283 /* MRMKReportViewController_iPad.xib in Resources */,
 				73192C9817E7844C0080F339 /* AboutUsViewController.xib in Resources */,
-				7372F174180F7D3400BD2850 /* TDSaveViewController_iPad.xib in Resources */,
 				7384858D17F54E5700529CE1 /* tutorial_icon.png in Resources */,
 				7384858217F54E5700529CE1 /* jakenpoy_logo.png in Resources */,
 				73922A3A17E7A05A00401722 /* MyAccountViewController.xib in Resources */,
 				7384854817F54CDC00529CE1 /* MRMKChildCell.xib in Resources */,
 				7384858317F54E5700529CE1 /* jakenpoy_text.png in Resources */,
 				73D9E8071828E8AA004D70C2 /* fb_logo.png in Resources */,
-				73A5057C180D9684006792CA /* MyReviewersViewController_iPad.xib in Resources */,
-				7372F16C180F7C8600BD2850 /* MRMKKidsViewController_iPad.xib in Resources */,
-				7359929C17E86EC10051E3D2 /* MRMKKidsViewController.xib in Resources */,
-				735992A117E86ECA0051E3D2 /* MRMKRegisterViewController.xib in Resources */,
+				7353875B185616BC00D1A283 /* PRLSearchViewController_iPad.xib in Resources */,
+				73538729185613CD00D1A283 /* MRMKRegisterViewController.xib in Resources */,
 				7384854E17F54CDC00529CE1 /* TDCheckboxCell.xib in Resources */,
-				73FCF7F1184FA60F00BD130B /* MRAnalysisViewController.xib in Resources */,
-				7384855017F54CDC00529CE1 /* TDCourseCell.xib in Resources */,
+				7384855017F54CDC00529CE1 /* TDLessonPlanCell.xib in Resources */,
 				7384858E17F54E5700529CE1 /* next.png in Resources */,
 				730C7E581845F30D008E74F3 /* cb_glossy_off.png in Resources */,
-				7372F170180F7D0400BD2850 /* TDCourseViewController_iPad.xib in Resources */,
+				735387541856166200D1A283 /* MyReviewersViewController_iPad.xib in Resources */,
+				7353874D1856166200D1A283 /* MRAnalysisViewController.xib in Resources */,
+				73538737185615AE00D1A283 /* TDSaveViewController_iPad.xib in Resources */,
 				7384859217F54E5700529CE1 /* star_half.png in Resources */,
+				7353875A185616BC00D1A283 /* PRLPickViewController_iPad.xib in Resources */,
 				731A9611184655D600F3A2BC /* PRLQuestionCell.xib in Resources */,
+				735387511856166200D1A283 /* MRReportViewController_iPad.xib in Resources */,
+				73538759185616BC00D1A283 /* PRLFinishViewController_iPad.xib in Resources */,
+				7353872A185613CD00D1A283 /* MRMKRegisterViewController_iPad.xib in Resources */,
 				735428F117ECA584006CDF8F /* Default~iphone.png in Resources */,
-				7381634D180C197300B32A35 /* HPRegisterViewController_iPad.xib in Resources */,
 				7384858717F54E5700529CE1 /* manage_icon.png in Resources */,
 				7384857D17F54E5700529CE1 /* back.png in Resources */,
 				7384854A17F54CDC00529CE1 /* PRLReviewerCell.xib in Resources */,
 				73A4AAFB17E97BD200F52277 /* MRSFinishViewController.xib in Resources */,
 				73CE81391806B72F00FD2957 /* Settings.bundle in Resources */,
-				7372F168180F7C2000BD2850 /* PRLSearchViewController_iPad.xib in Resources */,
 				730C7E591845F30D008E74F3 /* cb_glossy_on.png in Resources */,
+				7353876F18563A3900D1A283 /* TDTeacherViewController.xib in Resources */,
 				73A4AAFD17E97BD200F52277 /* MRSQuestionViewController.xib in Resources */,
+				73538738185615AE00D1A283 /* TDSectionViewController_iPad.xib in Resources */,
+				7353872C185613CD00D1A283 /* MRMKReportViewController.xib in Resources */,
+				7353873E1856162600D1A283 /* HPRegisterViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,55 +1045,67 @@
 				73EC79B217B914BE00F2E12E /* main.m in Sources */,
 				7384856017F54D8B00529CE1 /* Challenge.m in Sources */,
 				734A608A1837B55900E64184 /* ReviewerReport.m in Sources */,
+				735387141856135300D1A283 /* GIAccordionViewCell.m in Sources */,
+				73538725185613CD00D1A283 /* MRMKKidsViewController.m in Sources */,
 				7384856117F54D8B00529CE1 /* JakenpoyHTTPClient.m in Sources */,
 				73EC79B617B914BE00F2E12E /* AppDelegate.m in Sources */,
-				4A22730517C1FF1E00019CAD /* MyReviewersViewController.m in Sources */,
 				73D3F88417E4ADCE00149106 /* HPFinishViewController.m in Sources */,
 				73D3F88617E4ADCE00149106 /* HPLoginViewController.m in Sources */,
 				73D3F88817E4ADCE00149106 /* HPRegisterViewController.m in Sources */,
 				733077FE17E62DBA00B76FA5 /* SVSegmentedControl.m in Sources */,
+				735387521856166200D1A283 /* MyReviewersViewController.m in Sources */,
 				733077FF17E62DBA00B76FA5 /* SVSegmentedThumb.m in Sources */,
 				73A893AA17F6107A00A9F4FD /* Student.m in Sources */,
 				73B5E9DB17E6E2C000F53186 /* PRLFinishViewController.m in Sources */,
-				7384854F17F54CDC00529CE1 /* TDCourseCell.m in Sources */,
+				73538761185634FE00D1A283 /* Teacher.m in Sources */,
+				7384854F17F54CDC00529CE1 /* TDLessonPlanCell.m in Sources */,
 				73B5E9DD17E6E2C000F53186 /* PRLPickViewController.m in Sources */,
 				7384856217F54D8B00529CE1 /* Reviewer.m in Sources */,
 				73B05789183E388F003649AC /* QuestionDetails.m in Sources */,
 				73B5E9DF17E6E2C000F53186 /* PRLSearchViewController.m in Sources */,
 				73192C7D17E779110080F339 /* RandomizerViewController.m in Sources */,
 				73FCF7F4184FA6E400BD130B /* MRAnalysisCell.m in Sources */,
-				73192C8C17E783B10080F339 /* TDCourseViewController.m in Sources */,
+				73192C8C17E783B10080F339 /* TDLessonPlanViewController.m in Sources */,
 				73192C8E17E783B10080F339 /* TDMenuViewController.m in Sources */,
 				73192C9017E783B10080F339 /* TDSaveViewController.m in Sources */,
+				7353872B185613CD00D1A283 /* MRMKReportViewController.m in Sources */,
+				735387151856135300D1A283 /* GIAccordionViewController.m in Sources */,
+				7353875E18562CA400D1A283 /* Section.m in Sources */,
 				73192C9217E783B10080F339 /* TDSectionViewController.m in Sources */,
-				73FCF7F0184FA60F00BD130B /* MRAnalysisViewController.m in Sources */,
 				73192C9717E7844C0080F339 /* AboutUsViewController.m in Sources */,
 				7384854717F54CDC00529CE1 /* MRMKChildCell.m in Sources */,
 				73922A3917E7A05A00401722 /* MyAccountViewController.m in Sources */,
-				7359929B17E86EC10051E3D2 /* MRMKKidsViewController.m in Sources */,
+				7353874C1856166200D1A283 /* MRAnalysisViewController.m in Sources */,
 				7374F94317FB02290017ECB0 /* School.m in Sources */,
-				735992A017E86ECA0051E3D2 /* MRMKRegisterViewController.m in Sources */,
 				73A4AAEA17E97B7600F52277 /* AFHTTPClient.m in Sources */,
+				73D7DF2A1850E781008EFC77 /* KidReport.m in Sources */,
+				735387161856135300D1A283 /* GITree.m in Sources */,
 				73A4AAEB17E97B7600F52277 /* AFHTTPRequestOperation.m in Sources */,
 				73FCF7E9184FA53000BD130B /* ReviewerStudent.m in Sources */,
+				7353874F1856166200D1A283 /* MRReportViewController.m in Sources */,
 				73A4AAEC17E97B7600F52277 /* AFImageRequestOperation.m in Sources */,
 				7384854B17F54CDC00529CE1 /* ReviewerCell.m in Sources */,
 				7384855F17F54D8B00529CE1 /* Assignees.m in Sources */,
 				7384856317F54D8B00529CE1 /* UserType.m in Sources */,
 				73A4AAED17E97B7600F52277 /* AFJSONRequestOperation.m in Sources */,
+				7353876B1856389000D1A283 /* TDTeacherViewController.m in Sources */,
 				7384854917F54CDC00529CE1 /* PRLReviewerCell.m in Sources */,
 				73A4AAEE17E97B7600F52277 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				73A4AAEF17E97B7600F52277 /* AFPropertyListRequestOperation.m in Sources */,
-				730417DA1832899A00051BB0 /* MRReportViewController.m in Sources */,
+				73538728185613CD00D1A283 /* MRMKRegisterViewController.m in Sources */,
 				730417E018328C6E00051BB0 /* MRReportCell.m in Sources */,
 				73A4AAF017E97B7600F52277 /* AFURLConnectionOperation.m in Sources */,
+				7311E4E618521EF300816372 /* MRMKChildReportCell.m in Sources */,
 				7384855117F54CDC00529CE1 /* TDSectionCell.m in Sources */,
+				735387131856135300D1A283 /* GIAccordion.m in Sources */,
 				73A4AAF117E97B7600F52277 /* AFXMLRequestOperation.m in Sources */,
 				73A4AAF217E97B7600F52277 /* UIImageView+AFNetworking.m in Sources */,
 				7384854D17F54CDC00529CE1 /* TDCheckboxCell.m in Sources */,
 				734A608D1837BA9900E64184 /* Question.m in Sources */,
+				735387171856135300D1A283 /* GITreeNode.m in Sources */,
 				73A4AAFA17E97BD200F52277 /* MRSFinishViewController.m in Sources */,
 				731A960F1846557D00F3A2BC /* PRLQuestionCell.m in Sources */,
+				735387641856355600D1A283 /* TDTeacherCell.m in Sources */,
 				73A4AAFC17E97BD200F52277 /* MRSQuestionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

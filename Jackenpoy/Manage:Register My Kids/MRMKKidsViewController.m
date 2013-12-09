@@ -7,8 +7,9 @@
 //
 
 #import "MRMKKidsViewController.h"
-#import "MRMKChildCell.h"
 #import "MRMKRegisterViewController.h"
+#import "MRMKReportViewController.h"
+#import "MRMKChildCell.h"
 #import "Student.h"
 
 static JakenpoyHTTPClient * client;
@@ -90,9 +91,19 @@ NSIndexPath * SelectedIndex;
 - (IBAction)report
 {
     Student * kid = StudentList[SelectedIndex.row];
-#warning This causes an error
-    //[client kidReport:kid.ID];
-    [client studentReport:kid.ID];
+    
+    MRMKReportViewController * mrmkrvc;
+    
+    if (isPhone) {
+        mrmkrvc = [[MRMKReportViewController alloc] initWithNibName:@"MRMKReportViewController" bundle:nil];
+    }
+    else {
+        mrmkrvc = [[MRMKReportViewController alloc] initWithNibName:@"MRMKReportViewController_iPad" bundle:nil];
+    }
+    
+    [self.navigationController pushViewController:mrmkrvc animated:YES];
+    
+    [mrmkrvc setKidID:kid.ID];
 }
 
 #pragma mark - UITableView Data Source

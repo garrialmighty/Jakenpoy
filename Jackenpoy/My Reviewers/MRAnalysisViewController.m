@@ -93,6 +93,7 @@ static NSNumber * reviewerID;
         
         [cell.Name setText:item.Name];
         [cell.Score setText:[NSString stringWithFormat:@"%@/%@",item.Correct, item.Total]];
+        [cell.Percentage setText:item.Percent];
     }
     
     return cell;
@@ -109,7 +110,7 @@ static NSNumber * reviewerID;
             [item setID:[NSNumber numberWithInteger:[student[@"id"] integerValue]]];
             [item setName:student[@"name"]];
             [item setCorrect:student[@"correct"]];
-            [item setPercent:student[@"percent"]];
+            [item setPercent:[NSString stringWithFormat:@"%0.02f%%",[student[@"percent"] floatValue]]];
             [item setTotal:student[@"total"]];
             
             [StudentList addObject:item];
@@ -126,7 +127,7 @@ static NSNumber * reviewerID;
     [alert show];
 }
 
-#pragma mark - UITableView Delegate
+#pragma mark UITableView Delegate
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"MRAnalysisCell" owner:self options:nil];

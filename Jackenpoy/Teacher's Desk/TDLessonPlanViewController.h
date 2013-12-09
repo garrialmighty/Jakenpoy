@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDCourseViewController : UIViewController
+@interface TDLessonPlanViewController : UIViewController <JakenpoyHTTPClientDelegate>
 
 @end

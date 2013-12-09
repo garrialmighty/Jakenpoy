@@ -11,4 +11,5 @@
 @interface MRAnalysisCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *Name;
 @property (weak, nonatomic) IBOutlet UILabel *Score;
+@property (weak, nonatomic) IBOutlet UILabel *Percentage;
 @end

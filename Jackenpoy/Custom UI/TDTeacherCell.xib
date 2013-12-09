@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Lup-4d-hGP" customClass="TDTeacherCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lup-4d-hGP" id="sWz-za-MAY">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icA-fF-z0T" userLabel="Selected BG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="cjn-j3-B6V" userLabel="Name">
+                        <rect key="frame" x="10" y="0.0" width="150" height="43"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="Dgf-uR-lDT" userLabel="Description">
+                        <rect key="frame" x="170" y="0.0" width="150" height="43"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="icA-fF-z0T" secondAttribute="bottom" id="6Dx-A7-vOo"/>
+                    <constraint firstItem="Dgf-uR-lDT" firstAttribute="top" secondItem="sWz-za-MAY" secondAttribute="top" id="9TW-cp-TQm"/>
+                    <constraint firstAttribute="bottom" secondItem="Dgf-uR-lDT" secondAttribute="bottom" id="9WY-PF-Y1A"/>
+                    <constraint firstItem="cjn-j3-B6V" firstAttribute="leading" secondItem="sWz-za-MAY" secondAttribute="leading" constant="10" id="Hm3-D8-zIR"/>
+                    <constraint firstAttribute="trailing" secondItem="icA-fF-z0T" secondAttribute="trailing" id="RaF-Iq-uZe"/>
+                    <constraint firstAttribute="bottom" secondItem="cjn-j3-B6V" secondAttribute="bottom" id="Rm4-8v-kvG"/>
+                    <constraint firstItem="Dgf-uR-lDT" firstAttribute="leading" secondItem="cjn-j3-B6V" secondAttribute="trailing" constant="10" id="VGi-4e-Tf7"/>
+                    <constraint firstAttribute="trailing" secondItem="Dgf-uR-lDT" secondAttribute="trailing" id="Xjn-dR-AGp"/>
+                    <constraint firstItem="icA-fF-z0T" firstAttribute="leading" secondItem="sWz-za-MAY" secondAttribute="leading" id="cZX-gF-ZvR"/>
+                    <constraint firstItem="icA-fF-z0T" firstAttribute="top" secondItem="sWz-za-MAY" secondAttribute="top" id="kyO-si-h4J"/>
+                    <constraint firstItem="Dgf-uR-lDT" firstAttribute="leading" secondItem="cjn-j3-B6V" secondAttribute="trailing" constant="10" id="tLk-3B-k5W"/>
+                    <constraint firstItem="cjn-j3-B6V" firstAttribute="top" secondItem="sWz-za-MAY" secondAttribute="top" id="wvf-YB-xXH"/>
+                    <constraint firstItem="Dgf-uR-lDT" firstAttribute="width" secondItem="cjn-j3-B6V" secondAttribute="width" id="ykM-YR-no0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="Email" destination="Dgf-uR-lDT" id="jhV-QW-eJ9"/>
+                <outlet property="Name" destination="cjn-j3-B6V" id="Nlg-MX-C8S"/>
+                <outlet property="SelectedBG" destination="icA-fF-z0T" id="Ii0-A7-yv1"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

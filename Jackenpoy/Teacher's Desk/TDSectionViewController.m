@@ -8,12 +8,16 @@
 
 #import "TDSectionViewController.h"
 #import "TDSectionCell.h"
+#import "Section.h"
 
+static JakenpoyHTTPClient * client;
+static NSMutableArray * SectionList;
 NSIndexPath * SelectedIndex;
 
 @interface TDSectionViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *EditSectionButton;
 @property (weak, nonatomic) IBOutlet UIButton *ViewStudentsButton;
+@property (weak, nonatomic) IBOutlet UITableView *Table;
 
 @end
 
@@ -31,6 +35,12 @@ NSIndexPath * SelectedIndex;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    SectionList = [[NSMutableArray alloc] init];
+    
+    client = [JakenpoyHTTPClient getSharedClient];
+    [client setDelegate:self];
+    [client getAvailableSections];
     
     [jakenpoyAppDelegate showBackButton];
     [self.navigationItem setHidesBackButton:YES];
@@ -57,7 +67,7 @@ NSIndexPath * SelectedIndex;
 #pragma mark - UITableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return SectionList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -69,22 +79,22 @@ NSIndexPath * SelectedIndex;
         cell = topObj[0];
     }
     
-    [cell.Section setText:[NSString stringWithFormat:@"Sample Section %d",indexPath.row]];
-    [cell.Grade setText:@"AB"];
-    [cell.Teacher setText:@"Prof. Ession Al"];
+    Section * section = SectionList[indexPath.row];
+    
+    [cell.ID setText:[section.ID stringValue]];
+    [cell.GradeLevel setText:section.GradeLevel];
+    [cell.Name setText:section.Name];
     
     return cell;
 }
 
-#pragma mark - UITableView Delegate
+#pragma mark Delegate
+#pragma mark UITableView Delegate
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"TDSectionCell" owner:self options:nil];
     TDSectionCell * returnView = topObj[0];
     [returnView setBackgroundColor:[UIColor whiteColor]];
-    [returnView.Section setText:@"Section"];
-    [returnView.Grade setText:@"Grade"];
-    [returnView.Teacher setText:@"Teacher"];
     
     return returnView;
 }
@@ -98,6 +108,33 @@ NSIndexPath * SelectedIndex;
     
     if (SelectedIndex.row != indexPath.row) [tableView deselectRowAtIndexPath:SelectedIndex animated:YES];
     SelectedIndex = indexPath;
+}
+
+#pragma mark JakenpoyHTTPClient Delegate
+-(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        NSArray * data = json[@"data"][@"available_sections"];
+        
+        for (NSDictionary * section in data) {
+            Section * item = [[Section alloc] init];
+            
+            [item setID:[NSNumber numberWithInteger:[section[@"id"] integerValue]]];
+            [item setGradeLevel:section[@"grade_level"]];
+            [item setName:section[@"name"]];
+            
+            [SectionList addObject:item];
+        }
+        
+        [self.Table reloadData];
+    }
+}
+
+-(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error
+{
+    NSLog(@"E:%@",error);
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error Searching" message:@"Make sure you are connected to the internet and please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
 }
 
 @end

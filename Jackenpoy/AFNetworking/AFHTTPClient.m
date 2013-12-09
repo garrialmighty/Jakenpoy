@@ -518,7 +518,6 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
                 NSString * paramString = [NSString stringWithFormat:@"/%@/%@/%@/%@/%@",parameters[@"email"], parameters[@"name"], parameters[@"password"], parameters[@"type"] ,parameters[@"schoolid"]];
                 paramString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)paramString, NULL, (CFStringRef)@"!*'();:@&=+$,?%#[]", kCFStringEncodingUTF8));
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
-                NSLog(@"after%@",url);
             }
             else if ([path isEqualToString:@"unpublish"] || [path isEqualToString:@"publish"] || [path isEqualToString:@"analysisreport"] || [path isEqualToString:@"getquestion"] || [path isEqualToString:@"getPDF"] || [path isEqualToString:@"report"]) {
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@",parameters[@"qsetId"], parameters[@"userId"], parameters[@"token"]]];
@@ -531,6 +530,17 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
             }
             else if ([path isEqualToString:@"updateAccount"]) {
                 NSString * paramString = [NSString stringWithFormat:@"/%@/%@/%@/%@/%@",parameters[@"name"], parameters[@"currentpassword"], parameters[@"email"], parameters[@"userId"], parameters[@"token"]];
+                paramString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)paramString, NULL, (CFStringRef)@"!*'();:@&=+$,?%#[]", kCFStringEncodingUTF8));
+                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
+            }
+            else if ([path isEqualToString:@"courseSections"] || [path isEqualToString:@"getCourse"]) {
+                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@",parameters[@"id"], parameters[@"userId"], parameters[@"token"]]];
+            }
+            else if ([path isEqualToString:@"addSection"]) {
+                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@",parameters[@"id"], parameters[@"userId"], parameters[@"token"]]];
+            }
+            else if ([path isEqualToString:@"saveCourse"]) {
+                NSString * paramString = [NSString stringWithFormat:@"/%@/%@/%@/%@/%@/%@",parameters[@"name"], parameters[@"courseId"], parameters[@"subjectId"], parameters[@"teacherId"], parameters[@"userId"], parameters[@"token"]];
                 paramString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)paramString, NULL, (CFStringRef)@"!*'();:@&=+$,?%#[]", kCFStringEncodingUTF8));
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
             }

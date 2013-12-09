@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Garri Adrian Nablo. All rights reserved.
 //
 
-#import "TDCourseCell.h"
+#import "TDLessonPlanCell.h"
 
-@interface TDCourseCell()
+@interface TDLessonPlanCell()
 @property (weak, nonatomic) IBOutlet UIView *SelectedBG;
 @property (weak, nonatomic) IBOutlet UIButton *TopicsButton;
 
 @end
 
-@implementation TDCourseCell
+@implementation TDLessonPlanCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

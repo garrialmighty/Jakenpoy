@@ -180,22 +180,23 @@ static NSString * CurrentInstruction;
         [self.view sendSubviewToBack:self.Detail];
         [self.view sendSubviewToBack:self.Step2];
     }
-    else if (sender.tag == 3) {
-        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
+    //else if (sender.tag == 3) {
+    else {
+        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Save"];
         [self.NFButton setTag:3];
         [self.Step1Button setEnabled:YES];
         [self.Step2Button setEnabled:YES];
         [self.view sendSubviewToBack:self.Step1];
         [self.view sendSubviewToBack:self.Step2];
     }
-    else {
-        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Finished"];
+    /*else {
+        NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Save"];
         [self.NFButton setTag:2];
         [self.DetailsButton setEnabled:YES];
         [self.Step1Button setEnabled:YES];
         [self.view sendSubviewToBack:self.Detail];
         [self.view sendSubviewToBack:self.Step1];
-    }
+    }*/
     
     [NFUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [NFUlString length])];
     [NFUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [NFUlString length])];
@@ -223,19 +224,24 @@ static NSString * CurrentInstruction;
         [self.Step2Button setEnabled:YES];
         [self.view sendSubviewToBack:self.Detail];
         [self.view sendSubviewToBack:self.Step2];
+        
+        NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"Save"];
+        [finUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [finUlString length])];
+        [finUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [finUlString length])];
+        [self.NFButton setAttributedTitle:finUlString forState:UIControlStateNormal];
     }
-    else if (sender.tag == 1) {
+    /*else if (sender.tag == 1) {
         [self.NFButton setTag:2];
         [self.Step1Button setEnabled:YES];
         [self.Step2Button setEnabled:NO];
         [self.view sendSubviewToBack:self.Detail];
         [self.view sendSubviewToBack:self.Step1];
         
-        NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"Finished"];
+        NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"Save"];
         [finUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [finUlString length])];
         [finUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [finUlString length])];
         [self.NFButton setAttributedTitle:finUlString forState:UIControlStateNormal];
-    }
+    }*/
     else {
         NSString * assigneeString = @"";
         for (NSIndexPath * ip in [self.KidsTable indexPathsForSelectedRows]) {
@@ -462,12 +468,20 @@ static NSString * CurrentInstruction;
     }
 }
 
+#pragma mark Alertview
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSArray * vcStack = self.navigationController.viewControllers;
+    [self.navigationController popToViewController:vcStack[1] animated:YES];
+}
+
 #pragma mark JakenpoyHTTPClient
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(NSDictionary *)json
 {
     [self hideLoadingScreen];
-    NSArray * vcStack = self.navigationController.viewControllers;
-    [self.navigationController popToViewController:vcStack[1] animated:YES];
+    
+    [[[UIAlertView alloc] initWithTitle:nil message:@"Reviewer saved successfully!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    
     NSLog(@"%@",json);
 }
 
@@ -561,7 +575,7 @@ static NSString * CurrentInstruction;
         //UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
         //[cell setAccessoryType:UITableViewCellAccessoryNone];
         
-        TDCheckboxCell *cCell = [tableView cellForRowAtIndexPath:indexPath];
+        TDCheckboxCell *cCell = (TDCheckboxCell *)[tableView cellForRowAtIndexPath:indexPath];
         [cCell toggleCheckbox];
     }
 }
@@ -576,7 +590,7 @@ static NSString * CurrentInstruction;
         //UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
         //[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
         
-        TDCheckboxCell *cCell = [tableView cellForRowAtIndexPath:indexPath];
+        TDCheckboxCell *cCell = (TDCheckboxCell *)[tableView cellForRowAtIndexPath:indexPath];
         [cCell toggleCheckbox];
     }
 }

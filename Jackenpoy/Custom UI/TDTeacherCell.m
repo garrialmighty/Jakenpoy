@@ -1,18 +1,18 @@
 //
-//  TDSectionCell.m
-//  Jackenpoy
+//  TDTeacherCell.m
+//  Jakenpoy PTA
 //
-//  Created by Garri Adrian Nablo on 8/20/13.
+//  Created by Garri Adrian Nablo on 12/10/13.
 //  Copyright (c) 2013 Garri Adrian Nablo. All rights reserved.
 //
 
-#import "TDSectionCell.h"
+#import "TDTeacherCell.h"
 
-@interface TDSectionCell()
+@interface TDTeacherCell()
 @property (weak, nonatomic) IBOutlet UIView *SelectedBG;
 @end
 
-@implementation TDSectionCell
+@implementation TDTeacherCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -27,30 +27,19 @@
 {
     [super setSelected:selected animated:animated];
     
+    // Configure the view for the selected state
     if (selected) {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.ID setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
-            [self.ID setTextColor:[UIColor blackColor]];
-            
             [self.Name setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
-            [self.Name setTextColor:[UIColor blackColor]];
-            
-            [self.GradeLevel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
-            [self.GradeLevel setTextColor:[UIColor blackColor]];
+            [self.Email setTextColor:[UIColor blackColor]];
             
             [self.SelectedBG setHidden:NO];
         }];
     }
     else {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.ID setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
-            [self.ID setTextColor:[UIColor blackColor]];
-            
             [self.Name setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
-            [self.Name setTextColor:[UIColor blackColor]];
-            
-            [self.GradeLevel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
-            [self.GradeLevel setTextColor:[UIColor blackColor]];
+            [self.Email setTextColor:[UIColor blackColor]];
             
             [self.SelectedBG setHidden:YES];
         }];

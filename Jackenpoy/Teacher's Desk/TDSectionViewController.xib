@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TDSectionViewController">
             <connections>
                 <outlet property="EditSectionButton" destination="31" id="64"/>
+                <outlet property="Table" destination="18" id="1oW-G4-yqb"/>
                 <outlet property="ViewStudentsButton" destination="30" id="65"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>

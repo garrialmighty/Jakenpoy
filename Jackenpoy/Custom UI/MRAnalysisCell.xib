@@ -14,38 +14,67 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="246" translatesAutoresizingMaskIntoConstraints="NO" id="Dyy-dF-y1i" userLabel="Question">
-                        <rect key="frame" x="5" y="0.0" width="246" height="43"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="Dyy-dF-y1i" userLabel="Name">
+                        <rect key="frame" x="5" y="0.0" width="211" height="43"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="nyl-nu-Ggp" userLabel="Score">
+                        <rect key="frame" x="216" y="0.0" width="40" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="246" id="5T1-dt-3oX"/>
+                            <constraint firstAttribute="width" constant="40" id="zFZ-v1-CdT"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="69" translatesAutoresizingMaskIntoConstraints="NO" id="nyl-nu-Ggp" userLabel="Right">
-                        <rect key="frame" x="251" y="0.0" width="69" height="43"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="64" translatesAutoresizingMaskIntoConstraints="NO" id="qlg-LY-1Sq" userLabel="Percentage">
+                        <rect key="frame" x="256" y="0.0" width="64" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="CGE-l2-VdQ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ooc-wF-KJB" userLabel="Border">
+                        <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="m8R-Lh-8ns"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="nyl-nu-Ggp" firstAttribute="top" secondItem="fyI-4N-YIm" secondAttribute="top" id="4yb-5D-QjV"/>
+                    <constraint firstItem="Ooc-wF-KJB" firstAttribute="leading" secondItem="fyI-4N-YIm" secondAttribute="leading" id="7Hh-7D-eYf"/>
+                    <constraint firstItem="qlg-LY-1Sq" firstAttribute="top" secondItem="fyI-4N-YIm" secondAttribute="top" id="IYT-d8-a1q"/>
+                    <constraint firstAttribute="bottom" secondItem="nyl-nu-Ggp" secondAttribute="bottom" id="Rvf-Rh-AYB"/>
                     <constraint firstAttribute="bottom" secondItem="Dyy-dF-y1i" secondAttribute="bottom" id="Sii-zS-ycx"/>
+                    <constraint firstAttribute="trailing" secondItem="qlg-LY-1Sq" secondAttribute="trailing" id="Uit-wb-MIw"/>
                     <constraint firstItem="Dyy-dF-y1i" firstAttribute="top" secondItem="fyI-4N-YIm" secondAttribute="top" id="Y9y-eU-CWv"/>
                     <constraint firstItem="nyl-nu-Ggp" firstAttribute="top" secondItem="fyI-4N-YIm" secondAttribute="top" id="dxt-V4-1IS"/>
-                    <constraint firstAttribute="trailing" secondItem="nyl-nu-Ggp" secondAttribute="trailing" id="gj4-RL-hxp"/>
+                    <constraint firstAttribute="bottom" secondItem="qlg-LY-1Sq" secondAttribute="bottom" id="f2C-bq-p2w"/>
                     <constraint firstItem="Dyy-dF-y1i" firstAttribute="leading" secondItem="fyI-4N-YIm" secondAttribute="leading" constant="5" id="gn8-wH-Q3k"/>
+                    <constraint firstAttribute="bottom" secondItem="Ooc-wF-KJB" secondAttribute="bottom" id="je5-O1-Hiz"/>
+                    <constraint firstAttribute="trailing" secondItem="Ooc-wF-KJB" secondAttribute="trailing" id="mWy-5w-9hh"/>
+                    <constraint firstItem="qlg-LY-1Sq" firstAttribute="leading" secondItem="nyl-nu-Ggp" secondAttribute="trailing" id="mql-ok-ksA"/>
+                    <constraint firstItem="nyl-nu-Ggp" firstAttribute="leading" secondItem="Dyy-dF-y1i" secondAttribute="trailing" id="nVT-04-sMZ"/>
                     <constraint firstAttribute="bottom" secondItem="nyl-nu-Ggp" secondAttribute="bottom" id="osI-z3-QNd"/>
-                    <constraint firstItem="nyl-nu-Ggp" firstAttribute="leading" secondItem="Dyy-dF-y1i" secondAttribute="trailing" id="yda-Oc-rTS"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="Name" destination="Dyy-dF-y1i" id="Gzz-BQ-5IZ"/>
+                <outlet property="Percentage" destination="qlg-LY-1Sq" id="ZKN-a1-3qP"/>
                 <outlet property="Score" destination="nyl-nu-Ggp" id="h9Z-oH-rMm"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Default.png" width="320" height="480"/>
+    </resources>
 </document>
