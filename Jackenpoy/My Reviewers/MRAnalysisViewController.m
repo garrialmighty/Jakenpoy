@@ -104,6 +104,8 @@ static NSNumber * reviewerID;
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
 {
     if ([json[@"status"] isEqualToString:@"success"]) {
+        [StudentList removeAllObjects];
+        
         for (NSDictionary * student in json[@"data"]) {
             ReviewerStudent * item = [[ReviewerStudent alloc] init];
             
@@ -128,11 +130,19 @@ static NSNumber * reviewerID;
 }
 
 #pragma mark UITableView Delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"MRAnalysisCell" owner:self options:nil];
     MRAnalysisCell * returnView = topObj[0];
-    [returnView setBackgroundColor:[UIColor whiteColor]];
+    [returnView setBackgroundColor:[UIColor colorWithRed:0.83 green:0.86 blue:0.9 alpha:1]];
+    [returnView.Name setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+    [returnView.Score setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+    [returnView.Percentage setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
     
     return returnView;
 }

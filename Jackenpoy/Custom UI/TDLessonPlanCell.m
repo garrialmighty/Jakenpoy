@@ -32,7 +32,7 @@
     // Configure the view for the selected state
     if (selected) {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.CourseTitle setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.CourseTitle setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.CourseTitle setTextColor:[UIColor blackColor]];
             
             [self.SelectedBG setHidden:NO];
@@ -40,7 +40,7 @@
     }
     else {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.CourseTitle setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.CourseTitle setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.CourseTitle setTextColor:[UIColor blackColor]];
             
             [self.SelectedBG setHidden:YES];

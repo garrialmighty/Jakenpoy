@@ -29,13 +29,13 @@
     
     if (selected) {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.ID setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.ID setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.ID setTextColor:[UIColor blackColor]];
             
-            [self.Name setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.Name setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.Name setTextColor:[UIColor blackColor]];
             
-            [self.GradeLevel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.GradeLevel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.GradeLevel setTextColor:[UIColor blackColor]];
             
             [self.SelectedBG setHidden:NO];
@@ -43,13 +43,13 @@
     }
     else {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.ID setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.ID setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.ID setTextColor:[UIColor blackColor]];
             
-            [self.Name setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.Name setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.Name setTextColor:[UIColor blackColor]];
             
-            [self.GradeLevel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.GradeLevel setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.GradeLevel setTextColor:[UIColor blackColor]];
             
             [self.SelectedBG setHidden:YES];

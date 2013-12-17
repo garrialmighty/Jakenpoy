@@ -60,7 +60,7 @@ NSIndexPath * SelectedIndex;
     //[self.ReportsButton.layer setBorderWidth:1.0];
     
     // Add underlined titles
-    NSMutableAttributedString *reportUlString = [[NSMutableAttributedString alloc] initWithString:@"Reports"];
+    /*NSMutableAttributedString *reportUlString = [[NSMutableAttributedString alloc] initWithString:@"Reports"];
     [reportUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [reportUlString length])];
     [reportUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [reportUlString length])];
     [self.ReportsButton setAttributedTitle:reportUlString forState:UIControlStateNormal];
@@ -73,9 +73,13 @@ NSIndexPath * SelectedIndex;
     NSMutableAttributedString *republishUlString = [[NSMutableAttributedString alloc] initWithString:@"Publish"];
     [republishUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [republishUlString length])];
     [republishUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [republishUlString length])];
-    [self.RepublishButton setAttributedTitle:republishUlString forState:UIControlStateNormal];
+    [self.RepublishButton setAttributedTitle:republishUlString forState:UIControlStateNormal];*/
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    [self.ReportsButton.titleLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:15]];
+    [self.PrintButton.titleLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:15]];
+    [self.RepublishButton.titleLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:15]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -205,14 +209,22 @@ NSIndexPath * SelectedIndex;
 
 #pragma mark - Delegate
 #pragma mark UITableView Delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"ReviewerCell" owner:self options:nil];
     ReviewerCell * returnView = topObj[0];
-    [returnView setBackgroundColor:[UIColor whiteColor]];
+    [returnView setBackgroundColor:[UIColor colorWithRed:0.83 green:0.86 blue:0.9 alpha:1]];
     [returnView.Title setText:@"Title"];
-    [returnView.ExpirationDate setText:@"Exp."];
+    [returnView.Title setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+    [returnView.ExpirationDate setText:@"Expiry Date"];
+    [returnView.ExpirationDate setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
     [returnView.Status setText:@"Status"];
+    [returnView.Status setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
     
     return returnView;
 }
@@ -234,7 +246,7 @@ NSIndexPath * SelectedIndex;
     // If cell is published
     if (cell.isGood) {
         NSMutableAttributedString *reportUlString = [[NSMutableAttributedString alloc] initWithString:@"Reports"];
-        [reportUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [reportUlString length])];
+        //[reportUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [reportUlString length])];
         [reportUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [reportUlString length])];
         [self.ReportsButton setAttributedTitle:reportUlString forState:UIControlStateNormal];
         [self.ReportsButton setBackgroundColor:[UIColor colorWithRed:0.86 green:0.39 blue:0.25 alpha:1]];
@@ -242,7 +254,7 @@ NSIndexPath * SelectedIndex;
         // Date today is less than expiry
         if ([[NSDate date] compare:cell.ExpDate]==NSOrderedDescending) {
             NSMutableAttributedString *republishUlString = [[NSMutableAttributedString alloc] initWithString:@"Unpublish"];
-            [republishUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [republishUlString length])];
+            //[republishUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [republishUlString length])];
             [republishUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [republishUlString length])];
             [self.RepublishButton setAttributedTitle:republishUlString forState:UIControlStateNormal];
             [self.RepublishButton setTag:2];
@@ -250,7 +262,7 @@ NSIndexPath * SelectedIndex;
         // Date today is more than expiry
         else {
             NSMutableAttributedString *republishUlString = [[NSMutableAttributedString alloc] initWithString:@"Republish"];
-            [republishUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [republishUlString length])];
+            //[republishUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [republishUlString length])];
             [republishUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [republishUlString length])];
             [self.RepublishButton setAttributedTitle:republishUlString forState:UIControlStateNormal];
             [self.RepublishButton setTag:1];
@@ -259,13 +271,13 @@ NSIndexPath * SelectedIndex;
     // If cell is unpublished or has expired
     else {
         NSMutableAttributedString *reportUlString = [[NSMutableAttributedString alloc] initWithString:@"Edit"];
-        [reportUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [reportUlString length])];
+        //[reportUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [reportUlString length])];
         [reportUlString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, [reportUlString length])];
         [self.ReportsButton setAttributedTitle:reportUlString forState:UIControlStateNormal];
         [self.ReportsButton setBackgroundColor:[UIColor whiteColor]];
         
         NSMutableAttributedString *republishUlString = [[NSMutableAttributedString alloc] initWithString:@"Publish"];
-        [republishUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [republishUlString length])];
+        //[republishUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [republishUlString length])];
         [republishUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [republishUlString length])];
         [self.RepublishButton setAttributedTitle:republishUlString forState:UIControlStateNormal];
         [self.RepublishButton setTag:1];
@@ -413,6 +425,7 @@ NSIndexPath * SelectedIndex;
 {
     if ([json[@"status"] isEqualToString:@"success"]) {
         NSArray * data = json[@"data"][@"challenges"];
+        [ReviewersList removeAllObjects];
         
         for (NSDictionary * reviewer in data) {
             Reviewer * item = [[Reviewer alloc] init];

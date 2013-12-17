@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TDSectionViewController">
             <connections>
+                <outlet property="AddButton" destination="4" id="5IT-Fg-Hwx"/>
                 <outlet property="EditSectionButton" destination="31" id="64"/>
                 <outlet property="Table" destination="18" id="1oW-G4-yqb"/>
                 <outlet property="ViewStudentsButton" destination="30" id="65"/>
@@ -18,25 +19,13 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="Add Section Button">
-                    <rect key="frame" x="180" y="3" width="140" height="35"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxJ-Rg-6FX" userLabel="Background Color">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.41568627450000001" green="0.67450980390000004" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="35" id="9"/>
-                        <constraint firstAttribute="width" constant="140" id="11"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="Add Section">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="feedback.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
+                    <color key="backgroundColor" red="0.21176470589999999" green="0.49019607840000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="18" userLabel="Table">
-                    <rect key="frame" x="0.0" y="43" width="320" height="343"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="386"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -45,48 +34,71 @@
                     </connections>
                 </tableView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31" userLabel="Edit Section">
-                    <rect key="frame" x="0.0" y="386" width="160" height="50"/>
+                    <rect key="frame" x="0.0" y="386" width="107" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.36470588240000001" green="0.52156862749999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="33"/>
-                        <constraint firstAttribute="width" constant="160" id="47"/>
+                        <constraint firstAttribute="height" constant="50" id="6Lj-iN-Kpu"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="Edit Section">
+                    <state key="normal" title="Edit">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="highlighted" backgroundImage="feedback.png"/>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30" userLabel="View Students">
-                    <rect key="frame" x="160" y="386" width="160" height="50"/>
+                    <rect key="frame" x="107" y="386" width="106" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.75686274509999996" green="0.38823529410000002" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="35"/>
-                        <constraint firstAttribute="width" constant="160" id="49"/>
+                        <constraint firstAttribute="height" constant="50" id="5Qh-Gt-eje"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="View Students">
+                    <state key="normal" title="View">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="highlighted" backgroundImage="feedback.png"/>
                 </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="Add Section Button">
+                    <rect key="frame" x="213" y="386" width="107" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.41568627450000001" green="0.67450980390000004" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="bMg-35-3aS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="Add">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="feedback.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="4" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="12"/>
-                <constraint firstItem="18" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="23"/>
-                <constraint firstItem="18" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="25"/>
-                <constraint firstItem="31" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="45"/>
-                <constraint firstItem="30" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="50"/>
-                <constraint firstItem="30" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="51"/>
-                <constraint firstItem="31" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="55"/>
-                <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" constant="3" id="91"/>
-                <constraint firstItem="18" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="5" id="d0Y-lp-kRO"/>
-                <constraint firstItem="30" firstAttribute="top" secondItem="18" secondAttribute="bottom" id="eZi-KL-923"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="30" secondAttribute="trailing" id="0yO-we-RQ7"/>
+                <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="2s7-2y-KzT"/>
+                <constraint firstAttribute="bottom" secondItem="uxJ-Rg-6FX" secondAttribute="bottom" id="3NR-9D-PDg"/>
+                <constraint firstAttribute="bottom" secondItem="31" secondAttribute="bottom" id="7za-y8-vSa"/>
+                <constraint firstItem="uxJ-Rg-6FX" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="8dp-J7-bE0"/>
+                <constraint firstAttribute="bottom" secondItem="30" secondAttribute="bottom" id="A4o-n4-xGP"/>
+                <constraint firstItem="18" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Apm-oz-aqg"/>
+                <constraint firstItem="31" firstAttribute="width" secondItem="30" secondAttribute="width" id="Bd2-OX-x8u"/>
+                <constraint firstItem="30" firstAttribute="leading" secondItem="31" secondAttribute="trailing" id="Bik-Rp-S1V"/>
+                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="FXs-xY-5PR"/>
+                <constraint firstItem="30" firstAttribute="leading" secondItem="31" secondAttribute="trailing" id="GQz-Md-X1D"/>
+                <constraint firstItem="18" firstAttribute="top" secondItem="1" secondAttribute="top" id="GY8-i9-NK6"/>
+                <constraint firstItem="uxJ-Rg-6FX" firstAttribute="top" secondItem="1" secondAttribute="top" id="QF2-wn-L4t"/>
+                <constraint firstItem="31" firstAttribute="width" secondItem="4" secondAttribute="width" id="QWq-rm-UXE"/>
+                <constraint firstItem="31" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="UGh-1W-Zm6"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="30" secondAttribute="trailing" id="oSG-No-2ce"/>
+                <constraint firstItem="30" firstAttribute="top" secondItem="18" secondAttribute="bottom" id="swi-tX-s7a"/>
+                <constraint firstAttribute="trailing" secondItem="18" secondAttribute="trailing" id="x6d-Vi-hAD"/>
+                <constraint firstAttribute="trailing" secondItem="uxJ-Rg-6FX" secondAttribute="trailing" id="xvY-o2-29g"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

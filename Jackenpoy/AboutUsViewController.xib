@@ -8,7 +8,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutUsViewController">
             <connections>
                 <outlet property="EmailButton" destination="19" id="323"/>
-                <outlet property="GlobeButton" destination="13" id="321"/>
                 <outlet property="LandlineButton" destination="16" id="322"/>
                 <outlet property="LearnMoreButton" destination="4" id="317"/>
                 <outlet property="SmartButton" destination="7" id="318"/>
@@ -44,7 +43,6 @@
                         <constraint firstAttribute="height" constant="20" id="130"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                    <color key="textColor" red="0.1764705882" green="0.52941176469999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="40" userLabel="Information">
@@ -55,7 +53,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SMART:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22" userLabel="Smart Label">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GLOBE:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22" userLabel="Smart Label">
                     <rect key="frame" x="20" y="237" width="90" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -72,7 +70,7 @@
                         <constraint firstAttribute="width" constant="120" id="305"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="(0939) 908-5930">
+                    <state key="normal" title="(0917) 853-8840">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -105,37 +103,15 @@
                         <action selector="contact:" destination="-1" eventType="touchUpInside" id="334"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GLOBE:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28" userLabel="Globe Label">
-                    <rect key="frame" x="20" y="303" width="90" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13" userLabel="Globe Button">
-                    <rect key="frame" x="147" y="303" width="120" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="(0917) 853-8840">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="contact:" destination="-1" eventType="touchUpInside" id="335"/>
-                    </connections>
-                </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LANDLINE:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31" userLabel=" Landline Label">
-                    <rect key="frame" x="20" y="336" width="90" height="18"/>
+                    <rect key="frame" x="20" y="313" width="90" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16" userLabel="Landline Button">
-                    <rect key="frame" x="147" y="336" width="102" height="18"/>
+                    <rect key="frame" x="147" y="313" width="102" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="102" id="313"/>
@@ -153,14 +129,14 @@
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="EMAIL:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34" userLabel="Email Label">
-                    <rect key="frame" x="20" y="369" width="90" height="18"/>
+                    <rect key="frame" x="20" y="346" width="90" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19" userLabel="Email Button">
-                    <rect key="frame" x="147" y="369" width="153" height="18"/>
+                    <rect key="frame" x="147" y="346" width="153" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="admin@jakenpoy.com">
@@ -186,30 +162,24 @@
                 <constraint firstItem="40" firstAttribute="top" secondItem="1" secondAttribute="top" constant="140" id="132"/>
                 <constraint firstItem="22" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="134"/>
                 <constraint firstItem="25" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="138"/>
-                <constraint firstItem="28" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="143"/>
                 <constraint firstItem="31" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="145"/>
                 <constraint firstItem="34" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="147"/>
                 <constraint firstItem="25" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" id="154"/>
-                <constraint firstItem="28" firstAttribute="trailing" secondItem="25" secondAttribute="trailing" id="155"/>
                 <constraint firstItem="34" firstAttribute="trailing" secondItem="31" secondAttribute="trailing" id="161"/>
-                <constraint firstItem="28" firstAttribute="trailing" secondItem="31" secondAttribute="trailing" id="205"/>
                 <constraint firstItem="10" firstAttribute="baseline" secondItem="25" secondAttribute="baseline" id="226"/>
                 <constraint firstItem="7" firstAttribute="baseline" secondItem="22" secondAttribute="baseline" id="247"/>
-                <constraint firstItem="13" firstAttribute="baseline" secondItem="28" secondAttribute="baseline" id="249"/>
-                <constraint firstItem="13" firstAttribute="leading" secondItem="10" secondAttribute="leading" id="250"/>
-                <constraint firstItem="16" firstAttribute="leading" secondItem="13" secondAttribute="leading" id="251"/>
                 <constraint firstItem="16" firstAttribute="baseline" secondItem="31" secondAttribute="baseline" id="252"/>
                 <constraint firstItem="19" firstAttribute="baseline" secondItem="34" secondAttribute="baseline" id="255"/>
                 <constraint firstItem="7" firstAttribute="leading" secondItem="10" secondAttribute="leading" id="262"/>
                 <constraint firstItem="10" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" id="293"/>
                 <constraint firstItem="16" firstAttribute="leading" secondItem="19" secondAttribute="leading" id="296"/>
-                <constraint firstItem="13" firstAttribute="trailing" secondItem="10" secondAttribute="trailing" id="311"/>
                 <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" constant="20" symbolic="YES" id="316"/>
                 <constraint firstItem="22" firstAttribute="top" secondItem="40" secondAttribute="bottom" constant="25" id="327"/>
                 <constraint firstItem="25" firstAttribute="top" secondItem="22" secondAttribute="bottom" constant="15" id="329"/>
-                <constraint firstItem="28" firstAttribute="top" secondItem="25" secondAttribute="bottom" constant="15" id="330"/>
-                <constraint firstItem="31" firstAttribute="top" secondItem="28" secondAttribute="bottom" constant="15" id="331"/>
                 <constraint firstItem="34" firstAttribute="top" secondItem="31" secondAttribute="bottom" constant="15" id="332"/>
+                <constraint firstItem="31" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" id="DWa-5t-FAz"/>
+                <constraint firstItem="31" firstAttribute="top" secondItem="25" secondAttribute="bottom" constant="25" id="Llm-me-Cw9"/>
+                <constraint firstItem="7" firstAttribute="leading" secondItem="22" secondAttribute="trailing" constant="37" id="uC9-18-yT6"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

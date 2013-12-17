@@ -19,6 +19,8 @@ NSIndexPath * SelectedIndex;
 @interface MRMKKidsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *Table;
 @property (weak, nonatomic) IBOutlet UIButton *RegisterButton;
+@property (weak, nonatomic) IBOutlet UIButton *ReportsButton;
+@property (weak, nonatomic) IBOutlet UIButton *DeactivateButton;
 @end
 
 @implementation MRMKKidsViewController
@@ -135,6 +137,7 @@ NSIndexPath * SelectedIndex;
 {
     if ([json[@"status"] isEqualToString:@"success"]) {
         NSArray * data = json[@"data"][@"student_accounts"];
+        [StudentList removeAllObjects];
         
         for (NSDictionary * student in data) {
             Student * item = [[Student alloc] init];
@@ -161,17 +164,30 @@ NSIndexPath * SelectedIndex;
 }
 
 #pragma mark UITableView
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"MRMKChildCell" owner:self options:nil];
     MRMKChildCell * returnView = topObj[0];
-    [returnView setBackgroundColor:[UIColor whiteColor]];
+    [returnView setBackgroundColor:[UIColor colorWithRed:0.83 green:0.86 blue:0.9 alpha:1]];
+    [returnView.Name setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+    [returnView.Status setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
     
     return returnView;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
+    if ([self.ReportsButton isHidden]) {
+        [self.ReportsButton setHidden:NO];
+        [self.DeactivateButton setHidden:NO];
+        [self.RegisterButton setHidden:NO];
+    }
+    
     if (SelectedIndex.row != indexPath.row) [tableView deselectRowAtIndexPath:SelectedIndex animated:YES];
     SelectedIndex = indexPath;
 }

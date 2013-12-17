@@ -245,13 +245,18 @@ static NSIndexPath * IndexToUpdate;
 }
 
 #pragma mark UITableView
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"PRLReviewerCell" owner:self options:nil];
     PRLReviewerCell * returnView = topObj[0];
-    [returnView setBackgroundColor:[UIColor whiteColor]];
-    [returnView.Title setText:@"Reviewer Title"];
-    [returnView.Author setText:@"Author"];
+    [returnView setBackgroundColor:[UIColor colorWithRed:0.83 green:0.86 blue:0.9 alpha:1]];
+    [returnView.Title setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+    [returnView.Author setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
     
     return returnView;
 }

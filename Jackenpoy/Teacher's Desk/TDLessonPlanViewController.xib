@@ -7,7 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TDLessonPlanViewController">
             <connections>
+                <outlet property="AddLessonPlanButton" destination="5" id="WcB-Fo-AXH"/>
                 <outlet property="EditCourseButton" destination="6" id="41"/>
+                <outlet property="Table" destination="7" id="RfD-bH-jCX"/>
                 <outlet property="ViewSectionsButton" destination="4" id="42"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -17,13 +19,41 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="Add Course Button">
-                    <rect key="frame" x="180" y="3" width="140" height="35"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USD-cz-exq" userLabel="Background Color">
+                    <rect key="frame" x="90" y="-4" width="32" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.21176470589999999" green="0.49019607840000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="Table">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="386"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="35"/>
+                        <outlet property="delegate" destination="-1" id="36"/>
+                    </connections>
+                </tableView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="View Sections">
+                    <rect key="frame" x="107" y="386" width="107" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.86274509799999999" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="zI0-Ys-Ijh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="View Sections">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="feedback.png"/>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="Add Course Button">
+                    <rect key="frame" x="214" y="386" width="106" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="35" id="11"/>
-                        <constraint firstAttribute="width" constant="140" id="12"/>
+                        <constraint firstAttribute="height" constant="50" id="eHb-DU-xDe"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Add Lesson Plan">
@@ -34,40 +64,15 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="addCourse" destination="-1" eventType="touchUpInside" id="64"/>
+                        <action selector="addCourse" destination="-1" eventType="touchUpInside" id="Nkh-l5-5Ax"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="Table">
-                    <rect key="frame" x="0.0" y="43" width="320" height="343"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="35"/>
-                        <outlet property="delegate" destination="-1" id="36"/>
-                    </connections>
-                </tableView>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="View Sections">
-                    <rect key="frame" x="160" y="386" width="160" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.86274509799999999" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="13"/>
-                        <constraint firstAttribute="width" constant="160" id="14"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="View Sections">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="feedback.png"/>
-                </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="Edit Course">
-                    <rect key="frame" x="0.0" y="386" width="160" height="50"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="Edit Lesson Plan">
+                    <rect key="frame" x="0.0" y="386" width="107" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.36470588240000001" green="0.52156862749999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="9"/>
-                        <constraint firstAttribute="width" constant="160" id="10"/>
+                        <constraint firstAttribute="height" constant="50" id="rMH-ra-ujT"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Edit Lesson Plan">
@@ -76,22 +81,27 @@
                     </state>
                     <state key="highlighted" backgroundImage="feedback.png"/>
                     <connections>
-                        <action selector="editCourse" destination="-1" eventType="touchUpInside" id="pcL-bt-pej"/>
+                        <action selector="editCourse" destination="-1" eventType="touchUpInside" id="lRW-rN-rJ5"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="4" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="26"/>
-                <constraint firstItem="6" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="27"/>
-                <constraint firstItem="7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="28"/>
-                <constraint firstItem="7" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="29"/>
-                <constraint firstItem="6" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="31"/>
-                <constraint firstItem="4" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="32"/>
-                <constraint firstItem="5" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="33"/>
-                <constraint firstItem="5" firstAttribute="top" secondItem="1" secondAttribute="top" constant="3" id="63"/>
-                <constraint firstItem="7" firstAttribute="top" secondItem="5" secondAttribute="bottom" constant="5" id="B3F-hJ-0tL"/>
-                <constraint firstItem="6" firstAttribute="top" secondItem="7" secondAttribute="bottom" id="Jva-IS-RkD"/>
+                <constraint firstItem="5" firstAttribute="leading" secondItem="4" secondAttribute="trailing" id="2Te-V4-Vao"/>
+                <constraint firstItem="5" firstAttribute="leading" secondItem="4" secondAttribute="trailing" id="3Vs-cJ-ncX"/>
+                <constraint firstItem="7" firstAttribute="top" secondItem="1" secondAttribute="top" id="7yi-Hx-kUu"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="6" secondAttribute="trailing" id="9yN-as-idO"/>
+                <constraint firstItem="6" firstAttribute="width" secondItem="5" secondAttribute="width" id="AKb-U5-Sln"/>
+                <constraint firstAttribute="trailing" secondItem="5" secondAttribute="trailing" id="EhS-sg-RIS"/>
+                <constraint firstItem="7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="GRh-om-BOn"/>
+                <constraint firstItem="6" firstAttribute="top" secondItem="7" secondAttribute="bottom" id="M36-d4-6gq"/>
+                <constraint firstItem="6" firstAttribute="width" secondItem="4" secondAttribute="width" id="N04-Vw-ajf"/>
+                <constraint firstAttribute="trailing" secondItem="7" secondAttribute="trailing" id="QCy-L4-xQC"/>
+                <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="bq8-nW-vDd"/>
+                <constraint firstItem="6" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ejc-Up-kh7"/>
+                <constraint firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="fNl-id-ook"/>
+                <constraint firstAttribute="bottom" secondItem="5" secondAttribute="bottom" id="q6X-ba-mWn"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="6" secondAttribute="trailing" id="xvh-tF-c1y"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

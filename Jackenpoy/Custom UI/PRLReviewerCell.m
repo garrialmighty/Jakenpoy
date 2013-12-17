@@ -29,10 +29,10 @@
 
     if (selected) {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.Title setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.Title setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.Title setTextColor:[UIColor blackColor]];
             
-            [self.Author setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.Author setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.Author setTextColor:[UIColor blackColor]];
             
             [self.SelectedBG setHidden:NO];
@@ -40,10 +40,10 @@
     }
     else {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.Title setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.Title setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.Title setTextColor:[UIColor blackColor]];
             
-            [self.Author setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.Author setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.Author setTextColor:[UIColor blackColor]];
             
             [self.SelectedBG setHidden:YES];

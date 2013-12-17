@@ -87,6 +87,7 @@ static NSNumber * KidID;
     //NSLog(@"%@",json);
     if ([json[@"status"] isEqualToString:@"success"]) {
         NSArray * data = json[@"data"][@"results"];
+        [ReportList removeAllObjects];
         
         for (NSDictionary * report in data) {
             KidReport * item = [[KidReport alloc] init];
@@ -107,11 +108,20 @@ static NSNumber * KidID;
 }
 
 #pragma mark UITableView
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"MRMKChildReportCell" owner:self options:nil];
     MRMKChildReportCell * returnView = topObj[0];
-    [returnView setBackgroundColor:[UIColor whiteColor]];
+    [returnView setBackgroundColor:[UIColor colorWithRed:0.83 green:0.86 blue:0.9 alpha:1]];
+    [returnView.Name setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+    [returnView.Description setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+    [returnView.Count setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+
     
     return returnView;
 }

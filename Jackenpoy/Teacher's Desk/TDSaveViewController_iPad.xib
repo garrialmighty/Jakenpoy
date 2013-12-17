@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="CheckboxTable" destination="dWq-Ij-LkY" id="fyA-5p-LZb"/>
                 <outlet property="NSButton" destination="pca-ek-Hbz" id="RYk-ej-0RO"/>
+                <outlet property="Picker" destination="EKC-hS-891" id="A63-zg-cxH"/>
                 <outlet property="Step1" destination="dMo-hG-zcL" id="bv0-LE-XGS"/>
                 <outlet property="Step1Button" destination="uOL-c3-Blh" id="Bq6-zh-5hF"/>
                 <outlet property="Step2" destination="eME-lI-78k" id="KDV-uD-GiW"/>
@@ -161,7 +162,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina3.5"/>
                 </view>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOL-c3-Blh" userLabel="Step 1 Button">
+                <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOL-c3-Blh" userLabel="Step 1 Button">
                     <rect key="frame" x="0.0" y="900" width="193" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -181,7 +182,7 @@
                         <action selector="showStep:" destination="-1" eventType="touchUpInside" id="Sbf-Fu-esR"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zn-TI-kW8" userLabel="Step 2 Button">
+                <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zn-TI-kW8" userLabel="Step 2 Button">
                     <rect key="frame" x="193" y="900" width="193" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -201,7 +202,7 @@
                         <action selector="showStep:" destination="-1" eventType="touchUpInside" id="ep2-Fe-YFe"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvv-NR-9ZH" userLabel="Step 3 Button">
+                <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvv-NR-9ZH" userLabel="Step 3 Button">
                     <rect key="frame" x="386" y="900" width="193" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -221,7 +222,7 @@
                         <action selector="showStep:" destination="-1" eventType="touchUpInside" id="hoo-oG-nHP"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pca-ek-Hbz" userLabel="Next/Save Button">
+                <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pca-ek-Hbz" userLabel="Next/Save Button">
                     <rect key="frame" x="579" y="900" width="193" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -240,9 +241,49 @@
                         <action selector="nextSave:" destination="-1" eventType="touchUpInside" id="5Ad-QQ-mMS"/>
                     </connections>
                 </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHY-Jy-gr5" userLabel="Cancel Button">
+                    <rect key="frame" x="386" y="900" width="386" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.86274509799999999" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="yay-bX-GRq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="feedback.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancel" destination="-1" eventType="touchUpInside" id="pi6-A6-nXj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUa-bE-wOC" userLabel="Add Button">
+                    <rect key="frame" x="0.0" y="900" width="386" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="XoD-V6-lAp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <state key="normal" title="Add">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="feedback.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addLessonPlan" destination="-1" eventType="touchUpInside" id="rdD-lR-Qz0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="FHY-Jy-gr5" firstAttribute="leading" secondItem="uUa-bE-wOC" secondAttribute="trailing" id="4Bj-NE-KS3"/>
+                <constraint firstAttribute="bottom" secondItem="uUa-bE-wOC" secondAttribute="bottom" id="79h-uw-G7S"/>
                 <constraint firstItem="eME-lI-78k" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="9P7-Ky-oSu"/>
                 <constraint firstAttribute="bottom" secondItem="4Zn-TI-kW8" secondAttribute="bottom" id="Abz-i5-y7E"/>
                 <constraint firstAttribute="trailing" secondItem="pca-ek-Hbz" secondAttribute="trailing" id="CD0-xS-bC4"/>
@@ -253,12 +294,16 @@
                 <constraint firstItem="pca-ek-Hbz" firstAttribute="width" secondItem="Gvv-NR-9ZH" secondAttribute="width" id="SOS-wo-f7h"/>
                 <constraint firstItem="gzb-y1-Jwz" firstAttribute="top" secondItem="1" secondAttribute="top" id="SrM-4d-v0Q"/>
                 <constraint firstAttribute="trailing" secondItem="eME-lI-78k" secondAttribute="trailing" id="U8d-53-Kl5"/>
+                <constraint firstAttribute="trailing" secondItem="FHY-Jy-gr5" secondAttribute="trailing" id="Woq-tL-kRM"/>
                 <constraint firstItem="pca-ek-Hbz" firstAttribute="leading" secondItem="Gvv-NR-9ZH" secondAttribute="trailing" id="Xra-B8-3N5"/>
                 <constraint firstItem="pca-ek-Hbz" firstAttribute="width" secondItem="4Zn-TI-kW8" secondAttribute="width" id="ZFU-TY-3kd"/>
                 <constraint firstAttribute="trailing" secondItem="gzb-y1-Jwz" secondAttribute="trailing" id="cNu-ET-et1"/>
                 <constraint firstItem="uOL-c3-Blh" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="cRW-gw-ICG"/>
                 <constraint firstAttribute="bottom" secondItem="Gvv-NR-9ZH" secondAttribute="bottom" id="ckb-kd-4Ul"/>
                 <constraint firstItem="eME-lI-78k" firstAttribute="top" secondItem="1" secondAttribute="top" id="fdW-44-497"/>
+                <constraint firstAttribute="bottom" secondItem="FHY-Jy-gr5" secondAttribute="bottom" id="fuZ-Ms-73D"/>
+                <constraint firstItem="uUa-bE-wOC" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="gkU-N9-bc1"/>
+                <constraint firstItem="FHY-Jy-gr5" firstAttribute="leading" secondItem="uUa-bE-wOC" secondAttribute="trailing" id="h5p-H2-F4A"/>
                 <constraint firstItem="pca-ek-Hbz" firstAttribute="width" secondItem="uOL-c3-Blh" secondAttribute="width" id="hYv-EK-LSO"/>
                 <constraint firstAttribute="trailing" secondItem="dMo-hG-zcL" secondAttribute="trailing" id="iAc-5a-LEb"/>
                 <constraint firstItem="dMo-hG-zcL" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="lmF-0A-rzm"/>
@@ -266,6 +311,7 @@
                 <constraint firstItem="4Zn-TI-kW8" firstAttribute="leading" secondItem="uOL-c3-Blh" secondAttribute="trailing" id="ofA-vU-Wzi"/>
                 <constraint firstAttribute="bottom" secondItem="dMo-hG-zcL" secondAttribute="bottom" id="sa2-uP-Ded"/>
                 <constraint firstAttribute="bottom" secondItem="uOL-c3-Blh" secondAttribute="bottom" id="vit-Xj-Le1"/>
+                <constraint firstItem="uUa-bE-wOC" firstAttribute="width" secondItem="FHY-Jy-gr5" secondAttribute="width" id="yOM-wZ-HQu"/>
                 <constraint firstItem="gzb-y1-Jwz" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="zrN-X6-RET"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

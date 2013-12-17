@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73027E911856593D00F561FE /* MGGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73027E901856593D00F561FE /* MGGradientView.m */; };
 		730417E018328C6E00051BB0 /* MRReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730417DF18328C6E00051BB0 /* MRReportCell.m */; };
 		730417E218328C8800051BB0 /* MRReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730417E118328C8800051BB0 /* MRReportCell.xib */; };
 		730C7E541845DF3B008E74F3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730C7E531845DF3B008E74F3 /* FacebookSDK.framework */; };
@@ -32,6 +33,16 @@
 		732181F117FC89D9005442A8 /* new logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 732181F017FC89D9005442A8 /* new logo.png */; };
 		733077FE17E62DBA00B76FA5 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FB17E62DBA00B76FA5 /* SVSegmentedControl.m */; };
 		733077FF17E62DBA00B76FA5 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FD17E62DBA00B76FA5 /* SVSegmentedThumb.m */; };
+		7331B87F185A167F006C04EB /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7331B875185A167F006C04EB /* OpenSans-Bold.ttf */; };
+		7331B880185A167F006C04EB /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7331B876185A167F006C04EB /* OpenSans-BoldItalic.ttf */; };
+		7331B881185A167F006C04EB /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7331B877185A167F006C04EB /* OpenSans-ExtraBold.ttf */; };
+		7331B882185A167F006C04EB /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7331B878185A167F006C04EB /* OpenSans-ExtraBoldItalic.ttf */; };
+		7331B883185A167F006C04EB /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7331B879185A167F006C04EB /* OpenSans-Italic.ttf */; };
+		7331B884185A167F006C04EB /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7331B87A185A167F006C04EB /* OpenSans-Light.ttf */; };
+		7331B885185A167F006C04EB /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7331B87B185A167F006C04EB /* OpenSans-LightItalic.ttf */; };
+		7331B886185A167F006C04EB /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7331B87C185A167F006C04EB /* OpenSans-Regular.ttf */; };
+		7331B887185A167F006C04EB /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7331B87D185A167F006C04EB /* OpenSans-Semibold.ttf */; };
+		7331B888185A167F006C04EB /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7331B87E185A167F006C04EB /* OpenSans-SemiboldItalic.ttf */; };
 		734A608A1837B55900E64184 /* ReviewerReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 734A60891837B55900E64184 /* ReviewerReport.m */; };
 		734A608D1837BA9900E64184 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 734A608C1837BA9900E64184 /* Question.m */; };
 		735387131856135300D1A283 /* GIAccordion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7353870A1856135300D1A283 /* GIAccordion.m */; };
@@ -103,19 +114,8 @@
 		7384858217F54E5700529CE1 /* jakenpoy_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856A17F54E5700529CE1 /* jakenpoy_logo.png */; };
 		7384858317F54E5700529CE1 /* jakenpoy_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856B17F54E5700529CE1 /* jakenpoy_text.png */; };
 		7384858417F54E5700529CE1 /* landing_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856C17F54E5700529CE1 /* landing_logo.png */; };
-		7384858517F54E5700529CE1 /* logout_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856E17F54E5700529CE1 /* logout_icon.png */; };
-		7384858617F54E5700529CE1 /* make_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384856F17F54E5700529CE1 /* make_icon.png */; };
-		7384858717F54E5700529CE1 /* manage_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857017F54E5700529CE1 /* manage_icon.png */; };
-		7384858817F54E5700529CE1 /* my_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857117F54E5700529CE1 /* my_icon.png */; };
-		7384858917F54E5700529CE1 /* pick_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857217F54E5700529CE1 /* pick_icon.png */; };
-		7384858A17F54E5700529CE1 /* random_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857317F54E5700529CE1 /* random_icon.png */; };
-		7384858B17F54E5700529CE1 /* reviewers_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857417F54E5700529CE1 /* reviewers_icon.png */; };
-		7384858C17F54E5700529CE1 /* teacher_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857517F54E5700529CE1 /* teacher_icon.png */; };
-		7384858D17F54E5700529CE1 /* tutorial_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857617F54E5700529CE1 /* tutorial_icon.png */; };
 		7384858E17F54E5700529CE1 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857717F54E5700529CE1 /* next.png */; };
 		7384858F17F54E5700529CE1 /* selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857817F54E5700529CE1 /* selected.png */; };
-		7384859017F54E5700529CE1 /* star_blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857917F54E5700529CE1 /* star_blank.png */; };
-		7384859117F54E5700529CE1 /* star_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857A17F54E5700529CE1 /* star_fill.png */; };
 		7384859217F54E5700529CE1 /* star_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857B17F54E5700529CE1 /* star_half.png */; };
 		7384859317F54E5700529CE1 /* unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7384857C17F54E5700529CE1 /* unselected.png */; };
 		73922A3917E7A05A00401722 /* MyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73922A3717E7A05A00401722 /* MyAccountViewController.m */; };
@@ -144,6 +144,18 @@
 		73B5E9DE17E6E2C000F53186 /* PRLPickViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B5E9D717E6E2C000F53186 /* PRLPickViewController.xib */; };
 		73B5E9DF17E6E2C000F53186 /* PRLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5E9D917E6E2C000F53186 /* PRLSearchViewController.m */; };
 		73B5E9E017E6E2C000F53186 /* PRLSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B5E9DA17E6E2C000F53186 /* PRLSearchViewController.xib */; };
+		73B769E31858C7E400850E31 /* LessonPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B769E21858C7E400850E31 /* LessonPlan.m */; };
+		73CB1E4D185F83EE00920B72 /* star_blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E4B185F83EE00920B72 /* star_blank.png */; };
+		73CB1E4E185F83EE00920B72 /* star_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E4C185F83EE00920B72 /* star_fill.png */; };
+		73CB1E59185F89D600920B72 /* logout_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E50185F89D600920B72 /* logout_icon.png */; };
+		73CB1E5A185F89D600920B72 /* make_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E51185F89D600920B72 /* make_icon.png */; };
+		73CB1E5B185F89D600920B72 /* manage_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E52185F89D600920B72 /* manage_icon.png */; };
+		73CB1E5C185F89D600920B72 /* my_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E53185F89D600920B72 /* my_icon.png */; };
+		73CB1E5D185F89D600920B72 /* pick_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E54185F89D600920B72 /* pick_icon.png */; };
+		73CB1E5E185F89D600920B72 /* random_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E55185F89D600920B72 /* random_icon.png */; };
+		73CB1E5F185F89D600920B72 /* reviewers_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E56185F89D600920B72 /* reviewers_icon.png */; };
+		73CB1E60185F89D600920B72 /* teacher_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E57185F89D600920B72 /* teacher_icon.png */; };
+		73CB1E61185F89D600920B72 /* tutorial_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CB1E58185F89D600920B72 /* tutorial_icon.png */; };
 		73CE81391806B72F00FD2957 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 73CE81381806B72F00FD2957 /* Settings.bundle */; };
 		73D3F88417E4ADCE00149106 /* HPFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D3F87C17E4ADCE00149106 /* HPFinishViewController.m */; };
 		73D3F88517E4ADCE00149106 /* HPFinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D3F87D17E4ADCE00149106 /* HPFinishViewController.xib */; };
@@ -167,6 +179,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73027E8F1856593D00F561FE /* MGGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGradientView.h; sourceTree = "<group>"; };
+		73027E901856593D00F561FE /* MGGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGradientView.m; sourceTree = "<group>"; };
 		730417DE18328C6E00051BB0 /* MRReportCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRReportCell.h; sourceTree = "<group>"; };
 		730417DF18328C6E00051BB0 /* MRReportCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRReportCell.m; sourceTree = "<group>"; };
 		730417E118328C8800051BB0 /* MRReportCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRReportCell.xib; sourceTree = "<group>"; };
@@ -203,6 +217,16 @@
 		733077FB17E62DBA00B76FA5 /* SVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
 		733077FC17E62DBA00B76FA5 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
 		733077FD17E62DBA00B76FA5 /* SVSegmentedThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedThumb.m; sourceTree = "<group>"; };
+		7331B875185A167F006C04EB /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		7331B876185A167F006C04EB /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7331B877185A167F006C04EB /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		7331B878185A167F006C04EB /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		7331B879185A167F006C04EB /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		7331B87A185A167F006C04EB /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		7331B87B185A167F006C04EB /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		7331B87C185A167F006C04EB /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		7331B87D185A167F006C04EB /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		7331B87E185A167F006C04EB /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		734A60881837B55900E64184 /* ReviewerReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewerReport.h; sourceTree = "<group>"; };
 		734A60891837B55900E64184 /* ReviewerReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewerReport.m; sourceTree = "<group>"; };
 		734A608B1837BA9900E64184 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
@@ -303,19 +327,8 @@
 		7384856A17F54E5700529CE1 /* jakenpoy_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jakenpoy_logo.png; sourceTree = "<group>"; };
 		7384856B17F54E5700529CE1 /* jakenpoy_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jakenpoy_text.png; sourceTree = "<group>"; };
 		7384856C17F54E5700529CE1 /* landing_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landing_logo.png; sourceTree = "<group>"; };
-		7384856E17F54E5700529CE1 /* logout_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout_icon.png; sourceTree = "<group>"; };
-		7384856F17F54E5700529CE1 /* make_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = make_icon.png; sourceTree = "<group>"; };
-		7384857017F54E5700529CE1 /* manage_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manage_icon.png; sourceTree = "<group>"; };
-		7384857117F54E5700529CE1 /* my_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_icon.png; sourceTree = "<group>"; };
-		7384857217F54E5700529CE1 /* pick_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pick_icon.png; sourceTree = "<group>"; };
-		7384857317F54E5700529CE1 /* random_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = random_icon.png; sourceTree = "<group>"; };
-		7384857417F54E5700529CE1 /* reviewers_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reviewers_icon.png; sourceTree = "<group>"; };
-		7384857517F54E5700529CE1 /* teacher_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_icon.png; sourceTree = "<group>"; };
-		7384857617F54E5700529CE1 /* tutorial_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial_icon.png; sourceTree = "<group>"; };
 		7384857717F54E5700529CE1 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		7384857817F54E5700529CE1 /* selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected.png; sourceTree = "<group>"; };
-		7384857917F54E5700529CE1 /* star_blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_blank.png; sourceTree = "<group>"; };
-		7384857A17F54E5700529CE1 /* star_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_fill.png; sourceTree = "<group>"; };
 		7384857B17F54E5700529CE1 /* star_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_half.png; sourceTree = "<group>"; };
 		7384857C17F54E5700529CE1 /* unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unselected.png; sourceTree = "<group>"; };
 		73922A3617E7A05A00401722 /* MyAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountViewController.h; sourceTree = "<group>"; };
@@ -362,6 +375,19 @@
 		73B5E9D817E6E2C000F53186 /* PRLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRLSearchViewController.h; path = "Pick a Reviewer from the Library/PRLSearchViewController.h"; sourceTree = "<group>"; };
 		73B5E9D917E6E2C000F53186 /* PRLSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRLSearchViewController.m; path = "Pick a Reviewer from the Library/PRLSearchViewController.m"; sourceTree = "<group>"; };
 		73B5E9DA17E6E2C000F53186 /* PRLSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PRLSearchViewController.xib; path = "Pick a Reviewer from the Library/PRLSearchViewController.xib"; sourceTree = "<group>"; };
+		73B769E11858C7E400850E31 /* LessonPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonPlan.h; sourceTree = "<group>"; };
+		73B769E21858C7E400850E31 /* LessonPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonPlan.m; sourceTree = "<group>"; };
+		73CB1E4B185F83EE00920B72 /* star_blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_blank.png; sourceTree = "<group>"; };
+		73CB1E4C185F83EE00920B72 /* star_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_fill.png; sourceTree = "<group>"; };
+		73CB1E50185F89D600920B72 /* logout_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout_icon.png; sourceTree = "<group>"; };
+		73CB1E51185F89D600920B72 /* make_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = make_icon.png; sourceTree = "<group>"; };
+		73CB1E52185F89D600920B72 /* manage_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manage_icon.png; sourceTree = "<group>"; };
+		73CB1E53185F89D600920B72 /* my_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_icon.png; sourceTree = "<group>"; };
+		73CB1E54185F89D600920B72 /* pick_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pick_icon.png; sourceTree = "<group>"; };
+		73CB1E55185F89D600920B72 /* random_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = random_icon.png; sourceTree = "<group>"; };
+		73CB1E56185F89D600920B72 /* reviewers_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reviewers_icon.png; sourceTree = "<group>"; };
+		73CB1E57185F89D600920B72 /* teacher_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_icon.png; sourceTree = "<group>"; };
+		73CB1E58185F89D600920B72 /* tutorial_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial_icon.png; sourceTree = "<group>"; };
 		73CE81381806B72F00FD2957 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		73D3F87B17E4ADCE00149106 /* HPFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPFinishViewController.h; path = Homepage/HPFinishViewController.h; sourceTree = "<group>"; };
 		73D3F87C17E4ADCE00149106 /* HPFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPFinishViewController.m; path = Homepage/HPFinishViewController.m; sourceTree = "<group>"; };
@@ -467,7 +493,7 @@
 				4A5C10AD17C3374300C89CA6 /* Teacher's Desk */,
 				739239F717E6C77600576D06 /* Make a Reviewer from Scratch */,
 				73192C7F17E779160080F339 /* Randomizer */,
-				73538718185613CD00D1A283 /* Manage:Register My Kids */,
+				73538718185613CD00D1A283 /* Manage Register My Kids */,
 				73922A3B17E7A05C00401722 /* My Account */,
 				73192C9917E7844F0080F339 /* About Us */,
 			);
@@ -503,8 +529,8 @@
 				73538733185615AE00D1A283 /* TDSaveViewController_iPad.xib */,
 				73192C8B17E783B10080F339 /* TDSectionViewController.xib */,
 				73538734185615AE00D1A283 /* TDSectionViewController_iPad.xib */,
-				7353876C18563A0400D1A283 /* TDTeacherViewController_iPad.xib */,
 				7353876E18563A3900D1A283 /* TDTeacherViewController.xib */,
+				7353876C18563A0400D1A283 /* TDTeacherViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -541,6 +567,23 @@
 			path = SVSegmentedControl;
 			sourceTree = "<group>";
 		};
+		7331B874185A167F006C04EB /* Open Sans */ = {
+			isa = PBXGroup;
+			children = (
+				7331B875185A167F006C04EB /* OpenSans-Bold.ttf */,
+				7331B876185A167F006C04EB /* OpenSans-BoldItalic.ttf */,
+				7331B877185A167F006C04EB /* OpenSans-ExtraBold.ttf */,
+				7331B878185A167F006C04EB /* OpenSans-ExtraBoldItalic.ttf */,
+				7331B879185A167F006C04EB /* OpenSans-Italic.ttf */,
+				7331B87A185A167F006C04EB /* OpenSans-Light.ttf */,
+				7331B87B185A167F006C04EB /* OpenSans-LightItalic.ttf */,
+				7331B87C185A167F006C04EB /* OpenSans-Regular.ttf */,
+				7331B87D185A167F006C04EB /* OpenSans-Semibold.ttf */,
+				7331B87E185A167F006C04EB /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = "Open Sans";
+			sourceTree = "<group>";
+		};
 		735387081856135300D1A283 /* GIAccordion */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,11 +597,13 @@
 				735387101856135300D1A283 /* GITree.m */,
 				735387111856135300D1A283 /* GITreeNode.h */,
 				735387121856135300D1A283 /* GITreeNode.m */,
+				73027E8F1856593D00F561FE /* MGGradientView.h */,
+				73027E901856593D00F561FE /* MGGradientView.m */,
 			);
 			path = GIAccordion;
 			sourceTree = "<group>";
 		};
-		73538718185613CD00D1A283 /* Manage:Register My Kids */ = {
+		73538718185613CD00D1A283 /* Manage Register My Kids */ = {
 			isa = PBXGroup;
 			children = (
 				73538730185614FF00D1A283 /* xib */,
@@ -569,6 +614,7 @@
 				73538721185613CD00D1A283 /* MRMKReportViewController.h */,
 				73538722185613CD00D1A283 /* MRMKReportViewController.m */,
 			);
+			name = "Manage Register My Kids";
 			path = "Manage:Register My Kids";
 			sourceTree = "<group>";
 		};
@@ -647,12 +693,12 @@
 			children = (
 				7384853717F54CDC00529CE1 /* MRMKChildCell.xib */,
 				7384853A17F54CDC00529CE1 /* PRLReviewerCell.xib */,
-				7384853D17F54CDC00529CE1 /* ReviewerCell.xib */,
 				7384854017F54CDC00529CE1 /* TDCheckboxCell.xib */,
 				7384854317F54CDC00529CE1 /* TDLessonPlanCell.xib */,
 				7384854617F54CDC00529CE1 /* TDSectionCell.xib */,
-				730417E118328C8800051BB0 /* MRReportCell.xib */,
 				731A9610184655D600F3A2BC /* PRLQuestionCell.xib */,
+				7384853D17F54CDC00529CE1 /* ReviewerCell.xib */,
+				730417E118328C8800051BB0 /* MRReportCell.xib */,
 				73FCF7F5184FA6FD00BD130B /* MRAnalysisCell.xib */,
 				7311E4E718521F2200816372 /* MRMKChildReportCell.xib */,
 				735387671856357700D1A283 /* TDTeacherCell.xib */,
@@ -691,6 +737,8 @@
 				7353875D18562CA400D1A283 /* Section.m */,
 				7353875F185634FE00D1A283 /* Teacher.h */,
 				73538760185634FE00D1A283 /* Teacher.m */,
+				73B769E11858C7E400850E31 /* LessonPlan.h */,
+				73B769E21858C7E400850E31 /* LessonPlan.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -698,7 +746,7 @@
 		7384856417F54E5700529CE1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				7384856D17F54E5700529CE1 /* Menu Icons */,
+				73CB1E4F185F89D600920B72 /* Menu Icons */,
 				732181F017FC89D9005442A8 /* new logo.png */,
 				73D9E8061828E8AA004D70C2 /* fb_logo.png */,
 				7384856517F54E5700529CE1 /* back.png */,
@@ -712,29 +760,13 @@
 				7384856B17F54E5700529CE1 /* jakenpoy_text.png */,
 				7384856C17F54E5700529CE1 /* landing_logo.png */,
 				7384857717F54E5700529CE1 /* next.png */,
+				73CB1E4B185F83EE00920B72 /* star_blank.png */,
+				73CB1E4C185F83EE00920B72 /* star_fill.png */,
 				7384857817F54E5700529CE1 /* selected.png */,
-				7384857917F54E5700529CE1 /* star_blank.png */,
-				7384857A17F54E5700529CE1 /* star_fill.png */,
 				7384857B17F54E5700529CE1 /* star_half.png */,
 				7384857C17F54E5700529CE1 /* unselected.png */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		7384856D17F54E5700529CE1 /* Menu Icons */ = {
-			isa = PBXGroup;
-			children = (
-				7384856E17F54E5700529CE1 /* logout_icon.png */,
-				7384856F17F54E5700529CE1 /* make_icon.png */,
-				7384857017F54E5700529CE1 /* manage_icon.png */,
-				7384857117F54E5700529CE1 /* my_icon.png */,
-				7384857217F54E5700529CE1 /* pick_icon.png */,
-				7384857317F54E5700529CE1 /* random_icon.png */,
-				7384857417F54E5700529CE1 /* reviewers_icon.png */,
-				7384857517F54E5700529CE1 /* teacher_icon.png */,
-				7384857617F54E5700529CE1 /* tutorial_icon.png */,
-			);
-			path = "Menu Icons";
 			sourceTree = "<group>";
 		};
 		73922A3B17E7A05C00401722 /* My Account */ = {
@@ -805,6 +837,22 @@
 			name = xib;
 			sourceTree = "<group>";
 		};
+		73CB1E4F185F89D600920B72 /* Menu Icons */ = {
+			isa = PBXGroup;
+			children = (
+				73CB1E50185F89D600920B72 /* logout_icon.png */,
+				73CB1E51185F89D600920B72 /* make_icon.png */,
+				73CB1E52185F89D600920B72 /* manage_icon.png */,
+				73CB1E53185F89D600920B72 /* my_icon.png */,
+				73CB1E54185F89D600920B72 /* pick_icon.png */,
+				73CB1E55185F89D600920B72 /* random_icon.png */,
+				73CB1E56185F89D600920B72 /* reviewers_icon.png */,
+				73CB1E57185F89D600920B72 /* teacher_icon.png */,
+				73CB1E58185F89D600920B72 /* tutorial_icon.png */,
+			);
+			path = "Menu Icons";
+			sourceTree = "<group>";
+		};
 		73EC799917B914BE00F2E12E = {
 			isa = PBXGroup;
 			children = (
@@ -852,6 +900,7 @@
 		73EC79AC17B914BE00F2E12E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7331B874185A167F006C04EB /* Open Sans */,
 				73CE81381806B72F00FD2957 /* Settings.bundle */,
 				7384856417F54E5700529CE1 /* Assets */,
 				735428F017ECA584006CDF8F /* Default~iphone.png */,
@@ -882,12 +931,12 @@
 		73FD1EC517DC3A6600A690D2 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				73538756185616BC00D1A283 /* PRLFinishViewController_iPad.xib */,
-				73538757185616BC00D1A283 /* PRLPickViewController_iPad.xib */,
-				73538758185616BC00D1A283 /* PRLSearchViewController_iPad.xib */,
-				73B5E9D417E6E2C000F53186 /* PRLFinishViewController.xib */,
 				73B5E9D717E6E2C000F53186 /* PRLPickViewController.xib */,
+				73538757185616BC00D1A283 /* PRLPickViewController_iPad.xib */,
+				73B5E9D417E6E2C000F53186 /* PRLFinishViewController.xib */,
+				73538756185616BC00D1A283 /* PRLFinishViewController_iPad.xib */,
 				73B5E9DA17E6E2C000F53186 /* PRLSearchViewController.xib */,
+				73538758185616BC00D1A283 /* PRLSearchViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -951,60 +1000,68 @@
 				73538726185613CD00D1A283 /* MRMKKidsViewController.xib in Resources */,
 				7384858417F54E5700529CE1 /* landing_logo.png in Resources */,
 				73538736185615AE00D1A283 /* TDMenuViewController_iPad.xib in Resources */,
+				7331B87F185A167F006C04EB /* OpenSans-Bold.ttf in Resources */,
+				73CB1E5C185F89D600920B72 /* my_icon.png in Resources */,
+				73CB1E4E185F83EE00920B72 /* star_fill.png in Resources */,
 				73EC79B017B914BE00F2E12E /* InfoPlist.strings in Resources */,
 				73EC79B817B914BE00F2E12E /* Default.png in Resources */,
-				7384858A17F54E5700529CE1 /* random_icon.png in Resources */,
 				7353874E1856166200D1A283 /* MRAnalysisViewController_iPad.xib in Resources */,
-				7384858817F54E5700529CE1 /* my_icon.png in Resources */,
-				7384858917F54E5700529CE1 /* pick_icon.png in Resources */,
+				7331B887185A167F006C04EB /* OpenSans-Semibold.ttf in Resources */,
 				7353876D18563A0400D1A283 /* TDTeacherViewController_iPad.xib in Resources */,
 				7384857E17F54E5700529CE1 /* back_arrow.png in Resources */,
 				735387681856357700D1A283 /* TDTeacherCell.xib in Resources */,
 				7384854C17F54CDC00529CE1 /* ReviewerCell.xib in Resources */,
+				7331B883185A167F006C04EB /* OpenSans-Italic.ttf in Resources */,
 				73D3F88517E4ADCE00149106 /* HPFinishViewController.xib in Resources */,
 				73D3F88717E4ADCE00149106 /* HPLoginViewController.xib in Resources */,
 				730417E218328C8800051BB0 /* MRReportCell.xib in Resources */,
-				7384858B17F54E5700529CE1 /* reviewers_icon.png in Resources */,
 				73D3F88917E4ADCE00149106 /* HPRegisterViewController.xib in Resources */,
 				73538727185613CD00D1A283 /* MRMKKidsViewController_iPad.xib in Resources */,
 				7372F16A180F7C4900BD2850 /* MyAccountViewController_iPad.xib in Resources */,
+				7331B886185A167F006C04EB /* OpenSans-Regular.ttf in Resources */,
 				7311E4E818521F2200816372 /* MRMKChildReportCell.xib in Resources */,
 				73E725751843AFA400CBFE66 /* feedback.png in Resources */,
 				7384855217F54CDC00529CE1 /* TDSectionCell.xib in Resources */,
 				735428EF17ECA57D006CDF8F /* Default-568h@2x.png in Resources */,
 				73538735185615AE00D1A283 /* TDLessonPlanViewController_iPad.xib in Resources */,
 				73B5E9DC17E6E2C000F53186 /* PRLFinishViewController.xib in Resources */,
-				7384858517F54E5700529CE1 /* logout_icon.png in Resources */,
 				7353873D1856162600D1A283 /* HPLoginViewController_iPad.xib in Resources */,
 				73B5E9DE17E6E2C000F53186 /* PRLPickViewController.xib in Resources */,
-				7384858617F54E5700529CE1 /* make_icon.png in Resources */,
+				7331B882185A167F006C04EB /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				73B5E9E017E6E2C000F53186 /* PRLSearchViewController.xib in Resources */,
 				73192C7E17E779110080F339 /* RandomizerViewController.xib in Resources */,
 				73192C8D17E783B10080F339 /* TDLessonPlanViewController.xib in Resources */,
 				7384858F17F54E5700529CE1 /* selected.png in Resources */,
+				7331B885185A167F006C04EB /* OpenSans-LightItalic.ttf in Resources */,
 				735387501856166200D1A283 /* MRReportViewController.xib in Resources */,
 				73FCF7F6184FA6FD00BD130B /* MRAnalysisCell.xib in Resources */,
 				7384859317F54E5700529CE1 /* unselected.png in Resources */,
 				7353873C1856162600D1A283 /* HPFinishViewController_iPad.xib in Resources */,
-				7384858C17F54E5700529CE1 /* teacher_icon.png in Resources */,
+				73CB1E4D185F83EE00920B72 /* star_blank.png in Resources */,
+				7331B888185A167F006C04EB /* OpenSans-SemiboldItalic.ttf in Resources */,
+				73CB1E60185F89D600920B72 /* teacher_icon.png in Resources */,
 				73104455182530280028CC62 /* jakenpoy_logo_ipad.png in Resources */,
-				7384859017F54E5700529CE1 /* star_blank.png in Resources */,
+				7331B880185A167F006C04EB /* OpenSans-BoldItalic.ttf in Resources */,
 				73192C8F17E783B10080F339 /* TDMenuViewController.xib in Resources */,
+				73CB1E5F185F89D600920B72 /* reviewers_icon.png in Resources */,
 				73192C9117E783B10080F339 /* TDSaveViewController.xib in Resources */,
 				73192C9317E783B10080F339 /* TDSectionViewController.xib in Resources */,
 				737119E31813C2E8004217BA /* AboutUsViewController_iPad.xib in Resources */,
 				732181F117FC89D9005442A8 /* new logo.png in Resources */,
-				7384859117F54E5700529CE1 /* star_fill.png in Resources */,
 				735387531856166200D1A283 /* MyReviewersViewController.xib in Resources */,
+				7331B881185A167F006C04EB /* OpenSans-ExtraBold.ttf in Resources */,
 				7384858117F54E5700529CE1 /* drop_down.png in Resources */,
+				73CB1E5B185F89D600920B72 /* manage_icon.png in Resources */,
 				7353872D185613CD00D1A283 /* MRMKReportViewController_iPad.xib in Resources */,
 				73192C9817E7844C0080F339 /* AboutUsViewController.xib in Resources */,
-				7384858D17F54E5700529CE1 /* tutorial_icon.png in Resources */,
 				7384858217F54E5700529CE1 /* jakenpoy_logo.png in Resources */,
+				73CB1E61185F89D600920B72 /* tutorial_icon.png in Resources */,
 				73922A3A17E7A05A00401722 /* MyAccountViewController.xib in Resources */,
 				7384854817F54CDC00529CE1 /* MRMKChildCell.xib in Resources */,
 				7384858317F54E5700529CE1 /* jakenpoy_text.png in Resources */,
 				73D9E8071828E8AA004D70C2 /* fb_logo.png in Resources */,
+				73CB1E59185F89D600920B72 /* logout_icon.png in Resources */,
+				73CB1E5D185F89D600920B72 /* pick_icon.png in Resources */,
 				7353875B185616BC00D1A283 /* PRLSearchViewController_iPad.xib in Resources */,
 				73538729185613CD00D1A283 /* MRMKRegisterViewController.xib in Resources */,
 				7384854E17F54CDC00529CE1 /* TDCheckboxCell.xib in Resources */,
@@ -1013,6 +1070,7 @@
 				730C7E581845F30D008E74F3 /* cb_glossy_off.png in Resources */,
 				735387541856166200D1A283 /* MyReviewersViewController_iPad.xib in Resources */,
 				7353874D1856166200D1A283 /* MRAnalysisViewController.xib in Resources */,
+				73CB1E5E185F89D600920B72 /* random_icon.png in Resources */,
 				73538737185615AE00D1A283 /* TDSaveViewController_iPad.xib in Resources */,
 				7384859217F54E5700529CE1 /* star_half.png in Resources */,
 				7353875A185616BC00D1A283 /* PRLPickViewController_iPad.xib in Resources */,
@@ -1021,7 +1079,7 @@
 				73538759185616BC00D1A283 /* PRLFinishViewController_iPad.xib in Resources */,
 				7353872A185613CD00D1A283 /* MRMKRegisterViewController_iPad.xib in Resources */,
 				735428F117ECA584006CDF8F /* Default~iphone.png in Resources */,
-				7384858717F54E5700529CE1 /* manage_icon.png in Resources */,
+				7331B884185A167F006C04EB /* OpenSans-Light.ttf in Resources */,
 				7384857D17F54E5700529CE1 /* back.png in Resources */,
 				7384854A17F54CDC00529CE1 /* PRLReviewerCell.xib in Resources */,
 				73A4AAFB17E97BD200F52277 /* MRSFinishViewController.xib in Resources */,
@@ -1031,6 +1089,7 @@
 				73A4AAFD17E97BD200F52277 /* MRSQuestionViewController.xib in Resources */,
 				73538738185615AE00D1A283 /* TDSectionViewController_iPad.xib in Resources */,
 				7353872C185613CD00D1A283 /* MRMKReportViewController.xib in Resources */,
+				73CB1E5A185F89D600920B72 /* make_icon.png in Resources */,
 				7353873E1856162600D1A283 /* HPRegisterViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1074,6 +1133,7 @@
 				73192C9217E783B10080F339 /* TDSectionViewController.m in Sources */,
 				73192C9717E7844C0080F339 /* AboutUsViewController.m in Sources */,
 				7384854717F54CDC00529CE1 /* MRMKChildCell.m in Sources */,
+				73027E911856593D00F561FE /* MGGradientView.m in Sources */,
 				73922A3917E7A05A00401722 /* MyAccountViewController.m in Sources */,
 				7353874C1856166200D1A283 /* MRAnalysisViewController.m in Sources */,
 				7374F94317FB02290017ECB0 /* School.m in Sources */,
@@ -1089,6 +1149,7 @@
 				7384856317F54D8B00529CE1 /* UserType.m in Sources */,
 				73A4AAED17E97B7600F52277 /* AFJSONRequestOperation.m in Sources */,
 				7353876B1856389000D1A283 /* TDTeacherViewController.m in Sources */,
+				73B769E31858C7E400850E31 /* LessonPlan.m in Sources */,
 				7384854917F54CDC00529CE1 /* PRLReviewerCell.m in Sources */,
 				73A4AAEE17E97B7600F52277 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				73A4AAEF17E97B7600F52277 /* AFPropertyListRequestOperation.m in Sources */,

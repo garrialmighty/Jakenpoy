@@ -33,7 +33,6 @@ static NSString * CurrentInstruction;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *PreviousButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *NextButton;
 @property (weak, nonatomic) IBOutlet UITextField *Title;
-@property (weak, nonatomic) IBOutlet UITextField *Instructions;
 @property (weak, nonatomic) IBOutlet UITextField *Expiry;
 @property (weak, nonatomic) IBOutlet UITextField *Code;
 @property (weak, nonatomic) IBOutlet UITextField *Classification;
@@ -62,6 +61,7 @@ static NSString * CurrentInstruction;
 @property (weak, nonatomic) IBOutlet UILabel *QuestionTopic;
 @property (weak, nonatomic) IBOutlet UILabel *QuestionType;
 @property (weak, nonatomic) IBOutlet UITableView *QuestionTable;
+@property (weak, nonatomic) IBOutlet UILabel *QuestionInstructions;
 
 @property (weak, nonatomic) IBOutlet UIView *LoadingScreen;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spinner;
@@ -94,13 +94,12 @@ static NSString * CurrentInstruction;
     QuestionTypeList = [[NSArray alloc] init];
     SubjectList = @[@"Subject 1", @"Subject 2", @"Subject 3", @"Subject 4", @"Subject 5"];
     
-    NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
+    /*NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
     [nextUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [nextUlString length])];
     [nextUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [nextUlString length])];
-    [self.NFButton setAttributedTitle:nextUlString forState:UIControlStateNormal];
+    [self.NFButton setAttributedTitle:nextUlString forState:UIControlStateNormal];*/
     
     [self.Title setInputAccessoryView:self.Toolbar];
-    [self.Instructions setInputAccessoryView:self.Toolbar];
     [self.Code setInputAccessoryView:self.Toolbar];
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -138,7 +137,6 @@ static NSString * CurrentInstruction;
     CurrentTitle = t;
     CurrentInstruction = i;
     [self.Title setPlaceholder:t];
-    [self.Instructions setPlaceholder:i];
     
     [self.Expiry setText:e];
     [self.Code setText:[NSString stringWithFormat:@"%d",c]];
@@ -344,13 +342,7 @@ static NSString * CurrentInstruction;
 {
     if ([self.Code isFirstResponder]) {
         [self.Code resignFirstResponder];
-        [self.Instructions becomeFirstResponder];
         [self.NextButton setEnabled:YES];
-    }
-    else if ([self.Instructions isFirstResponder]) {
-        [self.Instructions resignFirstResponder];
-        [self.Title becomeFirstResponder];
-        [self.PreviousButton setEnabled:NO];
     }
 }
 
@@ -358,13 +350,7 @@ static NSString * CurrentInstruction;
 {
     if ([self.Title isFirstResponder]) {
         [self.Title resignFirstResponder];
-        [self.Instructions becomeFirstResponder];
         [self.PreviousButton setEnabled:YES];
-    }
-    else if ([self.Instructions isFirstResponder]) {
-        [self.Instructions resignFirstResponder];
-        [self.Code becomeFirstResponder];
-        [self.NextButton setEnabled:NO];
     }
 }
 
@@ -372,9 +358,6 @@ static NSString * CurrentInstruction;
 {
     if ([self.Title isFirstResponder]) {
         [self.Title resignFirstResponder];
-    }
-    else if ([self.Instructions isFirstResponder]) {
-        [self.Instructions resignFirstResponder];
     }
     else {
         [self.Code resignFirstResponder];
@@ -480,7 +463,11 @@ static NSString * CurrentInstruction;
 {
     [self hideLoadingScreen];
     
-    [[[UIAlertView alloc] initWithTitle:nil message:@"Reviewer saved successfully!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    [[[UIAlertView alloc] initWithTitle:@"You're reviewer has successfully been saved."
+                                message:@"Go to My Reviewers to see your recently saved reviewer!"
+                               delegate:self
+                      cancelButtonTitle:@"Ok"
+                      otherButtonTitles:nil] show];
     
     NSLog(@"%@",json);
 }
@@ -494,6 +481,8 @@ static NSString * CurrentInstruction;
 -(void)jakenpoyHTTPClientdidUpdateWithAssignees:(NSDictionary *)json
 {
     if ([json[@"status"] isEqualToString:@"success"]) {
+        [AssigneeList removeAllObjects];
+        
         NSDictionary * data = json[@"data"][@"assignees"];
         
         for (NSString * key in data) {
@@ -549,8 +538,8 @@ static NSString * CurrentInstruction;
         [self.QuestionTitle setText:QuestionDetail.Title];
         [self.QuestionClassification setText:QuestionDetail.Subject];
         [self.QuestionTopic setText:QuestionDetail.Topic];
-        [self.QuestionType setText:QuestionDetail.Type];
-        
+        [self.QuestionType setText:QuestionDetail.QuestionType];
+        [self.QuestionInstructions setText:QuestionDetail.Instruction];
         [self.QuestionTable reloadData];
     }
 }

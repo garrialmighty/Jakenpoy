@@ -10,9 +10,14 @@
 #import "SVSegmentedControl.h"
 #import "TDCheckboxCell.h"
 #import "ReviewerCell.h"
+#import "Teacher.h"
 
-static NSInteger Selected;
-static NSArray * SubjectList;
+static JakenpoyHTTPClient * client;
+static NSMutableArray * SubjectList;
+static NSMutableArray * TeacherList;
+static NSDictionary * Subjects;
+static NSInteger SubjectSelected;
+static NSInteger TeacherSelected;
 
 @interface TDSaveViewController ()
 @property (weak, nonatomic) IBOutlet UIView *Step1;
@@ -24,6 +29,7 @@ static NSArray * SubjectList;
 @property (weak, nonatomic) IBOutlet UIButton *NSButton;
 @property (weak, nonatomic) IBOutlet UITableView *CheckboxTable;
 @property (weak, nonatomic) IBOutlet UITextField *Title;
+@property (weak, nonatomic) IBOutlet UIPickerView *Picker;
 
 @end
 
@@ -44,8 +50,15 @@ static NSArray * SubjectList;
     
     [self.navigationItem setHidesBackButton:YES];
     
-    Selected = 0;
-    SubjectList = @[@"Subject 1", @"Subject 2", @"Subject 3", @"Subject 4", @"Subject 5"];
+    client = [JakenpoyHTTPClient getSharedClient];
+    [client setDelegate:self];
+    [client getSubjects];
+    [client getTeachers];
+    
+    SubjectSelected = 0;
+    TeacherSelected = 0;
+    SubjectList = [[NSMutableArray alloc] init];
+    TeacherList = [[NSMutableArray alloc] init];
     
     SVSegmentedControl * jackenpoySC = [[SVSegmentedControl alloc] initWithSectionTitles:@[@"Customized",@"Jakenpoy Default"]];
     [jackenpoySC setHeight:45];
@@ -56,10 +69,10 @@ static NSArray * SubjectList;
     
     [jackenpoySC setCenter:CGPointMake(isPhone?160:360, isPhone?70:100)];
     
-    NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
+    /*NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
     [nextUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [nextUlString length])];
     [nextUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [nextUlString length])];
-    [self.NSButton setAttributedTitle:nextUlString forState:UIControlStateNormal];
+    [self.NSButton setAttributedTitle:nextUlString forState:UIControlStateNormal];*/
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
@@ -74,6 +87,11 @@ static NSArray * SubjectList;
 - (void)updateTitle:(NSString *)title
 {
     [self.Title setText:title];
+}
+
+- (void)updateViewForAdmin
+{
+    [self.Picker reloadAllComponents];
 }
 
 #pragma mark - IBAction
@@ -150,16 +168,35 @@ static NSArray * SubjectList;
     }
 }
 
+- (IBAction)addLessonPlan
+{
+    
+}
+
+- (IBAction)cancel
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - Data Source
 #pragma mark UIPickerView
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 1;
+    return [client isAdmin]?2:1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return SubjectList.count;
+    NSInteger rowNumber = 0;
+    
+    if ([client isAdmin]) {
+        rowNumber = component==0?SubjectList.count:TeacherList.count;
+    }
+    else {
+        rowNumber = SubjectList.count;
+    }
+    
+    return rowNumber;
 }
 
 #pragma mark UITableView
@@ -203,14 +240,33 @@ static NSArray * SubjectList;
 }
 
 #pragma mark UIPickerView
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return SubjectList[row];
+    NSMutableAttributedString * body;
+    
+    if ([client isAdmin]) {
+        if (TeacherList.count>0) {
+            Teacher * item = TeacherList[row];
+            body = [[NSMutableAttributedString alloc] initWithString:component==0?SubjectList[row]:item.Name];
+        }
+    }
+    else {
+        body  = [[NSMutableAttributedString alloc] initWithString:SubjectList[row]];
+    }
+    
+    [body addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:[client isAdmin]?15:12] range:NSMakeRange(0, [body length])];
+    
+    return body;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    Selected = row;
+    if (component==0) {
+        SubjectSelected = row;
+    }
+    else {
+        TeacherSelected = row;
+    }
 }
 
 #pragma mark UITableView
@@ -227,6 +283,78 @@ static NSArray * SubjectList;
     //CheckedList[indexPath.row] = @YES;
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+}
+
+#pragma mark JakenpoyHTTPClient Delegate
+-(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
+{
+    /*if ([json[@"status"] isEqualToString:@"success"]) {
+        NSArray * data = json[@"data"][@"available_sections"];
+        
+        for (NSDictionary * section in data) {
+            Section * item = [[Section alloc] init];
+            
+            [item setID:[NSNumber numberWithInteger:[section[@"id"] integerValue]]];
+            [item setGradeLevel:section[@"grade_level"]];
+            [item setName:section[@"name"]];
+            
+            [SectionList addObject:item];
+        }
+        
+        [self.Table reloadData];
+    }*/
+}
+
+-(void)jakenpoyHTTPClientdidUpdateWithSubjects:(NSDictionary *)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        //NSLog(@"%@",json[@"data"][@"subjects"]);
+        
+        Subjects = json[@"data"][@"subjects"];
+        [SubjectList removeAllObjects];
+        
+        NSArray *sortedKeys = [Subjects allKeys];
+        sortedKeys = [sortedKeys sortedArrayUsingComparator:^(id a, id b) {
+            return [a compare:b options:NSNumericSearch];
+        }];
+        
+        for (NSString * key in sortedKeys) {
+            [SubjectList addObject:Subjects[key]];
+        }
+        
+        [self.Picker reloadComponent:0];
+    }
+}
+
+-(void)jakenpoyHTTPClientdidUpdateWithTeachers:(NSDictionary *)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        NSArray * data = json[@"data"][@"teachers"];
+        [TeacherList removeAllObjects];
+        
+        for (NSDictionary * teacher in data) {
+            Teacher * item = [[Teacher alloc] init];
+            
+            [item setIsAdmin:[teacher[@"is_admin"] boolValue]];
+            [item setID:[NSNumber numberWithInteger:[teacher[@"id"] integerValue]]];
+            [item setSchoolID:[NSNumber numberWithInteger:[teacher[@"school_id"] integerValue]]];
+            [item setEmail:teacher[@"email"]];
+            [item setName:teacher[@"name"]];
+            
+            [TeacherList addObject:item];
+        }
+        
+        if ([client isAdmin]) {
+            [self.Picker reloadComponent:1];
+        }
+    }
+}
+
+-(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error
+{
+    NSLog(@"E:%@",error);
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error Searching" message:@"Make sure you are connected to the internet and please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
 }
 
 @end

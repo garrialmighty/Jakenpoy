@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TDSectionViewController">
             <connections>
+                <outlet property="AddButton" destination="Ysf-OM-3Jq" id="mgl-7D-6Bd"/>
                 <outlet property="EditSectionButton" destination="jWA-dy-5qa" id="6oR-f2-edI"/>
                 <outlet property="Table" destination="XwS-1E-vRQ" id="3sz-hw-Xcq"/>
                 <outlet property="ViewStudentsButton" destination="ESr-ez-mbq" id="BQE-oN-62o"/>
@@ -18,12 +19,26 @@
             <rect key="frame" x="0.0" y="44" width="768" height="980"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exz-If-3AQ" userLabel="Background Color">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.21176470589999999" green="0.49019607840000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XwS-1E-vRQ" userLabel="Table">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="910"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="YTz-Qi-CES"/>
+                        <outlet property="delegate" destination="-1" id="Cy0-On-bXD"/>
+                    </connections>
+                </tableView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESr-ez-mbq" userLabel="View Students">
-                    <rect key="frame" x="384" y="910" width="384" height="70"/>
+                    <rect key="frame" x="256" y="910" width="256" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.75686274509999996" green="0.38823529410000002" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="fHr-ZZ-xQx"/>
+                        <constraint firstAttribute="height" constant="70" id="Gf4-Sw-P6K"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <state key="normal" title="View Students">
@@ -33,11 +48,11 @@
                     <state key="highlighted" backgroundImage="feedback.png"/>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWA-dy-5qa" userLabel="Edit Section">
-                    <rect key="frame" x="0.0" y="910" width="384" height="70"/>
+                    <rect key="frame" x="0.0" y="910" width="256" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.36470588240000001" green="0.52156862749999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="BI3-2F-Uy2"/>
+                        <constraint firstAttribute="height" constant="70" id="J5e-lS-ZcK"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <state key="normal" title="Edit Section">
@@ -46,13 +61,12 @@
                     </state>
                     <state key="highlighted" backgroundImage="feedback.png"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysf-OM-3Jq" userLabel="Add Section Button">
-                    <rect key="frame" x="418" y="20" width="340" height="70"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysf-OM-3Jq" userLabel="Add Section Button">
+                    <rect key="frame" x="512" y="910" width="256" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.41568627450000001" green="0.67450980390000004" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="340" id="bnV-Ip-XSr"/>
-                        <constraint firstAttribute="height" constant="70" id="pPx-bZ-Nrw"/>
+                        <constraint firstAttribute="height" constant="70" id="2iU-jW-1pm"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <state key="normal" title="Add Section">
@@ -63,30 +77,27 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XwS-1E-vRQ" userLabel="Table">
-                    <rect key="frame" x="0.0" y="100" width="768" height="810"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="YTz-Qi-CES"/>
-                        <outlet property="delegate" destination="-1" id="Cy0-On-bXD"/>
-                    </connections>
-                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ESr-ez-mbq" secondAttribute="bottom" id="2xH-wF-eW4"/>
-                <constraint firstItem="XwS-1E-vRQ" firstAttribute="top" secondItem="Ysf-OM-3Jq" secondAttribute="bottom" constant="10" id="9Z0-Kx-rYy"/>
-                <constraint firstItem="Ysf-OM-3Jq" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="ADD-vN-9cc"/>
-                <constraint firstAttribute="trailing" secondItem="ESr-ez-mbq" secondAttribute="trailing" id="Bsg-AZ-phG"/>
-                <constraint firstAttribute="bottom" secondItem="jWA-dy-5qa" secondAttribute="bottom" id="Pzd-KH-rCY"/>
-                <constraint firstAttribute="trailing" secondItem="XwS-1E-vRQ" secondAttribute="trailing" id="QNd-ob-Y1B"/>
-                <constraint firstAttribute="trailing" secondItem="Ysf-OM-3Jq" secondAttribute="trailing" constant="10" id="efb-fy-YUy"/>
-                <constraint firstItem="ESr-ez-mbq" firstAttribute="leading" secondItem="jWA-dy-5qa" secondAttribute="trailing" id="n4b-LA-wJp"/>
-                <constraint firstItem="XwS-1E-vRQ" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="nAw-oM-hk7"/>
-                <constraint firstItem="jWA-dy-5qa" firstAttribute="top" secondItem="XwS-1E-vRQ" secondAttribute="bottom" id="t9u-oI-Gne"/>
-                <constraint firstItem="ESr-ez-mbq" firstAttribute="width" secondItem="jWA-dy-5qa" secondAttribute="width" id="tIg-qr-RsD"/>
-                <constraint firstItem="jWA-dy-5qa" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="vnw-9x-hIH"/>
+                <constraint firstAttribute="trailing" secondItem="exz-If-3AQ" secondAttribute="trailing" id="98V-FY-cjE"/>
+                <constraint firstItem="XwS-1E-vRQ" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="EDx-SA-1Ih"/>
+                <constraint firstItem="Ysf-OM-3Jq" firstAttribute="leading" secondItem="ESr-ez-mbq" secondAttribute="trailing" id="GP3-N1-Ktg"/>
+                <constraint firstItem="ESr-ez-mbq" firstAttribute="width" secondItem="jWA-dy-5qa" secondAttribute="width" id="IwX-nV-eYW"/>
+                <constraint firstItem="exz-If-3AQ" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Lue-5A-qJs"/>
+                <constraint firstItem="exz-If-3AQ" firstAttribute="top" secondItem="1" secondAttribute="top" id="Lws-Cg-hTl"/>
+                <constraint firstAttribute="bottom" secondItem="jWA-dy-5qa" secondAttribute="bottom" id="Qdy-SZ-bDF"/>
+                <constraint firstItem="ESr-ez-mbq" firstAttribute="width" secondItem="Ysf-OM-3Jq" secondAttribute="width" id="RKW-sw-16C"/>
+                <constraint firstItem="jWA-dy-5qa" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="T8k-MQ-8Lf"/>
+                <constraint firstAttribute="bottom" secondItem="ESr-ez-mbq" secondAttribute="bottom" id="VZj-2p-SIz"/>
+                <constraint firstAttribute="trailing" secondItem="XwS-1E-vRQ" secondAttribute="trailing" id="Yeb-9G-Ovm"/>
+                <constraint firstAttribute="bottom" secondItem="Ysf-OM-3Jq" secondAttribute="bottom" id="YhD-Wa-PHq"/>
+                <constraint firstItem="Ysf-OM-3Jq" firstAttribute="top" secondItem="XwS-1E-vRQ" secondAttribute="bottom" id="aP6-iY-66a"/>
+                <constraint firstItem="Ysf-OM-3Jq" firstAttribute="leading" secondItem="ESr-ez-mbq" secondAttribute="trailing" id="fLj-ti-Y03"/>
+                <constraint firstItem="XwS-1E-vRQ" firstAttribute="top" secondItem="1" secondAttribute="top" id="gOU-Ke-XDY"/>
+                <constraint firstAttribute="trailing" secondItem="Ysf-OM-3Jq" secondAttribute="trailing" id="lkY-fr-kE0"/>
+                <constraint firstAttribute="bottom" secondItem="exz-If-3AQ" secondAttribute="bottom" id="pvn-EU-FFn"/>
+                <constraint firstItem="ESr-ez-mbq" firstAttribute="leading" secondItem="jWA-dy-5qa" secondAttribute="trailing" id="y2D-WQ-ZYl"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>

@@ -72,10 +72,10 @@
     TDLessonPlanViewController * tDCVC;
     
     if (isPhone) {
-        tDCVC = [[TDLessonPlanViewController alloc] initWithNibName:@"TDCourseViewController" bundle:nil];
+        tDCVC = [[TDLessonPlanViewController alloc] initWithNibName:@"TDLessonPlanViewController" bundle:nil];
     }
     else {
-        tDCVC = [[TDLessonPlanViewController alloc] initWithNibName:@"TDCourseViewController_iPad" bundle:nil];
+        tDCVC = [[TDLessonPlanViewController alloc] initWithNibName:@"TDLessonPlanViewController_iPad" bundle:nil];
     }
     
     [self.navigationController pushViewController:tDCVC animated:YES];

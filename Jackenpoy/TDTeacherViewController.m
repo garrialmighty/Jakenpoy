@@ -84,11 +84,18 @@ static NSIndexPath *SelectedIndex;
 
 #pragma mark - Delegate
 #pragma mark UITableView
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"TDTeacherCell" owner:self options:nil];
     TDTeacherCell * returnView = topObj[0];
-    [returnView setBackgroundColor:[UIColor whiteColor]];
+    [returnView setBackgroundColor:[UIColor colorWithRed:0.83 green:0.86 blue:0.9 alpha:1]];
+    [returnView.Email setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+    [returnView.Name setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
     
     return returnView;
 }
@@ -106,8 +113,14 @@ static NSIndexPath *SelectedIndex;
 #pragma mark JakenpoyHTTPClient Delegate
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
 {
+    
+}
+
+-(void)jakenpoyHTTPClientdidUpdateWithTeachers:(NSDictionary *)json
+{
     if ([json[@"status"] isEqualToString:@"success"]) {
         NSArray * data = json[@"data"][@"teachers"];
+        [TeacherList removeAllObjects];
         
         for (NSDictionary * teacher in data) {
             Teacher * item = [[Teacher alloc] init];

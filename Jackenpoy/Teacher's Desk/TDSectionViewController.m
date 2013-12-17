@@ -18,6 +18,7 @@ NSIndexPath * SelectedIndex;
 @property (weak, nonatomic) IBOutlet UIButton *EditSectionButton;
 @property (weak, nonatomic) IBOutlet UIButton *ViewStudentsButton;
 @property (weak, nonatomic) IBOutlet UITableView *Table;
+@property (weak, nonatomic) IBOutlet UIButton *AddButton;
 
 @end
 
@@ -45,7 +46,7 @@ NSIndexPath * SelectedIndex;
     [jakenpoyAppDelegate showBackButton];
     [self.navigationItem setHidesBackButton:YES];
     
-    NSMutableAttributedString *reportUlString = [[NSMutableAttributedString alloc] initWithString:@"Edit Section"];
+    /*NSMutableAttributedString *reportUlString = [[NSMutableAttributedString alloc] initWithString:@"Edit Section"];
     [reportUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [reportUlString length])];
     [reportUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [reportUlString length])];
     [self.EditSectionButton setAttributedTitle:reportUlString forState:UIControlStateNormal];
@@ -53,7 +54,7 @@ NSIndexPath * SelectedIndex;
     NSMutableAttributedString *printUlString = [[NSMutableAttributedString alloc] initWithString:@"View Students"];
     [printUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [printUlString length])];
     [printUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [printUlString length])];
-    [self.ViewStudentsButton setAttributedTitle:printUlString forState:UIControlStateNormal];
+    [self.ViewStudentsButton setAttributedTitle:printUlString forState:UIControlStateNormal];*/
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
@@ -90,11 +91,19 @@ NSIndexPath * SelectedIndex;
 
 #pragma mark Delegate
 #pragma mark UITableView Delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSArray *topObj = [[NSBundle mainBundle] loadNibNamed:@"TDSectionCell" owner:self options:nil];
     TDSectionCell * returnView = topObj[0];
-    [returnView setBackgroundColor:[UIColor whiteColor]];
+    [returnView setBackgroundColor:[UIColor colorWithRed:0.83 green:0.86 blue:0.9 alpha:1]];
+    [returnView.ID setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+    [returnView.Name setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
+    [returnView.GradeLevel setTextColor:[UIColor colorWithRed:0.27 green:0.31 blue:0.56 alpha:1]];
     
     return returnView;
 }
@@ -104,6 +113,7 @@ NSIndexPath * SelectedIndex;
     if ([self.ViewStudentsButton isHidden]) {
         [self.ViewStudentsButton setHidden:NO];
         [self.EditSectionButton setHidden:NO];
+        [self.AddButton setHidden:NO];
     }
     
     if (SelectedIndex.row != indexPath.row) [tableView deselectRowAtIndexPath:SelectedIndex animated:YES];
@@ -115,6 +125,7 @@ NSIndexPath * SelectedIndex;
 {
     if ([json[@"status"] isEqualToString:@"success"]) {
         NSArray * data = json[@"data"][@"available_sections"];
+        [SectionList removeAllObjects];
         
         for (NSDictionary * section in data) {
             Section * item = [[Section alloc] init];

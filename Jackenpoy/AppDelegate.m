@@ -232,7 +232,8 @@ static NSIndexPath * SelectedRow = nil;
     }
     
     UIImageView * menuLogo;
-    UILabel * cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, isPhone?200:500, MenuCellHeight)];
+    UILabel * cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(isPhone?70:140, 0, isPhone?170:300, MenuCellHeight)];
+    [cellLabel setNumberOfLines:0];
     
     UIView * highlight = [[UIView alloc] initWithFrame:CGRectMake(0, 0, isPhone?320:768, MenuCellHeight)];
     [highlight setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"feedback.png"]]];
@@ -256,7 +257,7 @@ static NSIndexPath * SelectedRow = nil;
             [cell setUserInteractionEnabled:NO];
             break;
         case 1:
-            menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-15)/2, 20, 15)];
+            menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-(isPhone?33:67))/2, isPhone?46:93, isPhone?33:67)];
             [menuLogo setImage:[UIImage imageNamed:@"reviewers_icon.png"]];
             [cell addSubview:menuLogo];
             
@@ -264,7 +265,7 @@ static NSIndexPath * SelectedRow = nil;
             [cell addSubview:cellLabel];
             break;
         case 2:
-            menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-10)/2, 25, 10)];
+            menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-(isPhone?24:48))/2, isPhone?54:108, isPhone?24:48)];
             [menuLogo setImage:[UIImage imageNamed:@"pick_icon.png"]];
             [cell addSubview:menuLogo];
             
@@ -307,7 +308,7 @@ static NSIndexPath * SelectedRow = nil;
     if (MenuCellCount == 7) {
         switch (indexPath.row) {
             case 3:
-                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-10)/2, 20, 20)];
+                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-(isPhone?36:72))/2, isPhone?40:80, isPhone?36:72)];
                 [menuLogo setImage:[UIImage imageNamed:@"manage_icon.png"]];
                 [cell addSubview:menuLogo];
                 
@@ -315,7 +316,7 @@ static NSIndexPath * SelectedRow = nil;
                 [cell addSubview:cellLabel];
                 break;
             case 4:
-                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-17)/2, 25, 17)];
+                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-(isPhone?31:62))/2, isPhone?42:85, isPhone?31:62)];
                 [menuLogo setImage:[UIImage imageNamed:@"my_icon.png"]];
                 [cell addSubview:menuLogo];
                 
@@ -327,7 +328,7 @@ static NSIndexPath * SelectedRow = nil;
                 [cell addSubview:cellLabel];
                 break;
             case 6:
-                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-17)/2, 20, 17)];
+                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-(isPhone?33:66))/2, isPhone?39:78, isPhone?33:66)];
                 [menuLogo setImage:[UIImage imageNamed:@"logout_icon.png"]];
                 [cell addSubview:menuLogo];
                 
@@ -341,7 +342,7 @@ static NSIndexPath * SelectedRow = nil;
     else {
         switch (indexPath.row) {
             case 3:
-                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-20)/2, 20, 20)];
+                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-(isPhone?40:80))/2, isPhone?40:80, isPhone?40:80)];
                 [menuLogo setImage:[UIImage imageNamed:@"teacher_icon.png"]];
                 [cell addSubview:menuLogo];
                 
@@ -349,7 +350,7 @@ static NSIndexPath * SelectedRow = nil;
                 [cell addSubview:cellLabel];
                 break;
             case 4:
-                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-10)/2, 20, 20)];
+                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-(isPhone?36:72))/2, isPhone?40:80, isPhone?36:72)];
                 [menuLogo setImage:[UIImage imageNamed:@"manage_icon.png"]];
                 [cell addSubview:menuLogo];
                 
@@ -357,7 +358,7 @@ static NSIndexPath * SelectedRow = nil;
                 [cell addSubview:cellLabel];
                 break;
             case 5:
-                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-17)/2, 25, 17)];
+                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-(isPhone?31:62))/2, isPhone?42.5:85, isPhone?31:62)];
                 [menuLogo setImage:[UIImage imageNamed:@"my_icon.png"]];
                 [cell addSubview:menuLogo];
                 
@@ -369,7 +370,7 @@ static NSIndexPath * SelectedRow = nil;
                 [cell addSubview:cellLabel];
                 break;
             case 7:
-                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-17)/2, 20, 17)];
+                menuLogo = [[UIImageView alloc] initWithFrame:CGRectMake(5, (MenuCellHeight-(isPhone?33:66))/2, isPhone?39:78, isPhone?33:66)];
                 [menuLogo setImage:[UIImage imageNamed:@"logout_icon.png"]];
                 [cell addSubview:menuLogo];
                 

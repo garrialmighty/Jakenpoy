@@ -23,14 +23,8 @@
             <rect key="frame" x="0.0" y="44" width="768" height="980"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Found Reviewers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K4-ML-Ppe" userLabel="Found Reviewers">
-                    <rect key="frame" x="10" y="10" width="239" height="36"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rB2-Yu-wqy">
-                    <rect key="frame" x="0.0" y="66" width="768" height="796"/>
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="870"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -39,14 +33,14 @@
                     </connections>
                 </tableView>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rate:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whe-xd-SRH" userLabel="Rate:">
-                    <rect key="frame" x="122" y="878" width="70" height="36"/>
+                    <rect key="frame" x="122" y="882" width="70" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button hidden="YES" opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgv-fT-BAA" userLabel="Star 5">
-                    <rect key="frame" x="677" y="867" width="71" height="58"/>
+                    <rect key="frame" x="698" y="875" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" backgroundImage="star_blank.png">
@@ -61,7 +55,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihF-67-yTX" userLabel="Star 4">
-                    <rect key="frame" x="586" y="867" width="71" height="58"/>
+                    <rect key="frame" x="628" y="875" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" backgroundImage="star_blank.png">
@@ -76,7 +70,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkS-uJ-C8n" userLabel="Star 3">
-                    <rect key="frame" x="495" y="867" width="71" height="58"/>
+                    <rect key="frame" x="558" y="875" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" backgroundImage="star_blank.png">
@@ -91,7 +85,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF3-RL-Dcp" userLabel="Star 2">
-                    <rect key="frame" x="404" y="867" width="71" height="58"/>
+                    <rect key="frame" x="488" y="875" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" backgroundImage="star_blank.png">
@@ -106,7 +100,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxn-WU-Rp3" userLabel="Star 1">
-                    <rect key="frame" x="313" y="867" width="71" height="58"/>
+                    <rect key="frame" x="418" y="875" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" backgroundImage="star_blank.png">
@@ -154,7 +148,6 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="ihF-67-yTX" firstAttribute="centerY" secondItem="fkS-uJ-C8n" secondAttribute="centerY" id="14C-M6-LkZ"/>
-                <constraint firstItem="8K4-ML-Ppe" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="32A-VY-JlU"/>
                 <constraint firstAttribute="trailing" secondItem="Ocx-ho-776" secondAttribute="trailing" id="35w-ZQ-Mhw"/>
                 <constraint firstItem="IF3-RL-Dcp" firstAttribute="leading" secondItem="dxn-WU-Rp3" secondAttribute="trailing" constant="20" id="3IC-SM-myc"/>
                 <constraint firstItem="fkS-uJ-C8n" firstAttribute="leading" secondItem="IF3-RL-Dcp" secondAttribute="trailing" constant="20" id="6Np-T4-wqd"/>
@@ -163,9 +156,8 @@
                 <constraint firstItem="jgv-fT-BAA" firstAttribute="leading" secondItem="ihF-67-yTX" secondAttribute="trailing" constant="20" id="Ijn-h9-aog"/>
                 <constraint firstItem="ihF-67-yTX" firstAttribute="centerY" secondItem="jgv-fT-BAA" secondAttribute="centerY" id="KYp-hk-Nfb"/>
                 <constraint firstItem="Ocx-ho-776" firstAttribute="top" secondItem="jgv-fT-BAA" secondAttribute="bottom" constant="5" id="LAH-YH-a5n"/>
-                <constraint firstItem="8K4-ML-Ppe" firstAttribute="top" secondItem="1" secondAttribute="top" constant="10" id="Rup-H7-acG"/>
+                <constraint firstItem="rB2-Yu-wqy" firstAttribute="top" secondItem="1" secondAttribute="top" id="WFO-m8-Xce"/>
                 <constraint firstAttribute="bottom" secondItem="Ocx-ho-776" secondAttribute="bottom" id="aWl-iw-nDF"/>
-                <constraint firstItem="rB2-Yu-wqy" firstAttribute="top" secondItem="8K4-ML-Ppe" secondAttribute="bottom" constant="20" id="hpF-wP-gyE"/>
                 <constraint firstItem="dxn-WU-Rp3" firstAttribute="centerY" secondItem="jgv-fT-BAA" secondAttribute="centerY" id="hty-5H-QVo"/>
                 <constraint firstAttribute="trailing" secondItem="rB2-Yu-wqy" secondAttribute="trailing" id="jVO-Pt-FEq"/>
                 <constraint firstItem="jgv-fT-BAA" firstAttribute="centerY" secondItem="Whe-xd-SRH" secondAttribute="centerY" id="kt3-Be-0eg"/>
@@ -183,6 +175,6 @@
     </objects>
     <resources>
         <image name="feedback.png" width="320" height="320"/>
-        <image name="star_blank.png" width="71" height="58"/>
+        <image name="star_blank.png" width="50" height="50"/>
     </resources>
 </document>

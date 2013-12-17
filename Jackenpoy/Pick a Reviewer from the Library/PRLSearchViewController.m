@@ -419,9 +419,11 @@ static NSInteger QuestionTypeSelected;
             return [a compare:b options:NSNumericSearch];
         }];
         
-        for (NSString * key in sortedKeys) {
+        /*for (NSString * key in sortedKeys) {
             [QuestionTypeList addObject:QuestionTypes[key]];
-        }
+        }*/
+        
+        QuestionTypeList = [NSMutableArray arrayWithArray:@[@"Multiple Choice", @"True or False", @"Identification", @"Category", @"All"]];
         
         if (isPhone) {
             if (isQuestionType) {
@@ -437,7 +439,7 @@ static NSInteger QuestionTypeSelected;
 -(void)jakenpoyHTTPClientdidUpdateWithGradeLevels:(NSDictionary *)json
 {
     //for (NSString * key in json) NSLog(@"GL:%@ %@",key, json[key]);
-    
+
     if ([json[@"status"] isEqualToString:@"success"]) {
         //NSLog(@"%@",json[@"data"][@"grade_levels_name"]);
         
@@ -449,9 +451,11 @@ static NSInteger QuestionTypeSelected;
             return [a compare:b options:NSNumericSearch];
         }];
         
-        for (NSString * key in sortedKeys) {
+        /*for (NSString * key in sortedKeys) {
             [GradeLevelList addObject:GradeLevels[key]];
-        }
+        }*/
+        
+        GradeLevelList = [NSMutableArray arrayWithArray:@[@"Grade 1", @"Grade 2", @"Grade 3", @"Grade 4", @"Grade 5", @"Grade 6", @"Grade 7", @"All", @"Randomized"]];
         
         if (isPhone) {
             if (isGradeLevel) {
@@ -479,9 +483,11 @@ static NSInteger QuestionTypeSelected;
             return [a compare:b options:NSNumericSearch];
         }];
         
-        for (NSString * key in sortedKeys) {
+        /*for (NSString * key in sortedKeys) {
             [SubjectList addObject:Subjects[key]];
-        }
+        }*/
+        
+        SubjectList = [NSMutableArray arrayWithArray:@[@"Araling Panlipunan", @"Civics", @"Filipino", @"Language", @"Math", @"Science", @"All", @"Unclassified"]];
         
         if (isPhone) {
             if (isSubject) {

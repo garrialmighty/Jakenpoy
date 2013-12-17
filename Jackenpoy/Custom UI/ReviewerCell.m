@@ -25,13 +25,13 @@
     
     if (selected) {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.Title setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.Title setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.Title setTextColor:[UIColor blackColor]];
             
-            [self.ExpirationDate setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.ExpirationDate setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.ExpirationDate setTextColor:[UIColor blackColor]];
             
-            [self.Status setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.Status setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.Status setTextColor:[UIColor blackColor]];
             
             [self.SelectedBG setHidden:NO];
@@ -39,13 +39,13 @@
     }
     else {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.Title setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.Title setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.Title setTextColor:[UIColor blackColor]];
             
-            [self.ExpirationDate setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.ExpirationDate setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.ExpirationDate setTextColor:[UIColor blackColor]];
             
-            [self.Status setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.Status setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.Status setTextColor:[UIColor blackColor]];
             
             [self.SelectedBG setHidden:YES];

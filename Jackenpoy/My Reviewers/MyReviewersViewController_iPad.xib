@@ -22,6 +22,11 @@
             <rect key="frame" x="0.0" y="44" width="768" height="980"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glt-H8-WXr" userLabel="Background Color">
+                    <rect key="frame" x="-95" y="-37" width="8" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.21176470589999999" green="0.49019607840000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="I38-an-Ye1">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="915"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,7 +136,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.40000000000000002" green="0.7843137255" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="R0F-61-oLu" firstAttribute="leading" secondItem="t7q-KC-cRj" secondAttribute="trailing" id="1Z8-lm-rwd"/>
                 <constraint firstAttribute="bottom" secondItem="xtQ-ML-EZe" secondAttribute="bottom" id="80A-8s-hkg"/>

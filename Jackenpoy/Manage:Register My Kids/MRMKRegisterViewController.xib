@@ -250,7 +250,7 @@
                         <outlet property="delegate" destination="-1" id="GKa-I9-1Yk"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select School:" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14" userLabel="School Text Field">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Choose School" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14" userLabel="School Text Field">
                     <rect key="frame" x="2" y="350" width="305" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -261,10 +261,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="drop_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="UTh-es-cv4" userLabel="Drop Down Icon">
-                    <rect key="frame" x="275" y="350" width="40" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17" userLabel="School Drop Down">
                     <rect key="frame" x="10" y="350" width="305" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -284,7 +280,7 @@
                         <action selector="dropDown:" destination="-1" eventType="touchUpInside" id="DCY-st-wBK"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Grade Level:" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="18" userLabel="Grade Level Text Field">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Choose Level" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="18" userLabel="Grade Level Text Field">
                     <rect key="frame" x="2" y="380" width="305" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -295,10 +291,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="drop_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="rDn-kj-efZ" userLabel="Drop Down Icon">
-                    <rect key="frame" x="275" y="380" width="40" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20" userLabel="Grade Level Drop Down">
                     <rect key="frame" x="10" y="380" width="305" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -318,7 +310,7 @@
                         <action selector="dropDown:" destination="-1" eventType="touchUpInside" id="3dB-hT-R0K"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Section:" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="793" userLabel="Section Text Field">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Choose Section" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="793" userLabel="Section Text Field">
                     <rect key="frame" x="2" y="411" width="305" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -329,10 +321,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="drop_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="sug-0E-0NW" userLabel="Drop Down Icon">
-                    <rect key="frame" x="275" y="411" width="40" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="794" userLabel="Section Drop Down">
                     <rect key="frame" x="10" y="411" width="305" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -489,7 +477,6 @@
         </toolbar>
     </objects>
     <resources>
-        <image name="drop_down.png" width="85" height="77"/>
         <image name="jakenpoy_logo.png" width="145" height="67"/>
         <image name="jakenpoy_text.png" width="168" height="49"/>
     </resources>

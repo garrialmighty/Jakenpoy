@@ -59,6 +59,7 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
                        [self setUserID:responseObject[@"user_id"]];
                        [self setUserName:responseObject[@"name"]];
                        [self setType:[UserType userTypeWithRole:responseObject[@"roles"]]];
+                       [self setIsAdmin:[responseObject[@"is_admin"] boolValue]];
                        
                        // Enable going to menu
                        jakenpoyAppDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -427,8 +428,8 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
     [self getPath:@"getTeachers"
        parameters:@{@"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
-                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithTeachers:)])
+                  [self.delegate jakenpoyHTTPClientdidUpdateWithTeachers:responseObject];
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])

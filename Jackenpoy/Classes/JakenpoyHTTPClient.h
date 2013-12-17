@@ -17,6 +17,7 @@
 @property(strong) NSString * Token;
 @property(strong) NSString * UserName;
 @property(assign) NSInteger LoginErrorFlag;
+@property(assign) BOOL isAdmin;
 @property(strong) UserType * Type;
 @property(weak) id<JakenpoyHTTPClientDelegate> delegate;
 
@@ -91,6 +92,7 @@
 -(void)jakenpoyHTTPClientdidCreateAccount:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidRateWithData:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithSchools:(NSDictionary *)json;
+-(void)jakenpoyHTTPClientdidUpdateWithTeachers:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithQuestionTypes:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithGradeLevels:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithSubjects:(NSDictionary *)json;

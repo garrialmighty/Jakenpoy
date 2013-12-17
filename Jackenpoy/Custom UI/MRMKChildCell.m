@@ -30,18 +30,18 @@
     // Configure the view for the selected state
     if (selected) {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.Name setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.Name setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.Name setTextColor:[UIColor blackColor]];
-            [self.Status setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:14]];
+            [self.Status setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
             [self.Status setTextColor:[UIColor blackColor]];
             [self.SelectedBG setHidden:NO];
         }];
     }
     else {
         [UIView animateWithDuration:0.4f animations:^{
-            [self.Name setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.Name setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.Name setTextColor:[UIColor blackColor]];
-            [self.Status setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.Status setFont:[UIFont fontWithName:@"OpenSans" size:12]];
             [self.Status setTextColor:[UIColor blackColor]];
             [self.SelectedBG setHidden:YES];
         }];

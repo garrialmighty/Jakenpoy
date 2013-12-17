@@ -7,7 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TDLessonPlanViewController">
             <connections>
+                <outlet property="AddLessonPlanButton" destination="efD-OG-wCg" id="3Pr-mn-9Ju"/>
                 <outlet property="EditCourseButton" destination="5cn-Nl-dH9" id="Cqr-XQ-8FO"/>
+                <outlet property="Table" destination="iDd-ty-3hr" id="xAq-7U-159"/>
                 <outlet property="ViewSectionsButton" destination="kBA-lt-Ccv" id="pYg-GD-IlM"/>
                 <outlet property="view" destination="1" id="Lvs-6U-ZCB"/>
             </connections>
@@ -17,13 +19,26 @@
             <rect key="frame" x="0.0" y="44" width="768" height="980"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efD-OG-wCg" userLabel="Add Course Button">
-                    <rect key="frame" x="418" y="10" width="340" height="70"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eb7-Eb-5Oq" userLabel="Background Color">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.21176470589999999" green="0.49019607840000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-ty-3hr" userLabel="Table">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="910"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="bey-Uk-Tch"/>
+                        <outlet property="delegate" destination="-1" id="9Ed-nT-joD"/>
+                    </connections>
+                </tableView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efD-OG-wCg" userLabel="Add Course Button">
+                    <rect key="frame" x="512" y="910" width="256" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="340" id="Ilf-QZ-xgn"/>
-                        <constraint firstAttribute="height" constant="70" id="gpl-5N-Tiy"/>
+                        <constraint firstAttribute="height" constant="70" id="RFn-Ws-7WG"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <state key="normal" title="Add Lesson Plan">
@@ -37,22 +52,12 @@
                         <action selector="addCourse" destination="-1" eventType="touchUpInside" id="dhP-F0-PhG"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-ty-3hr" userLabel="Table">
-                    <rect key="frame" x="0.0" y="90" width="768" height="820"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="bey-Uk-Tch"/>
-                        <outlet property="delegate" destination="-1" id="9Ed-nT-joD"/>
-                    </connections>
-                </tableView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cn-Nl-dH9" userLabel="Edit Course">
-                    <rect key="frame" x="0.0" y="910" width="385" height="70"/>
+                    <rect key="frame" x="0.0" y="910" width="256" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.36470588240000001" green="0.52156862749999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="6Zn-pm-wdq"/>
-                        <constraint firstAttribute="width" constant="385" id="gKs-ki-YHY"/>
+                        <constraint firstAttribute="height" constant="70" id="xxU-Em-ZHO"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <state key="normal" title="Edit Lesson Plan">
@@ -65,12 +70,11 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBA-lt-Ccv" userLabel="View Sections">
-                    <rect key="frame" x="385" y="910" width="385" height="70"/>
+                    <rect key="frame" x="256" y="910" width="256" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.86274509799999999" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="385" id="Crh-9m-kba"/>
-                        <constraint firstAttribute="height" constant="70" id="LSJ-pq-P4h"/>
+                        <constraint firstAttribute="height" constant="70" id="kOa-zb-d2f"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <state key="normal" title="View Sections">
@@ -82,18 +86,25 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="kBA-lt-Ccv" firstAttribute="leading" secondItem="5cn-Nl-dH9" secondAttribute="trailing" id="6lE-yh-IF7"/>
-                <constraint firstAttribute="bottom" secondItem="5cn-Nl-dH9" secondAttribute="bottom" id="9LW-Si-vXK"/>
-                <constraint firstItem="efD-OG-wCg" firstAttribute="top" secondItem="1" secondAttribute="top" constant="10" id="I8M-GD-foi"/>
-                <constraint firstItem="kBA-lt-Ccv" firstAttribute="top" secondItem="iDd-ty-3hr" secondAttribute="bottom" id="O0q-vP-Icl"/>
-                <constraint firstItem="iDd-ty-3hr" firstAttribute="top" secondItem="efD-OG-wCg" secondAttribute="bottom" constant="10" id="XKb-FO-oCr"/>
-                <constraint firstItem="5cn-Nl-dH9" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="bq5-Qk-TG2"/>
-                <constraint firstAttribute="trailing" secondItem="iDd-ty-3hr" secondAttribute="trailing" id="d48-qP-bNf"/>
-                <constraint firstItem="kBA-lt-Ccv" firstAttribute="leading" secondItem="5cn-Nl-dH9" secondAttribute="trailing" id="gpA-xP-8Qd"/>
-                <constraint firstAttribute="bottom" secondItem="kBA-lt-Ccv" secondAttribute="bottom" id="kIy-Mg-mnP"/>
-                <constraint firstItem="kBA-lt-Ccv" firstAttribute="top" secondItem="iDd-ty-3hr" secondAttribute="bottom" id="pBJ-o0-Maq"/>
-                <constraint firstAttribute="trailing" secondItem="efD-OG-wCg" secondAttribute="trailing" constant="10" id="pid-XD-z5M"/>
-                <constraint firstItem="iDd-ty-3hr" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="yPG-0I-r8j"/>
+                <constraint firstAttribute="trailing" secondItem="efD-OG-wCg" secondAttribute="trailing" id="4WZ-bU-zFe"/>
+                <constraint firstAttribute="bottom" secondItem="5cn-Nl-dH9" secondAttribute="bottom" id="8XH-YW-sY1"/>
+                <constraint firstItem="iDd-ty-3hr" firstAttribute="top" secondItem="1" secondAttribute="top" id="FxH-qH-MMv"/>
+                <constraint firstAttribute="trailing" secondItem="Eb7-Eb-5Oq" secondAttribute="trailing" id="GwG-uD-nAx"/>
+                <constraint firstItem="kBA-lt-Ccv" firstAttribute="top" secondItem="iDd-ty-3hr" secondAttribute="bottom" id="KKL-B6-Prh"/>
+                <constraint firstAttribute="trailing" secondItem="iDd-ty-3hr" secondAttribute="trailing" id="QCI-uB-hAT"/>
+                <constraint firstItem="efD-OG-wCg" firstAttribute="leading" secondItem="kBA-lt-Ccv" secondAttribute="trailing" id="QXe-hW-Jhw"/>
+                <constraint firstItem="5cn-Nl-dH9" firstAttribute="width" secondItem="efD-OG-wCg" secondAttribute="width" id="brw-C6-GrA"/>
+                <constraint firstItem="Eb7-Eb-5Oq" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="cmc-mP-tCX"/>
+                <constraint firstAttribute="bottom" secondItem="efD-OG-wCg" secondAttribute="bottom" id="gZF-IC-siX"/>
+                <constraint firstAttribute="bottom" secondItem="Eb7-Eb-5Oq" secondAttribute="bottom" id="gdH-I4-reB"/>
+                <constraint firstItem="efD-OG-wCg" firstAttribute="leading" secondItem="kBA-lt-Ccv" secondAttribute="trailing" id="ijy-Kg-SVq"/>
+                <constraint firstAttribute="bottom" secondItem="kBA-lt-Ccv" secondAttribute="bottom" id="lru-k7-D0u"/>
+                <constraint firstItem="iDd-ty-3hr" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="met-fu-Whn"/>
+                <constraint firstItem="Eb7-Eb-5Oq" firstAttribute="top" secondItem="1" secondAttribute="top" id="oBG-pW-94a"/>
+                <constraint firstItem="kBA-lt-Ccv" firstAttribute="leading" secondItem="5cn-Nl-dH9" secondAttribute="trailing" id="pEZ-M1-JgU"/>
+                <constraint firstItem="5cn-Nl-dH9" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="pGJ-jk-6Cx"/>
+                <constraint firstItem="kBA-lt-Ccv" firstAttribute="leading" secondItem="5cn-Nl-dH9" secondAttribute="trailing" id="ug5-I8-8z1"/>
+                <constraint firstItem="5cn-Nl-dH9" firstAttribute="width" secondItem="kBA-lt-Ccv" secondAttribute="width" id="zPW-i6-bS2"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>

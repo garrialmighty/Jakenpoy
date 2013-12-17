@@ -23,18 +23,8 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Found Reviewers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="Found Reviewers">
-                    <rect key="frame" x="15" y="5" width="200" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="5"/>
-                        <constraint firstAttribute="width" constant="200" id="6"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                    <rect key="frame" x="0.0" y="35" width="320" height="325"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="360"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -177,14 +167,12 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" constant="5" id="11"/>
-                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="15" id="22"/>
                 <constraint firstItem="13" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="23"/>
                 <constraint firstItem="13" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="26"/>
                 <constraint firstItem="33" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="44"/>
                 <constraint firstItem="46" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="47"/>
                 <constraint firstItem="46" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="56"/>
-                <constraint firstItem="13" firstAttribute="top" secondItem="1" secondAttribute="top" constant="35" id="68"/>
+                <constraint firstItem="13" firstAttribute="top" secondItem="1" secondAttribute="top" id="68"/>
                 <constraint firstItem="57" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="40" id="87"/>
                 <constraint firstItem="46" firstAttribute="top" secondItem="33" secondAttribute="top" id="104"/>
                 <constraint firstItem="146" firstAttribute="bottom" secondItem="127" secondAttribute="bottom" id="154"/>
@@ -211,6 +199,6 @@
     </objects>
     <resources>
         <image name="feedback.png" width="320" height="320"/>
-        <image name="star_blank.png" width="71" height="58"/>
+        <image name="star_blank.png" width="50" height="50"/>
     </resources>
 </document>

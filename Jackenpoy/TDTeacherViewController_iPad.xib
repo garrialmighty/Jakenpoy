@@ -17,6 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbf-fJ-u8j" userLabel="Background Color">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.21176470589999999" green="0.49019607840000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMw-H5-7Iq" userLabel="Reports Button">
                     <rect key="frame" x="0.0" y="974" width="760" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,9 +58,13 @@
                 <constraint firstAttribute="trailing" secondItem="6TK-cY-3hv" secondAttribute="trailing" id="38q-eC-O9X"/>
                 <constraint firstItem="6TK-cY-3hv" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="B2e-lX-ZOk"/>
                 <constraint firstAttribute="trailing" secondItem="MMw-H5-7Iq" secondAttribute="trailing" constant="8" id="HQZ-pd-LqJ"/>
+                <constraint firstItem="Tbf-fJ-u8j" firstAttribute="top" secondItem="1" secondAttribute="top" id="LEX-5z-yUg"/>
                 <constraint firstItem="6TK-cY-3hv" firstAttribute="top" secondItem="1" secondAttribute="top" id="O2M-mp-rfx"/>
                 <constraint firstItem="MMw-H5-7Iq" firstAttribute="top" secondItem="6TK-cY-3hv" secondAttribute="bottom" id="Ymo-3p-iSn"/>
+                <constraint firstItem="Tbf-fJ-u8j" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ep9-3o-QCj"/>
                 <constraint firstItem="MMw-H5-7Iq" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ijb-Qy-NIL"/>
+                <constraint firstAttribute="bottom" secondItem="Tbf-fJ-u8j" secondAttribute="bottom" id="jTS-Y8-5Kp"/>
+                <constraint firstAttribute="trailing" secondItem="Tbf-fJ-u8j" secondAttribute="trailing" id="xTE-FH-EZw"/>
                 <constraint firstAttribute="bottom" secondItem="MMw-H5-7Iq" secondAttribute="bottom" id="yCS-R7-VxC"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>

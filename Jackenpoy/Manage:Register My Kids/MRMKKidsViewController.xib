@@ -7,7 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MRMKKidsViewController">
             <connections>
+                <outlet property="DeactivateButton" destination="7" id="HdK-0I-Npo"/>
                 <outlet property="RegisterButton" destination="6" id="frk-EZ-IA1"/>
+                <outlet property="ReportsButton" destination="4" id="J40-rQ-z76"/>
                 <outlet property="Table" destination="5" id="tVx-vI-Ukb"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -17,8 +19,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-AL-QaX" userLabel="Background Color">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.21176470589999999" green="0.49019607840000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="Table">
-                    <rect key="frame" x="0.0" y="40" width="320" height="390"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -26,13 +33,46 @@
                         <outlet property="delegate" destination="-1" id="35"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="Register Child Button">
-                    <rect key="frame" x="180" y="3" width="140" height="35"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="Deactivate Account Button">
+                    <rect key="frame" x="0.0" y="430" width="107" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.74509803919999995" green="0.20000000000000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="BfP-8r-wdm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Deactivate">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="feedback.png"/>
+                    <connections>
+                        <action selector="deactivateAccount" destination="-1" eventType="touchUpInside" id="Etc-ki-ju2"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="Reports Button">
+                    <rect key="frame" x="107" y="430" width="107" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.86274509799999999" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="fiV-61-aMn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Reports">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="feedback.png"/>
+                    <connections>
+                        <action selector="report" destination="-1" eventType="touchUpInside" id="Pgf-8Q-R5w"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="Register Child Button">
+                    <rect key="frame" x="214" y="430" width="106" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="140" id="10"/>
-                        <constraint firstAttribute="height" constant="35" id="11"/>
+                        <constraint firstAttribute="height" constant="50" id="zzM-Lt-c2P"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Register Child">
@@ -46,56 +86,24 @@
                         <action selector="registerChild" destination="-1" eventType="touchUpInside" id="37"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="Deactivate Account Button">
-                    <rect key="frame" x="0.0" y="430" width="160" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.74509803919999995" green="0.20000000000000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="160" id="8"/>
-                        <constraint firstAttribute="height" constant="50" id="9"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                    <state key="normal" title="Deactivate Account">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="feedback.png"/>
-                    <connections>
-                        <action selector="deactivateAccount" destination="-1" eventType="touchUpInside" id="Etc-ki-ju2"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="Reports Button">
-                    <rect key="frame" x="160" y="430" width="160" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.86274509799999999" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="160" id="13"/>
-                        <constraint firstAttribute="height" constant="50" id="14"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                    <state key="normal" title="Reports">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="feedback.png"/>
-                    <connections>
-                        <action selector="report" destination="-1" eventType="touchUpInside" id="Pgf-8Q-R5w"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="6" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="25"/>
-                <constraint firstItem="4" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="26"/>
-                <constraint firstItem="6" firstAttribute="top" secondItem="1" secondAttribute="top" constant="3" id="28"/>
-                <constraint firstItem="5" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="29"/>
-                <constraint firstItem="7" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="30"/>
-                <constraint firstItem="4" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="31"/>
-                <constraint firstItem="5" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="32"/>
-                <constraint firstItem="7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="33"/>
-                <constraint firstItem="5" firstAttribute="top" secondItem="6" secondAttribute="bottom" constant="2" id="36"/>
-                <constraint firstItem="4" firstAttribute="top" secondItem="5" secondAttribute="bottom" id="pdH-1Z-2tk"/>
-                <constraint firstItem="5" firstAttribute="top" secondItem="6" secondAttribute="bottom" constant="2" id="zmw-8g-6BG"/>
+                <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" id="0YV-Ua-YCg"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="7" secondAttribute="trailing" id="9NS-80-T9k"/>
+                <constraint firstItem="7" firstAttribute="top" secondItem="5" secondAttribute="bottom" id="J1D-rI-wrc"/>
+                <constraint firstItem="6" firstAttribute="leading" secondItem="4" secondAttribute="trailing" id="TrI-Lf-buO"/>
+                <constraint firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="WQW-2Y-5UP"/>
+                <constraint firstItem="5" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="gmM-ty-39W"/>
+                <constraint firstAttribute="trailing" secondItem="5" secondAttribute="trailing" id="i09-zN-le4"/>
+                <constraint firstAttribute="bottom" secondItem="7" secondAttribute="bottom" id="j1f-Dz-ZBf"/>
+                <constraint firstItem="7" firstAttribute="width" secondItem="6" secondAttribute="width" id="luy-ae-cZ6"/>
+                <constraint firstItem="7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="nx1-oc-DcH"/>
+                <constraint firstItem="5" firstAttribute="top" secondItem="1" secondAttribute="top" id="uNh-nz-r2P"/>
+                <constraint firstItem="7" firstAttribute="width" secondItem="4" secondAttribute="width" id="wbp-X2-uFz"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="7" secondAttribute="trailing" id="xe4-hi-u00"/>
+                <constraint firstItem="6" firstAttribute="leading" secondItem="4" secondAttribute="trailing" id="yov-zE-575"/>
+                <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="zYf-VV-ZvS"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="CheckboxTable" destination="486" id="RI0-B2-mzl"/>
                 <outlet property="NSButton" destination="7" id="511"/>
+                <outlet property="Picker" destination="YR3-sb-vAM" id="Pwe-HR-bze"/>
                 <outlet property="Step1" destination="4" id="507"/>
                 <outlet property="Step1Button" destination="8" id="508"/>
                 <outlet property="Step2" destination="5" id="506"/>
@@ -195,7 +196,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </view>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="Step 1 Button">
+                <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="Step 1 Button">
                     <rect key="frame" x="0.0" y="396" width="75" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -216,7 +217,7 @@
                         <action selector="showStep:" destination="-1" eventType="touchUpInside" id="512"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="Step 2 Button">
+                <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="Step 2 Button">
                     <rect key="frame" x="75" y="396" width="75" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -236,7 +237,7 @@
                         <action selector="showStep:" destination="-1" eventType="touchUpInside" id="513"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="174" userLabel="Step 3 Button">
+                <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="174" userLabel="Step 3 Button">
                     <rect key="frame" x="150" y="396" width="75" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -256,7 +257,7 @@
                         <action selector="showStep:" destination="-1" eventType="touchUpInside" id="514"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="Next/Save Button">
+                <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="Next/Save Button">
                     <rect key="frame" x="225" y="396" width="95" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -273,6 +274,46 @@
                     </state>
                     <connections>
                         <action selector="nextSave:" destination="-1" eventType="touchUpInside" id="515"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbZ-md-KxO" userLabel="Add Button">
+                    <rect key="frame" x="0.0" y="396" width="160" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Mlf-8V-0mb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="Add">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="feedback.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addLessonPlan" destination="-1" eventType="touchUpInside" id="tOL-ut-BDL"/>
+                        <action selector="nextSave:" destination="-1" eventType="touchUpInside" id="Rxh-KL-Xv6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pT1-Ty-6u4" userLabel="Cancel Button">
+                    <rect key="frame" x="160" y="396" width="160" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.86274509799999999" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="vQD-TV-Xi8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="feedback.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancel" destination="-1" eventType="touchUpInside" id="vWv-UX-F7u"/>
+                        <action selector="nextSave:" destination="-1" eventType="touchUpInside" id="fXI-f8-5td"/>
                     </connections>
                 </button>
             </subviews>
@@ -301,6 +342,13 @@
                 <constraint firstItem="469" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="502"/>
                 <constraint firstItem="469" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="503"/>
                 <constraint firstItem="469" firstAttribute="top" secondItem="1" secondAttribute="top" id="504"/>
+                <constraint firstItem="pT1-Ty-6u4" firstAttribute="leading" secondItem="fbZ-md-KxO" secondAttribute="trailing" id="0Kj-xL-fyp"/>
+                <constraint firstItem="fbZ-md-KxO" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="JLl-s3-med"/>
+                <constraint firstItem="pT1-Ty-6u4" firstAttribute="leading" secondItem="fbZ-md-KxO" secondAttribute="trailing" id="KGB-K9-lSo"/>
+                <constraint firstAttribute="bottom" secondItem="fbZ-md-KxO" secondAttribute="bottom" id="Nzp-c5-clY"/>
+                <constraint firstAttribute="bottom" secondItem="pT1-Ty-6u4" secondAttribute="bottom" id="RvQ-3p-ucS"/>
+                <constraint firstAttribute="trailing" secondItem="pT1-Ty-6u4" secondAttribute="trailing" id="VeG-s1-JIA"/>
+                <constraint firstItem="pT1-Ty-6u4" firstAttribute="width" secondItem="fbZ-md-KxO" secondAttribute="width" id="blY-Mq-HU4"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

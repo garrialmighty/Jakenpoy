@@ -42,6 +42,12 @@
 	<string>115037308671185</string>
 	<key>FacebookDisplayName</key>
 	<string>Jakenpoy PTA</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OpenSans-Bold.ttf</string>
+		<string>OpenSans-Light.ttf</string>
+		<string>OpenSans-Regular.ttf</string>
+	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

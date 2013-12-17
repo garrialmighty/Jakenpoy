@@ -49,10 +49,10 @@ static NSInteger Selected;
     [self.navigationItem setHidesBackButton:YES];
     
     
-    NSMutableAttributedString *loginString = [[NSMutableAttributedString alloc] initWithString:@"Log-In"];
+    /*NSMutableAttributedString *loginString = [[NSMutableAttributedString alloc] initWithString:@"Log-In"];
     [loginString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [loginString length])];
     [loginString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.18 green:0.53 blue:0.94 alpha:1] range:NSMakeRange(0, [loginString length])];
-    [self.LogInButton setAttributedTitle:loginString forState:UIControlStateNormal];
+    [self.LogInButton setAttributedTitle:loginString forState:UIControlStateNormal];*/
     
     [self.Email setInputAccessoryView:self.Toolbar];
     [self.Name setInputAccessoryView:self.Toolbar];
