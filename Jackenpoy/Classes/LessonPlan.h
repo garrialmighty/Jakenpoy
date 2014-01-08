@@ -10,5 +10,7 @@
 
 @interface LessonPlan : NSObject
 @property (strong) NSNumber * ID;
+@property (strong) NSNumber * SubjectID;
+@property (strong) NSNumber * TeacherID;
 @property (strong) NSString * Name;
 @end

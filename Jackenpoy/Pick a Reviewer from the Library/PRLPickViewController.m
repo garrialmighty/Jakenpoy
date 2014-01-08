@@ -28,6 +28,7 @@ static NSIndexPath * IndexToUpdate;
 @property (weak, nonatomic) IBOutlet UIButton *Star2;
 @property (weak, nonatomic) IBOutlet UIButton *Star1;
 @property (weak, nonatomic) IBOutlet UILabel *RatingLabel;
+@property (weak, nonatomic) IBOutlet UIButton *PickButton;
 @end
 
 @implementation PRLPickViewController
@@ -181,17 +182,17 @@ static NSIndexPath * IndexToUpdate;
     
     Reviewer * reviewer = ReviewList[SelectedIndex.row];
     Challenge * info = reviewer.Info;
-    
+
     [prlfvc updateTitle:info.Title
            Instructions:info.Instruction
                  Expiry:info.Expiry
-                   Code:info.Code
+                   Code:[NSString stringWithFormat:@"%d",info.Code]
           ShareToPublic:info.ShareToPublic
           ShareToSchool:info.ShareToSchool
             ShowAnswers:info.ShowRightAnswers
-         Classification:info.Classification
+         Classification:[NSString stringWithFormat:@"%d",info.Classification]
                Assigned:nil];
-    
+
     [prlfvc setReviewerID:reviewer.ID QuestionTypeList:QuestionTypeList SubjectList:SubjectList];
 }
 
@@ -275,6 +276,7 @@ static NSIndexPath * IndexToUpdate;
         [self.Star2 setHidden:NO];
         [self.Star1 setHidden:NO];
         [self.RatingLabel setHidden:NO];
+        [self.PickButton setHidden:NO];
     }
     
     if (SelectedIndex.row != indexPath.row) [tableView deselectRowAtIndexPath:SelectedIndex animated:YES];

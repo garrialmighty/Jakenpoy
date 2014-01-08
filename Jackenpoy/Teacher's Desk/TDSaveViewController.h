@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TDSaveViewControllerDelegate;
+
 @interface TDSaveViewController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, JakenpoyHTTPClientDelegate>
-- (void)updateTitle:(NSString *)title;
+@property(weak) id<TDSaveViewControllerDelegate> delegate;
+
+- (void)updateTitle:(NSString *)title Subject:(NSNumber *)sid Teacher:(NSNumber *)tid LessonPlan:(NSNumber *)lid;
+- (void)setToEdit;
 - (void)updateViewForAdmin;
+@end
+
+@protocol TDSaveViewControllerDelegate <NSObject>
+-(void)tdDSaveViewControllerDelegateDidSave;
 @end

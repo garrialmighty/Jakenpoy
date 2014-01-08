@@ -66,11 +66,11 @@
 
 // Teacher's Desk
 - (void)getLessonPlans;
-- (void)getAvailableSections; //OK
+- (void)getAvailableSections;
 - (void)getSectionsForLessonPlan:(NSNumber *)sid;
-- (void)addSection:(NSNumber *)sid ToLessonPlan:(NSNumber *)lid;
+- (void)addSection:(NSNumber *)sid ToLessonPlan:(NSNumber *)lid; //TO TEST
 - (void)getLessonPlan:(NSNumber *)lid;
-- (void)getTeachers; //OK
+- (void)getTeachers;
 - (void)saveLessonPlan:(NSNumber *)lid WithSubject:(NSNumber *)sid Teacher:(NSNumber *)tid Name:(NSString *)name;
 
 // Manage/Register My Kids
@@ -100,4 +100,5 @@
 -(void)jakenpoyHTTPClientdidUpdateWithKids:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithQuestionDetails:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithPDFLink:(NSDictionary *)json;
+-(void)jakenpoyHTTPClientdidUpdateWithLessonPlan:(NSDictionary *)json;
 @end

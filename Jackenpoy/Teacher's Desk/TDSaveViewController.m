@@ -18,6 +18,9 @@ static NSMutableArray * TeacherList;
 static NSDictionary * Subjects;
 static NSInteger SubjectSelected;
 static NSInteger TeacherSelected;
+static NSNumber * SubjectID;
+static NSNumber * TeacherID;
+static NSNumber * LessonPlanID;
 
 @interface TDSaveViewController ()
 @property (weak, nonatomic) IBOutlet UIView *Step1;
@@ -27,6 +30,7 @@ static NSInteger TeacherSelected;
 @property (weak, nonatomic) IBOutlet UIButton *Step2Button;
 @property (weak, nonatomic) IBOutlet UIButton *Step3Button;
 @property (weak, nonatomic) IBOutlet UIButton *NSButton;
+@property (weak, nonatomic) IBOutlet UIButton *AddEditButton;
 @property (weak, nonatomic) IBOutlet UITableView *CheckboxTable;
 @property (weak, nonatomic) IBOutlet UITextField *Title;
 @property (weak, nonatomic) IBOutlet UIPickerView *Picker;
@@ -84,9 +88,17 @@ static NSInteger TeacherSelected;
 }
 
 #pragma mark - Helper Methods
-- (void)updateTitle:(NSString *)title
+- (void)updateTitle:(NSString *)title Subject:(NSNumber *)sid Teacher:(NSNumber *)tid LessonPlan:(NSNumber *)lid
 {
+    SubjectID = sid;
+    TeacherID = tid;
+    LessonPlanID = lid;
     [self.Title setText:title];
+}
+
+- (void)setToEdit
+{
+    [self.AddEditButton setTitle:@"Edit" forState:UIControlStateNormal];
 }
 
 - (void)updateViewForAdmin
@@ -170,7 +182,7 @@ static NSInteger TeacherSelected;
 
 - (IBAction)addLessonPlan
 {
-    
+    [client saveLessonPlan:LessonPlanID WithSubject:SubjectID Teacher:TeacherID Name:self.Title.text];
 }
 
 - (IBAction)cancel
@@ -288,21 +300,11 @@ static NSInteger TeacherSelected;
 #pragma mark JakenpoyHTTPClient Delegate
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
 {
-    /*if ([json[@"status"] isEqualToString:@"success"]) {
-        NSArray * data = json[@"data"][@"available_sections"];
-        
-        for (NSDictionary * section in data) {
-            Section * item = [[Section alloc] init];
-            
-            [item setID:[NSNumber numberWithInteger:[section[@"id"] integerValue]]];
-            [item setGradeLevel:section[@"grade_level"]];
-            [item setName:section[@"name"]];
-            
-            [SectionList addObject:item];
-        }
-        
-        [self.Table reloadData];
-    }*/
+    
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        [self.navigationController popViewControllerAnimated:YES];
+        [self.delegate tdDSaveViewControllerDelegateDidSave];
+    }
 }
 
 -(void)jakenpoyHTTPClientdidUpdateWithSubjects:(NSDictionary *)json
@@ -311,18 +313,28 @@ static NSInteger TeacherSelected;
         //NSLog(@"%@",json[@"data"][@"subjects"]);
         
         Subjects = json[@"data"][@"subjects"];
-        [SubjectList removeAllObjects];
+        //[SubjectList removeAllObjects];
         
         NSArray *sortedKeys = [Subjects allKeys];
         sortedKeys = [sortedKeys sortedArrayUsingComparator:^(id a, id b) {
             return [a compare:b options:NSNumericSearch];
         }];
         
-        for (NSString * key in sortedKeys) {
+        /*for (NSString * key in sortedKeys) {
             [SubjectList addObject:Subjects[key]];
-        }
+        }*/
+        
+        SubjectList = [NSMutableArray arrayWithArray:@[@"Araling Panlipunan", @"Civics", @"Filipino", @"Language", @"Math", @"Science", @"All", @"Unclassified"]];
         
         [self.Picker reloadComponent:0];
+        
+        for (NSString * subject in SubjectList) {
+            if ([subject isEqualToString:Subjects[SubjectID]]) {
+                //NSLog(@"row is %d",[SubjectList indexOfObject:subject]);
+                
+                [self.Picker selectRow:[SubjectList indexOfObject:subject] inComponent:0 animated:NO];
+            }
+        }
     }
 }
 
@@ -346,6 +358,13 @@ static NSInteger TeacherSelected;
         
         if ([client isAdmin]) {
             [self.Picker reloadComponent:1];
+            
+            for (Teacher * teacher in TeacherList) {
+                if ([teacher.ID isEqualToNumber:[NSNumber numberWithInteger:TeacherID.integerValue]]) {
+                    //NSLog(@"row is %d",[TeacherList indexOfObject:teacher]);
+                    [self.Picker selectRow:[TeacherList indexOfObject:teacher] inComponent:1 animated:NO];
+                }
+            }
         }
     }
 }

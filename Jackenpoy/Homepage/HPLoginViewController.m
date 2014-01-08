@@ -208,10 +208,15 @@
 #pragma mark - UITextField
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
+    if (textField == self.Password) {
+        [self login];
+    }
+    else {
+        [self.PreviousButton setEnabled:YES];
+        [self.NextButton setEnabled:YES];
+    }
     
-    [self.PreviousButton setEnabled:YES];
-    [self.NextButton setEnabled:YES];
+    [textField resignFirstResponder];
     
     return NO;
 }

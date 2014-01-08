@@ -13,10 +13,10 @@
 - (void)updateTitle:(NSString *)t
        Instructions:(NSString *)i
              Expiry:(NSString *)e
-               Code:(uint)c
+               Code:(NSString *)c
       ShareToPublic:(BOOL)stp
       ShareToSchool:(BOOL)sts
         ShowAnswers:(BOOL)sa
-     Classification:(uint)cl
+     Classification:(NSString *)cl
            Assigned:(NSArray *)a;
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDSaveViewController.h"
 
-@interface TDLessonPlanViewController : UIViewController <JakenpoyHTTPClientDelegate>
+@interface TDLessonPlanViewController : UIViewController <JakenpoyHTTPClientDelegate, TDSaveViewControllerDelegate>
 
 @end

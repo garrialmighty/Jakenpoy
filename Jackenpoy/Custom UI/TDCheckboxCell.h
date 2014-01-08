@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TDCheckboxCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *Checkbox;
+@property (weak, nonatomic) IBOutlet UIImageView *Checkbox;
 @property (weak, nonatomic) IBOutlet UILabel *Section;
 - (void)toggleCheckbox;
 @end

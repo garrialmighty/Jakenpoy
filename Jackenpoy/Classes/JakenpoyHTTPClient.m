@@ -339,6 +339,7 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
                   ShowRightAnswers:(BOOL)sa
 {
     NSLog(@"picking reviewers");
+    NSLog(@"%@ %@ %@ %@ %@ %d %d %d",qid, a, t, e, c, stp, sts, sa);
     [self getPath:@"pickReviewer"
        parameters:@{@"qSetId":qid, @"assignees":a, @"title":t,  @"expiration":e, @"code":c, @"share_public":[NSString stringWithFormat:@"%d",stp], @"share_school":[NSString stringWithFormat:@"%d",sts], @"show_answers":[NSString stringWithFormat:@"%d",sa], @"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -414,8 +415,8 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
     [self getPath:@"getCourse"
        parameters:@{@"id":lid, @"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
-                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithLessonPlan:)])
+                  [self.delegate jakenpoyHTTPClientdidUpdateWithLessonPlan:responseObject];
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])

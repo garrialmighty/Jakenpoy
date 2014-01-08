@@ -28,13 +28,15 @@
 - (void)toggleCheckbox
 {
     if (self.Checkbox.tag == 0) {
-        [self.Checkbox setSelected:YES];
+        [self.Checkbox setImage:[UIImage imageNamed:@"cb_glossy_on.png"]];
         [self.Checkbox setTag:1];
     }
     else {
-        [self.Checkbox setSelected:NO];
+        [self.Checkbox setImage:[UIImage imageNamed:@"cb_glossy_off.png"]];
         [self.Checkbox setTag:0];
     }
+    
+    
 }
 
 @end

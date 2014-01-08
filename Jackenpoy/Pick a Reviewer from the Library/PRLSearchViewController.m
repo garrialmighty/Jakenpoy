@@ -441,7 +441,7 @@ static NSInteger QuestionTypeSelected;
     //for (NSString * key in json) NSLog(@"GL:%@ %@",key, json[key]);
 
     if ([json[@"status"] isEqualToString:@"success"]) {
-        //NSLog(@"%@",json[@"data"][@"grade_levels_name"]);
+        NSLog(@"%@",json[@"data"][@"grade_levels_name"]);
         
         GradeLevels = json[@"data"][@"grade_levels_name"];
         [GradeLevelList removeAllObjects];

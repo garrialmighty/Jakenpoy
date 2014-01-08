@@ -88,6 +88,9 @@
 		7353876F18563A3900D1A283 /* TDTeacherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7353876E18563A3900D1A283 /* TDTeacherViewController.xib */; };
 		735428EF17ECA57D006CDF8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 735428EE17ECA57D006CDF8F /* Default-568h@2x.png */; };
 		735428F117ECA584006CDF8F /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 735428F017ECA584006CDF8F /* Default~iphone.png */; };
+		735B8AA5187D8DF3006624D0 /* TDLPSectionViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735B8AA1187D8DF3006624D0 /* TDLPSectionViewController_iPad.xib */; };
+		735B8AA6187D8DF3006624D0 /* TDLPSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735B8AA3187D8DF3006624D0 /* TDLPSectionViewController.m */; };
+		735B8AA7187D8DF3006624D0 /* TDLPSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735B8AA4187D8DF3006624D0 /* TDLPSectionViewController.xib */; };
 		737119E31813C2E8004217BA /* AboutUsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737119E21813C2E8004217BA /* AboutUsViewController_iPad.xib */; };
 		7372F16A180F7C4900BD2850 /* MyAccountViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7372F169180F7C4900BD2850 /* MyAccountViewController_iPad.xib */; };
 		7374F94317FB02290017ECB0 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 7374F94217FB02290017ECB0 /* School.m */; };
@@ -289,6 +292,10 @@
 		7353876E18563A3900D1A283 /* TDTeacherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDTeacherViewController.xib; sourceTree = "<group>"; };
 		735428EE17ECA57D006CDF8F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		735428F017ECA584006CDF8F /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		735B8AA1187D8DF3006624D0 /* TDLPSectionViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDLPSectionViewController_iPad.xib; sourceTree = "<group>"; };
+		735B8AA2187D8DF3006624D0 /* TDLPSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLPSectionViewController.h; sourceTree = "<group>"; };
+		735B8AA3187D8DF3006624D0 /* TDLPSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLPSectionViewController.m; sourceTree = "<group>"; };
+		735B8AA4187D8DF3006624D0 /* TDLPSectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDLPSectionViewController.xib; sourceTree = "<group>"; };
 		737119E21813C2E8004217BA /* AboutUsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController_iPad.xib; sourceTree = "<group>"; };
 		7372F169180F7C4900BD2850 /* MyAccountViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAccountViewController_iPad.xib; sourceTree = "<group>"; };
 		7374F94117FB02290017ECB0 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
@@ -465,12 +472,12 @@
 		4A22730117C1FD7200019CAD /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				735387391856162600D1A283 /* HPFinishViewController_iPad.xib */,
-				7353873A1856162600D1A283 /* HPLoginViewController_iPad.xib */,
-				7353873B1856162600D1A283 /* HPRegisterViewController_iPad.xib */,
 				73D3F87D17E4ADCE00149106 /* HPFinishViewController.xib */,
+				735387391856162600D1A283 /* HPFinishViewController_iPad.xib */,
 				73D3F88017E4ADCE00149106 /* HPLoginViewController.xib */,
+				7353873A1856162600D1A283 /* HPLoginViewController_iPad.xib */,
 				73D3F88317E4ADCE00149106 /* HPRegisterViewController.xib */,
+				7353873B1856162600D1A283 /* HPRegisterViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -506,6 +513,8 @@
 				4A5C10BD17C33C9300C89CA6 /* xib */,
 				73192C8017E783B10080F339 /* TDLessonPlanViewController.h */,
 				73192C8117E783B10080F339 /* TDLessonPlanViewController.m */,
+				735B8AA2187D8DF3006624D0 /* TDLPSectionViewController.h */,
+				735B8AA3187D8DF3006624D0 /* TDLPSectionViewController.m */,
 				73192C8317E783B10080F339 /* TDMenuViewController.h */,
 				73192C8417E783B10080F339 /* TDMenuViewController.m */,
 				73192C8617E783B10080F339 /* TDSaveViewController.h */,
@@ -523,10 +532,12 @@
 			children = (
 				73192C8217E783B10080F339 /* TDLessonPlanViewController.xib */,
 				73538731185615AE00D1A283 /* TDLessonPlanViewController_iPad.xib */,
-				73192C8517E783B10080F339 /* TDMenuViewController.xib */,
-				73538732185615AE00D1A283 /* TDMenuViewController_iPad.xib */,
+				735B8AA4187D8DF3006624D0 /* TDLPSectionViewController.xib */,
+				735B8AA1187D8DF3006624D0 /* TDLPSectionViewController_iPad.xib */,
 				73192C8817E783B10080F339 /* TDSaveViewController.xib */,
 				73538733185615AE00D1A283 /* TDSaveViewController_iPad.xib */,
+				73192C8517E783B10080F339 /* TDMenuViewController.xib */,
+				73538732185615AE00D1A283 /* TDMenuViewController_iPad.xib */,
 				73192C8B17E783B10080F339 /* TDSectionViewController.xib */,
 				73538734185615AE00D1A283 /* TDSectionViewController_iPad.xib */,
 				7353876E18563A3900D1A283 /* TDTeacherViewController.xib */,
@@ -1051,6 +1062,7 @@
 				735387531856166200D1A283 /* MyReviewersViewController.xib in Resources */,
 				7331B881185A167F006C04EB /* OpenSans-ExtraBold.ttf in Resources */,
 				7384858117F54E5700529CE1 /* drop_down.png in Resources */,
+				735B8AA7187D8DF3006624D0 /* TDLPSectionViewController.xib in Resources */,
 				73CB1E5B185F89D600920B72 /* manage_icon.png in Resources */,
 				7353872D185613CD00D1A283 /* MRMKReportViewController_iPad.xib in Resources */,
 				73192C9817E7844C0080F339 /* AboutUsViewController.xib in Resources */,
@@ -1077,6 +1089,7 @@
 				731A9611184655D600F3A2BC /* PRLQuestionCell.xib in Resources */,
 				735387511856166200D1A283 /* MRReportViewController_iPad.xib in Resources */,
 				73538759185616BC00D1A283 /* PRLFinishViewController_iPad.xib in Resources */,
+				735B8AA5187D8DF3006624D0 /* TDLPSectionViewController_iPad.xib in Resources */,
 				7353872A185613CD00D1A283 /* MRMKRegisterViewController_iPad.xib in Resources */,
 				735428F117ECA584006CDF8F /* Default~iphone.png in Resources */,
 				7331B884185A167F006C04EB /* OpenSans-Light.ttf in Resources */,
@@ -1123,6 +1136,7 @@
 				73B05789183E388F003649AC /* QuestionDetails.m in Sources */,
 				73B5E9DF17E6E2C000F53186 /* PRLSearchViewController.m in Sources */,
 				73192C7D17E779110080F339 /* RandomizerViewController.m in Sources */,
+				735B8AA6187D8DF3006624D0 /* TDLPSectionViewController.m in Sources */,
 				73FCF7F4184FA6E400BD130B /* MRAnalysisCell.m in Sources */,
 				73192C8C17E783B10080F339 /* TDLessonPlanViewController.m in Sources */,
 				73192C8E17E783B10080F339 /* TDMenuViewController.m in Sources */,

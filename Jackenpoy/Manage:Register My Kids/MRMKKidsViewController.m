@@ -188,6 +188,9 @@ NSIndexPath * SelectedIndex;
         [self.RegisterButton setHidden:NO];
     }
     
+    Student * kid = StudentList[indexPath.row];
+    [self.DeactivateButton setTitle:kid.isGuardianActive?@"Deactivate":@"Activate" forState:UIControlStateNormal];
+    
     if (SelectedIndex.row != indexPath.row) [tableView deselectRowAtIndexPath:SelectedIndex animated:YES];
     SelectedIndex = indexPath;
 }

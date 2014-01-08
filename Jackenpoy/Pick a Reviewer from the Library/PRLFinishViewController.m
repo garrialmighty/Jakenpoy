@@ -18,11 +18,8 @@
 
 static JakenpoyHTTPClient * client;
 static QuestionDetails * QuestionDetail;
-static NSNumber * ReviewerID;
 static NSInteger Selected;
 static NSInteger Step2Selected;
-static NSArray * SubjectList;
-static NSArray * QuestionTypeList;
 static NSMutableArray * AssigneeList;
 
 static NSString * CurrentTitle;
@@ -66,6 +63,21 @@ static NSString * CurrentInstruction;
 @property (weak, nonatomic) IBOutlet UIView *LoadingScreen;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spinner;
 
+// Used when updating UI
+@property (strong, nonatomic) NSString * titleHolder;
+@property (strong, nonatomic) NSString * instructionHolder;
+@property (strong, nonatomic) NSString * expiryHolder;
+@property (strong, nonatomic) NSString * codeHolder;
+@property (assign, nonatomic) BOOL shareToPublicHolder;
+@property (assign, nonatomic) BOOL shareToSchoolHolder;
+@property (assign, nonatomic) BOOL showAnswersHolder;
+@property (strong, nonatomic) NSString * classificationHolder;
+@property (strong, nonatomic) NSArray * assignedHolder;
+
+// Used when getting reviewer details
+@property (strong, nonatomic)  NSNumber * ReviewerID;
+@property (strong, nonatomic)  NSArray * SubjectList;
+@property (strong, nonatomic)  NSArray * QuestionTypeList;
 @end
 
 @implementation PRLFinishViewController
@@ -82,17 +94,14 @@ static NSString * CurrentInstruction;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self.navigationItem setHidesBackButton:YES];
     
     client = [JakenpoyHTTPClient getSharedClient];
     [client setDelegate:self];
     [client getAssignees];
     
-    ReviewerID = [[NSNumber alloc] init];
     AssigneeList = [[NSMutableArray alloc] init];
-    QuestionTypeList = [[NSArray alloc] init];
-    SubjectList = @[@"Subject 1", @"Subject 2", @"Subject 3", @"Subject 4", @"Subject 5"];
     
     /*NSMutableAttributedString * nextUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
     [nextUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [nextUlString length])];
@@ -105,6 +114,24 @@ static NSString * CurrentInstruction;
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.Title setPlaceholder:self.titleHolder];
+    
+    [self.Expiry setText:self.expiryHolder];
+    [self.Code setText:self.codeHolder];
+    
+    [self.ShareToPublicCheckbox setSelected:self.shareToPublicHolder];
+    [self.ShareToSchoolCheckbox setSelected:self.shareToSchoolHolder];
+    [self.ShowRightAnswersCheckbox setSelected:self.showAnswersHolder];
+    
+    [self.Classification setText:self.classificationHolder];
+    
+    [client getQuestionWithID:self.ReviewerID];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -114,36 +141,32 @@ static NSString * CurrentInstruction;
 #pragma mark - Helper Method
 - (void)setReviewerID:(NSNumber *)ID QuestionTypeList:(NSArray *)list SubjectList:(NSArray *)slist
 {
-    ReviewerID = ID;
-    QuestionTypeList = list;
-    SubjectList = slist;
-    
-    [client getQuestionWithID:ID];
+    [self setReviewerID:ID];
+    [self setQuestionTypeList:list];
+    [self setSubjectList:slist];
 }
 
 - (void)updateTitle:(NSString *)t
        Instructions:(NSString *)i
              Expiry:(NSString *)e
-               Code:(uint)c
+               Code:(NSString *)c
       ShareToPublic:(BOOL)stp
       ShareToSchool:(BOOL)sts
         ShowAnswers:(BOOL)sa
-     Classification:(uint)cl
+     Classification:(NSString *)cl
            Assigned:(NSArray *)a
 {
-    //[self.Title setText:t];
-    //[self.Instructions setText:i];
-    
     CurrentTitle = t;
     CurrentInstruction = i;
-    [self.Title setPlaceholder:t];
     
-    [self.Expiry setText:e];
-    [self.Code setText:[NSString stringWithFormat:@"%d",c]];
-    [self.ShareToPublicCheckbox setSelected:stp];
-    [self.ShareToSchoolCheckbox setSelected:sts];
-    [self.ShowRightAnswersCheckbox setSelected:sa];
-    [self.Classification setText:[NSString stringWithFormat:@"%d",cl]];
+    [self setTitleHolder:t];
+    [self setExpiryHolder:e];
+
+    [self setCodeHolder:c];
+    [self setShareToPublicHolder:stp];
+    [self setShareToSchoolHolder:sts];
+    [self setShowAnswersHolder:sa];
+    [self setClassificationHolder:cl];
 }
 
 - (void) revertPageState
@@ -170,21 +193,21 @@ static NSString * CurrentInstruction;
 {
     NSMutableAttributedString * NFUlString;
     [sender setEnabled:NO];
-    if (sender.tag == 1) {
+    if (sender.tag == 3) {
         NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Next"];
-        [self.NFButton setTag:1];
-        [self.DetailsButton setEnabled:YES];
-        [self.Step2Button setEnabled:YES];
-        [self.view sendSubviewToBack:self.Detail];
+        [self.NFButton setTag:3];
+        [self.DetailsButton setEnabled:NO];
+        [self.Step1Button setEnabled:YES];
         [self.view sendSubviewToBack:self.Step2];
+        [self.view sendSubviewToBack:self.Step1];
     }
     //else if (sender.tag == 3) {
     else {
         NFUlString = [[NSMutableAttributedString alloc] initWithString:@"Save"];
-        [self.NFButton setTag:3];
-        [self.Step1Button setEnabled:YES];
-        [self.Step2Button setEnabled:YES];
-        [self.view sendSubviewToBack:self.Step1];
+        [self.NFButton setTag:1];
+        [self.DetailsButton setEnabled:YES];
+        [self.Step1Button setEnabled:NO];
+        [self.view sendSubviewToBack:self.Detail];
         [self.view sendSubviewToBack:self.Step2];
     }
     /*else {
@@ -196,7 +219,7 @@ static NSString * CurrentInstruction;
         [self.view sendSubviewToBack:self.Step1];
     }*/
     
-    [NFUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [NFUlString length])];
+    //[NFUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [NFUlString length])];
     [NFUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [NFUlString length])];
     [self.NFButton setAttributedTitle:NFUlString forState:UIControlStateNormal];
 }
@@ -224,7 +247,7 @@ static NSString * CurrentInstruction;
         [self.view sendSubviewToBack:self.Step2];
         
         NSMutableAttributedString * finUlString = [[NSMutableAttributedString alloc] initWithString:@"Save"];
-        [finUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [finUlString length])];
+        //[finUlString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, [finUlString length])];
         [finUlString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, [finUlString length])];
         [self.NFButton setAttributedTitle:finUlString forState:UIControlStateNormal];
     }
@@ -242,45 +265,56 @@ static NSString * CurrentInstruction;
     }*/
     else {
         NSString * assigneeString = @"";
-        for (NSIndexPath * ip in [self.KidsTable indexPathsForSelectedRows]) {
-            Assignees * student = AssigneeList[ip.row];
+
+        //NSLog(@"selected %d", self.KidsTable.indexPathsForSelectedRows.count);
+        
+        if ([self.KidsTable indexPathsForSelectedRows].count > 0) {
+            for (NSIndexPath * ip in [self.KidsTable indexPathsForSelectedRows]) {
+                Assignees * student = AssigneeList[ip.row];
+                
+                if (assigneeString.length==0) {
+                    assigneeString = [assigneeString stringByAppendingString:student.ID];
+                }
+                else {
+                    assigneeString = [assigneeString stringByAppendingString:[NSString stringWithFormat:@"+%@",student.ID]];
+                }
+            }
             
-            if (assigneeString.length==0) {
-                assigneeString = [assigneeString stringByAppendingString:student.ID];
+            [self showLoadingScreen];
+            
+            NSString * titleToSend = self.Title.text.length>0?self.Title.text:CurrentTitle.length>0?CurrentTitle:@"blank_0";
+            
+            if (isPhone) {
+                [client pickReviewerWithQuestionID:self.ReviewerID
+                                         Assigness:assigneeString.length>0?assigneeString:@"blank_0"
+                                             Title:titleToSend
+                                        Expiration:self.Expiry.text.length>0?self.Expiry.text:@"blank_0"
+                                              Code:self.Code.text.length>0?self.Code.text:@"blank_0"
+                                     ShareToPublic:[self.ShareToPublicCheckbox isSelected]
+                                     ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
+                                  ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
             }
             else {
-                assigneeString = [assigneeString stringByAppendingString:[NSString stringWithFormat:@"+%@",student.ID]];
+                NSDateFormatter * format = [[NSDateFormatter alloc] init];
+                [format setDateFormat:@"YYYY-MM-dd"];
+
+                [client pickReviewerWithQuestionID:self.ReviewerID
+                                         Assigness:assigneeString.length>0?assigneeString:@"blank_0"
+                                             Title:titleToSend
+                                        Expiration:[format stringFromDate:self.DatePicker.date]
+                                              Code:self.Code.text.length>0?self.Code.text:@"blank_0"
+                                     ShareToPublic:[self.ShareToPublicCheckbox isSelected]
+                                     ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
+                                  ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
             }
         }
-        
-        [self showLoadingScreen];
-        
-        NSString * titleToSend = self.Title.text.length>0?self.Title.text:CurrentTitle.length>0?CurrentTitle:@"blank_0";
-        
-        if (isPhone) {
-            [client pickReviewerWithQuestionID:ReviewerID
-                                     Assigness:assigneeString.length>0?assigneeString:@"blank_0"
-                                         Title:titleToSend
-                                    Expiration:self.Expiry.text.length>0?self.Expiry.text:@"blank_0"
-                                          Code:self.Code.text.length>0?self.Code.text:@"blank_0"
-                                 ShareToPublic:[self.ShareToPublicCheckbox isSelected]
-                                 ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
-                              ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
-        }
         else {
-            NSDateFormatter * format = [[NSDateFormatter alloc] init];
-            [format setDateFormat:@"YYYY-MM-dd"];
-            
-            [client pickReviewerWithQuestionID:ReviewerID
-                                     Assigness:assigneeString.length>0?assigneeString:@"blank_0"
-                                         Title:titleToSend
-                                    Expiration:[format stringFromDate:self.DatePicker.date]
-                                          Code:self.Code.text.length>0?self.Code.text:@"blank_0"
-                                 ShareToPublic:[self.ShareToPublicCheckbox isSelected]
-                                 ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
-                              ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
+            [[[UIAlertView alloc] initWithTitle:nil
+                                        message:@"You must assign at least one (1) child to the reviewer"
+                                       delegate:self
+                              cancelButtonTitle:@"Ok"
+                              otherButtonTitles:nil] show];
         }
-        
     }
 }
 
@@ -320,7 +354,7 @@ static NSString * CurrentInstruction;
     if (sender.tag==1) {
         [self.Picker setHidden:YES];
         [self.PickerToolbar setHidden:YES];
-        [self.Classification setText:SubjectList[Selected]];
+        [self.Classification setText:self.SubjectList[Selected]];
     }
     else if (sender.tag==2) {
         [self.DatePicker setHidden:YES];
@@ -333,7 +367,7 @@ static NSString * CurrentInstruction;
     else {
         [self.Step2Picker setHidden:YES];
         [self.Step2PickerToolbar setHidden:YES];
-        [self.QuestionType setText:QuestionTypeList[Step2Selected]];
+        [self.QuestionType setText:self.QuestionTypeList[Step2Selected]];
     }
 }
 
@@ -375,7 +409,7 @@ static NSString * CurrentInstruction;
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return pickerView.tag==1?SubjectList.count:QuestionTypeList.count;
+    return pickerView.tag==1?self.SubjectList.count:self.QuestionTypeList.count;
 }
 
 #pragma mark UITableView
@@ -438,7 +472,7 @@ static NSString * CurrentInstruction;
 #pragma mark UIPickerView
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return pickerView.tag==1?SubjectList[row]:QuestionTypeList[row];
+    return pickerView.tag==1?self.SubjectList[row]:self.QuestionTypeList[row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -454,8 +488,10 @@ static NSString * CurrentInstruction;
 #pragma mark Alertview
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSArray * vcStack = self.navigationController.viewControllers;
-    [self.navigationController popToViewController:vcStack[1] animated:YES];
+    if (alertView.tag==1) {
+        NSArray * vcStack = self.navigationController.viewControllers;
+        [self.navigationController popToViewController:vcStack[1] animated:YES];
+    }
 }
 
 #pragma mark JakenpoyHTTPClient
@@ -463,11 +499,13 @@ static NSString * CurrentInstruction;
 {
     [self hideLoadingScreen];
     
-    [[[UIAlertView alloc] initWithTitle:@"You're reviewer has successfully been saved."
-                                message:@"Go to My Reviewers to see your recently saved reviewer!"
-                               delegate:self
-                      cancelButtonTitle:@"Ok"
-                      otherButtonTitles:nil] show];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"You're reviewer has successfully been saved."
+                                                     message:@"Go to My Reviewers to see your recently saved reviewer!"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Ok"
+                                           otherButtonTitles:nil];
+    [alert setTag:1];
+    [alert show];
     
     NSLog(@"%@",json);
 }
@@ -552,6 +590,11 @@ static NSString * CurrentInstruction;
     [returnView setBackgroundColor:[UIColor whiteColor]];
     
     return tableView.tag==1337?returnView:nil;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return tableView.tag!=1337?@"Choose Kid":nil;
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath

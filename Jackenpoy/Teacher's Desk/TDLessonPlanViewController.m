@@ -7,8 +7,8 @@
 //
 
 #import "TDLessonPlanViewController.h"
+#import "TDLPSectionViewController.h"
 #import "TDLessonPlanCell.h"
-#import "TDSaveViewController.h"
 #import "LessonPlan.h"
 
 static JakenpoyHTTPClient * client;
@@ -41,7 +41,6 @@ NSIndexPath * SelectedIndex;
     
     client = [JakenpoyHTTPClient getSharedClient];
     [client setDelegate:self];
-    [client getLessonPlans];
     
     LessonPlanList = [[NSMutableArray alloc] init];
     
@@ -51,6 +50,13 @@ NSIndexPath * SelectedIndex;
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [client getLessonPlans];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -58,23 +64,30 @@ NSIndexPath * SelectedIndex;
 }
 
 #pragma mark - IBAction
-- (IBAction)addCourse
+- (IBAction)editCourse
 {
-    /*TDSaveViewController * tDSVC;
-    
-    if (isPhone) {
-        tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController" bundle:nil];
-    }
-    else {
-        tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController_iPad" bundle:nil];
-    }
-    
-    [self.navigationController pushViewController:tDSVC animated:YES];*/
-    
-    [self.Table reloadData];
+    LessonPlan * item = LessonPlanList[SelectedIndex.row];
+    [client getLessonPlan:item.ID];
 }
 
-- (IBAction)editCourse
+- (IBAction)viewSections
+{
+    TDLPSectionViewController * tDLPSVC;
+    
+    if (isPhone) {
+        tDLPSVC = [[TDLPSectionViewController alloc] initWithNibName:@"TDLPSectionViewController" bundle:nil];
+    }
+    else {
+        tDLPSVC = [[TDLPSectionViewController alloc] initWithNibName:@"TDLPSectionViewController_iPad" bundle:nil];
+    }
+    
+    [self.navigationController pushViewController:tDLPSVC animated:YES];
+    
+    LessonPlan * item = LessonPlanList[SelectedIndex.row];
+    [tDLPSVC setLessonPlanID:item.ID];
+}
+
+- (IBAction)addCourse
 {
     TDSaveViewController * tDSVC;
     
@@ -86,11 +99,6 @@ NSIndexPath * SelectedIndex;
     }
     
     [self.navigationController pushViewController:tDSVC animated:YES];
-    [tDSVC updateTitle:LessonPlanList[SelectedIndex.row]];
-    
-    if ([client isAdmin]) {
-        [tDSVC updateViewForAdmin];
-    }
 }
 
 #pragma mark - UITableView Data Source
@@ -144,7 +152,46 @@ NSIndexPath * SelectedIndex;
     SelectedIndex = indexPath;
 }
 
+#pragma mark TDSaveViewControllerDelegate
+-(void)tdDSaveViewControllerDelegateDidSave
+{
+    NSLog(@"delegate called");
+    [client getLessonPlans];
+}
+
 #pragma mark JakenpoyHTTPClient Delegate
+-(void)jakenpoyHTTPClientdidUpdateWithLessonPlan:(NSDictionary *)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        NSDictionary * data = json[@"data"][@"course"];
+        LessonPlan * item = [[LessonPlan alloc] init];
+
+        [item setID:[NSNumber numberWithInteger:[data[@"id"] integerValue]]];
+        [item setName:data[@"name"]];
+        [item setSubjectID:data[@"subject_id"]];
+        [item setTeacherID:data[@"teacher_id"]];
+        
+        TDSaveViewController * tDSVC;
+        
+        if (isPhone) {
+            tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController" bundle:nil];
+        }
+        else {
+            tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController_iPad" bundle:nil];
+        }
+        
+        [self.navigationController pushViewController:tDSVC animated:YES];
+        [tDSVC setDelegate:self];
+        [tDSVC setToEdit];
+        [tDSVC updateTitle:item.Name Subject:item.SubjectID Teacher:item.TeacherID LessonPlan:item.ID];
+        
+        if ([client isAdmin]) {
+            [tDSVC updateViewForAdmin];
+        }
+
+    }    
+}
+
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
 {
     if ([json[@"status"] isEqualToString:@"success"]) {
