@@ -120,8 +120,12 @@ static NSString * CurrentInstruction;
     
     [self.Title setPlaceholder:self.titleHolder];
     
-    [self.Expiry setText:self.expiryHolder];
-    [self.Code setText:self.codeHolder];
+    NSDateFormatter * format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"YYYY-MM-dd"];
+    //[self.Expiry setText:self.expiryHolder];
+    [self.Expiry setText:@""];
+    [self.Code setText:[self.codeHolder isEqualToString:@"0"]?@"":self.codeHolder];
+    [self.DatePicker setDate:[NSDate date]];
     
     [self.ShareToPublicCheckbox setSelected:self.shareToPublicHolder];
     [self.ShareToSchoolCheckbox setSelected:self.shareToSchoolHolder];
@@ -268,49 +272,83 @@ static NSString * CurrentInstruction;
 
         //NSLog(@"selected %d", self.KidsTable.indexPathsForSelectedRows.count);
         
-        if ([self.KidsTable indexPathsForSelectedRows].count > 0) {
-            for (NSIndexPath * ip in [self.KidsTable indexPathsForSelectedRows]) {
-                Assignees * student = AssigneeList[ip.row];
+        // Checks if Title is not empty
+        if (self.Title.text.length>0) {
+            
+            // Checks if expiration date is set if running in iPhone
+            if ((self.Expiry.text.length>0&&isPhone) || !isPhone) {
                 
-                if (assigneeString.length==0) {
-                    assigneeString = [assigneeString stringByAppendingString:student.ID];
+                // Checks if expiration date is valid
+                if ([self.DatePicker.date compare:[NSDate date]]==NSOrderedDescending || [self.DatePicker.date compare:[NSDate date]]==NSOrderedSame) {
+                    
+                    // Checks if kids have been assigned
+                    if ([self.KidsTable indexPathsForSelectedRows].count > 0) {
+                        for (NSIndexPath * ip in [self.KidsTable indexPathsForSelectedRows]) {
+                            Assignees * student = AssigneeList[ip.row];
+                            
+                            if (assigneeString.length==0) {
+                                assigneeString = [assigneeString stringByAppendingString:student.ID];
+                            }
+                            else {
+                                assigneeString = [assigneeString stringByAppendingString:[NSString stringWithFormat:@"+%@",student.ID]];
+                            }
+                        }
+                        
+                        [self showLoadingScreen];
+                        
+                        //NSString * titleToSend = self.Title.text.length>0?self.Title.text:CurrentTitle.length>0?CurrentTitle:@"blank_0";
+                        
+                        if (isPhone) {
+                            [client pickReviewerWithQuestionID:self.ReviewerID
+                                                     Assigness:assigneeString.length>0?assigneeString:@"blank_0"
+                                                         Title:self.Title.text
+                                                    Expiration:self.Expiry.text.length>0?self.Expiry.text:@"blank_0"
+                                                          Code:self.Code.text.length>0?self.Code.text:@"blank_0"
+                                                 ShareToPublic:[self.ShareToPublicCheckbox isSelected]
+                                                 ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
+                                              ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
+                        }
+                        else {
+                            NSDateFormatter * format = [[NSDateFormatter alloc] init];
+                            [format setDateFormat:@"YYYY-MM-dd"];
+                            
+                            [client pickReviewerWithQuestionID:self.ReviewerID
+                                                     Assigness:assigneeString.length>0?assigneeString:@"blank_0"
+                                                         Title:self.Title.text
+                                                    Expiration:[format stringFromDate:self.DatePicker.date]
+                                                          Code:self.Code.text.length>0?self.Code.text:@"blank_0"
+                                                 ShareToPublic:[self.ShareToPublicCheckbox isSelected]
+                                                 ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
+                                              ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
+                        }
+                    }
+                    else {
+                        [[[UIAlertView alloc] initWithTitle:nil
+                                                    message:@"You must assign at least one (1) child to the reviewer"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil] show];
+                    }
                 }
                 else {
-                    assigneeString = [assigneeString stringByAppendingString:[NSString stringWithFormat:@"+%@",student.ID]];
+                    [[[UIAlertView alloc] initWithTitle:nil
+                                                message:@"Expiration date cannot be a past date"
+                                               delegate:self
+                                      cancelButtonTitle:@"Ok"
+                                      otherButtonTitles:nil] show];
                 }
             }
-            
-            [self showLoadingScreen];
-            
-            NSString * titleToSend = self.Title.text.length>0?self.Title.text:CurrentTitle.length>0?CurrentTitle:@"blank_0";
-            
-            if (isPhone) {
-                [client pickReviewerWithQuestionID:self.ReviewerID
-                                         Assigness:assigneeString.length>0?assigneeString:@"blank_0"
-                                             Title:titleToSend
-                                        Expiration:self.Expiry.text.length>0?self.Expiry.text:@"blank_0"
-                                              Code:self.Code.text.length>0?self.Code.text:@"blank_0"
-                                     ShareToPublic:[self.ShareToPublicCheckbox isSelected]
-                                     ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
-                                  ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
-            }
             else {
-                NSDateFormatter * format = [[NSDateFormatter alloc] init];
-                [format setDateFormat:@"YYYY-MM-dd"];
-
-                [client pickReviewerWithQuestionID:self.ReviewerID
-                                         Assigness:assigneeString.length>0?assigneeString:@"blank_0"
-                                             Title:titleToSend
-                                        Expiration:[format stringFromDate:self.DatePicker.date]
-                                              Code:self.Code.text.length>0?self.Code.text:@"blank_0"
-                                     ShareToPublic:[self.ShareToPublicCheckbox isSelected]
-                                     ShareToSchool:[self.ShareToSchoolCheckbox isSelected]
-                                  ShowRightAnswers:[self.ShowRightAnswersCheckbox isSelected]];
+                [[[UIAlertView alloc] initWithTitle:nil
+                                            message:@"Expiry field must not be empty"
+                                           delegate:self
+                                  cancelButtonTitle:@"Ok"
+                                  otherButtonTitles:nil] show];
             }
         }
         else {
             [[[UIAlertView alloc] initWithTitle:nil
-                                        message:@"You must assign at least one (1) child to the reviewer"
+                                        message:@"Title field must not be empty"
                                        delegate:self
                               cancelButtonTitle:@"Ok"
                               otherButtonTitles:nil] show];
@@ -489,8 +527,11 @@ static NSString * CurrentInstruction;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView.tag==1) {
-        NSArray * vcStack = self.navigationController.viewControllers;
-        [self.navigationController popToViewController:vcStack[1] animated:YES];
+        NSLog(@"got here");
+        //NSArray * vcStack = self.navigationController.viewControllers;
+        //[self.navigationController popToViewController:vcStack[1] animated:YES];
+        jakenpoyAppDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        [jakenpoyAppDelegate jumpToMyReviewers];
     }
 }
 
@@ -499,8 +540,8 @@ static NSString * CurrentInstruction;
 {
     [self hideLoadingScreen];
     
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"You're reviewer has successfully been saved."
-                                                     message:@"Go to My Reviewers to see your recently saved reviewer!"
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"You have successfully created a reviewer!"
+                                                     message:@"You will now be redirected to My Reviewers. To send the reviewer to your child in Jakenpoy.com, kindly follow these steps:\n\n1) Tap on the reviewer you have just created.\n2) Click the Publish button to send reviewer to your child in Jakenpoy.com\n\nNote: Once your child finishes answering your reviewer in Jakenpoy.com, you may also view reports by tapping on the reviewer and clicking the Reports button."
                                                     delegate:self
                                            cancelButtonTitle:@"Ok"
                                            otherButtonTitles:nil];

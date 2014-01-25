@@ -12,11 +12,14 @@
 
 static JakenpoyHTTPClient * client;
 static NSMutableArray * SectionList;
+static NSMutableArray * AllSectionList;
 static NSNumber * LessonPlanID;
+static NSIndexPath * SelectedIndex;
 
 @interface TDLPSectionViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *Table;
-
+@property (weak, nonatomic) IBOutlet UIView *AddSectionView;
+@property (weak, nonatomic) IBOutlet UITableView *SectionTable;
 @end
 
 @implementation TDLPSectionViewController
@@ -35,6 +38,7 @@ static NSNumber * LessonPlanID;
     [super viewDidLoad];
     
     SectionList = [[NSMutableArray alloc] init];
+    AllSectionList = [[NSMutableArray alloc] init];
     
     client = [JakenpoyHTTPClient getSharedClient];
     [client setDelegate:self];
@@ -45,6 +49,7 @@ static NSNumber * LessonPlanID;
     [super viewDidAppear:animated];
     NSLog(@"getting id %@",LessonPlanID);
     [client getSectionsForLessonPlan:LessonPlanID];
+    [client getAvailableSections];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,13 +68,22 @@ static NSNumber * LessonPlanID;
 #pragma mark - IBActions
 - (IBAction)addSection
 {
-    
+    [self.AddSectionView setHidden:NO];
+}
+
+- (IBAction)done
+{
+    if (SelectedIndex) {
+        Section * item = AllSectionList[SelectedIndex.row];
+        [client addSection:item.ID ToLessonPlan:LessonPlanID];
+        [self.AddSectionView setHidden:YES];
+    }
 }
 
 #pragma mark - UITableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return SectionList.count;
+    return tableView.tag==1?AllSectionList.count:SectionList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -81,7 +95,7 @@ static NSNumber * LessonPlanID;
         cell = topObj[0];
     }
     
-    Section * section = SectionList[indexPath.row];
+    Section * section = tableView.tag==1?AllSectionList[indexPath.row]:SectionList[indexPath.row];
     
     [cell.ID setText:[section.ID stringValue]];
     [cell.GradeLevel setText:section.GradeLevel];
@@ -108,7 +122,42 @@ static NSNumber * LessonPlanID;
     return returnView;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView.tag==1) {
+        if (SelectedIndex.row != indexPath.row) [tableView deselectRowAtIndexPath:SelectedIndex animated:YES];
+        SelectedIndex = indexPath;
+    }
+}
+
 #pragma mark JakenpoyHTTPClient Delegate
+-(void)jakenpoyHTTPClientdidUpdateWithSections:(NSDictionary *)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        NSArray * data = json[@"data"][@"available_sections"];
+        [AllSectionList removeAllObjects];
+        
+        for (NSDictionary * section in data) {
+            Section * item = [[Section alloc] init];
+            
+            [item setID:[NSNumber numberWithInteger:[section[@"id"] integerValue]]];
+            [item setGradeLevel:section[@"grade_level"]];
+            [item setName:section[@"name"]];
+            
+            [AllSectionList addObject:item];
+        }
+        
+        [self.SectionTable reloadData];
+    }
+}
+
+-(void)jakenpoyHTTPClientdidUpdateWithAddedSections:(NSDictionary *)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        [client getSectionsForLessonPlan:LessonPlanID];
+    }
+}
+
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
 {
     if ([json[@"status"] isEqualToString:@"success"]) {

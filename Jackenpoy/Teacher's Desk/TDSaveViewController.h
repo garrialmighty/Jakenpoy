@@ -14,8 +14,8 @@
 @property(weak) id<TDSaveViewControllerDelegate> delegate;
 
 - (void)updateTitle:(NSString *)title Subject:(NSNumber *)sid Teacher:(NSNumber *)tid LessonPlan:(NSNumber *)lid;
-- (void)setToEdit;
-- (void)updateViewForAdmin;
+- (void)setToEditLessonPlan;
+- (void)setToEditSection;
 @end
 
 @protocol TDSaveViewControllerDelegate <NSObject>

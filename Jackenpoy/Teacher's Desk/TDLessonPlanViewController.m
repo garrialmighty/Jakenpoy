@@ -13,15 +13,13 @@
 
 static JakenpoyHTTPClient * client;
 static NSMutableArray * LessonPlanList;
-
-NSIndexPath * SelectedIndex;
+static NSIndexPath * SelectedIndex;
 
 @interface TDLessonPlanViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *ViewSectionsButton;
 @property (weak, nonatomic) IBOutlet UIButton *EditCourseButton;
 @property (weak, nonatomic) IBOutlet UIButton *AddLessonPlanButton;
 @property (weak, nonatomic) IBOutlet UITableView *Table;
-
 @end
 
 @implementation TDLessonPlanViewController
@@ -117,7 +115,6 @@ NSIndexPath * SelectedIndex;
     }
     
     LessonPlan * item = LessonPlanList[indexPath.row];
-    
     [cell.CourseTitle setText:item.Name];
     
     return cell;
@@ -182,13 +179,8 @@ NSIndexPath * SelectedIndex;
         
         [self.navigationController pushViewController:tDSVC animated:YES];
         [tDSVC setDelegate:self];
-        [tDSVC setToEdit];
+        [tDSVC setToEditLessonPlan];
         [tDSVC updateTitle:item.Name Subject:item.SubjectID Teacher:item.TeacherID LessonPlan:item.ID];
-        
-        if ([client isAdmin]) {
-            [tDSVC updateViewForAdmin];
-        }
-
     }    
 }
 

@@ -537,7 +537,7 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@",parameters[@"id"], parameters[@"userId"], parameters[@"token"]]];
             }
             else if ([path isEqualToString:@"addSection"]) {
-                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@",parameters[@"id"], parameters[@"userId"], parameters[@"token"]]];
+                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@/%@",parameters[@"courseId"], parameters[@"sectionId"], parameters[@"userId"], parameters[@"token"]]];
             }
             else if ([path isEqualToString:@"saveCourse"]) {
                 NSString * paramString = [NSString stringWithFormat:@"/%@/%@/%@/%@/%@/%@",parameters[@"name"], parameters[@"courseId"], parameters[@"subjectId"], parameters[@"teacherId"], parameters[@"userId"], parameters[@"token"]];

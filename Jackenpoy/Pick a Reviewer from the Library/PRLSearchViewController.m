@@ -221,6 +221,9 @@ static NSInteger QuestionTypeSelected;
     // For testing purposes
     /*PRLPickViewController * prlpvc = [[PRLPickViewController alloc] initWithNibName:@"PRLPickViewController" bundle:nil];
     [self.navigationController pushViewController:prlpvc animated:YES];*/
+    
+    /*jakenpoyAppDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [jakenpoyAppDelegate jumpToMyReviewers];*/
 }
 
 #pragma mark UIPicker

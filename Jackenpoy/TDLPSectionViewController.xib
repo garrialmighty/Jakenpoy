@@ -2,11 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TDLPSectionViewController">
             <connections>
+                <outlet property="AddSectionView" destination="6ox-Ia-4yh" id="J5S-4Q-28b"/>
+                <outlet property="SectionTable" destination="7ZB-sp-SdM" id="LcN-Kq-5DQ"/>
                 <outlet property="Table" destination="gRE-UU-TrU" id="XaC-Km-juV"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -45,13 +47,58 @@
                     <state key="highlighted" backgroundImage="feedback.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addSection" destination="-1" eventType="touchUpInside" id="sbc-Pl-M8X"/>
+                    </connections>
                 </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ox-Ia-4yh" userLabel="Add Section View">
+                    <rect key="frame" x="0.0" y="40" width="320" height="440"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7ZB-sp-SdM">
+                            <rect key="frame" x="20" y="20" width="280" height="367"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="K3a-sq-Ypg"/>
+                                <outlet property="delegate" destination="-1" id="OV1-Uw-56n"/>
+                            </connections>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cam-Vl-QxD" userLabel="Done Button">
+                            <rect key="frame" x="20" y="397" width="280" height="43"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="43" id="eTr-sX-1v0"/>
+                            </constraints>
+                            <state key="normal" title="Done">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="done" destination="-1" eventType="touchUpInside" id="Ufo-LV-VqS"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="cam-Vl-QxD" secondAttribute="bottom" id="2Cn-Lt-y6S"/>
+                        <constraint firstItem="7ZB-sp-SdM" firstAttribute="leading" secondItem="6ox-Ia-4yh" secondAttribute="leading" constant="20" id="PrP-Ch-LxQ"/>
+                        <constraint firstAttribute="trailing" secondItem="cam-Vl-QxD" secondAttribute="trailing" constant="20" id="WKf-EL-zD7"/>
+                        <constraint firstItem="cam-Vl-QxD" firstAttribute="top" secondItem="7ZB-sp-SdM" secondAttribute="bottom" constant="10" id="dSM-gb-BWz"/>
+                        <constraint firstItem="7ZB-sp-SdM" firstAttribute="top" secondItem="6ox-Ia-4yh" secondAttribute="top" constant="20" id="eL6-8b-jSd"/>
+                        <constraint firstAttribute="trailing" secondItem="7ZB-sp-SdM" secondAttribute="trailing" constant="20" id="gp9-fD-idS"/>
+                        <constraint firstItem="cam-Vl-QxD" firstAttribute="leading" secondItem="6ox-Ia-4yh" secondAttribute="leading" constant="20" id="z3h-xj-JpL"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="gRE-UU-TrU" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="5PN-Qc-gnu"/>
+                <constraint firstItem="7g7-9r-maE" firstAttribute="top" secondItem="6ox-Ia-4yh" secondAttribute="bottom" constant="-50" id="Gr6-RY-pvJ"/>
+                <constraint firstAttribute="trailing" secondItem="6ox-Ia-4yh" secondAttribute="trailing" id="IM8-Ze-3ju"/>
                 <constraint firstItem="7g7-9r-maE" firstAttribute="top" secondItem="gRE-UU-TrU" secondAttribute="bottom" id="KtX-Yc-gjA"/>
+                <constraint firstItem="6ox-Ia-4yh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="40" id="U3B-f6-a22"/>
                 <constraint firstAttribute="trailing" secondItem="gRE-UU-TrU" secondAttribute="trailing" id="UNB-Tv-xpp"/>
+                <constraint firstItem="6ox-Ia-4yh" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="fgR-2a-wSs"/>
                 <constraint firstItem="7g7-9r-maE" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="kWK-fy-cJV"/>
                 <constraint firstAttribute="trailing" secondItem="7g7-9r-maE" secondAttribute="trailing" id="qFb-V2-RPL"/>
                 <constraint firstItem="gRE-UU-TrU" firstAttribute="top" secondItem="1" secondAttribute="top" id="sjA-eg-OoE"/>

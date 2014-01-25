@@ -19,4 +19,5 @@
 - (void)showMenuButtons;
 - (void)showBackButton;
 - (void)hideBackButton;
+- (void)jumpToMyReviewers;
 @end

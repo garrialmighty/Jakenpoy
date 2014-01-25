@@ -2,13 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TDSaveViewController">
             <connections>
                 <outlet property="AddEditButton" destination="uUa-bE-wOC" id="tuf-34-hSw"/>
                 <outlet property="CheckboxTable" destination="dWq-Ij-LkY" id="fyA-5p-LZb"/>
+                <outlet property="Header" destination="cGh-lR-L4K" id="M0W-ld-2Y5"/>
                 <outlet property="NSButton" destination="pca-ek-Hbz" id="RYk-ej-0RO"/>
                 <outlet property="Picker" destination="EKC-hS-891" id="A63-zg-cxH"/>
                 <outlet property="Step1" destination="dMo-hG-zcL" id="bv0-LE-XGS"/>
@@ -17,7 +18,9 @@
                 <outlet property="Step2Button" destination="4Zn-TI-kW8" id="ntT-rj-Jkg"/>
                 <outlet property="Step3" destination="gzb-y1-Jwz" id="fNH-EM-pmp"/>
                 <outlet property="Step3Button" destination="Gvv-NR-9ZH" id="cCy-gZ-Cuw"/>
-                <outlet property="Title" destination="vch-Tw-SfB" id="PZc-IK-uDw"/>
+                <outlet property="TeacherLabel" destination="myp-Ob-3cG" id="g6g-Ji-TE5"/>
+                <outlet property="Title" destination="wuf-H1-e6u" id="v7C-5y-Pps"/>
+                <outlet property="TitleField" destination="vch-Tw-SfB" id="ZGe-Ay-c0F"/>
                 <outlet property="view" destination="1" id="Qih-jE-6ZI"/>
             </connections>
         </placeholder>
@@ -138,6 +141,13 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Teacher:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myp-Ob-3cG" userLabel="Subject Label">
+                            <rect key="frame" x="670" y="325" width="78" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKC-hS-891">
                             <rect key="frame" x="23" y="364" width="725" height="216"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -152,6 +162,8 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="8nH-3C-AoD" firstAttribute="centerY" secondItem="myp-Ob-3cG" secondAttribute="centerY" id="BPI-vy-7nE"/>
+                        <constraint firstItem="vch-Tw-SfB" firstAttribute="trailing" secondItem="myp-Ob-3cG" secondAttribute="trailing" id="QVw-HZ-cq1"/>
                         <constraint firstAttribute="centerX" secondItem="vch-Tw-SfB" secondAttribute="centerX" id="SlM-ix-RmA"/>
                         <constraint firstAttribute="centerX" secondItem="EKC-hS-891" secondAttribute="centerX" id="TwA-M1-tZp"/>
                         <constraint firstItem="8nH-3C-AoD" firstAttribute="leading" secondItem="wuf-H1-e6u" secondAttribute="leading" id="XSF-68-qS5"/>

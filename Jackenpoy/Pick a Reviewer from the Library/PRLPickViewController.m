@@ -269,12 +269,12 @@ static NSIndexPath * IndexToUpdate;
     [self updateAverage:reviewer.Average];
 
     if ([self.RateLabel isHidden]) {
-        [self.RateLabel setHidden:NO];
+        /*[self.RateLabel setHidden:NO];
         [self.Star5 setHidden:NO];
         [self.Star4 setHidden:NO];
         [self.Star3 setHidden:NO];
         [self.Star2 setHidden:NO];
-        [self.Star1 setHidden:NO];
+        [self.Star1 setHidden:NO];*/
         [self.RatingLabel setHidden:NO];
         [self.PickButton setHidden:NO];
     }

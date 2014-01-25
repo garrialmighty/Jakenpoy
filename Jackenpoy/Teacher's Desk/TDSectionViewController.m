@@ -7,6 +7,7 @@
 //
 
 #import "TDSectionViewController.h"
+#import "TDSStudentViewController.h"
 #import "TDSectionCell.h"
 #import "Section.h"
 
@@ -65,6 +66,46 @@ NSIndexPath * SelectedIndex;
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -IBAction
+- (IBAction)editSection
+{
+    TDSaveViewController * tDSVC;
+    
+    if (isPhone) {
+        tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController" bundle:nil];
+    }
+    else {
+        tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController_iPad" bundle:nil];
+    }
+    
+    Section * section = SectionList[SelectedIndex.row];
+    
+    [self.navigationController pushViewController:tDSVC animated:YES];
+    [tDSVC setDelegate:self];
+    [tDSVC setToEditSection];
+    //[tDSVC updateTitle:section.Name Subject:item.SubjectID Teacher:item.TeacherID LessonPlan:item.ID];
+}
+
+- (IBAction)viewSection
+{
+    TDSStudentViewController * tDSSVC;
+    
+    if (isPhone) {
+        tDSSVC = [[TDSStudentViewController alloc] initWithNibName:@"TDSStudentViewController" bundle:nil];
+    }
+    else {
+        tDSSVC = [[TDSStudentViewController alloc] initWithNibName:@"TDSStudentViewController_iPad" bundle:nil];
+    }
+    
+    Section * section = SectionList[SelectedIndex.row];
+    [tDSSVC setSectionID:section.ID];
+}
+
+- (IBAction)addSection
+{
+    
+}
+
 #pragma mark - UITableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -111,9 +152,9 @@ NSIndexPath * SelectedIndex;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.ViewStudentsButton isHidden]) {
-        [self.ViewStudentsButton setHidden:NO];
+        //[self.ViewStudentsButton setHidden:NO];
         [self.EditSectionButton setHidden:NO];
-        [self.AddButton setHidden:NO];
+        //[self.AddButton setHidden:NO];
     }
     
     if (SelectedIndex.row != indexPath.row) [tableView deselectRowAtIndexPath:SelectedIndex animated:YES];
@@ -121,7 +162,7 @@ NSIndexPath * SelectedIndex;
 }
 
 #pragma mark JakenpoyHTTPClient Delegate
--(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
+-(void)jakenpoyHTTPClientdidUpdateWithSections:(NSDictionary *)json
 {
     if ([json[@"status"] isEqualToString:@"success"]) {
         NSArray * data = json[@"data"][@"available_sections"];
@@ -139,6 +180,11 @@ NSIndexPath * SelectedIndex;
         
         [self.Table reloadData];
     }
+}
+
+-(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
+{
+    
 }
 
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didFailWithError:(NSError *)error

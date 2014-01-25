@@ -119,6 +119,8 @@ NSIndexPath * SelectedIndex;
     else {
         [client unpublish:reviewer.ID];
     }
+    
+    [[[UIAlertView alloc] initWithTitle:nil message:@"Your reviewer has been published." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
 }
 
 - (IBAction)edit
@@ -291,11 +293,16 @@ NSIndexPath * SelectedIndex;
     NSURL * urlToShare = [NSURL URLWithString:json[@"data"]];
     
     /*
-     message => I have created a reviewer in Jakenpoy PTA!
+     message => "I have created a reviewer in Jakenpoy PTA!",
+     picture => "pta.jakenpoy.com/img/pta-thumb.jpg",
+     link => "http://pta.jakenpoy.com/assets/pdf/" . $id . ".pdf",
+     name => "Jakenpoy PTA Reviewer: ". $info['title'],
+     caption => "Making reviewers has never been easier and more fun!"
+     */
+    
+    /*
      picture => pta.jakenpoy.com/img/pta-thumb.jpg
      link => this data will be returned sa web service
-     name => Jakenpoy PTA Reviewer: Reviewer_Title
-     caption => Make your reviewers fun!
      */
     
     Reviewer * reviewer = ReviewersList[SelectedIndex.row];
@@ -304,9 +311,10 @@ NSIndexPath * SelectedIndex;
     // Try to post using Facebook app
     FBAppCall *appCall = [FBDialogs presentShareDialogWithLink:urlToShare
                                                           name:[NSString stringWithFormat:@"Jakenpoy PTA Reviewer: %@",info.Title] // Hello Facebook
-                                                       caption:@"Make your reviewers fun!"
+                                                       caption:@"Making reviewers has never been easier and more fun!"
                                                    description:@"I have created a reviewer in Jakenpoy PTA!" //The 'Hello Facebook' sample application showcases simple Facebook integration.
-                                                       picture:nil
+                          //https://cdn1.iconfinder.com/data/icons/zoomeyed-creatures_2/128/monkeys_audio.png
+                                                       picture:[NSURL URLWithString:@"http://pta.jakenpoy.com/img/pta-thumb.jpg"]
                                                    clientState:nil
                                                        handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
                                                            if (error) {
@@ -315,6 +323,7 @@ NSIndexPath * SelectedIndex;
                                                                NSLog(@"Success!");
                                                            }
                                                        }];
+
     // If Facebook app is not available...
     if (!appCall) {
         // ... try to post using iOS6, and above, Facebook integration
@@ -380,7 +389,7 @@ NSIndexPath * SelectedIndex;
             // Put together the dialog parameters
             NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"Jakenpoy PTA Reviewer: %@",info.Title], @"name",
                                            @"I have created a reviewer in Jakenpoy PTA!", @"message",
-                                           @"Make your reviewers fun!", @"caption",
+                                           @"Making reviewers has never been easier and more fun!", @"caption",
                                            //@"The Facebook SDK for iOS makes it easier and faster to develop Facebook integrated iOS apps.", @"description",
                                            @"http://pta.jakenpoy.com/assets/pdf/8123.pdf", @"link",
                                            @"pta.jakenpoy.com/img/pta-thumb.jpg", @"picture",
@@ -414,10 +423,19 @@ NSIndexPath * SelectedIndex;
                                                                       // Show the result in an alert
                                                                       [[[UIAlertView alloc] initWithTitle:@"Result" message:msg delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles:nil] show];
                                                                   }*/
+                                                                  
+                                                                  [[[UIAlertView alloc] initWithTitle:nil message:@"You've successfully shared the reviewer in Facebook." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
                                                               }
                                                           }
                                                       }];
         }
+    }
+}
+
+-(void)jakenpoyHTTPClientdidPublish:(NSDictionary *)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        [client getMyReviewers];
     }
 }
 

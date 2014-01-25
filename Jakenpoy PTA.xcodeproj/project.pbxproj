@@ -30,6 +30,9 @@
 		73192C9817E7844C0080F339 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73192C9617E7844C0080F339 /* AboutUsViewController.xib */; };
 		731A960F1846557D00F3A2BC /* PRLQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 731A960E1846557D00F3A2BC /* PRLQuestionCell.m */; };
 		731A9611184655D600F3A2BC /* PRLQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731A9610184655D600F3A2BC /* PRLQuestionCell.xib */; };
+		731DFCEE188FF24700BBAEE2 /* TDSStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731DFCEC188FF24700BBAEE2 /* TDSStudentViewController.m */; };
+		731DFCEF188FF24700BBAEE2 /* TDSStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731DFCED188FF24700BBAEE2 /* TDSStudentViewController.xib */; };
+		731DFCF4188FF7A200BBAEE2 /* TDSStudentViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731DFCF3188FF7A200BBAEE2 /* TDSStudentViewController_iPad.xib */; };
 		732181F117FC89D9005442A8 /* new logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 732181F017FC89D9005442A8 /* new logo.png */; };
 		733077FE17E62DBA00B76FA5 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FB17E62DBA00B76FA5 /* SVSegmentedControl.m */; };
 		733077FF17E62DBA00B76FA5 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 733077FD17E62DBA00B76FA5 /* SVSegmentedThumb.m */; };
@@ -215,6 +218,10 @@
 		731A960D1846557D00F3A2BC /* PRLQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRLQuestionCell.h; sourceTree = "<group>"; };
 		731A960E1846557D00F3A2BC /* PRLQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRLQuestionCell.m; sourceTree = "<group>"; };
 		731A9610184655D600F3A2BC /* PRLQuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLQuestionCell.xib; sourceTree = "<group>"; };
+		731DFCEB188FF24700BBAEE2 /* TDSStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSStudentViewController.h; sourceTree = "<group>"; };
+		731DFCEC188FF24700BBAEE2 /* TDSStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSStudentViewController.m; sourceTree = "<group>"; };
+		731DFCED188FF24700BBAEE2 /* TDSStudentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSStudentViewController.xib; sourceTree = "<group>"; };
+		731DFCF3188FF7A200BBAEE2 /* TDSStudentViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSStudentViewController_iPad.xib; sourceTree = "<group>"; };
 		732181F017FC89D9005442A8 /* new logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new logo.png"; sourceTree = "<group>"; };
 		733077FA17E62DBA00B76FA5 /* SVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
 		733077FB17E62DBA00B76FA5 /* SVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
@@ -511,16 +518,10 @@
 			isa = PBXGroup;
 			children = (
 				4A5C10BD17C33C9300C89CA6 /* xib */,
-				73192C8017E783B10080F339 /* TDLessonPlanViewController.h */,
-				73192C8117E783B10080F339 /* TDLessonPlanViewController.m */,
-				735B8AA2187D8DF3006624D0 /* TDLPSectionViewController.h */,
-				735B8AA3187D8DF3006624D0 /* TDLPSectionViewController.m */,
+				731DFCF0188FF4B200BBAEE2 /* Lesson Plan */,
+				731DFCF1188FF50400BBAEE2 /* Section */,
 				73192C8317E783B10080F339 /* TDMenuViewController.h */,
 				73192C8417E783B10080F339 /* TDMenuViewController.m */,
-				73192C8617E783B10080F339 /* TDSaveViewController.h */,
-				73192C8717E783B10080F339 /* TDSaveViewController.m */,
-				73192C8917E783B10080F339 /* TDSectionViewController.h */,
-				73192C8A17E783B10080F339 /* TDSectionViewController.m */,
 				735387691856389000D1A283 /* TDTeacherViewController.h */,
 				7353876A1856389000D1A283 /* TDTeacherViewController.m */,
 			);
@@ -530,18 +531,15 @@
 		4A5C10BD17C33C9300C89CA6 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				73192C8217E783B10080F339 /* TDLessonPlanViewController.xib */,
-				73538731185615AE00D1A283 /* TDLessonPlanViewController_iPad.xib */,
-				735B8AA4187D8DF3006624D0 /* TDLPSectionViewController.xib */,
-				735B8AA1187D8DF3006624D0 /* TDLPSectionViewController_iPad.xib */,
-				73192C8817E783B10080F339 /* TDSaveViewController.xib */,
-				73538733185615AE00D1A283 /* TDSaveViewController_iPad.xib */,
+				731DFCF2188FF51300BBAEE2 /* Lesson Plan */,
 				73192C8517E783B10080F339 /* TDMenuViewController.xib */,
 				73538732185615AE00D1A283 /* TDMenuViewController_iPad.xib */,
 				73192C8B17E783B10080F339 /* TDSectionViewController.xib */,
 				73538734185615AE00D1A283 /* TDSectionViewController_iPad.xib */,
 				7353876E18563A3900D1A283 /* TDTeacherViewController.xib */,
 				7353876C18563A0400D1A283 /* TDTeacherViewController_iPad.xib */,
+				731DFCED188FF24700BBAEE2 /* TDSStudentViewController.xib */,
+				731DFCF3188FF7A200BBAEE2 /* TDSStudentViewController_iPad.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -565,6 +563,43 @@
 				73192C9517E7844C0080F339 /* AboutUsViewController.m */,
 			);
 			name = "About Us";
+			sourceTree = "<group>";
+		};
+		731DFCF0188FF4B200BBAEE2 /* Lesson Plan */ = {
+			isa = PBXGroup;
+			children = (
+				73192C8017E783B10080F339 /* TDLessonPlanViewController.h */,
+				73192C8117E783B10080F339 /* TDLessonPlanViewController.m */,
+				735B8AA2187D8DF3006624D0 /* TDLPSectionViewController.h */,
+				735B8AA3187D8DF3006624D0 /* TDLPSectionViewController.m */,
+				73192C8617E783B10080F339 /* TDSaveViewController.h */,
+				73192C8717E783B10080F339 /* TDSaveViewController.m */,
+			);
+			name = "Lesson Plan";
+			sourceTree = "<group>";
+		};
+		731DFCF1188FF50400BBAEE2 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				73192C8917E783B10080F339 /* TDSectionViewController.h */,
+				73192C8A17E783B10080F339 /* TDSectionViewController.m */,
+				731DFCEB188FF24700BBAEE2 /* TDSStudentViewController.h */,
+				731DFCEC188FF24700BBAEE2 /* TDSStudentViewController.m */,
+			);
+			name = Section;
+			sourceTree = "<group>";
+		};
+		731DFCF2188FF51300BBAEE2 /* Lesson Plan */ = {
+			isa = PBXGroup;
+			children = (
+				73192C8217E783B10080F339 /* TDLessonPlanViewController.xib */,
+				73538731185615AE00D1A283 /* TDLessonPlanViewController_iPad.xib */,
+				735B8AA4187D8DF3006624D0 /* TDLPSectionViewController.xib */,
+				735B8AA1187D8DF3006624D0 /* TDLPSectionViewController_iPad.xib */,
+				73192C8817E783B10080F339 /* TDSaveViewController.xib */,
+				73538733185615AE00D1A283 /* TDSaveViewController_iPad.xib */,
+			);
+			name = "Lesson Plan";
 			sourceTree = "<group>";
 		};
 		733077F917E62DBA00B76FA5 /* SVSegmentedControl */ = {
@@ -1014,6 +1049,7 @@
 				7331B87F185A167F006C04EB /* OpenSans-Bold.ttf in Resources */,
 				73CB1E5C185F89D600920B72 /* my_icon.png in Resources */,
 				73CB1E4E185F83EE00920B72 /* star_fill.png in Resources */,
+				731DFCF4188FF7A200BBAEE2 /* TDSStudentViewController_iPad.xib in Resources */,
 				73EC79B017B914BE00F2E12E /* InfoPlist.strings in Resources */,
 				73EC79B817B914BE00F2E12E /* Default.png in Resources */,
 				7353874E1856166200D1A283 /* MRAnalysisViewController_iPad.xib in Resources */,
@@ -1079,6 +1115,7 @@
 				7384854E17F54CDC00529CE1 /* TDCheckboxCell.xib in Resources */,
 				7384855017F54CDC00529CE1 /* TDLessonPlanCell.xib in Resources */,
 				7384858E17F54E5700529CE1 /* next.png in Resources */,
+				731DFCEF188FF24700BBAEE2 /* TDSStudentViewController.xib in Resources */,
 				730C7E581845F30D008E74F3 /* cb_glossy_off.png in Resources */,
 				735387541856166200D1A283 /* MyReviewersViewController_iPad.xib in Resources */,
 				7353874D1856166200D1A283 /* MRAnalysisViewController.xib in Resources */,
@@ -1125,6 +1162,7 @@
 				73D3F88617E4ADCE00149106 /* HPLoginViewController.m in Sources */,
 				73D3F88817E4ADCE00149106 /* HPRegisterViewController.m in Sources */,
 				733077FE17E62DBA00B76FA5 /* SVSegmentedControl.m in Sources */,
+				731DFCEE188FF24700BBAEE2 /* TDSStudentViewController.m in Sources */,
 				735387521856166200D1A283 /* MyReviewersViewController.m in Sources */,
 				733077FF17E62DBA00B76FA5 /* SVSegmentedThumb.m in Sources */,
 				73A893AA17F6107A00A9F4FD /* Student.m in Sources */,
@@ -1258,7 +1296,8 @@
 		73EC79C617B914BE00F2E12E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jakenpoy Corporation (UK7Q5V5E4G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/DorkLord/Documents/FacebookSDK,
@@ -1277,7 +1316,8 @@
 		73EC79C717B914BE00F2E12E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jakenpoy Corporation (UK7Q5V5E4G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/DorkLord/Documents/FacebookSDK,

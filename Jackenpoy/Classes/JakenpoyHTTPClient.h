@@ -72,6 +72,8 @@
 - (void)getLessonPlan:(NSNumber *)lid;
 - (void)getTeachers;
 - (void)saveLessonPlan:(NSNumber *)lid WithSubject:(NSNumber *)sid Teacher:(NSNumber *)tid Name:(NSString *)name;
+- (void)getSections;
+- (void)viewStudents:(NSNumber *)sid;
 
 // Manage/Register My Kids
 - (void)deactivateGuardian:(NSNumber *)ID;
@@ -101,4 +103,8 @@
 -(void)jakenpoyHTTPClientdidUpdateWithQuestionDetails:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithPDFLink:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithLessonPlan:(NSDictionary *)json;
+-(void)jakenpoyHTTPClientdidPublish:(NSDictionary *)json;
+-(void)jakenpoyHTTPClientdidUpdateWithStudents:(NSDictionary *)json;
+-(void)jakenpoyHTTPClientdidUpdateWithSections:(NSDictionary *)json;
+-(void)jakenpoyHTTPClientdidUpdateWithAddedSections:(NSDictionary *)json;
 @end

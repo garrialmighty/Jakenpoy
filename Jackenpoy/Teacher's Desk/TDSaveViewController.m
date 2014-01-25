@@ -18,9 +18,6 @@ static NSMutableArray * TeacherList;
 static NSDictionary * Subjects;
 static NSInteger SubjectSelected;
 static NSInteger TeacherSelected;
-static NSNumber * SubjectID;
-static NSNumber * TeacherID;
-static NSNumber * LessonPlanID;
 
 @interface TDSaveViewController ()
 @property (weak, nonatomic) IBOutlet UIView *Step1;
@@ -32,9 +29,18 @@ static NSNumber * LessonPlanID;
 @property (weak, nonatomic) IBOutlet UIButton *NSButton;
 @property (weak, nonatomic) IBOutlet UIButton *AddEditButton;
 @property (weak, nonatomic) IBOutlet UITableView *CheckboxTable;
-@property (weak, nonatomic) IBOutlet UITextField *Title;
+@property (weak, nonatomic) IBOutlet UILabel *Header;
+@property (weak, nonatomic) IBOutlet UILabel *Title;
+@property (weak, nonatomic) IBOutlet UITextField *TitleField;
+@property (weak, nonatomic) IBOutlet UILabel *TeacherLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *Picker;
 
+@property (strong, nonatomic) NSString * titleHolder;
+@property (strong, nonatomic) NSNumber * subjectID;
+@property (strong, nonatomic) NSNumber * teacherID;
+@property (strong, nonatomic) NSNumber * lessonPlanID;
+@property (assign, nonatomic) BOOL isEditLessonPlan;
+@property (assign, nonatomic) BOOL isEditSection;
 @end
 
 @implementation TDSaveViewController
@@ -53,11 +59,14 @@ static NSNumber * LessonPlanID;
     [super viewDidLoad];
     
     [self.navigationItem setHidesBackButton:YES];
-    
+    NSLog(@"did load");
     client = [JakenpoyHTTPClient getSharedClient];
     [client setDelegate:self];
     [client getSubjects];
     [client getTeachers];
+    
+    [self setIsEditLessonPlan:NO];
+    [self setIsEditSection:NO];
     
     SubjectSelected = 0;
     TeacherSelected = 0;
@@ -81,6 +90,27 @@ static NSNumber * LessonPlanID;
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSLog(@"did appear %@ %@",self.isEditLessonPlan?@"YES":@"NO", self.isEditSection?@"YES":@"NO");
+    if (self.isEditLessonPlan) {
+        NSLog(@"editLP");
+        [self.Header setText:@"Edit a Lesson Plan"];
+        [self.Title setText:@"Lesson Plan Title"];
+        [self.AddEditButton setTitle:@"Edit" forState:UIControlStateNormal];
+    }
+    else if (self.isEditSection) {
+        NSLog(@"edit S");
+        [self.Header setText:@"Edit Section"];
+        [self.Title setText:@"Section Title"];
+        [self.AddEditButton setTitle:@"Edit" forState:UIControlStateNormal];
+    }
+    
+    [self.TitleField setText:self.titleHolder];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -90,20 +120,21 @@ static NSNumber * LessonPlanID;
 #pragma mark - Helper Methods
 - (void)updateTitle:(NSString *)title Subject:(NSNumber *)sid Teacher:(NSNumber *)tid LessonPlan:(NSNumber *)lid
 {
-    SubjectID = sid;
-    TeacherID = tid;
-    LessonPlanID = lid;
-    [self.Title setText:title];
+    [self setTitleHolder:title];
+    [self setSubjectID:sid];
+    [self setTeacherID:tid];
+    [self setLessonPlanID:lid];
 }
 
-- (void)setToEdit
+- (void)setToEditLessonPlan
 {
-    [self.AddEditButton setTitle:@"Edit" forState:UIControlStateNormal];
+    NSLog(@"setting to edit");
+    [self setIsEditLessonPlan:YES];
 }
 
-- (void)updateViewForAdmin
+- (void)setToEditSection
 {
-    [self.Picker reloadAllComponents];
+    [self setIsEditSection:YES];
 }
 
 #pragma mark - IBAction
@@ -182,7 +213,7 @@ static NSNumber * LessonPlanID;
 
 - (IBAction)addLessonPlan
 {
-    [client saveLessonPlan:LessonPlanID WithSubject:SubjectID Teacher:TeacherID Name:self.Title.text];
+    [client saveLessonPlan:self.lessonPlanID WithSubject:self.subjectID Teacher:self.teacherID Name:self.TitleField.text];
 }
 
 - (IBAction)cancel
@@ -329,7 +360,7 @@ static NSNumber * LessonPlanID;
         [self.Picker reloadComponent:0];
         
         for (NSString * subject in SubjectList) {
-            if ([subject isEqualToString:Subjects[SubjectID]]) {
+            if ([subject isEqualToString:Subjects[self.subjectID]]) {
                 //NSLog(@"row is %d",[SubjectList indexOfObject:subject]);
                 
                 [self.Picker selectRow:[SubjectList indexOfObject:subject] inComponent:0 animated:NO];
@@ -360,11 +391,14 @@ static NSNumber * LessonPlanID;
             [self.Picker reloadComponent:1];
             
             for (Teacher * teacher in TeacherList) {
-                if ([teacher.ID isEqualToNumber:[NSNumber numberWithInteger:TeacherID.integerValue]]) {
+                if ([teacher.ID isEqualToNumber:[NSNumber numberWithInteger:self.teacherID.integerValue]]) {
                     //NSLog(@"row is %d",[TeacherList indexOfObject:teacher]);
                     [self.Picker selectRow:[TeacherList indexOfObject:teacher] inComponent:1 animated:NO];
                 }
             }
+        }
+        else {
+            [self.TeacherLabel setHidden:YES];
         }
     }
 }

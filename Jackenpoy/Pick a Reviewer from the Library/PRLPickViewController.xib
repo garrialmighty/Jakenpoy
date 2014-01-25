@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="360"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="391"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -191,8 +191,8 @@
                 <constraint firstItem="127" firstAttribute="top" secondItem="117" secondAttribute="top" id="245"/>
                 <constraint firstAttribute="bottom" secondItem="155" secondAttribute="bottom" constant="43" id="248"/>
                 <constraint firstItem="33" firstAttribute="top" secondItem="88" secondAttribute="bottom" constant="3" id="251"/>
-                <constraint firstItem="88" firstAttribute="top" secondItem="13" secondAttribute="bottom" constant="3" id="252"/>
                 <constraint firstItem="57" firstAttribute="centerY" secondItem="155" secondAttribute="centerY" id="dAS-IE-qkM"/>
+                <constraint firstItem="33" firstAttribute="top" secondItem="13" secondAttribute="bottom" constant="5" id="l2k-5Z-yox"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

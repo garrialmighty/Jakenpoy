@@ -133,6 +133,29 @@ static NSIndexPath * SelectedRow = nil;
     [self.ScreenLabel setText:RootPage];
 }
 
+- (void)jumpToMyReviewers
+{
+    NSLog(@"jumping");
+    [self.viewController popToRootViewControllerAnimated:NO];
+    
+    [self.Menu deselectRowAtIndexPath:SelectedRow animated:YES];
+    
+    SelectedRow = 0;
+    
+    UIViewController * newPage = nil;
+    RootPage = @"My Reviewers";
+    if (isPhone) {
+        newPage = [[MyReviewersViewController alloc] initWithNibName:@"MyReviewersViewController" bundle:nil];
+    } else {
+        newPage = [[MyReviewersViewController alloc] initWithNibName:@"MyReviewersViewController_iPad" bundle:nil];
+    }
+    
+    [self.viewController popViewControllerAnimated:NO];
+    [self.viewController pushViewController:newPage animated:NO];
+    
+    [self.ScreenLabel setText:RootPage];
+}
+
 #pragma mark - IBAction Methods
 - (void)showMenu
 {
