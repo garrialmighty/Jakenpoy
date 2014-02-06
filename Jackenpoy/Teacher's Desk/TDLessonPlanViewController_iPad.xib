@@ -9,6 +9,8 @@
             <connections>
                 <outlet property="AddLessonPlanButton" destination="efD-OG-wCg" id="3Pr-mn-9Ju"/>
                 <outlet property="EditCourseButton" destination="5cn-Nl-dH9" id="Cqr-XQ-8FO"/>
+                <outlet property="LoadingScreen" destination="rAi-Sh-88R" id="TFr-Jc-Db6"/>
+                <outlet property="Spinner" destination="OnG-pS-k7k" id="zQ7-Mg-8Ba"/>
                 <outlet property="Table" destination="iDd-ty-3hr" id="xAq-7U-159"/>
                 <outlet property="ViewSectionsButton" destination="kBA-lt-Ccv" id="pYg-GD-IlM"/>
                 <outlet property="view" destination="1" id="Lvs-6U-ZCB"/>
@@ -86,11 +88,28 @@
                         <action selector="viewSections" destination="-1" eventType="touchUpInside" id="cWd-TY-vLn"/>
                     </connections>
                 </button>
+                <view hidden="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAi-Sh-88R" userLabel="Loading Screen">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="OnG-pS-k7k">
+                            <rect key="frame" x="366" y="472" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="OnG-pS-k7k" secondAttribute="centerX" id="YJ8-cN-4ht"/>
+                        <constraint firstAttribute="centerY" secondItem="OnG-pS-k7k" secondAttribute="centerY" id="ved-3C-Txc"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="efD-OG-wCg" secondAttribute="trailing" id="4WZ-bU-zFe"/>
+                <constraint firstItem="rAi-Sh-88R" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="7EW-5Q-dMS"/>
                 <constraint firstAttribute="bottom" secondItem="5cn-Nl-dH9" secondAttribute="bottom" id="8XH-YW-sY1"/>
+                <constraint firstAttribute="trailing" secondItem="rAi-Sh-88R" secondAttribute="trailing" id="F3d-za-5Si"/>
                 <constraint firstItem="iDd-ty-3hr" firstAttribute="top" secondItem="1" secondAttribute="top" id="FxH-qH-MMv"/>
                 <constraint firstAttribute="trailing" secondItem="Eb7-Eb-5Oq" secondAttribute="trailing" id="GwG-uD-nAx"/>
                 <constraint firstItem="kBA-lt-Ccv" firstAttribute="top" secondItem="iDd-ty-3hr" secondAttribute="bottom" id="KKL-B6-Prh"/>
@@ -103,10 +122,12 @@
                 <constraint firstItem="efD-OG-wCg" firstAttribute="leading" secondItem="kBA-lt-Ccv" secondAttribute="trailing" id="ijy-Kg-SVq"/>
                 <constraint firstAttribute="bottom" secondItem="kBA-lt-Ccv" secondAttribute="bottom" id="lru-k7-D0u"/>
                 <constraint firstItem="iDd-ty-3hr" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="met-fu-Whn"/>
+                <constraint firstAttribute="bottom" secondItem="rAi-Sh-88R" secondAttribute="bottom" id="nzp-md-TKB"/>
                 <constraint firstItem="Eb7-Eb-5Oq" firstAttribute="top" secondItem="1" secondAttribute="top" id="oBG-pW-94a"/>
                 <constraint firstItem="kBA-lt-Ccv" firstAttribute="leading" secondItem="5cn-Nl-dH9" secondAttribute="trailing" id="pEZ-M1-JgU"/>
                 <constraint firstItem="5cn-Nl-dH9" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="pGJ-jk-6Cx"/>
                 <constraint firstItem="kBA-lt-Ccv" firstAttribute="leading" secondItem="5cn-Nl-dH9" secondAttribute="trailing" id="ug5-I8-8z1"/>
+                <constraint firstItem="rAi-Sh-88R" firstAttribute="top" secondItem="1" secondAttribute="top" id="w8h-0j-An0"/>
                 <constraint firstItem="5cn-Nl-dH9" firstAttribute="width" secondItem="kBA-lt-Ccv" secondAttribute="width" id="zPW-i6-bS2"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

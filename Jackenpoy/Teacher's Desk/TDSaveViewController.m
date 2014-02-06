@@ -1,3 +1,4 @@
+
 //
 //  TDSaveViewController.m
 //  Jackenpoy
@@ -16,8 +17,10 @@ static JakenpoyHTTPClient * client;
 static NSMutableArray * SubjectList;
 static NSMutableArray * TeacherList;
 static NSDictionary * Subjects;
+static NSDictionary * GradeLevels;
 static NSInteger SubjectSelected;
 static NSInteger TeacherSelected;
+static NSString * GradeLevel;
 
 @interface TDSaveViewController ()
 @property (weak, nonatomic) IBOutlet UIView *Step1;
@@ -31,6 +34,7 @@ static NSInteger TeacherSelected;
 @property (weak, nonatomic) IBOutlet UITableView *CheckboxTable;
 @property (weak, nonatomic) IBOutlet UILabel *Header;
 @property (weak, nonatomic) IBOutlet UILabel *Title;
+@property (weak, nonatomic) IBOutlet UILabel *SubjectLabel;
 @property (weak, nonatomic) IBOutlet UITextField *TitleField;
 @property (weak, nonatomic) IBOutlet UILabel *TeacherLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *Picker;
@@ -39,8 +43,10 @@ static NSInteger TeacherSelected;
 @property (strong, nonatomic) NSNumber * subjectID;
 @property (strong, nonatomic) NSNumber * teacherID;
 @property (strong, nonatomic) NSNumber * lessonPlanID;
+@property (strong, nonatomic) NSNumber * sectionID;
 @property (assign, nonatomic) BOOL isEditLessonPlan;
 @property (assign, nonatomic) BOOL isEditSection;
+@property (assign, nonatomic) BOOL isAddSection;
 @end
 
 @implementation TDSaveViewController
@@ -59,18 +65,15 @@ static NSInteger TeacherSelected;
     [super viewDidLoad];
     
     [self.navigationItem setHidesBackButton:YES];
-    NSLog(@"did load");
+
     client = [JakenpoyHTTPClient getSharedClient];
     [client setDelegate:self];
     [client getSubjects];
     [client getTeachers];
     
-    [self setIsEditLessonPlan:NO];
-    [self setIsEditSection:NO];
-    
     SubjectSelected = 0;
     TeacherSelected = 0;
-    SubjectList = [[NSMutableArray alloc] init];
+    SubjectList = [[NSMutableArray alloc] initWithArray:@[@"Araling Panlipunan", @"Civics", @"Filipino", @"Language", @"Math", @"Science", @"Unclassified"]];
     TeacherList = [[NSMutableArray alloc] init];
     
     SVSegmentedControl * jackenpoySC = [[SVSegmentedControl alloc] initWithSectionTitles:@[@"Customized",@"Jakenpoy Default"]];
@@ -94,18 +97,28 @@ static NSInteger TeacherSelected;
 {
     [super viewDidAppear:animated];
     
-    NSLog(@"did appear %@ %@",self.isEditLessonPlan?@"YES":@"NO", self.isEditSection?@"YES":@"NO");
     if (self.isEditLessonPlan) {
-        NSLog(@"editLP");
         [self.Header setText:@"Edit a Lesson Plan"];
         [self.Title setText:@"Lesson Plan Title"];
         [self.AddEditButton setTitle:@"Edit" forState:UIControlStateNormal];
     }
     else if (self.isEditSection) {
-        NSLog(@"edit S");
         [self.Header setText:@"Edit Section"];
         [self.Title setText:@"Section Title"];
+        [self.SubjectLabel setText:@"Grade Level"];
         [self.AddEditButton setTitle:@"Edit" forState:UIControlStateNormal];
+        
+        [self.TeacherLabel setHidden:NO];
+        [client getGradeLevels];
+    }
+    else if (self.isAddSection) {
+        [self.Header setText:@"Add Section"];
+        [self.Title setText:@"Section Title"];
+        [self.SubjectLabel setText:@"Grade Level"];
+        [self.AddEditButton setTitle:@"Add" forState:UIControlStateNormal];
+        
+        [self.TeacherLabel setHidden:NO];
+        [client getGradeLevels];
     }
     
     [self.TitleField setText:self.titleHolder];
@@ -126,15 +139,22 @@ static NSInteger TeacherSelected;
     [self setLessonPlanID:lid];
 }
 
+- (void)setToAddSection {
+    [self setIsAddSection:YES];
+}
+
 - (void)setToEditLessonPlan
 {
-    NSLog(@"setting to edit");
     [self setIsEditLessonPlan:YES];
 }
 
-- (void)setToEditSection
+- (void)editSectionName:(NSString *)name GradeLevel:(NSString *)grade WithID:(NSNumber *)sid
 {
     [self setIsEditSection:YES];
+    [self setTitleHolder:name];
+    [self setSectionID:sid];
+    
+    GradeLevel = grade;
 }
 
 #pragma mark - IBAction
@@ -213,7 +233,31 @@ static NSInteger TeacherSelected;
 
 - (IBAction)addLessonPlan
 {
-    [client saveLessonPlan:self.lessonPlanID WithSubject:self.subjectID Teacher:self.teacherID Name:self.TitleField.text];
+    if (self.isEditLessonPlan) {
+        for (NSString * key in Subjects) {
+            if ([Subjects[key] isEqualToString:SubjectList[SubjectSelected]]) {
+                [self setSubjectID:[NSNumber numberWithInteger:[key integerValue]]];
+            }
+        }
+        [client editLessonPlan:self.lessonPlanID WithSubject:self.subjectID Teacher:self.teacherID Name:self.TitleField.text];
+    }
+    else if (self.isAddSection) {
+        Teacher * teacher = TeacherList[TeacherSelected];
+        [client addSectionWithName:self.TitleField.text Teacher:teacher.ID GradeLevel:[NSString stringWithFormat:@"%d",SubjectSelected+1]];
+    }
+    else if (self.isEditSection) {
+        Teacher * teacher = TeacherList[TeacherSelected];
+        [client editName:self.TitleField.text Teacher:teacher.ID GradeLevel:[NSString stringWithFormat:@"%d",SubjectSelected+1] ForSection:self.sectionID];
+    }
+    // Add Lesson Plan
+    else {
+        for (NSString * key in Subjects) {
+            if ([Subjects[key] isEqualToString:SubjectList[SubjectSelected]]) {
+                [self setSubjectID:[NSNumber numberWithInteger:[key integerValue]]];
+            }
+        }
+        [client addLessonPlanWithTitle:self.TitleField.text ForSubject:self.subjectID];
+    }
 }
 
 - (IBAction)cancel
@@ -225,14 +269,14 @@ static NSInteger TeacherSelected;
 #pragma mark UIPickerView
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return [client isAdmin]?2:1;
+    return (self.isEditSection||self.isAddSection)?2:1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     NSInteger rowNumber = 0;
     
-    if ([client isAdmin]) {
+    if (self.isEditSection || self.isAddSection) {
         rowNumber = component==0?SubjectList.count:TeacherList.count;
     }
     else {
@@ -287,7 +331,7 @@ static NSInteger TeacherSelected;
 {
     NSMutableAttributedString * body;
     
-    if ([client isAdmin]) {
+    if (self.isEditSection || self.isAddSection) {
         if (TeacherList.count>0) {
             Teacher * item = TeacherList[row];
             body = [[NSMutableAttributedString alloc] initWithString:component==0?SubjectList[row]:item.Name];
@@ -297,8 +341,8 @@ static NSInteger TeacherSelected;
         body  = [[NSMutableAttributedString alloc] initWithString:SubjectList[row]];
     }
     
-    [body addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:[client isAdmin]?15:12] range:NSMakeRange(0, [body length])];
-    
+    [body addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:self.isEditSection?15:12] range:NSMakeRange(0, [body length])];
+
     return body;
 }
 
@@ -313,7 +357,7 @@ static NSInteger TeacherSelected;
 }
 
 #pragma mark UITableView
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //CheckedList[indexPath.row] = @NO;
     
@@ -326,15 +370,54 @@ static NSInteger TeacherSelected;
     //CheckedList[indexPath.row] = @YES;
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-}
+}*/
 
 #pragma mark JakenpoyHTTPClient Delegate
+-(void)jakenpoyHTTPClientdidUpdateWithGradeLevels:(NSDictionary *)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        GradeLevels = json[@"data"][@"grade_levels_name"];
+        [SubjectList removeAllObjects];
+        
+        NSArray *sortedKeys = [GradeLevels allKeys];
+        sortedKeys = [sortedKeys sortedArrayUsingComparator:^(id a, id b) {
+            return [a compare:b options:NSNumericSearch];
+        }];
+        
+        /*for (NSString * key in sortedKeys) {
+         [GradeLevelList addObject:GradeLevels[key]];
+         }*/
+        
+        SubjectList = [NSMutableArray arrayWithArray:@[@"Grade 1", @"Grade 2", @"Grade 3", @"Grade 4", @"Grade 5", @"Grade 6", @"Grade 7"]];
+        
+        [self.Picker reloadAllComponents];
+        
+        if (self.isEditSection) {
+            [client getSection:self.sectionID];
+        }
+    }
+}
+
+- (void)jakenpoyHTTPClientdidUpdateWithSection:(NSDictionary *)json
+{
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        NSMutableDictionary * tempDict = [NSMutableDictionary dictionaryWithDictionary:json[@"data"][@"section"]];
+        
+        [self.Picker selectRow:[tempDict[@"grade_level"] integerValue]-1 inComponent:0 animated:NO];
+        [self setTeacherID:[NSNumber numberWithInteger:[tempDict[@"teacher_id"] integerValue]]];
+        
+        for (Teacher * teacher in TeacherList) {
+            if ([teacher.ID isEqualToNumber:self.teacherID]) {
+                [self.Picker selectRow:[TeacherList indexOfObject:teacher] inComponent:1 animated:NO];
+            }
+        }
+    }
+}
+
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
 {
-    
     if ([json[@"status"] isEqualToString:@"success"]) {
         [self.navigationController popViewControllerAnimated:YES];
-        [self.delegate tdDSaveViewControllerDelegateDidSave];
     }
 }
 
@@ -343,7 +426,9 @@ static NSInteger TeacherSelected;
     if ([json[@"status"] isEqualToString:@"success"]) {
         //NSLog(@"%@",json[@"data"][@"subjects"]);
         
-        Subjects = json[@"data"][@"subjects"];
+        NSMutableDictionary * tempArr = [NSMutableDictionary dictionaryWithDictionary:json[@"data"][@"subjects"]];
+        [tempArr removeObjectForKey:@"0"];
+        Subjects = tempArr;
         //[SubjectList removeAllObjects];
         
         NSArray *sortedKeys = [Subjects allKeys];
@@ -354,8 +439,6 @@ static NSInteger TeacherSelected;
         /*for (NSString * key in sortedKeys) {
             [SubjectList addObject:Subjects[key]];
         }*/
-        
-        SubjectList = [NSMutableArray arrayWithArray:@[@"Araling Panlipunan", @"Civics", @"Filipino", @"Language", @"Math", @"Science", @"All", @"Unclassified"]];
         
         [self.Picker reloadComponent:0];
         
@@ -387,19 +470,7 @@ static NSInteger TeacherSelected;
             [TeacherList addObject:item];
         }
         
-        if ([client isAdmin]) {
-            [self.Picker reloadComponent:1];
-            
-            for (Teacher * teacher in TeacherList) {
-                if ([teacher.ID isEqualToNumber:[NSNumber numberWithInteger:self.teacherID.integerValue]]) {
-                    //NSLog(@"row is %d",[TeacherList indexOfObject:teacher]);
-                    [self.Picker selectRow:[TeacherList indexOfObject:teacher] inComponent:1 animated:NO];
-                }
-            }
-        }
-        else {
-            [self.TeacherLabel setHidden:YES];
-        }
+        if (self.isEditSection) [self.Picker reloadComponent:1];
     }
 }
 

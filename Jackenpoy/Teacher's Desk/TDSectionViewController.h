@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TDSaveViewController.h"
 
-@interface TDSectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, JakenpoyHTTPClientDelegate, TDSaveViewControllerDelegate>
+@interface TDSectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, JakenpoyHTTPClientDelegate>
 
 @end

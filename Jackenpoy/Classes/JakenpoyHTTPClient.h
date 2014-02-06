@@ -65,21 +65,30 @@
                   ShowRightAnswers:(BOOL)sa;
 
 // Teacher's Desk
+// Getter web services
 - (void)getLessonPlans;
 - (void)getAvailableSections;
 - (void)getSectionsForLessonPlan:(NSNumber *)sid;
-- (void)addSection:(NSNumber *)sid ToLessonPlan:(NSNumber *)lid; //TO TEST
 - (void)getLessonPlan:(NSNumber *)lid;
 - (void)getTeachers;
-- (void)saveLessonPlan:(NSNumber *)lid WithSubject:(NSNumber *)sid Teacher:(NSNumber *)tid Name:(NSString *)name;
-- (void)getSections;
+- (void)getSection:(NSNumber *)sid;
 - (void)viewStudents:(NSNumber *)sid;
+// Adder web services
+- (void)addLessonPlanWithTitle:(NSString *)title ForSubject:(NSNumber *)sid;
+- (void)addSectionWithName:(NSString *)name Teacher:(NSNumber *)tid GradeLevel:(NSString *)grade;
+- (void)addSection:(NSNumber *)sid ToLessonPlan:(NSNumber *)lid;
+// Edit web services
+- (void)editLessonPlan:(NSNumber *)lid WithSubject:(NSNumber *)sid Teacher:(NSNumber *)tid Name:(NSString *)name;
+- (void)editName:(NSString *)name Teacher:(NSNumber *)tid GradeLevel:(NSString *)grade ForSection:(NSNumber *)sid;
+// Misc web servies
+- (void)removeTeacher:(NSNumber *)tid FromSchool:(NSNumber *)sid;
 
 // Manage/Register My Kids
 - (void)deactivateGuardian:(NSNumber *)ID;
 - (void)kidReport:(NSNumber *)ID;
 - (void)studentReport:(NSNumber *)ID;
 - (void)getManageKids;
+
 
 // My Account
 - (void)updateName:(NSString *)name Email:(NSString *)email Password:(NSString *)password;
@@ -107,4 +116,5 @@
 -(void)jakenpoyHTTPClientdidUpdateWithStudents:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithSections:(NSDictionary *)json;
 -(void)jakenpoyHTTPClientdidUpdateWithAddedSections:(NSDictionary *)json;
+-(void)jakenpoyHTTPClientdidUpdateWithSection:(NSDictionary *)json;
 @end

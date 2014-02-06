@@ -9,6 +9,8 @@
             <connections>
                 <outlet property="AddLessonPlanButton" destination="5" id="WcB-Fo-AXH"/>
                 <outlet property="EditCourseButton" destination="6" id="41"/>
+                <outlet property="LoadingScreen" destination="bt2-SE-0OX" id="XWH-gJ-x2N"/>
+                <outlet property="Spinner" destination="02F-iK-YPa" id="pOx-qr-KDw"/>
                 <outlet property="Table" destination="7" id="RfD-bH-jCX"/>
                 <outlet property="ViewSectionsButton" destination="4" id="42"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -20,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USD-cz-exq" userLabel="Background Color">
-                    <rect key="frame" x="90" y="-4" width="32" height="22"/>
+                    <rect key="frame" x="60" y="-21" width="61" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.21176470589999999" green="0.49019607840000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -52,14 +54,14 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4" userLabel="View Sections">
-                    <rect key="frame" x="107" y="386" width="106" height="50"/>
+                    <rect key="frame" x="107" y="386" width="107" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.86274509799999999" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="zI0-Ys-Ijh"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="View">
+                    <state key="normal" title="View Sections">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -69,7 +71,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="Add Course Button">
-                    <rect key="frame" x="213" y="386" width="107" height="50"/>
+                    <rect key="frame" x="214" y="386" width="106" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -87,14 +89,34 @@
                         <action selector="addCourse" destination="-1" eventType="touchUpInside" id="Nkh-l5-5Ax"/>
                     </connections>
                 </button>
+                <view hidden="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bt2-SE-0OX" userLabel="Loading Screen">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="02F-iK-YPa">
+                            <rect key="frame" x="142" y="200" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="02F-iK-YPa" secondAttribute="centerX" id="4fY-7t-6qk"/>
+                        <constraint firstAttribute="centerY" secondItem="02F-iK-YPa" secondAttribute="centerY" id="6nQ-dZ-83P"/>
+                        <constraint firstAttribute="centerX" secondItem="02F-iK-YPa" secondAttribute="centerX" id="GII-ZY-d5u"/>
+                        <constraint firstAttribute="centerY" secondItem="02F-iK-YPa" secondAttribute="centerY" id="VQe-Zt-cek"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="bt2-SE-0OX" secondAttribute="trailing" id="2BS-IK-e4R"/>
                 <constraint firstItem="5" firstAttribute="leading" secondItem="4" secondAttribute="trailing" id="2Te-V4-Vao"/>
                 <constraint firstItem="5" firstAttribute="leading" secondItem="4" secondAttribute="trailing" id="3Vs-cJ-ncX"/>
                 <constraint firstItem="7" firstAttribute="top" secondItem="1" secondAttribute="top" id="7yi-Hx-kUu"/>
+                <constraint firstItem="bt2-SE-0OX" firstAttribute="top" secondItem="1" secondAttribute="top" id="8lB-WH-mXJ"/>
                 <constraint firstItem="4" firstAttribute="leading" secondItem="6" secondAttribute="trailing" id="9yN-as-idO"/>
                 <constraint firstItem="6" firstAttribute="width" secondItem="5" secondAttribute="width" id="AKb-U5-Sln"/>
+                <constraint firstItem="bt2-SE-0OX" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="B1T-aE-hd7"/>
                 <constraint firstAttribute="trailing" secondItem="5" secondAttribute="trailing" id="EhS-sg-RIS"/>
                 <constraint firstItem="7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="GRh-om-BOn"/>
                 <constraint firstItem="6" firstAttribute="top" secondItem="7" secondAttribute="bottom" id="M36-d4-6gq"/>
@@ -103,6 +125,7 @@
                 <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="bq8-nW-vDd"/>
                 <constraint firstItem="6" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ejc-Up-kh7"/>
                 <constraint firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="fNl-id-ook"/>
+                <constraint firstAttribute="bottom" secondItem="bt2-SE-0OX" secondAttribute="bottom" id="h1m-2l-lcE"/>
                 <constraint firstAttribute="bottom" secondItem="5" secondAttribute="bottom" id="q6X-ba-mWn"/>
                 <constraint firstItem="4" firstAttribute="leading" secondItem="6" secondAttribute="trailing" id="xvh-tF-c1y"/>
             </constraints>

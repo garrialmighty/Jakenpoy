@@ -354,13 +354,15 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
 }
 
 #pragma mark - Teacher's Desk
+#pragma mark Getter Web Services
 - (void)getLessonPlans
 {
     [self getPath:@"coursemanage"
        parameters:@{@"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)]) {
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+              }
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
@@ -396,20 +398,6 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
-- (void)addSection:(NSNumber *)sid ToLessonPlan:(NSNumber *)lid
-{
-    [self getPath:@"addSection"
-       parameters:@{@"courseId":lid, @"sectionId":sid, @"userId":self.UserID, @"token":self.Token}
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithAddedSections:)])
-                  [self.delegate jakenpoyHTTPClientdidUpdateWithAddedSections:responseObject];
-          }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
-                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
-          }];
-}
-
 - (void)getLessonPlan:(NSNumber *)lid
 {
     [self getPath:@"getCourse"
@@ -438,7 +426,81 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
-- (void)saveLessonPlan:(NSNumber *)lid WithSubject:(NSNumber *)sid Teacher:(NSNumber *)tid Name:(NSString *)name
+- (void)getSection:(NSNumber *)sid
+{
+    NSLog(@"getting section");
+    [self getPath:@"getSection"
+       parameters:@{@"sectionId":sid, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithSection:)])
+                  [self.delegate jakenpoyHTTPClientdidUpdateWithSection:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)viewStudents:(NSNumber *)sid
+{
+    NSLog(@"viewing students");
+    [self getPath:@"viewStudents"
+       parameters:@{@"sectionId":sid, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithStudents:)])
+                  [self.delegate jakenpoyHTTPClientdidUpdateWithStudents:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+#pragma mark Adder Web Services
+- (void)addLessonPlanWithTitle:(NSString *)title ForSubject:(NSNumber *)sid;
+{
+    [self getPath:@"addCourse"
+       parameters:@{@"subjectId":sid, @"name":title, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)addSectionWithName:(NSString *)name Teacher:(NSNumber *)tid GradeLevel:(NSString *)grade
+{
+    [self getPath:@"newSection"
+       parameters:@{@"name":name, @"teacherId":tid, @"grade_level":grade, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+- (void)addSection:(NSNumber *)sid ToLessonPlan:(NSNumber *)lid
+{
+    [self getPath:@"addSection"
+       parameters:@{@"courseId":lid, @"sectionId":sid, @"userId":self.UserID, @"token":self.Token}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithAddedSections:)])
+                  [self.delegate jakenpoyHTTPClientdidUpdateWithAddedSections:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
+                  [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
+          }];
+}
+
+#pragma mark Editer Web Services
+- (void)editLessonPlan:(NSNumber *)lid WithSubject:(NSNumber *)sid Teacher:(NSNumber *)tid Name:(NSString *)name
 {
     [self getPath:@"saveCourse"
        parameters:@{@"name":name, @"courseId":lid, @"subjectId":sid, @"teacherId":tid, @"userId":self.UserID, @"token":self.Token}
@@ -452,10 +514,10 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           }];
 }
 
-- (void)getSections
+- (void)editName:(NSString *)name Teacher:(NSNumber *)tid GradeLevel:(NSString *)grade ForSection:(NSNumber *)sid
 {
-    /*[self getPath:@"getSection"
-       parameters:@{@"sectionId":sid, @"userId":self.UserID, @"token":self.Token}
+    [self getPath:@"editSection"
+       parameters:@{@"sectionId":sid, @"name":name, @"teacherId":tid, @"grade_level":grade, @"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
                   [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
@@ -463,17 +525,17 @@ static NSString *const BaseURL = @"http://pta.jakenpoy.com/api/";
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])
                   [self.delegate jakenpoyHTTPClient:self didFailWithError:error];
-          }];*/
+          }];
 }
 
-- (void)viewStudents:(NSNumber *)sid
+#pragma mark Misc Web Services
+- (void)removeTeacher:(NSNumber *)tid FromSchool:(NSNumber *)sid
 {
-    NSLog(@"viewing students");
-    [self getPath:@"viewStudents"
-       parameters:@{@"sectionId":sid, @"userId":self.UserID, @"token":self.Token}
+    [self getPath:@"removeTeacher"
+       parameters:@{@"accountId":tid, @"schoolId":sid, @"userId":self.UserID, @"token":self.Token}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClientdidUpdateWithStudents:)])
-                  [self.delegate jakenpoyHTTPClientdidUpdateWithStudents:responseObject];
+              if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didUpdateWithData:)])
+                  [self.delegate jakenpoyHTTPClient:self didUpdateWithData:responseObject];
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if([self.delegate respondsToSelector:@selector(jakenpoyHTTPClient:didFailWithError:)])

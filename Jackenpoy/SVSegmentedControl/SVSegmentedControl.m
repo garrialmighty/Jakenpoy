@@ -653,7 +653,7 @@
     
     // Create the bitmap with just an alpha channel.
     // When created, it has value 0 at every pixel.
-    CGContextRef gc = CGBitmapContextCreate(NULL, scaledSize.width, scaledSize.height, 8, scaledSize.width, NULL, kCGImageAlphaOnly);
+    CGContextRef gc = CGBitmapContextCreate(NULL, scaledSize.width, scaledSize.height, 8, scaledSize.width, NULL, (CGBitmapInfo) kCGImageAlphaOnly);
     
     // Adjust the current transform matrix for the screen scale.
     CGContextScaleCTM(gc, scale, scale);

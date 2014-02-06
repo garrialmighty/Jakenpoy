@@ -41,8 +41,6 @@ NSIndexPath * SelectedIndex;
     SectionList = [[NSMutableArray alloc] init];
     
     client = [JakenpoyHTTPClient getSharedClient];
-    [client setDelegate:self];
-    [client getAvailableSections];
     
     [jakenpoyAppDelegate showBackButton];
     [self.navigationItem setHidesBackButton:YES];
@@ -58,6 +56,13 @@ NSIndexPath * SelectedIndex;
     [self.ViewStudentsButton setAttributedTitle:printUlString forState:UIControlStateNormal];*/
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) self.edgesForExtendedLayout = UIRectEdgeNone;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [client setDelegate:self];
+    [client getAvailableSections];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,9 +86,7 @@ NSIndexPath * SelectedIndex;
     Section * section = SectionList[SelectedIndex.row];
     
     [self.navigationController pushViewController:tDSVC animated:YES];
-    [tDSVC setDelegate:self];
-    [tDSVC setToEditSection];
-    //[tDSVC updateTitle:section.Name Subject:item.SubjectID Teacher:item.TeacherID LessonPlan:item.ID];
+    [tDSVC editSectionName:section.Name GradeLevel:section.GradeLevel WithID:section.ID];
 }
 
 - (IBAction)viewSection
@@ -103,7 +106,17 @@ NSIndexPath * SelectedIndex;
 
 - (IBAction)addSection
 {
+    TDSaveViewController * tDSVC;
     
+    if (isPhone) {
+        tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController" bundle:nil];
+    }
+    else {
+        tDSVC = [[TDSaveViewController alloc] initWithNibName:@"TDSaveViewController_iPad" bundle:nil];
+    }
+    
+    [self.navigationController pushViewController:tDSVC animated:YES];
+    [tDSVC setToAddSection];
 }
 
 #pragma mark - UITableView Data Source
@@ -154,7 +167,7 @@ NSIndexPath * SelectedIndex;
     if ([self.ViewStudentsButton isHidden]) {
         //[self.ViewStudentsButton setHidden:NO];
         [self.EditSectionButton setHidden:NO];
-        //[self.AddButton setHidden:NO];
+        [self.AddButton setHidden:NO];
     }
     
     if (SelectedIndex.row != indexPath.row) [tableView deselectRowAtIndexPath:SelectedIndex animated:YES];

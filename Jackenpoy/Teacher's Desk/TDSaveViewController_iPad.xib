@@ -18,6 +18,7 @@
                 <outlet property="Step2Button" destination="4Zn-TI-kW8" id="ntT-rj-Jkg"/>
                 <outlet property="Step3" destination="gzb-y1-Jwz" id="fNH-EM-pmp"/>
                 <outlet property="Step3Button" destination="Gvv-NR-9ZH" id="cCy-gZ-Cuw"/>
+                <outlet property="SubjectLabel" destination="8nH-3C-AoD" id="TC6-oK-Vsl"/>
                 <outlet property="TeacherLabel" destination="myp-Ob-3cG" id="g6g-Ji-TE5"/>
                 <outlet property="Title" destination="wuf-H1-e6u" id="v7C-5y-Pps"/>
                 <outlet property="TitleField" destination="vch-Tw-SfB" id="ZGe-Ay-c0F"/>
@@ -141,7 +142,7 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Teacher:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myp-Ob-3cG" userLabel="Subject Label">
+                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Teacher:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myp-Ob-3cG" userLabel="Subject Label">
                             <rect key="frame" x="670" y="325" width="78" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>

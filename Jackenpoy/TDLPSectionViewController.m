@@ -104,7 +104,8 @@ static NSIndexPath * SelectedIndex;
     return cell;
 }
 
-#pragma mark - UITableView Delegate
+#pragma mark - Delegate
+#pragma mark UITableView
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 44;

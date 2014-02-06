@@ -491,12 +491,13 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
         path = @"";
     }
 
-    //NSURL *url = [NSURL URLWithString:path relativeToURL:self.baseURL];
-    NSURL *url = [[NSURL alloc] initWithString:path relativeToURL:self.baseURL];
+    NSURL *url = [NSURL URLWithString:path relativeToURL:self.baseURL];
+    //NSURL *url = [[NSURL alloc] initWithString:path relativeToURL:self.baseURL];
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setHTTPMethod:method];
     [request setAllHTTPHeaderFields:self.defaultHeaders];
 
+    
     if (parameters) {
         if ([method isEqualToString:@"GET"] || [method isEqualToString:@"HEAD"] || [method isEqualToString:@"DELETE"]) {
             
@@ -544,8 +545,27 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
                 paramString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)paramString, NULL, (CFStringRef)@"!*'();:@&=+$,?%#[]", kCFStringEncodingUTF8));
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
             }
-            else if ([path isEqualToString:@"getSchools"]) {
-                //url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@",parameters[@"userId"], parameters[@"token"]]];
+            else if ([path isEqualToString:@"getSection"]) {
+                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@",parameters[@"sectionId"], parameters[@"userId"], parameters[@"token"]]];
+            }
+            else if ([path isEqualToString:@"newSection"]) {
+                NSString * paramString = [NSString stringWithFormat:@"/%@/%@/%@/%@/%@",parameters[@"name"], parameters[@"teacherId"], parameters[@"grade_level"], parameters[@"userId"], parameters[@"token"]];
+                paramString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)paramString, NULL, (CFStringRef)@"+", kCFStringEncodingUTF8));
+                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
+            }
+            else if ([path isEqualToString:@"editSection"]) {
+                NSString * paramString = [NSString stringWithFormat:@"/%@/%@/%@/%@/%@/%@",parameters[@"sectionId"], parameters[@"name"], parameters[@"teacherId"], parameters[@"grade_level"], parameters[@"userId"], parameters[@"token"]];
+                paramString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)paramString, NULL, (CFStringRef)@"+", kCFStringEncodingUTF8));
+                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
+            }
+            else if ([path isEqualToString:@"addCourse"]) {
+                NSString * paramString = [NSString stringWithFormat:@"/%@/%@/%@/%@",parameters[@"subjectId"], parameters[@"name"], parameters[@"userId"], parameters[@"token"]];
+                paramString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)paramString, NULL, (CFStringRef)@"+", kCFStringEncodingUTF8));
+                
+                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingString:paramString]];
+            }
+            else if ([path isEqualToString:@"removeTeacher"]) {
+                url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@/%@/%@",parameters[@"accountId"], parameters[@"schoolId"], parameters[@"userId"], parameters[@"token"]]];
             }
             else {
                 url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:@"/%@/%@",parameters[@"userId"], parameters[@"token"]]];

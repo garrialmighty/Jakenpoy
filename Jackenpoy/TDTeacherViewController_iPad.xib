@@ -42,6 +42,9 @@
                         </attributedString>
                     </state>
                     <state key="highlighted" backgroundImage="feedback.png"/>
+                    <connections>
+                        <action selector="removeTeacher" destination="-1" eventType="touchUpInside" id="ZV3-ri-5U5"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6TK-cY-3hv">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="974"/>

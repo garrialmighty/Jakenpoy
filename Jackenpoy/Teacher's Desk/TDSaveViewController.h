@@ -10,14 +10,11 @@
 
 @protocol TDSaveViewControllerDelegate;
 
-@interface TDSaveViewController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, JakenpoyHTTPClientDelegate>
+@interface TDSaveViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, JakenpoyHTTPClientDelegate>
 @property(weak) id<TDSaveViewControllerDelegate> delegate;
 
 - (void)updateTitle:(NSString *)title Subject:(NSNumber *)sid Teacher:(NSNumber *)tid LessonPlan:(NSNumber *)lid;
+- (void)setToAddSection;
 - (void)setToEditLessonPlan;
-- (void)setToEditSection;
-@end
-
-@protocol TDSaveViewControllerDelegate <NSObject>
--(void)tdDSaveViewControllerDelegateDidSave;
+- (void)editSectionName:(NSString *)name GradeLevel:(NSString *)grade WithID:(NSNumber *)sid;
 @end

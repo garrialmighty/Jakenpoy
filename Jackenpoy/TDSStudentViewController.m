@@ -59,7 +59,7 @@ static NSNumber * SectionID;
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
 {
     if ([json[@"status"] isEqualToString:@"success"]) {
-        NSArray * data = json[@"data"][@"available_sections"];
+        //NSArray * data = json[@"data"][@"available_sections"];
         [StudentList removeAllObjects];
         
         /*for (NSDictionary * section in data) {

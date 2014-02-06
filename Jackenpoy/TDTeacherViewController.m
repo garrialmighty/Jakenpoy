@@ -54,7 +54,9 @@ static NSIndexPath *SelectedIndex;
 #pragma mark - IBAction
 - (IBAction)removeTeacher
 {
+    Teacher * teacher = TeacherList[SelectedIndex.row];
     
+    [client removeTeacher:teacher.ID FromSchool:teacher.SchoolID];
 }
 
 #pragma mark - UITableView Data Source
@@ -113,7 +115,8 @@ static NSIndexPath *SelectedIndex;
 #pragma mark JakenpoyHTTPClient Delegate
 -(void)jakenpoyHTTPClient:(JakenpoyHTTPClient *)client didUpdateWithData:(id)json
 {
-    
+    NSLog(@"%@",json);
+    [client getTeachers];
 }
 
 -(void)jakenpoyHTTPClientdidUpdateWithTeachers:(NSDictionary *)json

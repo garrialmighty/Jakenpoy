@@ -20,6 +20,9 @@ static NSIndexPath * SelectedIndex;
 @property (weak, nonatomic) IBOutlet UIButton *EditCourseButton;
 @property (weak, nonatomic) IBOutlet UIButton *AddLessonPlanButton;
 @property (weak, nonatomic) IBOutlet UITableView *Table;
+
+@property (weak, nonatomic) IBOutlet UIView *LoadingScreen;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spinner;
 @end
 
 @implementation TDLessonPlanViewController
@@ -38,7 +41,6 @@ static NSIndexPath * SelectedIndex;
     [super viewDidLoad];
     
     client = [JakenpoyHTTPClient getSharedClient];
-    [client setDelegate:self];
     
     LessonPlanList = [[NSMutableArray alloc] init];
     
@@ -51,7 +53,7 @@ static NSIndexPath * SelectedIndex;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    [client setDelegate:self];
     [client getLessonPlans];
 }
 
@@ -61,11 +63,25 @@ static NSIndexPath * SelectedIndex;
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Helper Methods
+- (void)showLoadingScreen
+{
+    [self.LoadingScreen setHidden:NO];
+    [self.Spinner startAnimating];
+}
+
+- (void)hideLoadingScreen
+{
+    [self.LoadingScreen setHidden:YES];
+    [self.Spinner stopAnimating];
+}
+
 #pragma mark - IBAction
 - (IBAction)editCourse
 {
     LessonPlan * item = LessonPlanList[SelectedIndex.row];
     [client getLessonPlan:item.ID];
+    [self showLoadingScreen];
 }
 
 - (IBAction)viewSections
@@ -159,6 +175,8 @@ static NSIndexPath * SelectedIndex;
 #pragma mark JakenpoyHTTPClient Delegate
 -(void)jakenpoyHTTPClientdidUpdateWithLessonPlan:(NSDictionary *)json
 {
+    [self hideLoadingScreen];
+    
     if ([json[@"status"] isEqualToString:@"success"]) {
         NSDictionary * data = json[@"data"][@"course"];
         LessonPlan * item = [[LessonPlan alloc] init];
@@ -178,7 +196,7 @@ static NSIndexPath * SelectedIndex;
         }
         
         [self.navigationController pushViewController:tDSVC animated:YES];
-        [tDSVC setDelegate:self];
+        //[tDSVC setDelegate:self];
         [tDSVC setToEditLessonPlan];
         [tDSVC updateTitle:item.Name Subject:item.SubjectID Teacher:item.TeacherID LessonPlan:item.ID];
     }    
